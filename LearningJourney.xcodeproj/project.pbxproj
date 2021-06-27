@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B17B23BC26864FA1006E060A /* ContentViewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23BB26864FA1006E060A /* ContentViewRepository.swift */; };
+		B17B23C126864FCD006E060A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
+		B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
+		B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C42686500E006E060A /* LibraryAssembler.swift */; };
+		B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C8268652A2006E060A /* FetchStrandsUseCase.swift */; };
+		B17B23CC2686536C006E060A /* LearningStrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CB2686536C006E060A /* LearningStrand.swift */; };
+		B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CE26865ADA006E060A /* LibraryRepository.swift */; };
 		B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */; };
 		B18C4CB62683F5D100A150CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB52683F5D100A150CD /* ContentView.swift */; };
 		B18C4CB82683F5D200A150CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CB72683F5D200A150CD /* Assets.xcassets */; };
@@ -15,6 +22,24 @@
 		B18C4CC02683F5D200A150CD /* LearningJourney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CBE2683F5D200A150CD /* LearningJourney.xcdatamodeld */; };
 		B18C4CCB2683F5D200A150CD /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CCA2683F5D200A150CD /* LearningJourneyTests.swift */; };
 		B18C4CD62683F5D200A150CD /* LearningJourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CD52683F5D200A150CD /* LearningJourneyUITests.swift */; };
+		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
+		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
+		B1BFE75B26866E5700FAFF5D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */; };
+		B1BFE76026867BB000FAFF5D /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75F26867BB000FAFF5D /* ApiEndpoint.swift */; };
+		B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */; };
+		B1BFE7B82687775D00FAFF5D /* LearningStrandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7B72687775D00FAFF5D /* LearningStrandRow.swift */; };
+		B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7B9268777B700FAFF5D /* LearningGoalCard.swift */; };
+		B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BC2687A54600FAFF5D /* Fixtures.swift */; };
+		B1BFE7BF2687A5EC00FAFF5D /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BE2687A5EC00FAFF5D /* Mocks.swift */; };
+		B1BFE7C12687ACB200FAFF5D /* LearningGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C02687ACB200FAFF5D /* LearningGoal.swift */; };
+		B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C22687ACC900FAFF5D /* LearningObjective.swift */; };
+		B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */; };
+		B1BFE7C72687E6EF00FAFF5D /* ObjectivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */; };
+		B1BFE7CC2687E79300FAFF5D /* ObjectivesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7CB2687E79300FAFF5D /* ObjectivesListViewModel.swift */; };
+		B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7CE2687E83D00FAFF5D /* FetchObjectivesUseCase.swift */; };
+		B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */; };
+		B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */; };
+		B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +60,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B17B23BB26864FA1006E060A /* ContentViewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRepository.swift; sourceTree = "<group>"; };
+		B17B23C026864FCD006E060A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		B17B23C226864FE9006E060A /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
+		B17B23C42686500E006E060A /* LibraryAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryAssembler.swift; sourceTree = "<group>"; };
+		B17B23C8268652A2006E060A /* FetchStrandsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStrandsUseCase.swift; sourceTree = "<group>"; };
+		B17B23CB2686536C006E060A /* LearningStrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningStrand.swift; sourceTree = "<group>"; };
+		B17B23CE26865ADA006E060A /* LibraryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRepository.swift; sourceTree = "<group>"; };
 		B18C4CB02683F5D100A150CD /* LearningJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyApp.swift; sourceTree = "<group>"; };
 		B18C4CB52683F5D100A150CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +81,24 @@
 		B18C4CD12683F5D200A150CD /* LearningJourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningJourneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18C4CD52683F5D200A150CD /* LearningJourneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyUITests.swift; sourceTree = "<group>"; };
 		B18C4CD72683F5D200A150CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRemoteService.swift; sourceTree = "<group>"; };
+		B1BFE75826866E2100FAFF5D /* LibraryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryParser.swift; sourceTree = "<group>"; };
+		B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		B1BFE75F26867BB000FAFF5D /* ApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiEndpoint.swift; sourceTree = "<group>"; };
+		B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryEndpoint.swift; sourceTree = "<group>"; };
+		B1BFE7B72687775D00FAFF5D /* LearningStrandRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningStrandRow.swift; sourceTree = "<group>"; };
+		B1BFE7B9268777B700FAFF5D /* LearningGoalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningGoalCard.swift; sourceTree = "<group>"; };
+		B1BFE7BC2687A54600FAFF5D /* Fixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fixtures.swift; sourceTree = "<group>"; };
+		B1BFE7BE2687A5EC00FAFF5D /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		B1BFE7C02687ACB200FAFF5D /* LearningGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningGoal.swift; sourceTree = "<group>"; };
+		B1BFE7C22687ACC900FAFF5D /* LearningObjective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjective.swift; sourceTree = "<group>"; };
+		B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCoordinator.swift; sourceTree = "<group>"; };
+		B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListView.swift; sourceTree = "<group>"; };
+		B1BFE7CB2687E79300FAFF5D /* ObjectivesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListViewModel.swift; sourceTree = "<group>"; };
+		B1BFE7CE2687E83D00FAFF5D /* FetchObjectivesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchObjectivesUseCase.swift; sourceTree = "<group>"; };
+		B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesFactory.swift; sourceTree = "<group>"; };
+		B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListAssembler.swift; sourceTree = "<group>"; };
+		B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryFeature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +126,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B17B23BD26864FA5006E060A /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B17B23BE26864FBA006E060A /* Library */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B17B23BE26864FBA006E060A /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7D02688CD2A00FAFF5D /* Routing */,
+				B17B23CD26865ACD006E060A /* Data */,
+				B17B23CA2686535F006E060A /* Model */,
+				B1BFE7BB2687A53E00FAFF5D /* Preview */,
+				B17B23BF26864FC2006E060A /* Scenes */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		B17B23BF26864FC2006E060A /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7C92687E74600FAFF5D /* ObjectivesList */,
+				B1BFE7C82687E73500FAFF5D /* Library */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B17B23C726865245006E060A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B17B23C8268652A2006E060A /* FetchStrandsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		B17B23CA2686535F006E060A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B17B23CB2686536C006E060A /* LearningStrand.swift */,
+				B1BFE7C02687ACB200FAFF5D /* LearningGoal.swift */,
+				B1BFE7C22687ACC900FAFF5D /* LearningObjective.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B17B23CD26865ACD006E060A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE76126868F7100FAFF5D /* Service */,
+				B17B23CE26865ADA006E060A /* LibraryRepository.swift */,
+				B1BFE75826866E2100FAFF5D /* LibraryParser.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		B18C4CA72683F5D100A150CD = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +206,8 @@
 		B18C4CB22683F5D100A150CD /* LearningJourney */ = {
 			isa = PBXGroup;
 			children = (
+				B1BFE75C26866E5D00FAFF5D /* Core */,
+				B17B23BD26864FA5006E060A /* Features */,
 				B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */,
 				B18C4CB52683F5D100A150CD /* ContentView.swift */,
 				B18C4CB72683F5D200A150CD /* Assets.xcassets */,
@@ -106,6 +215,7 @@
 				B18C4CC12683F5D200A150CD /* Info.plist */,
 				B18C4CBE2683F5D200A150CD /* LearningJourney.xcdatamodeld */,
 				B18C4CB92683F5D200A150CD /* Preview Content */,
+				B17B23BB26864FA1006E060A /* ContentViewRepository.swift */,
 			);
 			path = LearningJourney;
 			sourceTree = "<group>";
@@ -134,6 +244,115 @@
 				B18C4CD72683F5D200A150CD /* Info.plist */,
 			);
 			path = LearningJourneyUITests;
+			sourceTree = "<group>";
+		};
+		B1BFE75C26866E5D00FAFF5D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE75D26867B9E00FAFF5D /* Networking */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B1BFE75D26867B9E00FAFF5D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */,
+				B1BFE75F26867BB000FAFF5D /* ApiEndpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B1BFE76126868F7100FAFF5D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */,
+				B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B1BFE7B62687773A00FAFF5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B17B23C026864FCD006E060A /* LibraryView.swift */,
+				B1BFE7B72687775D00FAFF5D /* LearningStrandRow.swift */,
+				B1BFE7B9268777B700FAFF5D /* LearningGoalCard.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1BFE7BB2687A53E00FAFF5D /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7BC2687A54600FAFF5D /* Fixtures.swift */,
+				B1BFE7BE2687A5EC00FAFF5D /* Mocks.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		B1BFE7C82687E73500FAFF5D /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B17B23C42686500E006E060A /* LibraryAssembler.swift */,
+				B1BFE7D72688FF5000FAFF5D /* Domain */,
+				B1BFE7B62687773A00FAFF5D /* View */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		B1BFE7C92687E74600FAFF5D /* ObjectivesList */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */,
+				B1BFE7D82688FF5E00FAFF5D /* Domain */,
+				B1BFE7CA2687E77E00FAFF5D /* View */,
+			);
+			path = ObjectivesList;
+			sourceTree = "<group>";
+		};
+		B1BFE7CA2687E77E00FAFF5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1BFE7CD2687E82600FAFF5D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7CE2687E83D00FAFF5D /* FetchObjectivesUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		B1BFE7D02688CD2A00FAFF5D /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */,
+				B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */,
+				B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		B1BFE7D72688FF5000FAFF5D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B17B23C226864FE9006E060A /* LibraryViewModel.swift */,
+				B17B23C726865245006E060A /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B1BFE7D82688FF5E00FAFF5D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7CB2687E79300FAFF5D /* ObjectivesListViewModel.swift */,
+				B1BFE7CD2687E82600FAFF5D /* UseCases */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,10 +484,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
+				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
+				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
+				B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */,
+				B1BFE7CC2687E79300FAFF5D /* ObjectivesListViewModel.swift in Sources */,
+				B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */,
+				B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */,
 				B18C4CC02683F5D200A150CD /* LearningJourney.xcdatamodeld in Sources */,
+				B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */,
+				B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */,
+				B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */,
 				B18C4CBD2683F5D200A150CD /* Persistence.swift in Sources */,
+				B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */,
+				B17B23BC26864FA1006E060A /* ContentViewRepository.swift in Sources */,
+				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
+				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
+				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
 				B18C4CB62683F5D100A150CD /* ContentView.swift in Sources */,
+				B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */,
+				B17B23CC2686536C006E060A /* LearningStrand.swift in Sources */,
+				B17B23C126864FCD006E060A /* LibraryView.swift in Sources */,
+				B1BFE7C72687E6EF00FAFF5D /* ObjectivesListView.swift in Sources */,
+				B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */,
+				B1BFE75B26866E5700FAFF5D /* ApiRequest.swift in Sources */,
 				B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */,
+				B1BFE76026867BB000FAFF5D /* ApiEndpoint.swift in Sources */,
+				B1BFE7C12687ACB200FAFF5D /* LearningGoal.swift in Sources */,
+				B1BFE7B82687775D00FAFF5D /* LearningStrandRow.swift in Sources */,
+				B1BFE7BF2687A5EC00FAFF5D /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

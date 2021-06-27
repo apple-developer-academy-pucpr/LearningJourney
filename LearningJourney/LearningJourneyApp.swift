@@ -11,10 +11,12 @@ import SwiftUI
 struct LearningJourneyApp: App {
     let persistenceController = PersistenceController.shared
 
+    let feature = LibraryFeature<LibraryCoordinator>()
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            feature.resolve()
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
