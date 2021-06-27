@@ -15,8 +15,6 @@ struct LearningJourneyApp: App {
     var body: some Scene {
         WindowGroup {
             feature.resolve()
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

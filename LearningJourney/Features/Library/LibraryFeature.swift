@@ -10,12 +10,12 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
     // MARK: - Initialization
     
     public init() {
-        let coordinator = LibraryCoordinator()
         let factory = LibraryScenesFactory(
-            libraryAssembler: LibraryAssembler(coordinator: coordinator),
+            libraryAssembler: LibraryAssembler(),
             objectivesListAssembler: ObjectivesListAssembler()
         )
-        coordinator.scenesFactory = factory
+        
+        let coordinator = LibraryCoordinator(scenesFactory: factory)
         self.init(
             coordinator: coordinator as? Coordinator,
             sceneFactory: factory
@@ -33,6 +33,9 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
         guard let coordinator = coordinator else {
             fatalError("Coordinator not configured for Library feature")
         }
-        return coordinator.start()
+        return AnyView(coordinator
+                        .start()
+                        .environmentObject(coordinator))
+            
     }
 }

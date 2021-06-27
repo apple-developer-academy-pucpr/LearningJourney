@@ -137,10 +137,11 @@
 		B17B23BE26864FBA006E060A /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				B1BFE7D02688CD2A00FAFF5D /* Routing */,
+				B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */,
 				B17B23CD26865ACD006E060A /* Data */,
 				B17B23CA2686535F006E060A /* Model */,
 				B1BFE7BB2687A53E00FAFF5D /* Preview */,
+				B1BFE7D02688CD2A00FAFF5D /* Routing */,
 				B17B23BF26864FC2006E060A /* Scenes */,
 			);
 			path = Library;
@@ -330,7 +331,6 @@
 		B1BFE7D02688CD2A00FAFF5D /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */,
 				B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */,
 				B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */,
 			);

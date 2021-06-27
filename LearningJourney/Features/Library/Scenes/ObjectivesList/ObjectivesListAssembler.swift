@@ -7,7 +7,6 @@ protocol ObjectivesListAssembling {
 final class ObjectivesListAssembler: ObjectivesListAssembling{
     func assemble(learningGoal: LearningGoal) -> AnyView {
         let parser = LibraryParser()
-        let coordinator = LibraryCoordinator()
         
         let service = LibraryRemoteService(
             apiFactory: { ApiRequest($0) })
@@ -18,8 +17,7 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
         let viewModel = ObjectivesListViewModel(
             useCases: .init(fetchObjectivesUseCase: FetchObjectivesUseCase(repository: repository)),
             dependencies: .init(goal: learningGoal))
-        let view = ObjectivesListView(viewModel: viewModel)
-            .environmentObject(coordinator)
+        let view = ObjectivesListView<ObjectivesListViewModel, LibraryCoordinator>(viewModel: viewModel)
         
         return AnyView(view)
     }

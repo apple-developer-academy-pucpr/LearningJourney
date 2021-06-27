@@ -30,4 +30,16 @@ final class LibraryCoordinatorMock: LibraryCoordinating {
     var isPresentingObjectives: Bool = true
 }
 
+final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
+    func resolveLibraryScene() -> AnyView {
+        .init(Text("Dummy"))
+    }
+    
+    func resolveObjectivesListScene(using goal: LearningGoal) -> AnyView {
+        .init(Text("Dummy"))
+    }
+    
+    
+}
+
 #endif

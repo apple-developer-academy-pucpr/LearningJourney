@@ -4,17 +4,8 @@ protocol LibraryAssembling {
     func assemble() -> AnyView
 }
 
-final class LibraryAssembler<Coordinator>: LibraryAssembling where Coordinator: LibraryCoordinating {
-    
-    // MARK: - Dependencies
-    
-    private let coordinator: Coordinator
-    
-    // MARK: - Initialization
-    init(coordinator: Coordinator) {
-        self.coordinator = coordinator
-    }
-    
+final class LibraryAssembler: LibraryAssembling {
+
     func assemble() -> AnyView {
         let parser = LibraryParser()
         
@@ -31,7 +22,7 @@ final class LibraryAssembler<Coordinator>: LibraryAssembling where Coordinator: 
                 )
             )
         )
-        let view = LibraryView(coordinator: coordinator, viewModel: viewModel)
+        let view = LibraryView<LibraryViewModel, LibraryCoordinator>(viewModel: viewModel)
         
         return AnyView(view)
     }

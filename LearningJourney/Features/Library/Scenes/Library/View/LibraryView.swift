@@ -4,7 +4,10 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
     
     // MARK: - Environment
     
-    @ObservedObject var coordinator: Coordinator
+    @EnvironmentObject var coordinator: Coordinator
+    
+    // MARK: - Dependencies
+    
     @ObservedObject var viewModel: ViewModel
     
     // MARK: - View
@@ -40,14 +43,7 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
                 searchBar
                     .padding(.vertical, 18)
                 ForEach(strands) { strand in
-                    NavigationLink(
-                        destination: Text("Destination"),
-                        isActive: $coordinator.isPresentingObjectives
-                    ) {
-                        LearningStrandRow(strand: strand)
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    
+                    LearningStrandRow<LibraryCoordinator>(strand: strand)                    
                     Spacer()
                         .frame(height: 20)
                 }
@@ -69,7 +65,7 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView(coordinator: LibraryCoordinatorMock(), viewModel: LibraryViewModelMock(resultToUse: [
+        LibraryView<LibraryViewModelMock, LibraryCoordinatorMock>(viewModel: LibraryViewModelMock(resultToUse: [
             .fixture(goals: [
                         .fixture(),
                         .fixture(),
@@ -91,7 +87,7 @@ struct ContentView_Previews: PreviewProvider {
                 .fixture(),
             ]),
         ]))
-        .environmentObject(LibraryCoordinator())
+        .environmentObject(LibraryCoordinatorMock())
     }
 }
 

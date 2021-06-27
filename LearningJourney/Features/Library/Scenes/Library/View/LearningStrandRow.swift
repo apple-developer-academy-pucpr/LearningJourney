@@ -1,7 +1,8 @@
 import SwiftUI
 
-struct LearningStrandRow: View {
+struct LearningStrandRow<Coordinator>: View where Coordinator: LibraryCoordinating {
     
+    @EnvironmentObject var coordinator: Coordinator
     let strand: LearningStrand
     
     var body: some View {
@@ -12,7 +13,12 @@ struct LearningStrandRow: View {
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(strand.goals) { goal in
-                        LearningGoalCard(goal: goal)
+                        NavigationLink(
+                            destination: coordinator.objectivesView(goal: goal)
+                        ) {
+                            LearningGoalCard(goal: goal)
+                        }
+                        .buttonStyle(PlainButtonStyle())
                     }
                 }
             }
@@ -23,7 +29,7 @@ struct LearningStrandRow: View {
 
 struct LearningStrandRow_Previews: PreviewProvider {
     static var previews: some View {
-        LearningStrandRow(strand: .init(
+        LearningStrandRow<LibraryCoordinator>(strand: .init(
             name: "Technical",
             goals: [
                 .init(

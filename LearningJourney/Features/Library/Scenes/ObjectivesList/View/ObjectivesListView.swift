@@ -1,7 +1,12 @@
 import SwiftUI
 
-struct ObjectivesListView<ViewModel>: View where ViewModel: ObjectivesListViewModelProtocol {
+struct ObjectivesListView<ViewModel, Coordinator>: View where
+    ViewModel: ObjectivesListViewModelProtocol, Coordinator: LibraryCoordinating {
 
+    // MARK: - Environment
+    
+    @EnvironmentObject var coordinator: Coordinator
+    
     // MARK: - Dependencies
     
     @ObservedObject var viewModel: ViewModel
@@ -9,10 +14,8 @@ struct ObjectivesListView<ViewModel>: View where ViewModel: ObjectivesListViewMo
     // MARK: - View
     
     var body: some View {
-        Group {
-            Text("Salve")
-        }
-        .onAppear(perform: viewModel.handleOnAppear)
+        Text("Salve")
         .navigationTitle(viewModel.goalName)
+        .onAppear(perform: viewModel.handleOnAppear)
     }
 }
