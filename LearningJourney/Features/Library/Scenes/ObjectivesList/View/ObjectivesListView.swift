@@ -14,8 +14,45 @@ struct ObjectivesListView<ViewModel, Coordinator>: View where
     // MARK: - View
     
     var body: some View {
-        Text("Salve")
-        .navigationTitle(viewModel.goalName)
-        .onAppear(perform: viewModel.handleOnAppear)
+        contentView
+            .navigationTitle(viewModel.goalName)
+            .onAppear(perform: viewModel.handleOnAppear)
+    }
+    
+    private var contentView: some View {
+        Group {
+            switch viewModel.objectives {
+            case .loading:
+                Text("Loading")
+            case let .error(message):
+                Text("Error! " + message)
+            case let .result(objectives):
+                resultView(objectives)
+            }
+        }
+        .padding()
+    }
+    
+    private func resultView(_ objectives: [LibraryViewModelState<LearningObjective>]) -> some View {
+        ScrollView {
+            VStack {
+                ForEach(objectives) { objective in
+                    ObjectiveCard(
+                        objective: objective) {
+                        viewModel.handleDidLearnToggled(objective: objective)
+                    }
+                }
+            }
+        }
     }
 }
+
+#if DEBUG
+
+struct ObjectivesListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ObjectivesListView<ObjectivesListViewModelMock, LibraryCoordinator>(viewModel: ObjectivesListViewModelMock())
+    }
+}
+
+#endif

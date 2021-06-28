@@ -15,7 +15,9 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
             parser: parser)
         
         let viewModel = ObjectivesListViewModel(
-            useCases: .init(fetchObjectivesUseCase: FetchObjectivesUseCase(repository: repository)),
+            useCases: .init(
+                fetchObjectivesUseCase: FetchObjectivesUseCase(repository: repository),
+                toggleLearnUseCase: ToggleLearnUseCase(repository: repository)),
             dependencies: .init(goal: learningGoal))
         let view = ObjectivesListView<ObjectivesListViewModel, LibraryCoordinator>(viewModel: viewModel)
         

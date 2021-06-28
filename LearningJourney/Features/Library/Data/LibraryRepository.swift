@@ -4,6 +4,7 @@ protocol LibraryRepositoryProtocol {
     typealias Completion<T> = (Result<T, LibraryRepositoryError>) -> Void
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>)
     func fetchObjectives(using goal: LearningGoal, completion: @escaping Completion<[LearningObjective]> )
+    func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>)
 }
 
 enum LibraryRepositoryError: Error {
@@ -57,14 +58,29 @@ final class LibraryRepository: LibraryRepositoryProtocol {
                 completion(.failure(.unknown))
                 return
             }
-            
-            switch result {
-            case let .success(payload):
-                completion(self.parser.parse(payload)
-                            .mapError { .parsing($0) })
-            case let .failure(error):
-                completion(.failure(.api(error)))
+            completion(self.mapResult(from: result))
+        }
+    }
+    
+    func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>) {
+        remoteService.updateObjective(using: newObjective) { [weak self] result in
+            guard let self = self else {
+                completion(.failure(.unknown))
+                return
             }
+            completion(self.mapResult(from: result))
+        }
+    }
+    
+    // MARK: - Helpers
+    
+    private func mapResult<T: Decodable>(from result: Result<Data, ApiError>) -> Result<T, LibraryRepositoryError> {
+        switch result {
+        case let .success(payload):
+            return (self.parser.parse(payload)
+                        .mapError { .parsing($0) })
+        case let .failure(error):
+            return (.failure(.api(error)))
         }
     }
 }

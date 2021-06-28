@@ -38,8 +38,43 @@ final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
     func resolveObjectivesListScene(using goal: LearningGoal) -> AnyView {
         .init(Text("Dummy"))
     }
+}
+
+final class ObjectivesListViewModelMock: ObjectivesListViewModelProtocol {
+    func handleDidLearnToggled(objective: LibraryViewModelState<LearningObjective>) {
+        //        let newObjective = LearningObjective(
+        //            id: objective.id,
+        //            isCore: objective.isCore,
+        //            Description: objective.Description,
+        //            isLearned: !objective.isLearned)
+        //        switch objectives {
+        //        case let .result(a):
+        //            var objectives = a.map { $0 }
+        //            let index = objectives.firstIndex(where: { $0.id == objective.id })!
+        //            objectives.remove(at: index)
+        //            objectives.insert(.result(newObjective), at: index)
+        //            self.objectives = .result(objectives)
+        //            objectWillChange.send()
+        //        default:
+        //            break
+        //        }
+    }
     
     
+    @Published
+    var objectives: LibraryViewModelState<[LibraryViewModelState<LearningObjective>]> = .result([
+        .result(.fixture()),
+        .result(.fixture()),
+        .result(.fixture()),
+        .result(.fixture()),
+        .result(.fixture()),
+    ])
+    
+    var goalName: String = "Dummy"
+    
+    func handleOnAppear() {
+        objectWillChange.send()
+    }
 }
 
 #endif

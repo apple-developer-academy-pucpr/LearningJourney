@@ -40,6 +40,9 @@
 		B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */; };
 		B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */; };
 		B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */; };
+		B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D9268923FD00FAFF5D /* ObjectiveCard.swift */; };
+		B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DB26892A6B00FAFF5D /* LearnedButtonStyle.swift */; };
+		B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DD2689316C00FAFF5D /* ToggleLearnUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,9 @@
 		B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenesFactory.swift; sourceTree = "<group>"; };
 		B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListAssembler.swift; sourceTree = "<group>"; };
 		B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryFeature.swift; sourceTree = "<group>"; };
+		B1BFE7D9268923FD00FAFF5D /* ObjectiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveCard.swift; sourceTree = "<group>"; };
+		B1BFE7DB26892A6B00FAFF5D /* LearnedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnedButtonStyle.swift; sourceTree = "<group>"; };
+		B1BFE7DD2689316C00FAFF5D /* ToggleLearnUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLearnUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,6 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */,
+				B1BFE7D9268923FD00FAFF5D /* ObjectiveCard.swift */,
+				B1BFE7DB26892A6B00FAFF5D /* LearnedButtonStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				B1BFE7CE2687E83D00FAFF5D /* FetchObjectivesUseCase.swift */,
+				B1BFE7DD2689316C00FAFF5D /* ToggleLearnUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -485,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
+				B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */,
 				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
 				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
 				B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */,
@@ -499,6 +509,7 @@
 				B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */,
 				B17B23BC26864FA1006E060A /* ContentViewRepository.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
+				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
 				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
 				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
 				B18C4CB62683F5D100A150CD /* ContentView.swift in Sources */,
@@ -506,6 +517,7 @@
 				B17B23CC2686536C006E060A /* LearningStrand.swift in Sources */,
 				B17B23C126864FCD006E060A /* LibraryView.swift in Sources */,
 				B1BFE7C72687E6EF00FAFF5D /* ObjectivesListView.swift in Sources */,
+				B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */,
 				B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */,
 				B1BFE75B26866E5700FAFF5D /* ApiRequest.swift in Sources */,
 				B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */,

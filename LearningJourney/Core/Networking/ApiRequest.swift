@@ -55,6 +55,7 @@ final class ApiRequest: ApiProtocol {
         var request = URLRequest(url: url)
         
         request.httpMethod = endpoint.method.rawValue
+        request.httpBody = endpoint.body
         
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else {

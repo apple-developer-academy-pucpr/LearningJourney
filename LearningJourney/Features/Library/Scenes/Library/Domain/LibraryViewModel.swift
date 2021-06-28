@@ -6,10 +6,14 @@ protocol LibraryViewModelProtocol: ObservableObject {
     func handleOnAppear()
 }
 
-enum LibraryViewModelState<T> {
+enum LibraryViewModelState<T: Equatable>: Equatable {
     case loading
     case error(String)
     case result(T)
+}
+
+extension LibraryViewModelState: Identifiable where T == LearningObjective {
+    var id: UUID { UUID() }
 }
 
 final class LibraryViewModel: LibraryViewModelProtocol {
@@ -46,6 +50,7 @@ final class LibraryViewModel: LibraryViewModelProtocol {
             case let .success(strands):
                 self?.strands = .result(strands)
             case let .failure(error):
+                print("GOT AN ERROR!", error)
                 self?.strands = .error(error.localizedDescription)
             }
         }

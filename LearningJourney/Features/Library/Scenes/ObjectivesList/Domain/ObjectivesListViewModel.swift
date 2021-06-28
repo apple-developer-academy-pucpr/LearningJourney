@@ -1,9 +1,10 @@
 import SwiftUI
 
 protocol ObjectivesListViewModelProtocol: ObservableObject {
-    var objectives: LibraryViewModelState<[LearningObjective]> { get }
+    var objectives: LibraryViewModelState<[LibraryViewModelState<LearningObjective>]> { get }
     var goalName: String { get }
     func handleOnAppear()
+    func handleDidLearnToggled(objective state: LibraryViewModelState<LearningObjective>)
 }
 
 final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
@@ -12,6 +13,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     struct UseCases {
         let fetchObjectivesUseCase: FetchObjectivesUseCaseProtocol
+        let toggleLearnUseCase: ToggleLearnUseCaseProtocol
     }
     
     struct Dependencies {
@@ -20,8 +22,10 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     // MARK: - ViewModel properties
     
+    typealias Objectives = LibraryViewModelState<[LibraryViewModelState<LearningObjective>]>
+    
     @Published
-    var objectives: LibraryViewModelState<[LearningObjective]> = .loading
+    var objectives: Objectives = .loading
     
     // MARK: - Dependencies
     
@@ -46,9 +50,31 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
         useCases.fetchObjectivesUseCase.execute(using: dependencies.goal) { [weak self] in
             switch $0 {
             case let .success(objectives):
+                self?.objectives = .result(objectives.map { .result($0) })
+            case let .failure(error):
+                print("GOT AN ERROR!", error)
+                self?.objectives = .error(error.localizedDescription)
+            }
+        }
+    }
+    
+    func handleDidLearnToggled(objective state: LibraryViewModelState<LearningObjective>) {
+        guard case let .result(oldObjective) = state,
+              case var .result(objectives) = objectives,
+              let selectedIndex = objectives.firstIndex(where: { $0 == state })
+        else { return }
+        
+        objectives[selectedIndex] = .loading
+        self.objectives = .result(objectives)
+        
+        useCases.toggleLearnUseCase.execute(objective: oldObjective) { [weak self] in
+            switch $0 {
+            case let .success(objective):
+                objectives[selectedIndex] = .result(objective)
                 self?.objectives = .result(objectives)
             case let .failure(error):
-                self?.objectives = .error(error.localizedDescription)
+                objectives[selectedIndex] = .result(oldObjective) // TODO this should present a button so that the user can try again
+                self?.objectives = .result(objectives)
             }
         }
     }

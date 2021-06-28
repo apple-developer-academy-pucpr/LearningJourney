@@ -72,6 +72,7 @@ struct LearningGoalCard: View {
 struct LearningGoalCard_Previews: PreviewProvider {
     static var previews: some View {
         LearningGoalCard(goal: .init(
+            id: "Dummy",
             name: "Logic and Programming",
             progress: 0.5
         ))

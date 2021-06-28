@@ -1,5 +1,4 @@
 protocol FetchObjectivesUseCaseProtocol {
-    
     typealias Completion = (Result<[LearningObjective], LibraryRepositoryError>) -> ()
     func execute(using learningGoal: LearningGoal, then handle: @escaping Completion)
 }
