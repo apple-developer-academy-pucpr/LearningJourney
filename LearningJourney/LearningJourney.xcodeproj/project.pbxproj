@@ -256,18 +256,19 @@
 		B1BFE75C26866E5D00FAFF5D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B1BFE75D26867B9E00FAFF5D /* Networking */,
+				D7EF262A269104EC00D8EA87 /* CoreAuthentication */,
+				B1BFE75D26867B9E00FAFF5D /* CoreNetworking */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		B1BFE75D26867B9E00FAFF5D /* Networking */ = {
+		B1BFE75D26867B9E00FAFF5D /* CoreNetworking */ = {
 			isa = PBXGroup;
 			children = (
 				B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */,
 				B1BFE75F26867BB000FAFF5D /* ApiEndpoint.swift */,
 			);
-			path = Networking;
+			path = CoreNetworking;
 			sourceTree = "<group>";
 		};
 		B1BFE76126868F7100FAFF5D /* Service */ = {
@@ -362,6 +363,13 @@
 				B1BFE7CD2687E82600FAFF5D /* UseCases */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		D7EF262A269104EC00D8EA87 /* CoreAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreAuthentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
