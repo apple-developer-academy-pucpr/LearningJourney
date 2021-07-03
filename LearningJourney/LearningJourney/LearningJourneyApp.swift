@@ -11,7 +11,7 @@ import SwiftUI
 struct LearningJourneyApp: App {
     let persistenceController = PersistenceController.shared
 
-    let feature = LibraryFeature<LibraryCoordinator>()
+    let feature = AuthenticationFeature<AuthenticationCoordinator>()
     var body: some Scene {
         WindowGroup {
             feature.resolve()

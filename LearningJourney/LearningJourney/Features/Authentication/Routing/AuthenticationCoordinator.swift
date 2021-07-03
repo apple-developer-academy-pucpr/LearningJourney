@@ -16,5 +16,5 @@ final class AuthenticationCoordinator: AuthenticationCoordinating {
         self.sceneFactory = sceneFactory
     }
     
-    func start() -> AnyView { AnyView(Text("Scene")) }
+    func start() -> AnyView { sceneFactory.loginScene() }
 }

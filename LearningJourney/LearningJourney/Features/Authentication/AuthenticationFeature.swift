@@ -9,7 +9,10 @@ struct AuthenticationFeature<Coordinator> where Coordinator: AuthenticationCoord
     // MARK: - Initialization
     
     public init() {
-        let factory = AuthenticationSceneFactory()
+        
+        let factory = AuthenticationSceneFactory(
+            loginAssembler: LoginAssembler()
+        )
         let coordinator = AuthenticationCoordinator(sceneFactory: factory)
         
         self.init(coordinator: coordinator as? Coordinator)

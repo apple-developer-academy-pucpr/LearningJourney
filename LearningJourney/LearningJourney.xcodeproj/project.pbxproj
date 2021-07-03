@@ -47,6 +47,7 @@
 		D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26382691085D00D8EA87 /* AuthenticationCoordinator.swift */; };
 		D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263A2691089400D8EA87 /* SceneFactory.swift */; };
 		D7EF263F26910B9300D8EA87 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263E26910B9300D8EA87 /* LoginView.swift */; };
+		D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF264126910CD700D8EA87 /* LoginAssembler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		D7EF26382691085D00D8EA87 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		D7EF263A2691089400D8EA87 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
 		D7EF263E26910B9300D8EA87 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D7EF264126910CD700D8EA87 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,9 +405,18 @@
 		D7EF263D26910B5100D8EA87 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D7EF263E26910B9300D8EA87 /* LoginView.swift */,
+				D7EF264126910CD700D8EA87 /* LoginAssembler.swift */,
+				D7EF264026910CCB00D8EA87 /* View */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D7EF264026910CCB00D8EA87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D7EF263E26910B9300D8EA87 /* LoginView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +567,7 @@
 				D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */,
 				D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
+				D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */,
 				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
 				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
 				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
