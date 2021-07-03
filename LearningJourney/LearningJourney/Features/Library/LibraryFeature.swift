@@ -5,7 +5,6 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
     // MARK: - Dependencies
     
     private let coordinator: Coordinator?
-    private let sceneFactory: LibraryScenesFactoryProtocol
     
     // MARK: - Initialization
     
@@ -17,16 +16,12 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
         
         let coordinator = LibraryCoordinator(scenesFactory: factory)
         self.init(
-            coordinator: coordinator as? Coordinator,
-            sceneFactory: factory
+            coordinator: coordinator as? Coordinator
         )
     }
     
-    init(
-        coordinator: Coordinator?,
-        sceneFactory: LibraryScenesFactoryProtocol ) {
+    init(coordinator: Coordinator?) {
         self.coordinator = coordinator
-        self.sceneFactory = sceneFactory
     }
     
     func resolve() -> AnyView {
