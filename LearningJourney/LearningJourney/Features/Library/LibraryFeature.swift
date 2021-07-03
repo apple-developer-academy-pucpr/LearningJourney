@@ -13,7 +13,6 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
             libraryAssembler: LibraryAssembler(),
             objectivesListAssembler: ObjectivesListAssembler()
         )
-        
         let coordinator = LibraryCoordinator(scenesFactory: factory)
         self.init(
             coordinator: coordinator as? Coordinator

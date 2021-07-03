@@ -9,7 +9,7 @@ final class LibraryCoordinator: LibraryCoordinating {
     
     // MARK: - Dependencies
     
-    private weak var scenesFactory: LibraryScenesFactoryProtocol!
+    private let scenesFactory: LibraryScenesFactoryProtocol
     
     // MARK: - Initialization
     

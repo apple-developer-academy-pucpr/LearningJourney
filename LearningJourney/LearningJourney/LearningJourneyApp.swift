@@ -23,6 +23,7 @@ struct LearningJourneyApp: App {
 
 extension View {
     func authenticateIfNeeded() -> some View {
-        AuthenticationFeature<AuthenticationCoordinator>().resolve()
+        AuthenticationFeature<AuthenticationCoordinator>()
+                .resolve()
     }
 }
