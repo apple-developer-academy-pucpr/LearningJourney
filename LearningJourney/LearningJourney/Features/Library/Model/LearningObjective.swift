@@ -1,8 +1,9 @@
 import Foundation
 
 struct LearningObjective: Decodable, Identifiable, Equatable {
-    let id: String
+    let id: Int
+    let code: String
+    let description: String
     let isCore: Bool
-    let Description: String
-    let isLearned: Bool
+    let isComplete: Bool
 }

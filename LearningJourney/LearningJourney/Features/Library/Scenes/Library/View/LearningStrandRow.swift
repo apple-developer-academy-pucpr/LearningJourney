@@ -30,21 +30,21 @@ struct LearningStrandRow<Coordinator>: View where Coordinator: LibraryCoordinati
 struct LearningStrandRow_Previews: PreviewProvider {
     static var previews: some View {
         LearningStrandRow<LibraryCoordinator>(strand: .init(
-            id: "asd",
+            id: 1,
             name: "Technical",
             goals: [
                 .init(
-                    id: "mock",
+                    id: 1,
                     name: "App Programming",
                     progress: 0.1),
                 
                     .init(
-                        id: "mock",
+                        id:1,
                         name: "App Programming",
                         progress: 0.5),
                 
                     .init(
-                        id: "mock",
+                        id:1,
                         name: "App Programming",
                         progress: 0.75),
             ]

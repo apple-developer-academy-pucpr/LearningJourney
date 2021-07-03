@@ -2,7 +2,7 @@ import Foundation
 
 enum LibraryEndpoint {
     case fetchStrand
-    case fetchObjectives(_ goalId: String)
+    case fetchObjectives(_ goalId: Int)
     case updateObjective(_ objectiveUpdate: UpdateObjectiveModel)
 }
 
@@ -10,13 +10,11 @@ extension LibraryEndpoint: ApiEndpoint {
     var path: String {
         switch self {
         case .fetchStrand:
-            return "8e2c6d83-a07d-490a-9405-bc7d3b7fe83e"
-//            return "strands/"
+            return "strands"
         case let .fetchObjectives(goalId):
-            return "d54f2d6f-4ec8-427d-b70a-0b02510ea6c4"
-            return "goal/\(goalId)"
-        case let .updateObjective(objectiveId):
-            return "objective/\(objectiveId)"
+            return "goals/\(goalId)"
+        case let .updateObjective(objective):
+            return "objective/\(objective.id)"
         }
     }
     
@@ -47,13 +45,7 @@ extension LibraryEndpoint: ApiEndpoint {
 
 extension LibraryEndpoint {
     struct UpdateObjectiveModel: Encodable {
-        let id: String
-        let description: String
-        let isCore: Bool
-        let isLearned: Bool
-        
-        enum CodingKeys: String, CodingKey {
-            case description, isCore, isLearned
-        }
+        let id: Int
+        let isComplete: Bool
     }
 }

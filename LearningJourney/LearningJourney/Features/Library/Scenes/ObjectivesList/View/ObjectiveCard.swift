@@ -29,7 +29,7 @@ struct ObjectiveCard: View {
         VStack(alignment: .leading) {
             HStack(alignment: .top) {
                 VStack (alignment: .leading) {
-                    Text(objective.id)
+                    Text(objective.code)
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     Text(objective.isCore ? "Core" : "Elective")
                         .font(.system(size: 12, weight: .regular, design: .default))
@@ -40,10 +40,10 @@ struct ObjectiveCard: View {
                 Button("Learned") {
                     buttonAction()
                 }
-                .buttonStyle(LearnedButtonStyle(isHightlighted: objective.isLearned))
+                .buttonStyle(LearnedButtonStyle(isHightlighted: objective.isComplete))
             }
             .padding(.bottom, 20)
-            Text(objective.Description)
+            Text(objective.description)
         }
     }
 }

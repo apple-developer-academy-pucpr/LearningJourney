@@ -18,6 +18,11 @@ final class ToggleLearnUseCase: ToggleLearnUseCaseProtocol {
     // MARK: - Execution
     
     func execute(objective: LearningObjective, then handle: @escaping Completion) {
-        repository.updateObjective(newObjective: objective, completion: handle)
+        repository.updateObjective(newObjective: .init(
+            id: objective.id,
+            code: objective.code,
+            description: objective.description,
+            isCore: objective.isCore,
+            isComplete: !objective.isComplete), completion: handle)
     }
 }

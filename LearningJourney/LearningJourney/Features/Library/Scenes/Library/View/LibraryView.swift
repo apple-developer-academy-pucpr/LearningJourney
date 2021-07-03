@@ -18,8 +18,8 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
             }
             .padding(.leading)
             .navigationTitle("Library")
+            .onAppear(perform: viewModel.handleOnAppear)
         }
-        .onAppear(perform: viewModel.handleOnAppear)
     }
     
     // MARK: - Component Views

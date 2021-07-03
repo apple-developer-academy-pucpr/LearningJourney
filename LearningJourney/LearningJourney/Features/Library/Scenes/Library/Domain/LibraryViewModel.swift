@@ -45,6 +45,7 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     // MARK: - View Events
     
     func handleOnAppear() {
+        strands = .loading
         useCases.fetchStrandsUseCase.execute { [weak self] in
             switch $0 {
             case let .success(strands):
