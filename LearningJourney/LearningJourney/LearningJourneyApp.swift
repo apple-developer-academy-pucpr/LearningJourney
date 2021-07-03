@@ -11,10 +11,18 @@ import SwiftUI
 struct LearningJourneyApp: App {
     let persistenceController = PersistenceController.shared
 
-    let feature = AuthenticationFeature<AuthenticationCoordinator>()
+    let libraryFeature = LibraryFeature<LibraryCoordinator>()
+    
     var body: some Scene {
         WindowGroup {
-            feature.resolve()
+            libraryFeature.resolve()
+                .authenticateIfNeeded()
         }
+    }
+}
+
+extension View {
+    func authenticateIfNeeded() -> some View {
+        AuthenticationFeature<AuthenticationCoordinator>().resolve()
     }
 }
