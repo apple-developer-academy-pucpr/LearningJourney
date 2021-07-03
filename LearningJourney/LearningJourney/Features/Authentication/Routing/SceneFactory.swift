@@ -1,8 +1,5 @@
-//
-//  SceneFactory.swift
-//  LearningJourney
-//
-//  Created by Bruno Pastre on 03/07/21.
-//
+protocol AuthenticationSceneFactoryProtocol {}
 
-import Foundation
+final class AuthenticationSceneFactory: AuthenticationSceneFactoryProtocol {
+    
+}

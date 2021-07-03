@@ -43,6 +43,10 @@
 		B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D9268923FD00FAFF5D /* ObjectiveCard.swift */; };
 		B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DB26892A6B00FAFF5D /* LearnedButtonStyle.swift */; };
 		B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DD2689316C00FAFF5D /* ToggleLearnUseCase.swift */; };
+		D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */; };
+		D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26382691085D00D8EA87 /* AuthenticationCoordinator.swift */; };
+		D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263A2691089400D8EA87 /* SceneFactory.swift */; };
+		D7EF263F26910B9300D8EA87 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263E26910B9300D8EA87 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,10 @@
 		B1BFE7D9268923FD00FAFF5D /* ObjectiveCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectiveCard.swift; sourceTree = "<group>"; };
 		B1BFE7DB26892A6B00FAFF5D /* LearnedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnedButtonStyle.swift; sourceTree = "<group>"; };
 		B1BFE7DD2689316C00FAFF5D /* ToggleLearnUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleLearnUseCase.swift; sourceTree = "<group>"; };
+		D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFeature.swift; sourceTree = "<group>"; };
+		D7EF26382691085D00D8EA87 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		D7EF263A2691089400D8EA87 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
+		D7EF263E26910B9300D8EA87 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 		B17B23BD26864FA5006E060A /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				D7EF26342691082300D8EA87 /* Authentication */,
 				B17B23BE26864FBA006E060A /* Library */,
 			);
 			path = Features;
@@ -256,7 +265,6 @@
 		B1BFE75C26866E5D00FAFF5D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				D7EF262A269104EC00D8EA87 /* CoreAuthentication */,
 				B1BFE75D26867B9E00FAFF5D /* CoreNetworking */,
 			);
 			path = Core;
@@ -365,11 +373,39 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		D7EF262A269104EC00D8EA87 /* CoreAuthentication */ = {
+		D7EF26342691082300D8EA87 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */,
+				D7EF26372691085200D8EA87 /* Routing */,
+				D7EF263C26910B3800D8EA87 /* Scenes */,
 			);
-			path = CoreAuthentication;
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		D7EF26372691085200D8EA87 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				D7EF26382691085D00D8EA87 /* AuthenticationCoordinator.swift */,
+				D7EF263A2691089400D8EA87 /* SceneFactory.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		D7EF263C26910B3800D8EA87 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				D7EF263D26910B5100D8EA87 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		D7EF263D26910B5100D8EA87 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D7EF263E26910B9300D8EA87 /* LoginView.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +539,7 @@
 			files = (
 				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
 				B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */,
+				D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */,
 				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
 				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
 				B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */,
@@ -516,6 +553,8 @@
 				B18C4CBD2683F5D200A150CD /* Persistence.swift in Sources */,
 				B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */,
 				B17B23BC26864FA1006E060A /* ContentViewRepository.swift in Sources */,
+				D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */,
+				D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
 				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
 				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
@@ -528,6 +567,7 @@
 				B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */,
 				B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */,
 				B1BFE75B26866E5700FAFF5D /* ApiRequest.swift in Sources */,
+				D7EF263F26910B9300D8EA87 /* LoginView.swift in Sources */,
 				B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */,
 				B1BFE76026867BB000FAFF5D /* ApiEndpoint.swift in Sources */,
 				B1BFE7C12687ACB200FAFF5D /* LearningGoal.swift in Sources */,

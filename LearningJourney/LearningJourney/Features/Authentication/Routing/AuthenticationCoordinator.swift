@@ -1,8 +1,20 @@
-//
-//  AuthenticationCoordinator.swift
-//  LearningJourney
-//
-//  Created by Bruno Pastre on 03/07/21.
-//
+import SwiftUI
 
-import Foundation
+protocol AuthenticationCoordinating: ObservableObject {
+    func start() -> AnyView
+}
+
+final class AuthenticationCoordinator: AuthenticationCoordinating {
+    
+    // MARK: - Dependencies
+    
+    private let sceneFactory: AuthenticationSceneFactoryProtocol
+    
+    // MARK: - Initialization
+    
+    init(sceneFactory: AuthenticationSceneFactoryProtocol) {
+        self.sceneFactory = sceneFactory
+    }
+    
+    func start() -> AnyView { AnyView(Text("Scene")) }
+}
