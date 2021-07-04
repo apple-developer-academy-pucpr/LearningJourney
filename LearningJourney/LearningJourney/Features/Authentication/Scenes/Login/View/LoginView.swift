@@ -1,7 +1,16 @@
 import SwiftUI
 
-struct LoginView: View {
+struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
+    
+    // MARK: - Dependencies
+    
+    @ObservedObject var viewModel: ViewModel
+    
+    // MARK: - View
+    
     var body: some View {
-        Text("Salve")
+        Button("Sign in with Apple") {
+            viewModel.handleSignInWithApple()
+        }
     }
 }

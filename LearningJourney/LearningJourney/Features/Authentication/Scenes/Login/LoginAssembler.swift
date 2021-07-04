@@ -6,7 +6,8 @@ protocol LoginAssembling {
 
 final class LoginAssembler: LoginAssembling {
     func assemble() -> AnyView {
-        let view = LoginView()
+        let viewModel = LoginViewModel()
+        let view = LoginView(viewModel: viewModel)
         return AnyView(view)
     }
 }
