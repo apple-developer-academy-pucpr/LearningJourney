@@ -17,11 +17,11 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
     // MARK: - Dependencies
     
     private let parser: AuthenticationParsing
-    private let service: AuthenticationServicing
+    private let service: RemoteAuthenticationServicing
     
     // MARK: - Initialization
     
-    init(parser: AuthenticationParsing, service: AuthenticationServicing) {
+    init(parser: AuthenticationParsing, service: RemoteAuthenticationServicing) {
         self.parser = parser
         self.service = service
     }

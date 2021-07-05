@@ -6,7 +6,7 @@ protocol LoginAssembling {
 
 final class LoginAssembler: LoginAssembling {
     func assemble() -> AnyView {
-        let service = AuthenticationService(apiFactory: { ApiRequest($0) })
+        let service = RemoteAuthenticationService(apiFactory: { ApiRequest($0) })
         let repository = AuthenticationRepository(
             parser: AuthenticationParser(),
             service: service

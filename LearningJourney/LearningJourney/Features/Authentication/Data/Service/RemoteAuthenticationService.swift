@@ -1,11 +1,11 @@
 import Foundation
 
-protocol AuthenticationServicing {
+protocol RemoteAuthenticationServicing {
     typealias Completion = (Result<Data, ApiError>) -> Void
     func signInWithApple(using payload: SignInWithApplePayload, then handle: @escaping Completion)
 }
 
-final class AuthenticationService: AuthenticationServicing {
+final class RemoteAuthenticationService: RemoteAuthenticationServicing {
     
     // MARK: - Dependencies
     
