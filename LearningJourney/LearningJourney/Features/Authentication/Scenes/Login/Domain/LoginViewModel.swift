@@ -1,7 +1,9 @@
 import Combine
+import AuthenticationServices
 
 protocol LoginViewModeling: ObservableObject {
-    func handleSignInWithApple()
+    func handleRequest(request: ASAuthorizationAppleIDRequest)
+    func handleCompletion(result: Result<ASAuthorization, Error>)
 }
 
 final class LoginViewModel: LoginViewModeling {
@@ -9,7 +11,7 @@ final class LoginViewModel: LoginViewModeling {
     // MARK: - Inner types
     
     struct UseCases {
-        let signInWithAppleUseCase: SignInWithAppleUseCase
+        let signInWithAppleUseCase: SignInWithAppleUseCaseProtocol
     }
     
     // MARK: - Dependencies
@@ -24,7 +26,13 @@ final class LoginViewModel: LoginViewModeling {
     
     // MARK: - View modeling
     
-    func handleSignInWithApple() {
-        
+    func handleRequest(request: ASAuthorizationAppleIDRequest) {
+        request.requestedScopes = [.email, .fullName]
+    }
+    
+    func handleCompletion(result: Result<ASAuthorization, Error>) {
+        useCases.signInWithAppleUseCase.execute(using: result) { result in
+            print("result is", result )
+        }
     }
 }

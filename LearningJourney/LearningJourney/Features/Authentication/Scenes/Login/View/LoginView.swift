@@ -1,4 +1,5 @@
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
     
@@ -9,8 +10,9 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
     // MARK: - View
     
     var body: some View {
-        Button("Sign in with Apple") {
-            viewModel.handleSignInWithApple()
-        }
+        SignInWithAppleButton(
+            onRequest: viewModel.handleRequest,
+            onCompletion: viewModel.handleCompletion
+        )
     }
 }

@@ -22,6 +22,10 @@
 		B18C4CC02683F5D200A150CD /* LearningJourney.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CBE2683F5D200A150CD /* LearningJourney.xcdatamodeld */; };
 		B18C4CCB2683F5D200A150CD /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CCA2683F5D200A150CD /* LearningJourneyTests.swift */; };
 		B18C4CD62683F5D200A150CD /* LearningJourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CD52683F5D200A150CD /* LearningJourneyUITests.swift */; };
+		B19AC3FC269351520095AF06 /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */; };
+		B19AC3FE269351B90095AF06 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */; };
+		B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */; };
+		B19AC4012693521E0095AF06 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FA269351420095AF06 /* AuthenticationService.swift */; };
 		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
 		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
 		B1BFE75B26866E5700FAFF5D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */; };
@@ -91,6 +95,10 @@
 		B18C4CD12683F5D200A150CD /* LearningJourneyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningJourneyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18C4CD52683F5D200A150CD /* LearningJourneyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyUITests.swift; sourceTree = "<group>"; };
 		B18C4CD72683F5D200A150CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B19AC3FA269351420095AF06 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
+		B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
+		B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParser.swift; sourceTree = "<group>"; };
 		B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRemoteService.swift; sourceTree = "<group>"; };
 		B1BFE75826866E2100FAFF5D /* LibraryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryParser.swift; sourceTree = "<group>"; };
 		B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -147,6 +155,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B16D5C81269291D6003288C9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B19AC3F92693513E0095AF06 /* Service */,
+				B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */,
+				B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		B17B23BD26864FA5006E060A /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +288,15 @@
 			path = LearningJourneyUITests;
 			sourceTree = "<group>";
 		};
+		B19AC3F92693513E0095AF06 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B19AC3FA269351420095AF06 /* AuthenticationService.swift */,
+				B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		B1BFE75C26866E5D00FAFF5D /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */,
+				B16D5C81269291D6003288C9 /* Data */,
 				D7EF26372691085200D8EA87 /* Routing */,
 				D7EF263C26910B3800D8EA87 /* Scenes */,
 			);
@@ -411,8 +439,8 @@
 		D7EF263D26910B5100D8EA87 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				D7EF264826911B5000D8EA87 /* Domain */,
 				D7EF264126910CD700D8EA87 /* LoginAssembler.swift */,
+				D7EF264826911B5000D8EA87 /* Domain */,
 				D7EF264026910CCB00D8EA87 /* View */,
 			);
 			path = Login;
@@ -572,12 +600,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B19AC3FC269351520095AF06 /* AuthenticationEndpoint.swift in Sources */,
 				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
 				B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */,
 				D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */,
 				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
 				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
 				B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */,
+				B19AC4012693521E0095AF06 /* AuthenticationService.swift in Sources */,
 				B1BFE7CC2687E79300FAFF5D /* ObjectivesListViewModel.swift in Sources */,
 				B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */,
 				B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */,
@@ -589,11 +619,13 @@
 				D7EF264B26911B6900D8EA87 /* SignInWithAppleUseCase.swift in Sources */,
 				B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */,
 				B17B23BC26864FA1006E060A /* ContentViewRepository.swift in Sources */,
+				B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */,
 				D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */,
 				D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
 				D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */,
 				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
+				B19AC3FE269351B90095AF06 /* AuthenticationRepository.swift in Sources */,
 				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
 				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
 				B18C4CB62683F5D100A150CD /* ContentView.swift in Sources */,
@@ -768,6 +800,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LearningJourney/LearningJourney.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
@@ -780,6 +813,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -791,6 +825,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LearningJourney/LearningJourney.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
@@ -803,6 +838,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
