@@ -67,8 +67,9 @@ final class ApiRequest: ApiProtocol {
                 return
             }
             let result = self.handleResponse(
-                data: data, response: response, error: error
-            )
+                data: data,
+                response: response,
+                error: error)
             
             self.dispatchQueue.async {
                 completion(result)

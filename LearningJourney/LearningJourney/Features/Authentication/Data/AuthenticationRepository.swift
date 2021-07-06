@@ -46,10 +46,10 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
             guard let self = self else { return }
             switch result {
             case let.success(data):
-                if !self.cacheService.cache(token: data) {
-                    completion(.failure(.caching(self.cacheService.lastResultCode)))
-                    return
-                }
+//                if !self.cacheService.cache(token: data) {
+//                    completion(.failure(.caching(self.cacheService.lastResultCode)))
+//                    return
+//                }
                 completion(self.parser.parse(data).mapError{ .parsing($0) })
             case let .failure(error):
                 completion(.failure(.api(error)))

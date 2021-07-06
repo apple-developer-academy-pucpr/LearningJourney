@@ -33,7 +33,7 @@ extension ApiEndpoint {
     var url: URL? { .init(string: absoluteStringUrl) }
     var absoluteStringUrl: String { baseUrl + path }
     var method: HTTPMethod { .get }
-    var baseUrl: String { "http://192.168.0.107:3000/api/" } // TODO load this from an envirnmnt
+    var baseUrl: String { "http://192.168.100.98:3000/api/" } // TODO load this from an envirnmnt
     var body: Data? { nil }
     var headers: [HTTPHeaderField] {[
         .contentType("application/json")
