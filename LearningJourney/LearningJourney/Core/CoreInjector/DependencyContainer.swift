@@ -11,24 +11,24 @@ public final class DefaultDependencyContainer: DependencyContainer {
     
     // MARK: - Properties
     
+    private var dependencyCreators = [NSString : DependencyFactory]()
     private var dependencies = NSMapTable<NSString, AnyObject>(
         keyOptions: .strongMemory,
         valueOptions: .weakMemory)
     
-    private var dependencyCreators = [NSString : DependencyFactory]()
     
     // MARK: - Container methods
     
     public func make<T>(_ type: T.Type) -> T? {
         let name = name(for: type)
-        let object = dependencies.object(forKey: name as NSString)
+        let object = dependencies.object(forKey: name)
         
         if object != nil { return object as? T }
         
         guard let instance = dependencyCreators[name]?()
         else { return nil }
         
-        dependencies.setObject(instance, forKey: name as NSString)
+        dependencies.setObject(instance, forKey: name)
         return instance as? T
     }
     

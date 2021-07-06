@@ -13,6 +13,13 @@ struct LearningJourneyApp: App {
 
     let libraryFeature = LibraryFeature<LibraryCoordinator>()
     
+    private let appContainer = DefaultDependencyContainer()
+    
+    
+    init() {
+        appContainer.register(factory: { ApiFactory() }, for: ApiFactoryProtocol.self)
+    }
+    
     var body: some Scene {
         WindowGroup {
             libraryFeature.resolve()

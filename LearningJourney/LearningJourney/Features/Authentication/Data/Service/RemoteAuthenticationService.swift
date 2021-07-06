@@ -17,7 +17,7 @@ final class RemoteAuthenticationService: RemoteAuthenticationServicing {
     
     // MARK: - Initialization
     
-    init(apiFactory: @escaping ApiFactory) {
+    init(apiFactory: ApiFactory) {
         self.apiFactory = apiFactory
     }
     
@@ -25,7 +25,7 @@ final class RemoteAuthenticationService: RemoteAuthenticationServicing {
     
     func signInWithApple(using payload: SignInWithApplePayload, then handle: @escaping Completion) {
         let endpoint: AuthenticationEndpoint = .signInWithApple(payload)
-        let apiRequest = apiFactory(endpoint)
+        let apiRequest = apiFactory.make(endpoint)
         currentRequest = apiRequest.make(completion: handle)
     }
 }

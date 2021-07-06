@@ -6,6 +6,10 @@ public enum DependencyInjectionError<T>: Error {
     case notRegistered(_ forType: T.Type)
 }
 
+func myErrorHandler(_ error: Error) -> Never {
+    fatalError("salve")
+}
+
 @propertyWrapper
 public final class Dependency<T>: Resolvable {
     

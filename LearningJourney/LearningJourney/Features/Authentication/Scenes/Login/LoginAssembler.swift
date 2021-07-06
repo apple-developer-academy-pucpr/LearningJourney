@@ -5,8 +5,11 @@ protocol LoginAssembling {
 }
 
 final class LoginAssembler: LoginAssembling {
+    
+    @Dependency var apiFactory: ApiFactory
+    
     func assemble() -> AnyView {
-        let service = RemoteAuthenticationService(apiFactory: { ApiRequest($0) })
+        let service = RemoteAuthenticationService(apiFactory: apiFactory)
         let repository = AuthenticationRepository(
             parser: AuthenticationParser(),
             remoteService: service,

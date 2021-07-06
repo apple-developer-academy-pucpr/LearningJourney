@@ -4,12 +4,14 @@ protocol ObjectivesListAssembling {
     func assemble(learningGoal: LearningGoal) -> AnyView
 }
 
-final class ObjectivesListAssembler: ObjectivesListAssembling{
+final class ObjectivesListAssembler: ObjectivesListAssembling {
+    
+    @Dependency var apiFactory: ApiFactory
+    
     func assemble(learningGoal: LearningGoal) -> AnyView {
         let parser = LibraryParser()
         
-        let service = LibraryRemoteService(
-            apiFactory: { ApiRequest($0) })
+        let service = LibraryRemoteService(apiFactory: apiFactory)
         let repository = LibraryRepository(
             remoteService: service,
             parser: parser)
