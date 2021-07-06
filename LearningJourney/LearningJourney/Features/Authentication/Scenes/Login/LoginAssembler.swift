@@ -9,7 +9,8 @@ final class LoginAssembler: LoginAssembling {
         let service = RemoteAuthenticationService(apiFactory: { ApiRequest($0) })
         let repository = AuthenticationRepository(
             parser: AuthenticationParser(),
-            service: service
+            remoteService: service,
+            cacheService: CacheAuthenticationService()
         )
         let viewModel = LoginViewModel(useCases: .init(
             signInWithAppleUseCase: SignInWithAppleUseCase(repository: repository)

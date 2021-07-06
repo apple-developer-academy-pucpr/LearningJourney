@@ -1,10 +1,10 @@
 import Foundation
 
 struct SignInWithApplePayload: Encodable {
-    let identityToken: Data
+    let identityToken: Data?
     let appleId: String
-    let fullName: String
-    let email: String
+    let fullName: String?
+    let email: String?
 }
 
 enum AuthenticationEndpoint {

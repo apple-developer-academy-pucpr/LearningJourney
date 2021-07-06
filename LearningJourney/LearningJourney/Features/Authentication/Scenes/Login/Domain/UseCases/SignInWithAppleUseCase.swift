@@ -4,11 +4,12 @@ protocol SignInWithAppleUseCaseProtocol {
     typealias Completion = (Result<Void, SignInWithAppleUseCaseError>) -> Void
     func execute(
         using result:  Result<ASAuthorization, Error>,
-        then handle: Completion)
+        then handle: @escaping Completion)
 }
 
 enum SignInWithAppleUseCaseError: Error {
     case systemError(Error)
+    case repository(Error)
     case invalidCredentialType
 }
 
@@ -28,7 +29,7 @@ final class SignInWithAppleUseCase: SignInWithAppleUseCaseProtocol {
     
     func execute(
         using result:  Result<ASAuthorization, Error>,
-        then handle: Completion) {
+        then handle: @escaping Completion) {
         switch result {
         case let .success(authorization):
             handleSiwaSuccess(using: authorization, completion: handle)
@@ -39,12 +40,21 @@ final class SignInWithAppleUseCase: SignInWithAppleUseCaseProtocol {
     
     // MARK: - Helpers
     
-    private func handleSiwaSuccess(using authorization: ASAuthorization, completion: Completion) {
+    private func handleSiwaSuccess(using authorization: ASAuthorization, completion: @escaping Completion) {
         guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential
         else {
             completion(.failure(.invalidCredentialType))
             return
         }
-        repository
+        let payload = SignInWithApplePayload(
+            identityToken: credentials.identityToken,
+            appleId: credentials.user,
+            fullName: credentials.fullName?.description,
+            email: credentials.email)
+        repository.signInWithApple(using: payload) {
+            completion($0
+                        .mapError { .repository($0 )}
+                        .map { _ in })
+        }
     }
 }

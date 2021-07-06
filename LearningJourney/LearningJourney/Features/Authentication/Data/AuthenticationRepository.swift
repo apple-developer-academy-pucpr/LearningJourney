@@ -2,6 +2,8 @@ import Foundation
 
 enum AuthenticationRepositoryError: Error {
     case api(Error)
+    case parsing(Error)
+    case caching(Int32)
 }
 
 protocol AuthenticationRepositoryProtocol {
@@ -17,24 +19,38 @@ final class AuthenticationRepository: AuthenticationRepositoryProtocol {
     // MARK: - Dependencies
     
     private let parser: AuthenticationParsing
-    private let service: RemoteAuthenticationServicing
+    private let remoteService: RemoteAuthenticationServicing
+    private let cacheService: CacheAuthenticationServicing
     
     // MARK: - Initialization
     
-    init(parser: AuthenticationParsing, service: RemoteAuthenticationServicing) {
+    init(
+        parser: AuthenticationParsing,
+        remoteService: RemoteAuthenticationServicing,
+        cacheService: CacheAuthenticationServicing
+    ) {
         self.parser = parser
-        self.service = service
+        self.remoteService = remoteService
+        self.cacheService = cacheService
     }
     
     // MARK: - Repository
     
     func signInWithApple(using payload: SignInWithApplePayload, completion: @escaping Completion) {
-        // TODO check if there is a token in cache
-        service.signInWithApple(using: payload) { [weak self] result in
+        
+        if let cached = cacheService.token {
+            completion(parser.parse(cached).mapError { .parsing($0) })
+            return
+        }
+        remoteService.signInWithApple(using: payload) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let.success(data):
-                completion(self.parser.parse(data).mapError{ .api($0) })
+                if !self.cacheService.cache(token: data) {
+                    completion(.failure(.caching(self.cacheService.lastResultCode)))
+                    return
+                }
+                completion(self.parser.parse(data).mapError{ .parsing($0) })
             case let .failure(error):
                 completion(.failure(.api(error)))
             }
