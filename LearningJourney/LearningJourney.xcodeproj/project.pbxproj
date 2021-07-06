@@ -14,6 +14,7 @@
 		B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C8268652A2006E060A /* FetchStrandsUseCase.swift */; };
 		B17B23CC2686536C006E060A /* LearningStrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CB2686536C006E060A /* LearningStrand.swift */; };
 		B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CE26865ADA006E060A /* LibraryRepository.swift */; };
+		B18A19502694D8EE00507E15 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A194F2694D8EE00507E15 /* TokenManager.swift */; };
 		B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */; };
 		B18C4CB62683F5D100A150CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB52683F5D100A150CD /* ContentView.swift */; };
 		B18C4CB82683F5D200A150CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CB72683F5D200A150CD /* Assets.xcassets */; };
@@ -23,10 +24,10 @@
 		B18C4CCB2683F5D200A150CD /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CCA2683F5D200A150CD /* LearningJourneyTests.swift */; };
 		B18C4CD62683F5D200A150CD /* LearningJourneyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CD52683F5D200A150CD /* LearningJourneyUITests.swift */; };
 		B19AC3FC269351520095AF06 /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */; };
-		B19AC3FE269351B90095AF06 /* AuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FD269351B90095AF06 /* AuthenticationProvider.swift */; };
+		B19AC3FE269351B90095AF06 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */; };
 		B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */; };
 		B19AC4012693521E0095AF06 /* RemoteAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */; };
-		B19AC456269359FD0095AF06 /* CacheAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC455269359FD0095AF06 /* CacheAuthenticationService.swift */; };
+		B19AC456269359FD0095AF06 /* TokenCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC455269359FD0095AF06 /* TokenCacheService.swift */; };
 		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
 		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
 		B1BFE75B26866E5700FAFF5D /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */; };
@@ -82,6 +83,7 @@
 		B17B23C8268652A2006E060A /* FetchStrandsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStrandsUseCase.swift; sourceTree = "<group>"; };
 		B17B23CB2686536C006E060A /* LearningStrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningStrand.swift; sourceTree = "<group>"; };
 		B17B23CE26865ADA006E060A /* LibraryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRepository.swift; sourceTree = "<group>"; };
+		B18A194F2694D8EE00507E15 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		B18C4CB02683F5D100A150CD /* LearningJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyApp.swift; sourceTree = "<group>"; };
 		B18C4CB52683F5D100A150CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,9 +100,9 @@
 		B18C4CD72683F5D200A150CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationService.swift; sourceTree = "<group>"; };
 		B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
-		B19AC3FD269351B90095AF06 /* AuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationProvider.swift; sourceTree = "<group>"; };
+		B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParser.swift; sourceTree = "<group>"; };
-		B19AC455269359FD0095AF06 /* CacheAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheAuthenticationService.swift; sourceTree = "<group>"; };
+		B19AC455269359FD0095AF06 /* TokenCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCacheService.swift; sourceTree = "<group>"; };
 		B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRemoteService.swift; sourceTree = "<group>"; };
 		B1BFE75826866E2100FAFF5D /* LibraryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryParser.swift; sourceTree = "<group>"; };
 		B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -219,11 +221,20 @@
 		B18A194D2694D42C00507E15 /* CoreAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				B19AC3F92693513E0095AF06 /* Service */,
-				B19AC3FD269351B90095AF06 /* AuthenticationProvider.swift */,
-				B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */,
+				B19AC455269359FD0095AF06 /* TokenCacheService.swift */,
+				B18A194F2694D8EE00507E15 /* TokenManager.swift */,
 			);
 			path = CoreAuthentication;
+			sourceTree = "<group>";
+		};
+		B18A194E2694D86A00507E15 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B19AC3F92693513E0095AF06 /* Service */,
+				B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */,
+				B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		B18C4CA72683F5D100A150CD = {
@@ -293,9 +304,8 @@
 		B19AC3F92693513E0095AF06 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B19AC455269359FD0095AF06 /* CacheAuthenticationService.swift */,
-				B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */,
 				B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */,
+				B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -416,6 +426,7 @@
 			isa = PBXGroup;
 			children = (
 				D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */,
+				B18A194E2694D86A00507E15 /* Data */,
 				D7EF26372691085200D8EA87 /* Routing */,
 				D7EF263C26910B3800D8EA87 /* Scenes */,
 			);
@@ -625,10 +636,11 @@
 				B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */,
 				D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */,
 				D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */,
+				B18A19502694D8EE00507E15 /* TokenManager.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
 				D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */,
 				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
-				B19AC3FE269351B90095AF06 /* AuthenticationProvider.swift in Sources */,
+				B19AC3FE269351B90095AF06 /* AuthenticationRepository.swift in Sources */,
 				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
 				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
 				B18C4CB62683F5D100A150CD /* ContentView.swift in Sources */,
@@ -639,7 +651,7 @@
 				B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */,
 				B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */,
 				B1BFE75B26866E5700FAFF5D /* ApiRequest.swift in Sources */,
-				B19AC456269359FD0095AF06 /* CacheAuthenticationService.swift in Sources */,
+				B19AC456269359FD0095AF06 /* TokenCacheService.swift in Sources */,
 				D7EF263F26910B9300D8EA87 /* LoginView.swift in Sources */,
 				B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */,
 				B1BFE76026867BB000FAFF5D /* ApiEndpoint.swift in Sources */,

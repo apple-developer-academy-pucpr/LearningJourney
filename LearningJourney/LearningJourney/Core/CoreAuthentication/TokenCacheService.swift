@@ -1,7 +1,7 @@
 import Security
 import Foundation
 
-protocol CacheAuthenticationServicing {
+protocol TokenCacheServicing {
     var token: Data? { get }
     var lastResultCode: OSStatus { get }
     func cache(token: Data) -> Bool
@@ -9,7 +9,7 @@ protocol CacheAuthenticationServicing {
 
 // TODO figure out how to mock Keychain functions
 // TODO Consider creating a wrapper for Keychain
-final class CacheAuthenticationService: CacheAuthenticationServicing {
+final class TokenCacheService: TokenCacheServicing {
     
     // MARK: - Inner types
     
@@ -46,7 +46,7 @@ final class CacheAuthenticationService: CacheAuthenticationServicing {
     func cache(token: Data) -> Bool {
         lock.lock()
         defer { lock.unlock() }
-        return createItem(for: Constants.Keys.token)
+        return createItem(token, for: Constants.Keys.token)
     }
     
     // MARK: - Helpers
@@ -60,17 +60,18 @@ final class CacheAuthenticationService: CacheAuthenticationServicing {
         lastQueryParameters = query
         lastResultCode = SecItemDelete(query as CFDictionary)
         
-        return lastResultCode == noErr
+        return lastResultCode == noErr || lastResultCode == errSecItemNotFound
     }
     
-    private func createItem(for key: String) -> Bool {
-        guard deleteItem(for: key)
-        else { return false } // TODO consider handling this with errors
+    private func createItem(_ token: Data, for key: String) -> Bool {
+        guard deleteItem(for: key) else {
+            return false
+        } // TODO consider handling this with errors
         
         let query: [String : Any] = [
             Constants.KeychainValues.klass       : kSecClassGenericPassword,
             Constants.KeychainValues.attrAccount : key,
-            Constants.KeychainValues.accessible  : kSecAttrAccessible,
+            Constants.KeychainValues.accessible  : kSecAttrAccessibleWhenUnlocked,
             Constants.KeychainValues.valueData   : token as Any
         ]
          

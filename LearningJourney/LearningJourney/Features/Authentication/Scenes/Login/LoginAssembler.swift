@@ -7,10 +7,9 @@ protocol LoginAssembling {
 final class LoginAssembler: LoginAssembling {
     func assemble() -> AnyView {
         let service = RemoteAuthenticationService(apiFactory: { ApiRequest($0) })
-        let repository = AuthenticationProvider(
+        let repository = AuthenticationRepository(
             parser: AuthenticationParser(),
-            remoteService: service,
-            cacheService: CacheAuthenticationService()
+            remoteService: service
         )
         let viewModel = LoginViewModel(useCases: .init(
             signInWithAppleUseCase: SignInWithAppleUseCase(repository: repository)
