@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B14F9D1D2693D876002C2524 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14F9D1C2693D876002C2524 /* Dependency.swift */; };
+		B14F9D1F2693DC3D002C2524 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14F9D1E2693DC3D002C2524 /* DependencyContainer.swift */; };
 		B17B23BC26864FA1006E060A /* ContentViewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23BB26864FA1006E060A /* ContentViewRepository.swift */; };
 		B17B23C126864FCD006E060A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
 		B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B14F9D1C2693D876002C2524 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		B14F9D1E2693DC3D002C2524 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		B17B23BB26864FA1006E060A /* ContentViewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewRepository.swift; sourceTree = "<group>"; };
 		B17B23C026864FCD006E060A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		B17B23C226864FE9006E060A /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +161,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B14F9D1B2693D853002C2524 /* CoreInjector */ = {
+			isa = PBXGroup;
+			children = (
+				B14F9D1C2693D876002C2524 /* Dependency.swift */,
+				B14F9D1E2693DC3D002C2524 /* DependencyContainer.swift */,
+			);
+			path = CoreInjector;
+			sourceTree = "<group>";
+		};
 		B16D5C81269291D6003288C9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +316,7 @@
 		B1BFE75C26866E5D00FAFF5D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B14F9D1B2693D853002C2524 /* CoreInjector */,
 				B1BFE75D26867B9E00FAFF5D /* CoreNetworking */,
 			);
 			path = Core;
@@ -615,6 +629,7 @@
 				B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */,
 				B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */,
 				B18C4CC02683F5D200A150CD /* LearningJourney.xcdatamodeld in Sources */,
+				B14F9D1F2693DC3D002C2524 /* DependencyContainer.swift in Sources */,
 				B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */,
 				B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */,
 				B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */,
@@ -624,6 +639,7 @@
 				B17B23BC26864FA1006E060A /* ContentViewRepository.swift in Sources */,
 				B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */,
 				D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */,
+				B14F9D1D2693D876002C2524 /* Dependency.swift in Sources */,
 				D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
 				D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */,
