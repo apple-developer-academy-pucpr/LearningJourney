@@ -24,8 +24,8 @@ struct ObjectivesListView<ViewModel, Coordinator>: View where
             switch viewModel.objectives {
             case .loading:
                 Text("Loading")
-            case let .error(message):
-                Text("Error! " + message)
+            case let .error(error):
+                errorView(for: error)
             case let .result(objectives):
                 resultView(objectives)
             }

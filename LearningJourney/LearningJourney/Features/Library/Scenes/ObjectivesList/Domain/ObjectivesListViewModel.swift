@@ -52,8 +52,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
             case let .success(objectives):
                 self?.objectives = .result(objectives.map { .result($0) })
             case let .failure(error):
-                print("GOT AN ERROR!", error)
-                self?.objectives = .error(error.localizedDescription)
+                self?.handleError(error)
             }
         }
     }
@@ -72,10 +71,21 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
             case let .success(objective):
                 objectives[selectedIndex] = .result(objective)
                 self?.objectives = .result(objectives)
-            case let .failure(error):
+            case .failure:
                 objectives[selectedIndex] = .result(oldObjective) // TODO this should present a button so that the user can try again
                 self?.objectives = .result(objectives)
             }
+        }
+    }
+    
+    // MARK: - Helper functions
+    
+    private func handleError(_ error: LibraryRepositoryError) {
+        switch error {
+        case .unauthorized:
+            self.objectives = .error(.notAuthenticated)
+        case .api, .parsing, .unknown:
+            self.objectives = .error(.unknown)
         }
     }
 }

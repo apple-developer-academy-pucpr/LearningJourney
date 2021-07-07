@@ -31,8 +31,8 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
                 strandsView(using: strands)
             case .loading:
                 Text("Loading")
-            case let .error(message):
-                Text("Error! \(message)")
+            case let .error(error):
+                errorView(for: error)
             }
         }
     }

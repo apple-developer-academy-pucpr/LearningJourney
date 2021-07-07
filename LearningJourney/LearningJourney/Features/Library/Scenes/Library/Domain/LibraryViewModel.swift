@@ -8,7 +8,7 @@ protocol LibraryViewModelProtocol: ObservableObject {
 
 enum LibraryViewModelState<T: Equatable>: Equatable {
     case loading
-    case error(String)
+    case error(ViewError)
     case result(T)
 }
 
@@ -51,9 +51,19 @@ final class LibraryViewModel: LibraryViewModelProtocol {
             case let .success(strands):
                 self?.strands = .result(strands)
             case let .failure(error):
-                print("GOT AN ERROR!", error)
-                self?.strands = .error(error.localizedDescription)
+                self?.handleError(error)
             }
+        }
+    }
+    
+    // MARK: - Helper functions
+    
+    private func handleError(_ error: LibraryRepositoryError) {
+        switch error {
+        case .unauthorized:
+            self.strands = .error(.notAuthenticated)
+        case .api, .parsing, .unknown:
+            self.strands = .error(.unknown)
         }
     }
 }

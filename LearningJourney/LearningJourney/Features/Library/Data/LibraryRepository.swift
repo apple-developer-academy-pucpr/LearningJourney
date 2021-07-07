@@ -10,6 +10,7 @@ protocol LibraryRepositoryProtocol {
 enum LibraryRepositoryError: Error {
     case api(ApiError)
     case parsing(ParsingError)
+    case unauthorized
     case unknown
 }
 
@@ -44,6 +45,9 @@ final class LibraryRepository: LibraryRepositoryProtocol {
                 completion(self.parser.parse(payload)
                             .mapError { .parsing($0) })
             case let .failure(error):
+                if case .notAllowed = error {
+                    completion(.failure(.unauthorized))
+                }
                 completion(.failure(.api(error)))
             }
         }

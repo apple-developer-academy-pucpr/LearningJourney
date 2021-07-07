@@ -16,14 +16,7 @@ struct LearningJourneyApp: App {
     var body: some Scene {
         WindowGroup {
             libraryFeature.resolve()
-                .authenticateIfNeeded()
+                .authenticationSheet()
         }
-    }
-}
-
-extension View {
-    func authenticateIfNeeded() -> some View {
-        AuthenticationFeature<AuthenticationCoordinator>()
-                .resolve()
     }
 }

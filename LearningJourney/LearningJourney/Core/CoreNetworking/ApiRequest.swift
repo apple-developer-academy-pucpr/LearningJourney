@@ -10,6 +10,7 @@ enum ApiError: Error {
     case clientError(Int)
     case externalError(Int)
     case invalidUrl
+    case notAllowed
 }
 
 protocol ApiProtocol {
@@ -96,6 +97,8 @@ final class ApiRequest: ApiProtocol {
             return .failure(.unhandledtatusCode(responseStatus))
         case 200..<300:
             return .success(data)
+        case 401:
+            return .failure(.notAllowed)
         case 400..<500:
             return .failure(.clientError(responseStatus))
         case 500..<600:

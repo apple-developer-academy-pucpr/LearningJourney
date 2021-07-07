@@ -15,6 +15,9 @@
 		B17B23CC2686536C006E060A /* LearningStrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CB2686536C006E060A /* LearningStrand.swift */; };
 		B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CE26865ADA006E060A /* LibraryRepository.swift */; };
 		B18A19502694D8EE00507E15 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A194F2694D8EE00507E15 /* TokenManager.swift */; };
+		B18A19A52695E7D400507E15 /* AuthenticationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A19A42695E7D400507E15 /* AuthenticationModifier.swift */; };
+		B18A19AC2695F28200507E15 /* ViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A19AB2695F28200507E15 /* ViewError.swift */; };
+		B18A19AF2695F34F00507E15 /* UnknownErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A19AE2695F34F00507E15 /* UnknownErrorView.swift */; };
 		B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */; };
 		B18C4CB62683F5D100A150CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB52683F5D100A150CD /* ContentView.swift */; };
 		B18C4CB82683F5D200A150CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CB72683F5D200A150CD /* Assets.xcassets */; };
@@ -84,6 +87,9 @@
 		B17B23CB2686536C006E060A /* LearningStrand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningStrand.swift; sourceTree = "<group>"; };
 		B17B23CE26865ADA006E060A /* LibraryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRepository.swift; sourceTree = "<group>"; };
 		B18A194F2694D8EE00507E15 /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		B18A19A42695E7D400507E15 /* AuthenticationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModifier.swift; sourceTree = "<group>"; };
+		B18A19AB2695F28200507E15 /* ViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewError.swift; sourceTree = "<group>"; };
+		B18A19AE2695F34F00507E15 /* UnknownErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnknownErrorView.swift; sourceTree = "<group>"; };
 		B18C4CB02683F5D100A150CD /* LearningJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyApp.swift; sourceTree = "<group>"; };
 		B18C4CB52683F5D100A150CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -237,6 +243,23 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		B18A19AA2695F22F00507E15 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B18A19AD2695F2D100507E15 /* Error */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B18A19AD2695F2D100507E15 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				B18A19AB2695F28200507E15 /* ViewError.swift */,
+				B18A19AE2695F34F00507E15 /* UnknownErrorView.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		B18C4CA72683F5D100A150CD = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +336,7 @@
 		B1BFE75C26866E5D00FAFF5D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B18A19AA2695F22F00507E15 /* UI */,
 				B18A194D2694D42C00507E15 /* CoreAuthentication */,
 				B1BFE75D26867B9E00FAFF5D /* CoreNetworking */,
 			);
@@ -464,6 +488,7 @@
 			isa = PBXGroup;
 			children = (
 				D7EF263E26910B9300D8EA87 /* LoginView.swift */,
+				B18A19A42695E7D400507E15 /* AuthenticationModifier.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -617,6 +642,7 @@
 				B19AC3FC269351520095AF06 /* AuthenticationEndpoint.swift in Sources */,
 				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
 				B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */,
+				B18A19AC2695F28200507E15 /* ViewError.swift in Sources */,
 				D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */,
 				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
 				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
@@ -627,6 +653,7 @@
 				B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */,
 				B18C4CC02683F5D200A150CD /* LearningJourney.xcdatamodeld in Sources */,
 				B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */,
+				B18A19AF2695F34F00507E15 /* UnknownErrorView.swift in Sources */,
 				B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */,
 				B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */,
 				B18C4CBD2683F5D200A150CD /* Persistence.swift in Sources */,
@@ -636,6 +663,7 @@
 				B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */,
 				D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */,
 				D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */,
+				B18A19A52695E7D400507E15 /* AuthenticationModifier.swift in Sources */,
 				B18A19502694D8EE00507E15 /* TokenManager.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
 				D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */,
