@@ -4,6 +4,7 @@ protocol LibraryViewModelProtocol: ObservableObject {
     var strands: LibraryViewModelState<[LearningStrand]> { get }
     var searchQuery: String { get set }
     func handleOnAppear()
+    func handleUserDidChange()
 }
 
 enum LibraryViewModelState<T: Equatable>: Equatable {
@@ -44,7 +45,17 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     
     // MARK: - View Events
     
+    func handleUserDidChange() {
+        fetchStrands()
+    }
+    
     func handleOnAppear() {
+        fetchStrands()
+    }
+    
+    // MARK: - Helper functions
+    
+    private func fetchStrands() {
         strands = .loading
         useCases.fetchStrandsUseCase.execute { [weak self] in
             switch $0 {
@@ -55,8 +66,6 @@ final class LibraryViewModel: LibraryViewModelProtocol {
             }
         }
     }
-    
-    // MARK: - Helper functions
     
     private func handleError(_ error: LibraryRepositoryError) {
         switch error {

@@ -101,3 +101,19 @@ final class TokenCacheService: TokenCacheServicing {
         return result as? Data
     }
 }
+
+#if DEBUG
+
+extension TokenCacheService {
+    func clear() {
+        lock.lock()
+        defer { lock.unlock() }
+        
+        let query = [kSecClass : kSecClassGenericPassword]
+        let result = SecItemDelete(query as CFDictionary)
+        
+        guard result == noErr || result == -25300 else { fatalError("Failed to clear keychain! \(result) \(SecCopyErrorMessageString(result, nil))")}
+    }
+}
+
+#endif

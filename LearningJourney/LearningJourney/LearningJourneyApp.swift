@@ -9,14 +9,19 @@ import SwiftUI
 
 @main
 struct LearningJourneyApp: App {
-    let persistenceController = PersistenceController.shared
-
+    
+    init() {
+//        #if DEBUG
+//        TokenCacheService().clear()
+//        #endif
+    }
+    
     let libraryFeature = LibraryFeature<LibraryCoordinator>()
     
     var body: some Scene {
         WindowGroup {
             libraryFeature.resolve()
-                .authenticationSheet()
+                .authenticationSheet(assembler: LoginAssembler()) // TODO handle this gracefully
         }
     }
 }

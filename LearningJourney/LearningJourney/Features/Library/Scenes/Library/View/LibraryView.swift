@@ -19,6 +19,9 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
             .padding(.leading)
             .navigationTitle("Library")
             .onAppear(perform: viewModel.handleOnAppear)
+            .onReceive(NotificationCenter.default.publisher(for: .authDidChange), perform: { _ in
+                viewModel.handleUserDidChange() // TODO this should be replaced by `task`
+            })
         }
     }
     
@@ -47,7 +50,6 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
                     Spacer()
                         .frame(height: 20)
                 }
-
             }
         }
     }
@@ -59,6 +61,11 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
     }
     
     
+}
+extension PresentationMode: Equatable {
+    public static func == (lhs: PresentationMode, rhs: PresentationMode) -> Bool {
+        lhs.isPresented == rhs.isPresented
+    }
 }
 
 #if DEBUG

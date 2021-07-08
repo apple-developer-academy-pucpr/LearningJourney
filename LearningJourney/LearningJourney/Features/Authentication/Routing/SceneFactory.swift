@@ -17,6 +17,6 @@ final class AuthenticationSceneFactory: AuthenticationSceneFactoryProtocol {
     // MARK: - Factory methods
     
     func loginScene() -> AnyView {
-        loginAssembler.assemble()
+        AnyView(loginAssembler.assemble())
     }
 }
