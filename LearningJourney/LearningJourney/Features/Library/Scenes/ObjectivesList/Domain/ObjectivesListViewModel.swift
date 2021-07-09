@@ -47,6 +47,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     var goalName: String { dependencies.goal.name }
     
     func handleOnAppear() {
+        objectives = .loading
         useCases.fetchObjectivesUseCase.execute(using: dependencies.goal) { [weak self] in
             switch $0 {
             case let .success(objectives):
@@ -83,9 +84,9 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     private func handleError(_ error: LibraryRepositoryError) {
         switch error {
         case .unauthorized:
-            self.objectives = .error(.notAuthenticated)
+            objectives = .error(.notAuthenticated)
         case .api, .parsing, .unknown:
-            self.objectives = .error(.unknown)
+            objectives = .error(.unknown (handleOnAppear))
         }
     }
 }

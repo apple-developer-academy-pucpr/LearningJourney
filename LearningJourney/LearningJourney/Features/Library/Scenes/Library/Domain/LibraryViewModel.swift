@@ -70,9 +70,9 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     private func handleError(_ error: LibraryRepositoryError) {
         switch error {
         case .unauthorized:
-            self.strands = .error(.notAuthenticated)
+            strands = .error(.notAuthenticated)
         case .api, .parsing, .unknown:
-            self.strands = .error(.unknown)
+            strands = .error(.unknown(fetchStrands))
         }
     }
 }

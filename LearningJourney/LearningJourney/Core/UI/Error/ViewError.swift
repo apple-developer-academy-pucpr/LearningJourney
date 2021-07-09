@@ -1,8 +1,20 @@
 import SwiftUI
 
-public enum ViewError {
+public enum ViewError: Equatable {
     case notAuthenticated
-    case unknown
+    case unknown (UnknownErrorCallback)
+    
+    public static func == (lhs: ViewError, rhs: ViewError) -> Bool {
+        switch lhs {
+        case .notAuthenticated:
+            return rhs == .notAuthenticated
+        case .unknown:
+            if case .unknown = rhs {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 
@@ -11,8 +23,8 @@ public extension ViewError {
         switch self {
         case .notAuthenticated:
             return AnyView(Text("salve"))
-        case .unknown:
-           return AnyView(UnknownErrorView())
+        case let .unknown (callback):
+            return AnyView(UnknownErrorView(action: callback))
         }
     }
 }
