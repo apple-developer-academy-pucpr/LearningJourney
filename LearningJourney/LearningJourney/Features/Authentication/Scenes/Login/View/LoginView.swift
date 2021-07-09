@@ -7,6 +7,9 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
     
     @ObservedObject var viewModel: ViewModel
     
+    @Environment (\.colorScheme)
+    var colorScheme
+    
     // MARK: - View
     
     var body: some View {
@@ -49,6 +52,8 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
                 )
                 .frame(height: 50)
                 .cornerRadius(10)
+                .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black )
+               
             }
             .padding(30)
         }
@@ -91,6 +96,7 @@ extension View {
 struct LoginView_Preview: PreviewProvider {
     static var previews: some View {
         LoginView(viewModel: LoginViewModelMock())
+            .preferredColorScheme(.dark)
     }
 }
 #endif
