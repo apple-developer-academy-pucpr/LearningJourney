@@ -11,9 +11,9 @@ import SwiftUI
 struct LearningJourneyApp: App {
     
     init() {
-//        #if DEBUG
-//        TokenCacheService().clear()
-//        #endif
+        #if DEBUG
+        TokenCacheService().clear()
+        #endif
     }
     
     let libraryFeature = LibraryFeature<LibraryCoordinator>()
