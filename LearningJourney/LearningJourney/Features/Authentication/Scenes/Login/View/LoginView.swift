@@ -22,11 +22,39 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
         }
     }
     
+    // fazer a tela aqui
+    
     private var contentView: some View {
-        SignInWithAppleButton(
-            onRequest: viewModel.handleRequest,
-            onCompletion: viewModel.handleCompletion
-        )
+        VStack{
+            Image("loginScreenBanner")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .ignoresSafeArea()
+
+            VStack (alignment: .leading){
+                Text("Your journey starts here")
+                    .font(.largeTitle)
+                    .bold()
+                    .padding(.bottom, 20)
+                VStack (alignment: .leading){
+                    FeatureRow(icon: "checkmark.circle", title: "Progress tracking", description: "See what you've already learned.")
+                    FeatureRow(icon: "target", title: "Goal mapping", description: "Understand what you still need to work on.")
+                }
+                
+                Spacer()
+                SignInWithAppleButton(
+                    .continue,
+                    onRequest: viewModel.handleRequest,
+                    onCompletion: viewModel.handleCompletion
+                )
+                .frame(height: 50)
+                .cornerRadius(10)
+            }
+            .padding(30)
+        }
+        
+        
+       
     }
 }
 
@@ -58,3 +86,11 @@ extension View {
                         loginView: AnyView(view)))
     }
 }
+
+#if DEBUG
+struct LoginView_Preview: PreviewProvider {
+    static var previews: some View {
+        LoginView(viewModel: LoginViewModelMock())
+    }
+}
+#endif

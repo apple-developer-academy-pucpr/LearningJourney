@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110730122698FB5600B7D261 /* LoginViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730112698FB5600B7D261 /* LoginViewModelMock.swift */; };
+		110730142699025A00B7D261 /* FeatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730132699025A00B7D261 /* FeatureRow.swift */; };
 		B161E0AF269750D200D79A8D /* ValidateTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */; };
 		B17B23C126864FCD006E060A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
 		B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		110730112698FB5600B7D261 /* LoginViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelMock.swift; sourceTree = "<group>"; };
+		110730132699025A00B7D261 /* FeatureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRow.swift; sourceTree = "<group>"; };
 		B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTokenUseCase.swift; sourceTree = "<group>"; };
 		B17B23C026864FCD006E060A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		B17B23C226864FE9006E060A /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +161,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110730102698FB2400B7D261 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				110730112698FB5600B7D261 /* LoginViewModelMock.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
 		B17B23BD26864FA5006E060A /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +449,7 @@
 		D7EF26342691082300D8EA87 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				110730102698FB2400B7D261 /* Preview */,
 				D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */,
 				B18A194E2694D86A00507E15 /* Data */,
 				D7EF26372691085200D8EA87 /* Routing */,
@@ -476,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				D7EF263E26910B9300D8EA87 /* LoginView.swift */,
+				110730132699025A00B7D261 /* FeatureRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -633,6 +647,7 @@
 				B18A19AC2695F28200507E15 /* ViewError.swift in Sources */,
 				D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */,
 				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
+				110730142699025A00B7D261 /* FeatureRow.swift in Sources */,
 				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
 				B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */,
 				B19AC4012693521E0095AF06 /* RemoteAuthenticationService.swift in Sources */,
@@ -654,6 +669,7 @@
 				D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */,
 				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
 				B19AC3FE269351B90095AF06 /* AuthenticationRepository.swift in Sources */,
+				110730122698FB5600B7D261 /* LoginViewModelMock.swift in Sources */,
 				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
 				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
 				B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */,
@@ -831,7 +847,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LearningJourney/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -856,7 +872,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
-				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LearningJourney/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

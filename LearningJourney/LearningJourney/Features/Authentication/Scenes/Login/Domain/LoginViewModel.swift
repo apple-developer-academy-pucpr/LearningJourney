@@ -58,7 +58,9 @@ final class LoginViewModel: LoginViewModeling {
     }
     
     func handleCompletion(result: Result<ASAuthorization, Error>) {
+        viewState = .loading
         useCases.signInWithAppleUseCase.execute(using: result) { [weak self] result in
+            self?.viewState = .result
             switch result {
             case .success:
                 self?.dismiss()
