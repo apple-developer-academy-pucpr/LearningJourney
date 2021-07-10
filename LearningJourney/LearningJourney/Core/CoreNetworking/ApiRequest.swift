@@ -48,6 +48,7 @@ final class ApiRequest: ApiProtocol {
     // MARK: - ApiProtocol methods
     
     func make(completion: @escaping Completion) -> ApiProtocol? {
+        print("Making request on \(endpoint.absoluteStringUrl)")
         guard let url = endpoint.url else {
             completion(.failure(.invalidUrl))
             return nil
@@ -61,7 +62,6 @@ final class ApiRequest: ApiProtocol {
         endpoint.headers.forEach { header in
             request.addValue(header.formatted.1, forHTTPHeaderField: header.formatted.0)
         }
-        
         let task = session.dataTask(with: request) { [weak self] data, response, error in
             guard let self = self else {
                 completion(.failure(.unknown))

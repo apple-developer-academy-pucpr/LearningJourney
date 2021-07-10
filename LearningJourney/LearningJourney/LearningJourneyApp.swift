@@ -11,9 +11,10 @@ import SwiftUI
 struct LearningJourneyApp: App {
     
     init() {
-        #if DEBUG
+//        #if DEBUG
         TokenCacheService().clear()
-        #endif
+//        #endif
+        print(DefaultEnvironment.baseUrl)
     }
     
     let libraryFeature = LibraryFeature<LibraryCoordinator>()

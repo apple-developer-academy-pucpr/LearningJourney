@@ -102,10 +102,11 @@ final class TokenCacheService: TokenCacheServicing {
     }
 }
 
-#if DEBUG
+//#if DEBUG
 
 extension TokenCacheService {
     func clear() {
+        print("Cleared keychain!")
         lock.lock()
         defer { lock.unlock() }
         
@@ -116,4 +117,4 @@ extension TokenCacheService {
     }
 }
 
-#endif
+//#endif

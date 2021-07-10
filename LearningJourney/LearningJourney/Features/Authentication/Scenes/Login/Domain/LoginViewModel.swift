@@ -68,6 +68,8 @@ final class LoginViewModel: LoginViewModeling {
                 self?.isPresented = true
             }
         }
+        
+        objectWillChange.send()
     }
     
     // MARK: - Helpers

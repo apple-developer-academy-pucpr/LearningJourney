@@ -4,7 +4,7 @@ public protocol EnvironmentFacade {
     static var baseUrl: String { get }
 }
 
-public enum DefaultEnvironment: EnvironmentFacade {
+public enum DefaultEnvironment: EnvironmentFacade { // TODO consider this so that it can be modular
     
     private static let infoDictionary: [String : Any] = {
         guard let dict = Bundle.main.infoDictionary else {

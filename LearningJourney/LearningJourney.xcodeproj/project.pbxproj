@@ -10,6 +10,7 @@
 		110730122698FB5600B7D261 /* LoginViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730112698FB5600B7D261 /* LoginViewModelMock.swift */; };
 		110730142699025A00B7D261 /* FeatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730132699025A00B7D261 /* FeatureRow.swift */; };
 		B12857A52699D2AA00DF335D /* EnvironmentFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */; };
+		B12857A72699D6CD00DF335D /* Development.plist in Resources */ = {isa = PBXBuildFile; fileRef = B12857A62699D6CD00DF335D /* Development.plist */; };
 		B161E0AF269750D200D79A8D /* ValidateTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */; };
 		B17B23C126864FCD006E060A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
 		B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
@@ -83,6 +84,7 @@
 		B12857A22699D22B00DF335D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		B12857A32699D26800DF335D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentFacade.swift; sourceTree = "<group>"; };
+		B12857A62699D6CD00DF335D /* Development.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
 		B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTokenUseCase.swift; sourceTree = "<group>"; };
 		B17B23C026864FCD006E060A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		B17B23C226864FE9006E060A /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyApp.swift; sourceTree = "<group>"; };
 		B18C4CB72683F5D200A150CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B18C4CBA2683F5D200A150CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B18C4CC12683F5D200A150CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18C4CC12683F5D200A150CD /* Production.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Production.plist; sourceTree = "<group>"; };
 		B18C4CC62683F5D200A150CD /* LearningJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18C4CCA2683F5D200A150CD /* LearningJourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyTests.swift; sourceTree = "<group>"; };
 		B18C4CCC2683F5D200A150CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -173,14 +175,16 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
-		B12857A12699D21200DF335D /* CoreEnvironment */ = {
+		B12857A12699D21200DF335D /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				B12857A62699D6CD00DF335D /* Development.plist */,
+				B18C4CC12683F5D200A150CD /* Production.plist */,
 				B12857A22699D22B00DF335D /* Development.xcconfig */,
 				B12857A32699D26800DF335D /* Production.xcconfig */,
 				B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */,
 			);
-			path = CoreEnvironment;
+			path = Environment;
 			sourceTree = "<group>";
 		};
 		B17B23BD26864FA5006E060A /* Features */ = {
@@ -302,11 +306,11 @@
 			isa = PBXGroup;
 			children = (
 				D7EF264626911AAF00D8EA87 /* LearningJourney.entitlements */,
+				B12857A12699D21200DF335D /* Environment */,
 				B1BFE75C26866E5D00FAFF5D /* Core */,
 				B17B23BD26864FA5006E060A /* Features */,
 				B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */,
 				B18C4CB72683F5D200A150CD /* Assets.xcassets */,
-				B18C4CC12683F5D200A150CD /* Info.plist */,
 				B18C4CB92683F5D200A150CD /* Preview Content */,
 			);
 			path = LearningJourney;
@@ -350,7 +354,6 @@
 		B1BFE75C26866E5D00FAFF5D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B12857A12699D21200DF335D /* CoreEnvironment */,
 				B18A194D2694D42C00507E15 /* CoreAuthentication */,
 				B1BFE75D26867B9E00FAFF5D /* CoreNetworking */,
 				B18A19AA2695F22F00507E15 /* UI */,
@@ -464,8 +467,8 @@
 		D7EF26342691082300D8EA87 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				110730102698FB2400B7D261 /* Preview */,
 				D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */,
+				110730102698FB2400B7D261 /* Preview */,
 				B18A194E2694D86A00507E15 /* Data */,
 				D7EF26372691085200D8EA87 /* Routing */,
 				D7EF263C26910B3800D8EA87 /* Scenes */,
@@ -631,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18C4CBB2683F5D200A150CD /* Preview Assets.xcassets in Resources */,
+				B12857A72699D6CD00DF335D /* Development.plist in Resources */,
 				B18C4CB82683F5D200A150CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -858,7 +862,6 @@
 		};
 		B18C4CDB2683F5D200A150CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B12857A22699D22B00DF335D /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -868,7 +871,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = LearningJourney/Info.plist;
+				INFOPLIST_FILE = LearningJourney/Environment/Development.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -893,7 +896,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = LearningJourney/Info.plist;
+				INFOPLIST_FILE = LearningJourney/Environment/Production.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
