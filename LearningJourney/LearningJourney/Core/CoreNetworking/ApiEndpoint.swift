@@ -34,7 +34,7 @@ extension ApiEndpoint {
     var url: URL? { .init(string: absoluteStringUrl) }
     var absoluteStringUrl: String { baseUrl + path }
     var method: HTTPMethod { .get }
-    var baseUrl: String { "http://192.168.0.10:5000/api/" } // TODO load this from an envirnmnt
+    var baseUrl: String { DefaultEnvironment.baseUrl } // TODO load this from an envirnmnt
     var body: Data? { nil }
     var tokenProvider: TokenProviding? { TokenManager.shared }
     var headers: [HTTPHeaderField] {

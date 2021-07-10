@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		110730122698FB5600B7D261 /* LoginViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730112698FB5600B7D261 /* LoginViewModelMock.swift */; };
 		110730142699025A00B7D261 /* FeatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730132699025A00B7D261 /* FeatureRow.swift */; };
+		B12857A52699D2AA00DF335D /* EnvironmentFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */; };
 		B161E0AF269750D200D79A8D /* ValidateTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */; };
 		B17B23C126864FCD006E060A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
 		B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
@@ -79,6 +80,9 @@
 /* Begin PBXFileReference section */
 		110730112698FB5600B7D261 /* LoginViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelMock.swift; sourceTree = "<group>"; };
 		110730132699025A00B7D261 /* FeatureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRow.swift; sourceTree = "<group>"; };
+		B12857A22699D22B00DF335D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
+		B12857A32699D26800DF335D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentFacade.swift; sourceTree = "<group>"; };
 		B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTokenUseCase.swift; sourceTree = "<group>"; };
 		B17B23C026864FCD006E060A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		B17B23C226864FE9006E060A /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
@@ -167,6 +171,16 @@
 				110730112698FB5600B7D261 /* LoginViewModelMock.swift */,
 			);
 			path = Preview;
+			sourceTree = "<group>";
+		};
+		B12857A12699D21200DF335D /* CoreEnvironment */ = {
+			isa = PBXGroup;
+			children = (
+				B12857A22699D22B00DF335D /* Development.xcconfig */,
+				B12857A32699D26800DF335D /* Production.xcconfig */,
+				B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */,
+			);
+			path = CoreEnvironment;
 			sourceTree = "<group>";
 		};
 		B17B23BD26864FA5006E060A /* Features */ = {
@@ -336,9 +350,10 @@
 		B1BFE75C26866E5D00FAFF5D /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B18A19AA2695F22F00507E15 /* UI */,
+				B12857A12699D21200DF335D /* CoreEnvironment */,
 				B18A194D2694D42C00507E15 /* CoreAuthentication */,
 				B1BFE75D26867B9E00FAFF5D /* CoreNetworking */,
+				B18A19AA2695F22F00507E15 /* UI */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -645,6 +660,7 @@
 				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
 				B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */,
 				B18A19AC2695F28200507E15 /* ViewError.swift in Sources */,
+				B12857A52699D2AA00DF335D /* EnvironmentFacade.swift in Sources */,
 				D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */,
 				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
 				110730142699025A00B7D261 /* FeatureRow.swift in Sources */,
@@ -724,6 +740,7 @@
 /* Begin XCBuildConfiguration section */
 		B18C4CD82683F5D200A150CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12857A22699D22B00DF335D /* Development.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -785,6 +802,7 @@
 		};
 		B18C4CD92683F5D200A150CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12857A32699D26800DF335D /* Production.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -840,6 +858,7 @@
 		};
 		B18C4CDB2683F5D200A150CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B12857A22699D22B00DF335D /* Development.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -847,7 +866,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LearningJourney/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -872,7 +891,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = LearningJourney/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
