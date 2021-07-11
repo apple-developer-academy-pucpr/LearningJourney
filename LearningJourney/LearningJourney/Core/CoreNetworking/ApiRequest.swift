@@ -26,8 +26,8 @@ final class ApiRequest: ApiProtocol {
     // MARK: - Dependencies
     
     private let endpoint: ApiEndpoint
-    private let session: URLSession // TODO mock
-    private let dispatchQueue: DispatchQueue // TODO mock
+    private let session: URLSessionProtocol
+    private let dispatchQueue: Dispatching
     
     // MARK: - Initialization
     
@@ -37,8 +37,8 @@ final class ApiRequest: ApiProtocol {
     
     init(
         _ endpoint: ApiEndpoint,
-        session: URLSession = .shared,
-        dispatchQueue: DispatchQueue = .main
+        session: URLSessionProtocol = URLSession.shared, // TODO inject via proper injector
+        dispatchQueue: Dispatching = DispatchQueue.main
     ) {
         self.endpoint = endpoint
         self.session = session
@@ -47,6 +47,7 @@ final class ApiRequest: ApiProtocol {
     
     // MARK: - ApiProtocol methods
     
+    @discardableResult
     func make(completion: @escaping Completion) -> ApiProtocol? {
         print("Making request on \(endpoint.absoluteStringUrl)")
         guard let url = endpoint.url else {
@@ -62,7 +63,7 @@ final class ApiRequest: ApiProtocol {
         endpoint.headers.forEach { header in
             request.addValue(header.formatted.1, forHTTPHeaderField: header.formatted.0)
         }
-        let task = session.dataTask(with: request) { [weak self] data, response, error in
+        let task = session.dataTask(request: request) { [weak self] data, response, error in
             guard let self = self else {
                 completion(.failure(.unknown))
                 return
@@ -77,7 +78,7 @@ final class ApiRequest: ApiProtocol {
             }
         }
         
-        task.resume()
+        task?.resume()
         return self
     }
     
