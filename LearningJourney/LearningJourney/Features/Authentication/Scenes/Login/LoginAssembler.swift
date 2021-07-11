@@ -8,7 +8,7 @@ final class LoginAssembler: LoginAssembling {
     
     @Dependency var apiFactory: ApiFactory
     
-    func assemble() -> AnyView {
+    func assemble() -> LoginView<LoginViewModel> {
         let service = RemoteAuthenticationService(apiFactory: apiFactory)
         let repository = AuthenticationRepository(
             parser: AuthenticationParser(),

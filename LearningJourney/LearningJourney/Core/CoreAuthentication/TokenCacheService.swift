@@ -102,7 +102,7 @@ final class TokenCacheService: TokenCacheServicing {
     }
 }
 
-//#if DEBUG
+#if DEBUG
 
 extension TokenCacheService {
     func clear() {
@@ -117,4 +117,4 @@ extension TokenCacheService {
     }
 }
 
-//#endif
+#endif
