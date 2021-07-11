@@ -28,6 +28,56 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B123D99E269BA88E00671D11"
+               BuildableName = "LearningJourneyTests.xctest"
+               BlueprintName = "LearningJourneyTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B123DA08269BAA6C00671D11"
+               BuildableName = "LibraryTests.xctest"
+               BlueprintName = "LibraryTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B123DA52269BACAB00671D11"
+               BuildableName = "CoreAdaptersTests.xctest"
+               BlueprintName = "CoreAdaptersTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B123DA7C269BAD5A00671D11"
+               BuildableName = "CoreAuthenticationTests.xctest"
+               BlueprintName = "CoreAuthenticationTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B1E6FA30269BAEEC001AB07F"
+               BuildableName = "CoreEnvironmentTests.xctest"
+               BlueprintName = "CoreEnvironmentTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -1,21 +1,21 @@
 import Foundation
 
-enum TokenProviderError: Error {
+public enum TokenProviderError: Error {
     case parsing(Error)
     case notCached
 }
 
-protocol TokenProviding {
+public protocol TokenProviding {
     var token: Result<TokenPayload, TokenProviderError> { get }
 }
 
-protocol TokenSaving {
+public protocol TokenSaving {
     func cache(token data: Data) -> Bool
 }
 
-typealias TokenManaging = TokenProviding & TokenSaving
+public typealias TokenManaging = TokenProviding & TokenSaving
 
-final class TokenManager: TokenManaging {
+public final class TokenManager: TokenManaging {
     
     // MARK: - Shared instance
     
@@ -33,7 +33,7 @@ final class TokenManager: TokenManaging {
     
     // MARK: - Token providing
     
-    var token: Result<TokenPayload, TokenProviderError> {
+    public var token: Result<TokenPayload, TokenProviderError> {
         if let cached = cacheService.token {
             return parse(token: cached)
         }
@@ -42,7 +42,7 @@ final class TokenManager: TokenManaging {
         
     // MARK: - Token configurator
     
-    func cache(token data: Data) -> Bool {
+    public func cache(token data: Data) -> Bool {
         cacheService.cache(token: data)
     }
 

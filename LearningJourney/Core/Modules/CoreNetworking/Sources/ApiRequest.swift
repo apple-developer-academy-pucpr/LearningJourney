@@ -1,5 +1,7 @@
 import Foundation
 
+import CoreAdapters
+
 enum ApiError: Error {
     case unknown
     case httpError(code: Int)
@@ -21,7 +23,7 @@ protocol ApiProtocol {
 
 typealias ApiFactory = (ApiEndpoint) -> ApiProtocol
 
-final class ApiRequest: ApiProtocol {
+public final class ApiRequest: ApiProtocol {
     
     // MARK: - Dependencies
     

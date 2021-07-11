@@ -7,10 +7,6 @@ enum AuthenticationError: Error {
     case notAuthenticated
 }
 
-struct TokenPayload: Decodable {
-    let token: String
-}
-
 protocol AuthenticationProviderProtocol {
     typealias Completion = (Result<TokenPayload, AuthenticationError>) -> Void
     func signInWithApple(using payload: SignInWithApplePayload, completion: @escaping Completion )

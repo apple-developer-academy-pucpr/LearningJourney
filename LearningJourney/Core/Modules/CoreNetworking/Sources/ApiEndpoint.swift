@@ -1,11 +1,13 @@
 import Foundation
+import CoreAuthentication
+import CoreEnvironment
 
-enum HTTPMethod: String {
+public enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
 }
 
-enum HTTPHeaderField {
+public enum HTTPHeaderField {
     case jwt(_ token: String)
     case contentType(_ mime: String)
     
@@ -19,7 +21,7 @@ enum HTTPHeaderField {
     }
 }
 
-protocol ApiEndpoint {
+public protocol ApiEndpoint {
     var absoluteStringUrl: String { get }
     var url: URL? { get }
     var baseUrl: String { get }
@@ -34,7 +36,7 @@ extension ApiEndpoint {
     var url: URL? { .init(string: absoluteStringUrl) }
     var absoluteStringUrl: String { baseUrl + path }
     var method: HTTPMethod { .get }
-    var baseUrl: String { DefaultEnvironment.baseUrl } // TODO load this from an envirnmnt
+    var baseUrl: String { DefaultEnvironment.baseUrl }
     var body: Data? { nil }
     var tokenProvider: TokenProviding? { TokenManager.shared }
     var headers: [HTTPHeaderField] {
