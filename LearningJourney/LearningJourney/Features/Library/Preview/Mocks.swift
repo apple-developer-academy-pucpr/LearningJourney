@@ -3,6 +3,10 @@
 import SwiftUI
 
 final class LibraryViewModelMock: LibraryViewModelProtocol {
+    func handleUserDidChange() {
+        
+    }
+    
     var searchQuery: String = ""
     
     let resultToUse: [LearningStrand]

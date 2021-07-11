@@ -47,13 +47,13 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     var goalName: String { dependencies.goal.name }
     
     func handleOnAppear() {
+        objectives = .loading
         useCases.fetchObjectivesUseCase.execute(using: dependencies.goal) { [weak self] in
             switch $0 {
             case let .success(objectives):
                 self?.objectives = .result(objectives.map { .result($0) })
             case let .failure(error):
-                print("GOT AN ERROR!", error)
-                self?.objectives = .error(error.localizedDescription)
+                self?.handleError(error)
             }
         }
     }
@@ -72,10 +72,21 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
             case let .success(objective):
                 objectives[selectedIndex] = .result(objective)
                 self?.objectives = .result(objectives)
-            case let .failure(error):
+            case .failure:
                 objectives[selectedIndex] = .result(oldObjective) // TODO this should present a button so that the user can try again
                 self?.objectives = .result(objectives)
             }
+        }
+    }
+    
+    // MARK: - Helper functions
+    
+    private func handleError(_ error: LibraryRepositoryError) {
+        switch error {
+        case .unauthorized:
+            objectives = .error(.notAuthenticated)
+        case .api, .parsing, .unknown:
+            objectives = .error(.unknown (handleOnAppear))
         }
     }
 }

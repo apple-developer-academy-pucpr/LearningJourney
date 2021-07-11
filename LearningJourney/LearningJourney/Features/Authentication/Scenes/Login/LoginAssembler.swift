@@ -1,7 +1,7 @@
 import SwiftUI
 
 protocol LoginAssembling {
-    func assemble() -> AnyView
+    func assemble() -> LoginView<LoginViewModel>
 }
 
 final class LoginAssembler: LoginAssembling {
@@ -12,13 +12,12 @@ final class LoginAssembler: LoginAssembling {
         let service = RemoteAuthenticationService(apiFactory: apiFactory)
         let repository = AuthenticationRepository(
             parser: AuthenticationParser(),
-            remoteService: service,
-            cacheService: CacheAuthenticationService()
+            remoteService: service
         )
         let viewModel = LoginViewModel(useCases: .init(
-            signInWithAppleUseCase: SignInWithAppleUseCase(repository: repository)
+            signInWithAppleUseCase: SignInWithAppleUseCase(repository: repository),
+            validateTokenUseCase: ValidateTokenUseCase(tokenProvider: TokenManager.shared)
         ))
-        let view = LoginView(viewModel: viewModel)
-        return AnyView(view)
+        return LoginView(viewModel: viewModel)
     }
 }
