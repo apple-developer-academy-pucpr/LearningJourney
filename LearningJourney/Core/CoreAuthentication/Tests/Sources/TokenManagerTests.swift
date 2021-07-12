@@ -45,9 +45,7 @@ final class TokenManagerTests: XCTestCase {
     func test_token_whenTokenIsCached_itShouldReturnTokenPayload() throws {
         // Given
         let expectedString = "token"
-        let payloadDummy = TokenPayload(token: expectedString)
-        spy.token = try JSONEncoder().encode(payloadDummy)
-        
+        spy.token = .tokenFixture(expectedString)
         // When
         let token = sut.token
         
@@ -78,5 +76,15 @@ final class TokenCacheMock: TokenCacheServicing {
     func cache(token: Data) -> Bool {
         cacheCallCount += 1
         return true
+    }
+}
+
+extension Data {
+    static func tokenFixture(
+        token: String = "dummy"
+    ) throws -> Data {
+        
+        let payloadDummy = TokenPayload(token: token)
+        return try JSONEncoder().encode(payloadDummy)
     }
 }

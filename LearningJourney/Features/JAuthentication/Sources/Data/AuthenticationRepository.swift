@@ -8,12 +8,12 @@ enum AuthenticationError: Error {
     case notAuthenticated
 }
 
-protocol AuthenticationProviderProtocol {
+protocol AuthenticationRepositoryProtocol {
     typealias Completion = (Result<TokenPayload, AuthenticationError>) -> Void
     func signInWithApple(using payload: SignInWithApplePayload, completion: @escaping Completion )
 }
 
-final class AuthenticationRepository: AuthenticationProviderProtocol {
+final class AuthenticationRepository: AuthenticationRepositoryProtocol {
     
     // MARK: - Dependencies
     

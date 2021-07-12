@@ -17,11 +17,11 @@ final class SignInWithAppleUseCase: SignInWithAppleUseCaseProtocol {
     
     // MARK: - Dependencies
     
-    private let repository: AuthenticationProviderProtocol
+    private let repository: AuthenticationRepositoryProtocol
     
     // MARK: - Initialization
     
-    init(repository: AuthenticationProviderProtocol) {
+    init(repository: AuthenticationRepositoryProtocol) {
         self.repository = repository
     }
     
