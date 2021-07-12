@@ -1,4 +1,5 @@
 import SwiftUI
+import UI
 
 struct ObjectivesListView<ViewModel, Coordinator>: View where
     ViewModel: ObjectivesListViewModelProtocol, Coordinator: LibraryCoordinating {

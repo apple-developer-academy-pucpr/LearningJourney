@@ -1,5 +1,7 @@
 import Foundation
 
+import CoreAuthentication
+
 enum AuthenticationError: Error {
     case api(Error)
     case parsing(Error)

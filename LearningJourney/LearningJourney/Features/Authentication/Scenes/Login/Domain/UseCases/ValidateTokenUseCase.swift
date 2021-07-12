@@ -1,3 +1,5 @@
+import CoreAuthentication
+
 enum ValidateTokenUseCaseError: Error {
     case invalidToken
 }

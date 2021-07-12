@@ -1,5 +1,7 @@
 import SwiftUI
 
+import CoreNetworking
+
 protocol LibraryAssembling {
     func assemble() -> AnyView
 }
@@ -10,7 +12,7 @@ final class LibraryAssembler: LibraryAssembling {
         let parser = LibraryParser()
         
         let service = LibraryRemoteService(
-            apiFactory: { ApiRequest($0) })
+            apiFactory: { ApiRequest(endpoint: $0) })
         let repository = LibraryRepository(
             remoteService: service,
             parser: parser)

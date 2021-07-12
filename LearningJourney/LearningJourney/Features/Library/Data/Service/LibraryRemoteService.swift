@@ -1,5 +1,7 @@
 import Foundation
 
+import CoreNetworking
+
 protocol LibraryRemoteServiceProtocol {
     typealias Completion = (Result<Data, ApiError>) -> Void
     func learningStrands(completion: @escaping Completion)

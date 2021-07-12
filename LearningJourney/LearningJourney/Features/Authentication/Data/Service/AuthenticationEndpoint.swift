@@ -1,4 +1,5 @@
 import Foundation
+import CoreNetworking
 
 struct SignInWithApplePayload: Encodable {
     let identityToken: Data?
@@ -20,6 +21,8 @@ extension AuthenticationEndpoint: ApiEndpoint {
             return signInWithApplePayload(payload)
         }
     }
+    
+    // MARK: - Helpers
     
     private func signInWithApplePayload(_ payload: SignInWithApplePayload) -> Data? {
         let encoder = JSONEncoder()

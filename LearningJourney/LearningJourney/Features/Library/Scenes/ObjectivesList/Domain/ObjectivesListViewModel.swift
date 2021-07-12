@@ -1,4 +1,5 @@
 import SwiftUI
+import UI
 
 protocol ObjectivesListViewModelProtocol: ObservableObject {
     var objectives: LibraryViewModelState<[LibraryViewModelState<LearningObjective>]> { get }

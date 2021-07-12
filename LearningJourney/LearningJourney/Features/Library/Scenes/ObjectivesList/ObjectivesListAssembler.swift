@@ -1,5 +1,7 @@
 import SwiftUI
 
+import CoreNetworking
+
 protocol ObjectivesListAssembling {
     func assemble(learningGoal: LearningGoal) -> AnyView
 }
@@ -9,7 +11,7 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
         let parser = LibraryParser()
         
         let service = LibraryRemoteService(
-            apiFactory: { ApiRequest($0) })
+            apiFactory: { ApiRequest(endpoint: $0) })
         let repository = LibraryRepository(
             remoteService: service,
             parser: parser)

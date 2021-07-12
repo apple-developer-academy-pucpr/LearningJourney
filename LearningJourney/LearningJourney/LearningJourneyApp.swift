@@ -7,13 +7,13 @@
 
 import SwiftUI
 
+import CoreAuthentication
+import CoreEnvironment
+
 @main
 struct LearningJourneyApp: App {
     
     init() {
-//        #if DEBUG
-        TokenCacheService().clear()
-//        #endif
         print(DefaultEnvironment.baseUrl)
     }
     

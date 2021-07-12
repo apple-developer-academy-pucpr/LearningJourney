@@ -16,7 +16,7 @@ struct UnknownErrorView: View {
                 .font(.largeTitle)
                 .bold()
             Text("An error's occured")
-                .font(.title2)
+                .font(.title)
             Spacer()
             Button(action: action,
                    label: {

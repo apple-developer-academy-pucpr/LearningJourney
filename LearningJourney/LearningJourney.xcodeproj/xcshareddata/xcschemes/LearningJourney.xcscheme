@@ -20,6 +20,20 @@
                ReferencedContainer = "container:LearningJourney.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B1E6FA30269BAEEC001AB07F"
+               BuildableName = "CoreEnvironmentTests.xctest"
+               BlueprintName = "CoreEnvironmentTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -31,26 +45,6 @@
       userAttachmentLifetime = "keepAlways"
       codeCoverageEnabled = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B123D99E269BA88E00671D11"
-               BuildableName = "LearningJourneyTests.xctest"
-               BlueprintName = "LearningJourneyTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B123DA08269BAA6C00671D11"
-               BuildableName = "LibraryTests.xctest"
-               BlueprintName = "LibraryTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
@@ -75,9 +69,39 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B123DA2B269BAB5D00671D11"
+               BuildableName = "CoreNetworkingTests.xctest"
+               BlueprintName = "CoreNetworkingTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B1E6FA30269BAEEC001AB07F"
                BuildableName = "CoreEnvironmentTests.xctest"
                BlueprintName = "CoreEnvironmentTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B15F781B269C780E009315A3"
+               BuildableName = "LJUITests.xctest"
+               BlueprintName = "LJUITests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B18D4158269C7CDB000C3826"
+               BuildableName = "UITests.xctest"
+               BlueprintName = "UITests"
                ReferencedContainer = "container:LearningJourney.xcodeproj">
             </BuildableReference>
          </TestableReference>

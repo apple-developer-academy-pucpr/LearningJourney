@@ -1,4 +1,5 @@
 import SwiftUI
+import UI
 
 protocol LibraryViewModelProtocol: ObservableObject {
     var strands: LibraryViewModelState<[LearningStrand]> { get }

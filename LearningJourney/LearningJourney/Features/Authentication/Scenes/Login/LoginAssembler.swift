@@ -1,12 +1,15 @@
 import SwiftUI
 
+import CoreAuthentication
+import CoreNetworking
+
 protocol LoginAssembling {
     func assemble() -> LoginView<LoginViewModel>
 }
 
 final class LoginAssembler: LoginAssembling {
     func assemble() -> LoginView<LoginViewModel> {
-        let service = RemoteAuthenticationService(apiFactory: { ApiRequest($0) })
+        let service = RemoteAuthenticationService(apiFactory: { ApiRequest(endpoint: $0) })
         let repository = AuthenticationRepository(
             parser: AuthenticationParser(),
             remoteService: service

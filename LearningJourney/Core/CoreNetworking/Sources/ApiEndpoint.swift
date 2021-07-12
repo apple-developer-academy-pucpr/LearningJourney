@@ -33,14 +33,12 @@ public protocol ApiEndpoint {
     var environment: EnvironmentProvider.Type { get  }
 }
 
-extension ApiEndpoint {
-    var url: URL? { .init(string: absoluteStringUrl) }
+public extension ApiEndpoint {
     var absoluteStringUrl: String { baseUrl + path }
-    var method: HTTPMethod { .get }
+    var url: URL? { .init(string: absoluteStringUrl) }
     var baseUrl: String { environment.baseUrl }
-    var environment: EnvironmentProvider.Type { DefaultEnvironment.self }
+    var method: HTTPMethod { .get }
     var body: Data? { nil }
-    var tokenProvider: TokenProviding? { TokenManager.shared }
     var headers: [HTTPHeaderField] {
         var headers: [HTTPHeaderField] = [.contentType("application/json")]
         if case let .success(token) = tokenProvider?.token {
@@ -48,4 +46,7 @@ extension ApiEndpoint {
         }
         return headers
     }
+    var tokenProvider: TokenProviding? { TokenManager.shared }
+    var environment: EnvironmentProvider.Type { DefaultEnvironment.self }
 }
+

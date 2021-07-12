@@ -2,7 +2,7 @@ import Foundation
 
 import CoreAdapters
 
-enum ApiError: Error {
+public enum ApiError: Error {
     case unknown
     case httpError(code: Int)
     case requestFailed(Error)
@@ -15,13 +15,13 @@ enum ApiError: Error {
     case notAllowed
 }
 
-protocol ApiProtocol {
+public protocol ApiProtocol {
     typealias Completion = (Result<Data, ApiError>) -> Void
     init(endpoint: ApiEndpoint)
     func make(completion: @escaping Completion) -> ApiProtocol?
 }
 
-typealias ApiFactory = (ApiEndpoint) -> ApiProtocol
+public typealias ApiFactory = (ApiEndpoint) -> ApiProtocol
 
 public final class ApiRequest: ApiProtocol {
     
@@ -33,7 +33,7 @@ public final class ApiRequest: ApiProtocol {
     
     // MARK: - Initialization
     
-    convenience init(endpoint: ApiEndpoint) {
+    public convenience init(endpoint: ApiEndpoint) {
         self.init(endpoint)
     }
     
@@ -50,7 +50,7 @@ public final class ApiRequest: ApiProtocol {
     // MARK: - ApiProtocol methods
     
     @discardableResult
-    func make(completion: @escaping Completion) -> ApiProtocol? {
+    public func make(completion: @escaping Completion) -> ApiProtocol? {
         print("Making request on \(endpoint.absoluteStringUrl)")
         guard let url = endpoint.url else {
             completion(.failure(.invalidUrl))

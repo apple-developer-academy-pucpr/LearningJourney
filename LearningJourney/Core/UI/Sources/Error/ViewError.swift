@@ -17,7 +17,6 @@ public enum ViewError: Equatable {
     }
 }
 
-
 public extension ViewError {
     var view: AnyView {
         switch self {

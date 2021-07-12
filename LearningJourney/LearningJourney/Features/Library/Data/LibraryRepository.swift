@@ -1,5 +1,7 @@
 import Foundation
 
+import CoreNetworking
+
 protocol LibraryRepositoryProtocol {
     typealias Completion<T> = (Result<T, LibraryRepositoryError>) -> Void
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>)

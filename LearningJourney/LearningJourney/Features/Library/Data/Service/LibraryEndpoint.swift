@@ -1,5 +1,7 @@
 import Foundation
 
+import CoreNetworking
+
 enum LibraryEndpoint {
     case fetchStrand
     case fetchObjectives(_ goalId: Int)

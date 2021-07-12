@@ -1,5 +1,7 @@
 import Foundation
 
+import CoreNetworking
+
 protocol RemoteAuthenticationServicing {
     typealias Completion = (Result<Data, ApiError>) -> Void
     func signInWithApple(using payload: SignInWithApplePayload, then handle: @escaping Completion)
