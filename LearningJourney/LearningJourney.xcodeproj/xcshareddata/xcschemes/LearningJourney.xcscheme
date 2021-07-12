@@ -105,6 +105,26 @@
                ReferencedContainer = "container:LearningJourney.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B18D4187269C7FF7000C3826"
+               BuildableName = "AuthenticationTests.xctest"
+               BlueprintName = "AuthenticationTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B18D41B0269C8167000C3826"
+               BuildableName = "JAuthenticationTests.xctest"
+               BlueprintName = "JAuthenticationTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
