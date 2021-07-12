@@ -74,6 +74,11 @@
 		B18D41DF269C85C0000C3826 /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D41E5269C8666000C3826 /* AuthenticationRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E4269C8666000C3826 /* AuthenticationRepositoryTests.swift */; };
 		B18D41E7269C925D000C3826 /* AuthenticationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E6269C925D000C3826 /* AuthenticationParserTests.swift */; };
+		B18D41EA269C947F000C3826 /* RemoteAuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E9269C947F000C3826 /* RemoteAuthenticationServiceTests.swift */; };
+		B18D41F1269C97AC000C3826 /* ValidateTokenUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41EF269C97A7000C3826 /* ValidateTokenUseCaseTests.swift */; };
+		B18D41F4269C9A73000C3826 /* SignInWithAppleUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41F2269C9A6E000C3826 /* SignInWithAppleUseCaseTests.swift */; };
+		B18D41F7269CA6AB000C3826 /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41F5269CA697000C3826 /* Adapters.swift */; };
+		B18D41F9269CA881000C3826 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41F8269CA881000C3826 /* LoginViewModelTests.swift */; };
 		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
 		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
 		B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */; };
@@ -338,6 +343,11 @@
 		B18D41BA269C8167000C3826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B18D41E4269C8666000C3826 /* AuthenticationRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositoryTests.swift; sourceTree = "<group>"; };
 		B18D41E6269C925D000C3826 /* AuthenticationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParserTests.swift; sourceTree = "<group>"; };
+		B18D41E9269C947F000C3826 /* RemoteAuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationServiceTests.swift; sourceTree = "<group>"; };
+		B18D41EF269C97A7000C3826 /* ValidateTokenUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTokenUseCaseTests.swift; sourceTree = "<group>"; };
+		B18D41F2269C9A6E000C3826 /* SignInWithAppleUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleUseCaseTests.swift; sourceTree = "<group>"; };
+		B18D41F5269CA697000C3826 /* Adapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
+		B18D41F8269CA881000C3826 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationService.swift; sourceTree = "<group>"; };
 		B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
 		B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
@@ -842,6 +852,7 @@
 			isa = PBXGroup;
 			children = (
 				B18D41E3269C863C000C3826 /* Data */,
+				B18D41EB269C977B000C3826 /* Scenes */,
 				B18D418F269C7FF7000C3826 /* AuthenticationTests.swift */,
 			);
 			path = Sources;
@@ -858,10 +869,53 @@
 		B18D41E3269C863C000C3826 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B18D41E8269C9471000C3826 /* Service */,
 				B18D41E4269C8666000C3826 /* AuthenticationRepositoryTests.swift */,
 				B18D41E6269C925D000C3826 /* AuthenticationParserTests.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		B18D41E8269C9471000C3826 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B18D41E9269C947F000C3826 /* RemoteAuthenticationServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B18D41EB269C977B000C3826 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B18D41EC269C9784000C3826 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B18D41EC269C9784000C3826 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B18D41ED269C978C000C3826 /* Domain */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		B18D41ED269C978C000C3826 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				B18D41EE269C9792000C3826 /* UseCases */,
+				B18D41F8269CA881000C3826 /* LoginViewModelTests.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B18D41EE269C9792000C3826 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B18D41EF269C97A7000C3826 /* ValidateTokenUseCaseTests.swift */,
+				B18D41F2269C9A6E000C3826 /* SignInWithAppleUseCaseTests.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		B19AC3F92693513E0095AF06 /* Service */ = {
@@ -1156,6 +1210,7 @@
 			isa = PBXGroup;
 			children = (
 				D7EF264126910CD700D8EA87 /* LoginAssembler.swift */,
+				B18D41F5269CA697000C3826 /* Adapters.swift */,
 				D7EF264826911B5000D8EA87 /* Domain */,
 				D7EF264026910CCB00D8EA87 /* View */,
 			);
@@ -1816,6 +1871,7 @@
 				B18D41D0269C8276000C3826 /* AuthenticationEndpoint.swift in Sources */,
 				B18D41CE269C8276000C3826 /* AuthenticationParser.swift in Sources */,
 				B18D41D2269C827D000C3826 /* SceneFactory.swift in Sources */,
+				B18D41F7269CA6AB000C3826 /* Adapters.swift in Sources */,
 				B18D41CF269C8276000C3826 /* AuthenticationRepository.swift in Sources */,
 				B18D41D5269C8287000C3826 /* LoginAssembler.swift in Sources */,
 				B18D41D1269C8276000C3826 /* RemoteAuthenticationService.swift in Sources */,
@@ -1835,8 +1891,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18D41E7269C925D000C3826 /* AuthenticationParserTests.swift in Sources */,
+				B18D41EA269C947F000C3826 /* RemoteAuthenticationServiceTests.swift in Sources */,
 				B18D41CA269C81BB000C3826 /* AuthenticationTests.swift in Sources */,
 				B18D41E5269C8666000C3826 /* AuthenticationRepositoryTests.swift in Sources */,
+				B18D41F4269C9A73000C3826 /* SignInWithAppleUseCaseTests.swift in Sources */,
+				B18D41F9269CA881000C3826 /* LoginViewModelTests.swift in Sources */,
+				B18D41F1269C97AC000C3826 /* ValidateTokenUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,8 +5,7 @@ enum ValidateTokenUseCaseError: Error {
 }
 
 protocol ValidateTokenUseCaseProtocol {
-    typealias Completion = (Result<Void, ValidateTokenUseCaseError>) -> Void
-    func execute(then handle: Completion)
+    func execute() -> Result<Void, ValidateTokenUseCaseError>
 }
 
 final class ValidateTokenUseCase: ValidateTokenUseCaseProtocol {
@@ -21,10 +20,9 @@ final class ValidateTokenUseCase: ValidateTokenUseCaseProtocol {
         self.tokenProvider = tokenProvider
     }
 
-    func execute(then handle: Completion) {
-        handle(tokenProvider.token
+    func execute() -> Result<Void, ValidateTokenUseCaseError> {
+        tokenProvider.token
                 .mapError { _ in .invalidToken }
                 .map { _ in }
-        )
     }
 }

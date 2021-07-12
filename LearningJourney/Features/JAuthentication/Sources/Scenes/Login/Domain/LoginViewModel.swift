@@ -43,23 +43,25 @@ final class LoginViewModel: LoginViewModeling {
     // MARK: - View modeling
     
     func handleOnAppear() {
-        useCases.validateTokenUseCase.execute { result in
-            switch result {
-            case .success:
-                dismiss()
-            case .failure:
-                viewState = .result
-            }
+        let result = useCases
+            .validateTokenUseCase
+            .execute()
+        
+        switch result {
+        case .success:
+            dismiss()
+        case .failure:
+            viewState = .result
         }
     }
     
-    func handleRequest(request: ASAuthorizationAppleIDRequest) {
+    func handleRequest(request: ASAuthorizationAppleIDRequest) { // TODO this should be testable
         request.requestedScopes = [.email, .fullName]
     }
     
     func handleCompletion(result: Result<ASAuthorization, Error>) {
         viewState = .loading
-        useCases.signInWithAppleUseCase.execute(using: result) { [weak self] result in
+        useCases.signInWithAppleUseCase.execute(using: result.map { $0 }) { [weak self] result in
             self?.viewState = .result
             switch result {
             case .success:

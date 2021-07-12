@@ -3,7 +3,7 @@ import AuthenticationServices
 protocol SignInWithAppleUseCaseProtocol {
     typealias Completion = (Result<Void, SignInWithAppleUseCaseError>) -> Void
     func execute(
-        using result:  Result<ASAuthorization, Error>,
+        using result:  Result<ASAuthorizationProtocol, Error>,
         then handle: @escaping Completion)
 }
 
@@ -28,7 +28,7 @@ final class SignInWithAppleUseCase: SignInWithAppleUseCaseProtocol {
     // MARK: - Usecase methods
     
     func execute(
-        using result:  Result<ASAuthorization, Error>,
+        using result:  Result<ASAuthorizationProtocol, Error>,
         then handle: @escaping Completion) {
         switch result {
         case let .success(authorization):
@@ -40,8 +40,8 @@ final class SignInWithAppleUseCase: SignInWithAppleUseCaseProtocol {
     
     // MARK: - Helpers
     
-    private func handleSiwaSuccess(using authorization: ASAuthorization, completion: @escaping Completion) {
-        guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential
+    private func handleSiwaSuccess(using authorization: ASAuthorizationProtocol, completion: @escaping Completion) {
+        guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredentialProtocol
         else {
             completion(.failure(.invalidCredentialType))
             return
