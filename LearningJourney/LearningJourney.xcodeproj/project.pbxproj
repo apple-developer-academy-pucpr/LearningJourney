@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		110730122698FB5600B7D261 /* LoginViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730112698FB5600B7D261 /* LoginViewModelMock.swift */; };
-		110730142699025A00B7D261 /* FeatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730132699025A00B7D261 /* FeatureRow.swift */; };
 		B123D9A2269BA88E00671D11 /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123D9A1269BA88E00671D11 /* LearningJourneyTests.swift */; };
 		B123DA2D269BAB5D00671D11 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
 		B123DA34269BAB5D00671D11 /* CoreNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B123DA26269BAB5D00671D11 /* CoreNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,7 +33,6 @@
 		B123DA95269BAD7600671D11 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A194F2694D8EE00507E15 /* TokenManager.swift */; };
 		B123DA9B269BADA100671D11 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
 		B123DA9C269BADA100671D11 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B161E0AF269750D200D79A8D /* ValidateTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */; };
 		B17B23C126864FCD006E060A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
 		B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
 		B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C42686500E006E060A /* LibraryAssembler.swift */; };
@@ -57,10 +54,24 @@
 		B18D41BE269C8167000C3826 /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; };
 		B18D41BF269C8167000C3826 /* JAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D41CA269C81BB000C3826 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D418F269C7FF7000C3826 /* AuthenticationTests.swift */; };
-		B19AC3FC269351520095AF06 /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */; };
-		B19AC3FE269351B90095AF06 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */; };
-		B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */; };
-		B19AC4012693521E0095AF06 /* RemoteAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */; };
+		B18D41CC269C826A000C3826 /* AuthenticationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */; };
+		B18D41CD269C826F000C3826 /* LoginViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730112698FB5600B7D261 /* LoginViewModelMock.swift */; };
+		B18D41CE269C8276000C3826 /* AuthenticationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */; };
+		B18D41CF269C8276000C3826 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */; };
+		B18D41D0269C8276000C3826 /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */; };
+		B18D41D1269C8276000C3826 /* RemoteAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */; };
+		B18D41D2269C827D000C3826 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263A2691089400D8EA87 /* SceneFactory.swift */; };
+		B18D41D3269C827D000C3826 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26382691085D00D8EA87 /* AuthenticationCoordinator.swift */; };
+		B18D41D4269C8287000C3826 /* SignInWithAppleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF264A26911B6900D8EA87 /* SignInWithAppleUseCase.swift */; };
+		B18D41D5269C8287000C3826 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF264126910CD700D8EA87 /* LoginAssembler.swift */; };
+		B18D41D6269C8287000C3826 /* ValidateTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */; };
+		B18D41D7269C8287000C3826 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26442691174F00D8EA87 /* LoginViewModel.swift */; };
+		B18D41D8269C828C000C3826 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263E26910B9300D8EA87 /* LoginView.swift */; };
+		B18D41D9269C828C000C3826 /* FeatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730132699025A00B7D261 /* FeatureRow.swift */; };
+		B18D41DA269C85C0000C3826 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
+		B18D41DB269C85C0000C3826 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B18D41DE269C85C0000C3826 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
+		B18D41DF269C85C0000C3826 /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
 		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
 		B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */; };
@@ -91,13 +102,6 @@
 		B1E6FA4E269BB067001AB07F /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */; };
 		B1EF15BB269BDC5F00422192 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A22699D22B00DF335D /* Development.xcconfig */; };
 		B1EF15BC269BDC5F00422192 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A32699D26800DF335D /* Production.xcconfig */; };
-		D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */; };
-		D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26382691085D00D8EA87 /* AuthenticationCoordinator.swift */; };
-		D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263A2691089400D8EA87 /* SceneFactory.swift */; };
-		D7EF263F26910B9300D8EA87 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263E26910B9300D8EA87 /* LoginView.swift */; };
-		D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF264126910CD700D8EA87 /* LoginAssembler.swift */; };
-		D7EF26452691174F00D8EA87 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26442691174F00D8EA87 /* LoginViewModel.swift */; };
-		D7EF264B26911B6900D8EA87 /* SignInWithAppleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF264A26911B6900D8EA87 /* SignInWithAppleUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,6 +196,20 @@
 			remoteGlobalIDString = B18D41A8269C8167000C3826;
 			remoteInfo = JAuthentication;
 		};
+		B18D41DC269C85C0000C3826 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B123DA74269BAD5A00671D11;
+			remoteInfo = CoreAuthentication;
+		};
+		B18D41E0269C85C0000C3826 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B123DA23269BAB5D00671D11;
+			remoteInfo = CoreNetworking;
+		};
 		B1E6FA33269BAEEC001AB07F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
@@ -241,6 +259,18 @@
 				B123DA6C269BAD0A00671D11 /* CoreAdapters.framework in Embed Frameworks */,
 				B1E6FA4B269BB03B001AB07F /* CoreEnvironment.framework in Embed Frameworks */,
 				B123DA9C269BADA100671D11 /* CoreAuthentication.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18D41E2269C85C0000C3826 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B18D41DB269C85C0000C3826 /* CoreAuthentication.framework in Embed Frameworks */,
+				B18D41DF269C85C0000C3826 /* CoreNetworking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +465,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18D41DA269C85C0000C3826 /* CoreAuthentication.framework in Frameworks */,
+				B18D41DE269C85C0000C3826 /* CoreNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +625,6 @@
 		B17B23BD26864FA5006E060A /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				D7EF26342691082300D8EA87 /* Authentication */,
 				B17B23BE26864FBA006E060A /* Library */,
 			);
 			path = Features;
@@ -785,6 +816,11 @@
 		B18D419E269C8039000C3826 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */,
+				110730102698FB2400B7D261 /* Preview */,
+				B18A194E2694D86A00507E15 /* Data */,
+				D7EF26372691085200D8EA87 /* Routing */,
+				D7EF263C26910B3800D8EA87 /* Scenes */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1083,18 +1119,6 @@
 				B1E6FA3A269BAEEC001AB07F /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		D7EF26342691082300D8EA87 /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */,
-				110730102698FB2400B7D261 /* Preview */,
-				B18A194E2694D86A00507E15 /* Data */,
-				D7EF26372691085200D8EA87 /* Routing */,
-				D7EF263C26910B3800D8EA87 /* Scenes */,
-			);
-			path = Authentication;
 			sourceTree = "<group>";
 		};
 		D7EF26372691085200D8EA87 /* Routing */ = {
@@ -1403,10 +1427,13 @@
 				B18D41A5269C8167000C3826 /* Sources */,
 				B18D41A6269C8167000C3826 /* Frameworks */,
 				B18D41A7269C8167000C3826 /* Resources */,
+				B18D41E2269C85C0000C3826 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B18D41DD269C85C0000C3826 /* PBXTargetDependency */,
+				B18D41E1269C85C0000C3826 /* PBXTargetDependency */,
 			);
 			name = JAuthentication;
 			productName = JAuthentication;
@@ -1540,14 +1567,14 @@
 				B123DA74269BAD5A00671D11 /* CoreAuthentication */,
 				B1E6FA28269BAEEC001AB07F /* CoreEnvironment */,
 				B123DA23269BAB5D00671D11 /* CoreNetworking */,
+				B18D41A8269C8167000C3826 /* JAuthentication */,
 				B18D4150269C7CDB000C3826 /* UI */,
 				B123DA52269BACAB00671D11 /* CoreAdaptersTests */,
 				B123DA7C269BAD5A00671D11 /* CoreAuthenticationTests */,
 				B1E6FA30269BAEEC001AB07F /* CoreEnvironmentTests */,
 				B123DA2B269BAB5D00671D11 /* CoreNetworkingTests */,
-				B18D4158269C7CDB000C3826 /* UITests */,
-				B18D41A8269C8167000C3826 /* JAuthentication */,
 				B18D41B0269C8167000C3826 /* JAuthenticationTests */,
+				B18D4158269C7CDB000C3826 /* UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1722,32 +1749,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B19AC3FC269351520095AF06 /* AuthenticationEndpoint.swift in Sources */,
 				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
 				B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */,
-				D7EF26362691082D00D8EA87 /* AuthenticationFeature.swift in Sources */,
 				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
-				110730142699025A00B7D261 /* FeatureRow.swift in Sources */,
 				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
 				B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */,
-				B19AC4012693521E0095AF06 /* RemoteAuthenticationService.swift in Sources */,
 				B1BFE7CC2687E79300FAFF5D /* ObjectivesListViewModel.swift in Sources */,
-				B161E0AF269750D200D79A8D /* ValidateTokenUseCase.swift in Sources */,
 				B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */,
 				B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */,
 				B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */,
 				B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */,
 				B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */,
-				D7EF264B26911B6900D8EA87 /* SignInWithAppleUseCase.swift in Sources */,
 				B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */,
-				B19AC400269351DB0095AF06 /* AuthenticationParser.swift in Sources */,
-				D7EF263B2691089400D8EA87 /* SceneFactory.swift in Sources */,
-				D7EF26392691085D00D8EA87 /* AuthenticationCoordinator.swift in Sources */,
 				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
-				D7EF264226910CD700D8EA87 /* LoginAssembler.swift in Sources */,
 				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
-				B19AC3FE269351B90095AF06 /* AuthenticationRepository.swift in Sources */,
-				110730122698FB5600B7D261 /* LoginViewModelMock.swift in Sources */,
 				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
 				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
 				B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */,
@@ -1756,11 +1771,9 @@
 				B1BFE7C72687E6EF00FAFF5D /* ObjectivesListView.swift in Sources */,
 				B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */,
 				B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */,
-				D7EF263F26910B9300D8EA87 /* LoginView.swift in Sources */,
 				B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */,
 				B1BFE7C12687ACB200FAFF5D /* LearningGoal.swift in Sources */,
 				B1BFE7B82687775D00FAFF5D /* LearningStrandRow.swift in Sources */,
-				D7EF26452691174F00D8EA87 /* LoginViewModel.swift in Sources */,
 				B1BFE7BF2687A5EC00FAFF5D /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1786,6 +1799,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18D41D0269C8276000C3826 /* AuthenticationEndpoint.swift in Sources */,
+				B18D41CE269C8276000C3826 /* AuthenticationParser.swift in Sources */,
+				B18D41D2269C827D000C3826 /* SceneFactory.swift in Sources */,
+				B18D41CF269C8276000C3826 /* AuthenticationRepository.swift in Sources */,
+				B18D41D5269C8287000C3826 /* LoginAssembler.swift in Sources */,
+				B18D41D1269C8276000C3826 /* RemoteAuthenticationService.swift in Sources */,
+				B18D41D4269C8287000C3826 /* SignInWithAppleUseCase.swift in Sources */,
+				B18D41CD269C826F000C3826 /* LoginViewModelMock.swift in Sources */,
+				B18D41D7269C8287000C3826 /* LoginViewModel.swift in Sources */,
+				B18D41D9269C828C000C3826 /* FeatureRow.swift in Sources */,
+				B18D41D3269C827D000C3826 /* AuthenticationCoordinator.swift in Sources */,
+				B18D41D8269C828C000C3826 /* LoginView.swift in Sources */,
+				B18D41CC269C826A000C3826 /* AuthenticationFeature.swift in Sources */,
+				B18D41D6269C8287000C3826 /* ValidateTokenUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1880,6 +1907,16 @@
 			isa = PBXTargetDependency;
 			target = B18D41A8269C8167000C3826 /* JAuthentication */;
 			targetProxy = B18D41BC269C8167000C3826 /* PBXContainerItemProxy */;
+		};
+		B18D41DD269C85C0000C3826 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B123DA74269BAD5A00671D11 /* CoreAuthentication */;
+			targetProxy = B18D41DC269C85C0000C3826 /* PBXContainerItemProxy */;
+		};
+		B18D41E1269C85C0000C3826 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B123DA23269BAB5D00671D11 /* CoreNetworking */;
+			targetProxy = B18D41E0269C85C0000C3826 /* PBXContainerItemProxy */;
 		};
 		B1E6FA34269BAEEC001AB07F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2363,7 +2400,7 @@
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2390,7 +2427,7 @@
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2558,6 +2595,7 @@
 		B18D41C4269C8167000C3826 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				INFOPLIST_FILE = Features/JAuthentication/Tests/Resources/Info.plist;
@@ -2576,6 +2614,7 @@
 		B18D41C5269C8167000C3826 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				INFOPLIST_FILE = Features/JAuthentication/Tests/Resources/Info.plist;

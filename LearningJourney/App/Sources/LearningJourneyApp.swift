@@ -9,6 +9,7 @@ import SwiftUI
 
 import CoreAuthentication
 import CoreEnvironment
+import JAuthentication
 
 @main
 struct LearningJourneyApp: App {
@@ -22,7 +23,7 @@ struct LearningJourneyApp: App {
     var body: some Scene {
         WindowGroup {
             libraryFeature.resolve()
-                .authenticationSheet(assembler: LoginAssembler()) // TODO handle this gracefully
+                .authenticationSheet() // TODO handle this gracefully
         }
     }
 }

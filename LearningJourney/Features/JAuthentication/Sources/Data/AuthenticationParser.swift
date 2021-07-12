@@ -1,5 +1,9 @@
 import Foundation
 
+enum ParsingError: Error {
+    case invalidData(Error)
+}
+
 protocol AuthenticationParsing {
     func parse<T: Decodable>(_ data: Data) -> Result<T, ParsingError>
 }

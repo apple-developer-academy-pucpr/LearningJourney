@@ -83,9 +83,9 @@ struct LoginPresentationModifier<ViewModel>: ViewModifier where ViewModel: Login
     }
 }
 
-extension View {
-    func authenticationSheet(assembler: LoginAssembling) -> some View {
-        let view = assembler.assemble()
+public extension View {
+    func authenticationSheet() -> some View {
+        let view = LoginAssembler().assemble()
         return modifier(LoginPresentationModifier(
                         viewModel: view.viewModel,
                         loginView: AnyView(view)))

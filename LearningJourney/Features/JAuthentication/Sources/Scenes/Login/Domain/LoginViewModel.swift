@@ -84,6 +84,6 @@ final class LoginViewModel: LoginViewModeling {
     }
 }
 
-extension Notification.Name {
+public extension Notification.Name {
     static let authDidChange: Notification.Name = .init("authdidchange")
 }
