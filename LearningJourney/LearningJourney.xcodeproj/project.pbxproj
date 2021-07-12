@@ -430,15 +430,6 @@
 			path = Preview;
 			sourceTree = "<group>";
 		};
-		B123D9A0269BA88E00671D11 /* LearningJourneyTests */ = {
-			isa = PBXGroup;
-			children = (
-				B123D9A3269BA88E00671D11 /* Info.plist */,
-				B123D9A1269BA88E00671D11 /* LearningJourneyTests.swift */,
-			);
-			path = LearningJourneyTests;
-			sourceTree = "<group>";
-		};
 		B123DA25269BAB5D00671D11 /* CoreNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,14 +494,6 @@
 				B1E6FA21269BAE42001AB07F /* TokenPayload.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
-		};
-		B12857A12699D21200DF335D /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-				B12857A62699D6CD00DF335D /* Info.plist */,
-			);
-			path = Environment;
 			sourceTree = "<group>";
 		};
 		B15F7831269C7819009315A3 /* UI */ = {
@@ -648,7 +631,6 @@
 			children = (
 				B1E6FA23269BAE9E001AB07F /* Core */,
 				B18C4CB22683F5D100A150CD /* LearningJourney */,
-				B123D9A0269BA88E00671D11 /* LearningJourneyTests */,
 				B18C4CB12683F5D100A150CD /* Products */,
 				B123DA3B269BAB8200671D11 /* Frameworks */,
 			);
@@ -676,22 +658,56 @@
 		B18C4CB22683F5D100A150CD /* LearningJourney */ = {
 			isa = PBXGroup;
 			children = (
-				D7EF264626911AAF00D8EA87 /* LearningJourney.entitlements */,
-				B12857A12699D21200DF335D /* Environment */,
+				B18D4175269C7E72000C3826 /* Resources */,
+				B18D4174269C7E6E000C3826 /* Sources */,
+				B18D4176269C7E76000C3826 /* Tests */,
 				B17B23BD26864FA5006E060A /* Features */,
-				B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */,
-				B18C4CB72683F5D200A150CD /* Assets.xcassets */,
-				B18C4CB92683F5D200A150CD /* Preview Content */,
 			);
 			path = LearningJourney;
 			sourceTree = "<group>";
 		};
-		B18C4CB92683F5D200A150CD /* Preview Content */ = {
+		B18D4174269C7E6E000C3826 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B18C4CBA2683F5D200A150CD /* Preview Assets.xcassets */,
+				B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */,
 			);
-			path = "Preview Content";
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B18D4175269C7E72000C3826 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B18C4CB72683F5D200A150CD /* Assets.xcassets */,
+				B18C4CBA2683F5D200A150CD /* Preview Assets.xcassets */,
+				B12857A62699D6CD00DF335D /* Info.plist */,
+				D7EF264626911AAF00D8EA87 /* LearningJourney.entitlements */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B18D4176269C7E76000C3826 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B18D4178269C7E9B000C3826 /* Resources */,
+				B18D4177269C7E97000C3826 /* Sources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B18D4177269C7E97000C3826 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B123D9A1269BA88E00671D11 /* LearningJourneyTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B18D4178269C7E9B000C3826 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B123D9A3269BA88E00671D11 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B19AC3F92693513E0095AF06 /* Service */ = {
@@ -2147,10 +2163,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Resources\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = LearningJourney/Environment/Info.plist;
+				INFOPLIST_FILE = LearningJourney/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2174,10 +2190,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Resources\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = LearningJourney/Environment/Info.plist;
+				INFOPLIST_FILE = LearningJourney/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
