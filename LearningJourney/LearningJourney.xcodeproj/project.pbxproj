@@ -629,8 +629,8 @@
 		B18C4CA72683F5D100A150CD = {
 			isa = PBXGroup;
 			children = (
+				B18C4CB22683F5D100A150CD /* App */,
 				B1E6FA23269BAE9E001AB07F /* Core */,
-				B18C4CB22683F5D100A150CD /* LearningJourney */,
 				B18C4CB12683F5D100A150CD /* Products */,
 				B123DA3B269BAB8200671D11 /* Frameworks */,
 			);
@@ -655,7 +655,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B18C4CB22683F5D100A150CD /* LearningJourney */ = {
+		B18C4CB22683F5D100A150CD /* App */ = {
 			isa = PBXGroup;
 			children = (
 				B18D4175269C7E72000C3826 /* Resources */,
@@ -663,7 +663,7 @@
 				B18D4176269C7E76000C3826 /* Tests */,
 				B17B23BD26864FA5006E060A /* Features */,
 			);
-			path = LearningJourney;
+			path = App;
 			sourceTree = "<group>";
 		};
 		B18D4174269C7E6E000C3826 /* Sources */ = {
@@ -2163,10 +2163,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Resources\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Resources\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = LearningJourney/Resources/Info.plist;
+				INFOPLIST_FILE = App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2190,10 +2190,10 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_ASSET_PATHS = "\"LearningJourney/Resources\"";
+				DEVELOPMENT_ASSET_PATHS = "\"App/Resources\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = LearningJourney/Resources/Info.plist;
+				INFOPLIST_FILE = App/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
