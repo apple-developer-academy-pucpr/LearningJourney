@@ -73,6 +73,7 @@
 		B18D41DE269C85C0000C3826 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
 		B18D41DF269C85C0000C3826 /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D41E5269C8666000C3826 /* AuthenticationRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E4269C8666000C3826 /* AuthenticationRepositoryTests.swift */; };
+		B18D41E7269C925D000C3826 /* AuthenticationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E6269C925D000C3826 /* AuthenticationParserTests.swift */; };
 		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
 		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
 		B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */; };
@@ -336,6 +337,7 @@
 		B18D41B1269C8167000C3826 /* JAuthenticationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JAuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18D41BA269C8167000C3826 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B18D41E4269C8666000C3826 /* AuthenticationRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositoryTests.swift; sourceTree = "<group>"; };
+		B18D41E6269C925D000C3826 /* AuthenticationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParserTests.swift; sourceTree = "<group>"; };
 		B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationService.swift; sourceTree = "<group>"; };
 		B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
 		B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
@@ -857,6 +859,7 @@
 			isa = PBXGroup;
 			children = (
 				B18D41E4269C8666000C3826 /* AuthenticationRepositoryTests.swift */,
+				B18D41E6269C925D000C3826 /* AuthenticationParserTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1831,6 +1834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18D41E7269C925D000C3826 /* AuthenticationParserTests.swift in Sources */,
 				B18D41CA269C81BB000C3826 /* AuthenticationTests.swift in Sources */,
 				B18D41E5269C8666000C3826 /* AuthenticationRepositoryTests.swift in Sources */,
 			);
