@@ -6,8 +6,6 @@ protocol TokenCacheServicing {
     func cache(token: Data) -> Bool
 }
 
-// TODO figure out how to mock Keychain functions
-// TODO Consider creating a wrapper for Keychain
 final class TokenCacheService: TokenCacheServicing {
     
     // MARK: - Inner types
@@ -29,11 +27,19 @@ final class TokenCacheService: TokenCacheServicing {
     }
     
     // MARK: - Properties
-    
+    private let keychainManager: KeychainManaging
     private let lock = NSLock()
     private var lastQueryParameters: [String: Any]?
     private(set) var lastResultCode: OSStatus = noErr
     
+    // MARK: - Initialization
+    
+    init(
+        keychainManager: KeychainManaging = KeychainManager()
+    ) {
+        self.keychainManager = keychainManager
+    }
+
     // MARK: - Caching
     
     var token: Data? {
@@ -42,6 +48,7 @@ final class TokenCacheService: TokenCacheServicing {
         return fetchItem(for: Constants.Keys.token)
     }
     
+    @discardableResult
     func cache(token: Data) -> Bool {
         lock.lock()
         defer { lock.unlock() }
@@ -57,7 +64,7 @@ final class TokenCacheService: TokenCacheServicing {
         ]
         
         lastQueryParameters = query
-        lastResultCode = SecItemDelete(query as CFDictionary)
+        lastResultCode = keychainManager.delete(query as CFDictionary)
         
         return lastResultCode == noErr || lastResultCode == errSecItemNotFound
     }
@@ -76,7 +83,7 @@ final class TokenCacheService: TokenCacheServicing {
          
         lastQueryParameters = query
         
-        lastResultCode = SecItemAdd(query as CFDictionary, nil)
+        lastResultCode = keychainManager.add(query as CFDictionary, nil)
         
         return lastResultCode == noErr
     }
@@ -91,9 +98,9 @@ final class TokenCacheService: TokenCacheServicing {
         ]
         
         lastQueryParameters = query
-        lastResultCode = SecItemAdd(query as CFDictionary, nil)
+        lastResultCode = keychainManager.add(query as CFDictionary, nil)
         lastResultCode = withUnsafeMutablePointer(to: &result) {
-            SecItemCopyMatching(query as CFDictionary, UnsafeMutablePointer($0))
+            keychainManager.copy(query as CFDictionary, UnsafeMutablePointer($0))
         }
         
         guard lastResultCode == noErr else { return nil }
@@ -101,7 +108,7 @@ final class TokenCacheService: TokenCacheServicing {
     }
 }
 
-//#if DEBUG
+#if DEBUG
 
 extension TokenCacheService {
     func clear() {
@@ -110,10 +117,10 @@ extension TokenCacheService {
         defer { lock.unlock() }
         
         let query = [kSecClass : kSecClassGenericPassword]
-        let result = SecItemDelete(query as CFDictionary)
+        let result = keychainManager.delete(query as CFDictionary)
         
-        guard result == noErr || result == -25300 else { fatalError("Failed to clear keychain! \(result) \(SecCopyErrorMessageString(result, nil))")}
+        guard result == noErr || result == -25300 else { fatalError("Failed to clear keychain! \(result) \(String(describing: SecCopyErrorMessageString(result, nil)))") }
     }
 }
 
-//#endif
+#endif

@@ -79,6 +79,8 @@
 		B18D41F4269C9A73000C3826 /* SignInWithAppleUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41F2269C9A6E000C3826 /* SignInWithAppleUseCaseTests.swift */; };
 		B18D41F7269CA6AB000C3826 /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41F5269CA697000C3826 /* Adapters.swift */; };
 		B18D41F9269CA881000C3826 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41F8269CA881000C3826 /* LoginViewModelTests.swift */; };
+		B18D41FB269CBD78000C3826 /* TokenCacheServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41FA269CBD78000C3826 /* TokenCacheServiceTests.swift */; };
+		B18D41FD269CC3C3000C3826 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41FC269CC3C3000C3826 /* KeychainManager.swift */; };
 		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
 		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
 		B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */; };
@@ -348,6 +350,8 @@
 		B18D41F2269C9A6E000C3826 /* SignInWithAppleUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleUseCaseTests.swift; sourceTree = "<group>"; };
 		B18D41F5269CA697000C3826 /* Adapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
 		B18D41F8269CA881000C3826 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		B18D41FA269CBD78000C3826 /* TokenCacheServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCacheServiceTests.swift; sourceTree = "<group>"; };
+		B18D41FC269CC3C3000C3826 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationService.swift; sourceTree = "<group>"; };
 		B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
 		B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
@@ -580,6 +584,7 @@
 				B19AC455269359FD0095AF06 /* TokenCacheService.swift */,
 				B18A194F2694D8EE00507E15 /* TokenManager.swift */,
 				B1E6FA21269BAE42001AB07F /* TokenPayload.swift */,
+				B18D41FC269CC3C3000C3826 /* KeychainManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1141,6 +1146,7 @@
 			isa = PBXGroup;
 			children = (
 				B123DA84269BAD5B00671D11 /* TokenManagerTests.swift */,
+				B18D41FA269CBD78000C3826 /* TokenCacheServiceTests.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1803,6 +1809,7 @@
 				B1E6FA22269BAE42001AB07F /* TokenPayload.swift in Sources */,
 				B123DA94269BAD7600671D11 /* TokenCacheService.swift in Sources */,
 				B123DA95269BAD7600671D11 /* TokenManager.swift in Sources */,
+				B18D41FD269CC3C3000C3826 /* KeychainManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1810,6 +1817,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18D41FB269CBD78000C3826 /* TokenCacheServiceTests.swift in Sources */,
 				B123DA85269BAD5B00671D11 /* TokenManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

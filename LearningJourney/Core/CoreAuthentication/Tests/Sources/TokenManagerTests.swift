@@ -45,7 +45,7 @@ final class TokenManagerTests: XCTestCase {
     func test_token_whenTokenIsCached_itShouldReturnTokenPayload() throws {
         // Given
         let expectedString = "token"
-        spy.token = .tokenFixture(expectedString)
+        spy.token = try .tokenFixture(token: expectedString)
         // When
         let token = sut.token
         
