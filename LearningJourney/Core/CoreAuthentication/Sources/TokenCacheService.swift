@@ -3,7 +3,6 @@ import Foundation
 
 protocol TokenCacheServicing {
     var token: Data? { get }
-    var lastResultCode: OSStatus { get }
     func cache(token: Data) -> Bool
 }
 

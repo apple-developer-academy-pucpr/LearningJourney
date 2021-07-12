@@ -27,7 +27,7 @@
 		B123DA6B269BAD0A00671D11 /* CoreAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; };
 		B123DA6C269BAD0A00671D11 /* CoreAdapters.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B123DA7E269BAD5B00671D11 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
-		B123DA85269BAD5B00671D11 /* CoreAuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123DA84269BAD5B00671D11 /* CoreAuthenticationTests.swift */; };
+		B123DA85269BAD5B00671D11 /* TokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123DA84269BAD5B00671D11 /* TokenManagerTests.swift */; };
 		B123DA87269BAD5B00671D11 /* CoreAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = B123DA77269BAD5A00671D11 /* CoreAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B123DA8A269BAD5B00671D11 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
 		B123DA8B269BAD5B00671D11 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -150,13 +150,6 @@
 			remoteGlobalIDString = B123DA74269BAD5A00671D11;
 			remoteInfo = CoreAuthentication;
 		};
-		B123DA81269BAD5B00671D11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B18C4CAF2683F5D100A150CD;
-			remoteInfo = LearningJourney;
-		};
 		B123DA88269BAD5B00671D11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
@@ -255,7 +248,7 @@
 		B123DA77269BAD5A00671D11 /* CoreAuthentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreAuthentication.h; sourceTree = "<group>"; };
 		B123DA78269BAD5A00671D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B123DA7D269BAD5A00671D11 /* CoreAuthenticationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreAuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B123DA84269BAD5B00671D11 /* CoreAuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAuthenticationTests.swift; sourceTree = "<group>"; };
+		B123DA84269BAD5B00671D11 /* TokenManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManagerTests.swift; sourceTree = "<group>"; };
 		B123DA86269BAD5B00671D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12857A22699D22B00DF335D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		B12857A32699D26800DF335D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
@@ -452,20 +445,21 @@
 		B123DA4C269BACAB00671D11 /* CoreAdapters */ = {
 			isa = PBXGroup;
 			children = (
+				B1EF15AC269BCF0200422192 /* Resources */,
 				B123DA68269BACB600671D11 /* Sources */,
+				B123DA59269BACAB00671D11 /* Tests */,
 				B123DA4D269BACAB00671D11 /* CoreAdapters.h */,
-				B123DA4E269BACAB00671D11 /* Info.plist */,
 			);
 			path = CoreAdapters;
 			sourceTree = "<group>";
 		};
-		B123DA59269BACAB00671D11 /* CoreAdaptersTests */ = {
+		B123DA59269BACAB00671D11 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA5A269BACAB00671D11 /* CoreAdaptersTests.swift */,
-				B123DA5C269BACAC00671D11 /* Info.plist */,
+				B1EF15AF269BD05C00422192 /* Sources */,
+				B1EF15AE269BD04B00422192 /* Resources */,
 			);
-			path = CoreAdaptersTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		B123DA68269BACB600671D11 /* Sources */ = {
@@ -480,9 +474,6 @@
 		B123DA76269BAD5A00671D11 /* CoreAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA93269BAD6B00671D11 /* Sources */,
-				B123DA77269BAD5A00671D11 /* CoreAuthentication.h */,
-				B123DA78269BAD5A00671D11 /* Info.plist */,
 			);
 			path = CoreAuthentication;
 			sourceTree = "<group>";
@@ -490,8 +481,6 @@
 		B123DA83269BAD5B00671D11 /* CoreAuthenticationTests */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA84269BAD5B00671D11 /* CoreAuthenticationTests.swift */,
-				B123DA86269BAD5B00671D11 /* Info.plist */,
 			);
 			path = CoreAuthenticationTests;
 			sourceTree = "<group>";
@@ -764,6 +753,8 @@
 		B1E6FA23269BAE9E001AB07F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B1EF15B0269BD0B500422192 /* CoreAuthentication */,
+				B123DA4C269BACAB00671D11 /* CoreAdapters */,
 				B123DA25269BAB5D00671D11 /* CoreNetworking */,
 				B1E6FA47269BAF13001AB07F /* Modules */,
 				B1E6FA48269BAF1A001AB07F /* Tests */,
@@ -805,7 +796,6 @@
 		B1E6FA47269BAF13001AB07F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA4C269BACAB00671D11 /* CoreAdapters */,
 				B123DA76269BAD5A00671D11 /* CoreAuthentication */,
 				B1E6FA2A269BAEEC001AB07F /* CoreEnvironment */,
 			);
@@ -815,7 +805,6 @@
 		B1E6FA48269BAF1A001AB07F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA59269BACAB00671D11 /* CoreAdaptersTests */,
 				B123DA83269BAD5B00671D11 /* CoreAuthenticationTests */,
 				B1E6FA37269BAEEC001AB07F /* CoreEnvironmentTests */,
 			);
@@ -851,6 +840,74 @@
 			isa = PBXGroup;
 			children = (
 				B123DA33269BAB5D00671D11 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1EF15AC269BCF0200422192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA4E269BACAB00671D11 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1EF15AE269BD04B00422192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA5C269BACAC00671D11 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1EF15AF269BD05C00422192 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA5A269BACAB00671D11 /* CoreAdaptersTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B1EF15B0269BD0B500422192 /* CoreAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA77269BAD5A00671D11 /* CoreAuthentication.h */,
+				B1EF15B1269BD0D300422192 /* Resources */,
+				B123DA93269BAD6B00671D11 /* Sources */,
+				B1EF15B2269BD0DB00422192 /* Tests */,
+			);
+			path = CoreAuthentication;
+			sourceTree = "<group>";
+		};
+		B1EF15B1269BD0D300422192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA78269BAD5A00671D11 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1EF15B2269BD0DB00422192 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF15B4269BD0EE00422192 /* Resources */,
+				B1EF15B3269BD0E800422192 /* Sources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B1EF15B3269BD0E800422192 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA84269BAD5B00671D11 /* TokenManagerTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B1EF15B4269BD0EE00422192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA86269BAD5B00671D11 /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1084,7 +1141,6 @@
 			);
 			dependencies = (
 				B123DA80269BAD5B00671D11 /* PBXTargetDependency */,
-				B123DA82269BAD5B00671D11 /* PBXTargetDependency */,
 			);
 			name = CoreAuthenticationTests;
 			productName = CoreAuthenticationTests;
@@ -1181,7 +1237,6 @@
 					};
 					B123DA7C269BAD5A00671D11 = {
 						CreatedOnToolsVersion = 12.5;
-						TestTargetID = B18C4CAF2683F5D100A150CD;
 					};
 					B18C4CAF2683F5D100A150CD = {
 						CreatedOnToolsVersion = 12.5;
@@ -1359,7 +1414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B123DA85269BAD5B00671D11 /* CoreAuthenticationTests.swift in Sources */,
+				B123DA85269BAD5B00671D11 /* TokenManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1470,11 +1525,6 @@
 			isa = PBXTargetDependency;
 			target = B123DA74269BAD5A00671D11 /* CoreAuthentication */;
 			targetProxy = B123DA7F269BAD5B00671D11 /* PBXContainerItemProxy */;
-		};
-		B123DA82269BAD5B00671D11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B18C4CAF2683F5D100A150CD /* LearningJourney */;
-			targetProxy = B123DA81269BAD5B00671D11 /* PBXContainerItemProxy */;
 		};
 		B123DA89269BAD5B00671D11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1652,7 +1702,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Modules/CoreAdapters/Info.plist;
+				INFOPLIST_FILE = Core/CoreAdapters/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1680,7 +1730,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Modules/CoreAdapters/Info.plist;
+				INFOPLIST_FILE = Core/CoreAdapters/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1703,7 +1753,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
-				INFOPLIST_FILE = CoreAdaptersTests/Info.plist;
+				INFOPLIST_FILE = Core/CoreAdapters/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1723,7 +1773,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
-				INFOPLIST_FILE = CoreAdaptersTests/Info.plist;
+				INFOPLIST_FILE = Core/CoreAdapters/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1748,7 +1798,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Modules/CoreAuthentication/Info.plist;
+				INFOPLIST_FILE = Core/CoreAuthentication/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1776,7 +1826,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Modules/CoreAuthentication/Info.plist;
+				INFOPLIST_FILE = Core/CoreAuthentication/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1799,7 +1849,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
-				INFOPLIST_FILE = CoreAuthenticationTests/Info.plist;
+				INFOPLIST_FILE = Core/CoreAuthentication/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1809,7 +1859,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearningJourney.app/LearningJourney";
 			};
 			name = Debug;
 		};
@@ -1819,7 +1868,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
-				INFOPLIST_FILE = CoreAuthenticationTests/Info.plist;
+				INFOPLIST_FILE = Core/CoreAuthentication/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1829,7 +1878,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LearningJourney.app/LearningJourney";
 			};
 			name = Release;
 		};

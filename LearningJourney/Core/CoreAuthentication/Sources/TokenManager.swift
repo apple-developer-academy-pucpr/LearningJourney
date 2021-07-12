@@ -42,6 +42,7 @@ public final class TokenManager: TokenManaging {
         
     // MARK: - Token configurator
     
+    @discardableResult
     public func cache(token data: Data) -> Bool {
         cacheService.cache(token: data)
     }
