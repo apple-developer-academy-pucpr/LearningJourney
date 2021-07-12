@@ -79,7 +79,7 @@
 		B1E6FA3F269BAEEC001AB07F /* CoreEnvironment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1E6FA4A269BB03B001AB07F /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
 		B1E6FA4B269BB03B001AB07F /* CoreEnvironment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B1E6FA4E269BB067001AB07F /* EnvironmentFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */; };
+		B1E6FA4E269BB067001AB07F /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */; };
 		B1E6FA4F269BB06B001AB07F /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CC12683F5D200A150CD /* Production.plist */; };
 		B1E6FA50269BB06B001AB07F /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A22699D22B00DF335D /* Development.xcconfig */; };
 		B1E6FA51269BB06B001AB07F /* Development.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1E6FA49269BAF65001AB07F /* Development.plist */; };
@@ -259,7 +259,7 @@
 		B123DA86269BAD5B00671D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B12857A22699D22B00DF335D /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		B12857A32699D26800DF335D /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
-		B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentFacade.swift; sourceTree = "<group>"; };
+		B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentProvider.swift; sourceTree = "<group>"; };
 		B12857A62699D6CD00DF335D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B161E0AE269750D200D79A8D /* ValidateTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTokenUseCase.swift; sourceTree = "<group>"; };
 		B17B23C026864FCD006E060A /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -425,20 +425,12 @@
 		B123DA25269BAB5D00671D11 /* CoreNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				B1EF15A7269BB20500422192 /* Resources */,
 				B123DA40269BAB9B00671D11 /* Sources */,
+				B1EF15A6269BB1B800422192 /* Tests */,
 				B123DA26269BAB5D00671D11 /* CoreNetworking.h */,
-				B123DA27269BAB5D00671D11 /* Info.plist */,
 			);
 			path = CoreNetworking;
-			sourceTree = "<group>";
-		};
-		B123DA30269BAB5D00671D11 /* CoreNetworkingTests */ = {
-			isa = PBXGroup;
-			children = (
-				B123DA41269BAC0100671D11 /* Sources */,
-				B123DA33269BAB5D00671D11 /* Info.plist */,
-			);
-			path = CoreNetworkingTests;
 			sourceTree = "<group>";
 		};
 		B123DA3B269BAB8200671D11 /* Frameworks */ = {
@@ -453,14 +445,6 @@
 			children = (
 				B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */,
 				B1BFE75F26867BB000FAFF5D /* ApiEndpoint.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		B123DA41269BAC0100671D11 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				B123DA42269BAC1C00671D11 /* ApiRequestTests.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -780,6 +764,7 @@
 		B1E6FA23269BAE9E001AB07F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B123DA25269BAB5D00671D11 /* CoreNetworking */,
 				B1E6FA47269BAF13001AB07F /* Modules */,
 				B1E6FA48269BAF1A001AB07F /* Tests */,
 			);
@@ -812,7 +797,7 @@
 				B18C4CC12683F5D200A150CD /* Production.plist */,
 				B12857A22699D22B00DF335D /* Development.xcconfig */,
 				B12857A32699D26800DF335D /* Production.xcconfig */,
-				B12857A42699D2AA00DF335D /* EnvironmentFacade.swift */,
+				B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -823,7 +808,6 @@
 				B123DA4C269BACAB00671D11 /* CoreAdapters */,
 				B123DA76269BAD5A00671D11 /* CoreAuthentication */,
 				B1E6FA2A269BAEEC001AB07F /* CoreEnvironment */,
-				B123DA25269BAB5D00671D11 /* CoreNetworking */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -834,9 +818,41 @@
 				B123DA59269BACAB00671D11 /* CoreAdaptersTests */,
 				B123DA83269BAD5B00671D11 /* CoreAuthenticationTests */,
 				B1E6FA37269BAEEC001AB07F /* CoreEnvironmentTests */,
-				B123DA30269BAB5D00671D11 /* CoreNetworkingTests */,
 			);
 			path = Tests;
+			sourceTree = "<group>";
+		};
+		B1EF15A6269BB1B800422192 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B1EF15A9269BB24200422192 /* Resources */,
+				B1EF15A8269BB23B00422192 /* Sources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B1EF15A7269BB20500422192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA27269BAB5D00671D11 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1EF15A8269BB23B00422192 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA42269BAC1C00671D11 /* ApiRequestTests.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B1EF15A9269BB24200422192 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B123DA33269BAB5D00671D11 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D7EF26342691082300D8EA87 /* Authentication */ = {
@@ -1400,7 +1416,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1E6FA4E269BB067001AB07F /* EnvironmentFacade.swift in Sources */,
+				B1E6FA4E269BB067001AB07F /* EnvironmentProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1543,7 +1559,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Modules/CoreNetworking/Info.plist;
+				INFOPLIST_FILE = Core/CoreNetworking/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1570,7 +1586,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Core/Modules/CoreNetworking/Info.plist;
+				INFOPLIST_FILE = Core/CoreNetworking/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1593,7 +1609,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
-				INFOPLIST_FILE = Core/Tests/CoreNetworkingTests/Info.plist;
+				INFOPLIST_FILE = Core/CoreNetworking/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1612,7 +1628,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
-				INFOPLIST_FILE = Core/Tests/CoreNetworkingTests/Info.plist;
+				INFOPLIST_FILE = Core/CoreNetworking/Tests/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

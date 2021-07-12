@@ -1,10 +1,10 @@
 import Foundation
 
-public protocol EnvironmentFacade {
+public protocol EnvironmentProvider {
     static var baseUrl: String { get }
 }
 
-public enum DefaultEnvironment: EnvironmentFacade { // TODO consider this so that it can be modular
+public enum DefaultEnvironment: EnvironmentProvider { // TODO consider this so that it can be modular
     
     private static let infoDictionary: [String : Any] = {
         guard let dict = Bundle.main.infoDictionary else {

@@ -87,7 +87,9 @@ public final class ApiRequest: ApiProtocol {
     // MARK: - Helpers
     
     private func handleResponse(data: Data?, response: URLResponse?, error: Error?) -> Result<Data, ApiError> {
-        if let error = error { return .failure(.requestFailed(error)) }
+        if let error = error {
+            return .failure(.requestFailed(error))
+        }
         guard let response = response as? HTTPURLResponse
         else { return .failure(.nonHTTPResponse) }
         

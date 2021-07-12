@@ -30,13 +30,15 @@ public protocol ApiEndpoint {
     var body: Data? { get }
     var headers: [HTTPHeaderField] { get }
     var tokenProvider: TokenProviding? { get }
+    var environment: EnvironmentProvider.Type { get  }
 }
 
 extension ApiEndpoint {
     var url: URL? { .init(string: absoluteStringUrl) }
     var absoluteStringUrl: String { baseUrl + path }
     var method: HTTPMethod { .get }
-    var baseUrl: String { DefaultEnvironment.baseUrl }
+    var baseUrl: String { environment.baseUrl }
+    var environment: EnvironmentProvider.Type { DefaultEnvironment.self }
     var body: Data? { nil }
     var tokenProvider: TokenProviding? { TokenManager.shared }
     var headers: [HTTPHeaderField] {
