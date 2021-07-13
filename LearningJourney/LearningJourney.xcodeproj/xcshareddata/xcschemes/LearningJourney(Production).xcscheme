@@ -128,6 +128,16 @@
                ReferencedContainer = "container:LearningJourney.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B18D48E8269DB688005EFAF4"
+               BuildableName = "CoreInjectorTests.xctest"
+               BlueprintName = "CoreInjectorTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
