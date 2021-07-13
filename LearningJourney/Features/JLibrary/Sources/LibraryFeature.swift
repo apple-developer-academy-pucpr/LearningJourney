@@ -1,5 +1,11 @@
 import SwiftUI
 
+public enum LibraryFeatureFactory {
+    public static func make() -> AnyView { LibraryFeature<LibraryCoordinator>()
+            .resolve()
+    }
+}
+
 struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
     
     // MARK: - Dependencies
@@ -23,6 +29,8 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
         self.coordinator = coordinator
     }
     
+    // MARK: - Feature resolving
+    
     func resolve() -> AnyView {
         guard let coordinator = coordinator else {
             fatalError("Coordinator not configured for Library feature")
@@ -30,6 +38,5 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
         return AnyView(coordinator
                         .start()
                         .environmentObject(coordinator))
-            
     }
 }

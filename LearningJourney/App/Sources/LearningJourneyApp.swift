@@ -1,15 +1,9 @@
-//
-//  LearningJourneyApp.swift
-//  LearningJourney
-//
-//  Created by Bruno Pastre on 23/06/21.
-//
-
 import SwiftUI
 
 import CoreAuthentication
 import CoreEnvironment
 import JAuthentication
+import JLibrary
 
 @main
 struct LearningJourneyApp: App {
@@ -18,12 +12,10 @@ struct LearningJourneyApp: App {
         print(DefaultEnvironment.baseUrl)
     }
     
-    let libraryFeature = LibraryFeature<LibraryCoordinator>()
-    
     var body: some Scene {
         WindowGroup {
-            libraryFeature.resolve()
-                .authenticationSheet() // TODO handle this gracefully
+            LibraryFeatureFactory.make()
+                .authenticationSheet()
         }
     }
 }

@@ -4,11 +4,13 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
     
     // MARK: - Environment
     
-    @EnvironmentObject var coordinator: Coordinator
+    @EnvironmentObject
+    var coordinator: Coordinator
     
     // MARK: - Dependencies
     
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject
+    var viewModel: ViewModel
     
     // MARK: - View
     var body: some View {
@@ -62,6 +64,11 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
     
     
 }
+
+public extension Notification.Name {
+    static let authDidChange: Notification.Name = .init("authdidchange")
+}
+
 extension PresentationMode: Equatable {
     public static func == (lhs: PresentationMode, rhs: PresentationMode) -> Bool {
         lhs.isPresented == rhs.isPresented

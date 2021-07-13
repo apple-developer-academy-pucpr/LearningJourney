@@ -33,12 +33,6 @@
 		B123DA95269BAD7600671D11 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A194F2694D8EE00507E15 /* TokenManager.swift */; };
 		B123DA9B269BADA100671D11 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
 		B123DA9C269BADA100671D11 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B17B23C126864FCD006E060A /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
-		B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
-		B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C42686500E006E060A /* LibraryAssembler.swift */; };
-		B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C8268652A2006E060A /* FetchStrandsUseCase.swift */; };
-		B17B23CC2686536C006E060A /* LearningStrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CB2686536C006E060A /* LearningStrand.swift */; };
-		B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CE26865ADA006E060A /* LibraryRepository.swift */; };
 		B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */; };
 		B18C4CB82683F5D200A150CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CB72683F5D200A150CD /* Assets.xcassets */; };
 		B18C4CBB2683F5D200A150CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CBA2683F5D200A150CD /* Preview Assets.xcassets */; };
@@ -81,25 +75,36 @@
 		B18D41F9269CA881000C3826 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41F8269CA881000C3826 /* LoginViewModelTests.swift */; };
 		B18D41FB269CBD78000C3826 /* TokenCacheServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41FA269CBD78000C3826 /* TokenCacheServiceTests.swift */; };
 		B18D41FD269CC3C3000C3826 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41FC269CC3C3000C3826 /* KeychainManager.swift */; };
-		B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
-		B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
-		B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */; };
-		B1BFE7B82687775D00FAFF5D /* LearningStrandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7B72687775D00FAFF5D /* LearningStrandRow.swift */; };
-		B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7B9268777B700FAFF5D /* LearningGoalCard.swift */; };
-		B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BC2687A54600FAFF5D /* Fixtures.swift */; };
-		B1BFE7BF2687A5EC00FAFF5D /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BE2687A5EC00FAFF5D /* Mocks.swift */; };
-		B1BFE7C12687ACB200FAFF5D /* LearningGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C02687ACB200FAFF5D /* LearningGoal.swift */; };
-		B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C22687ACC900FAFF5D /* LearningObjective.swift */; };
-		B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */; };
-		B1BFE7C72687E6EF00FAFF5D /* ObjectivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */; };
-		B1BFE7CC2687E79300FAFF5D /* ObjectivesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7CB2687E79300FAFF5D /* ObjectivesListViewModel.swift */; };
-		B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7CE2687E83D00FAFF5D /* FetchObjectivesUseCase.swift */; };
-		B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */; };
-		B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */; };
-		B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */; };
-		B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D9268923FD00FAFF5D /* ObjectiveCard.swift */; };
-		B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DB26892A6B00FAFF5D /* LearnedButtonStyle.swift */; };
-		B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DD2689316C00FAFF5D /* ToggleLearnUseCase.swift */; };
+		B18D4826269D1AC1005EFAF4 /* JLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; };
+		B18D482D269D1AC2005EFAF4 /* JLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D482C269D1AC2005EFAF4 /* JLibraryTests.swift */; };
+		B18D482F269D1AC2005EFAF4 /* JLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D481F269D1AC1005EFAF4 /* JLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B18D4832269D1AC2005EFAF4 /* JLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; };
+		B18D4833269D1AC2005EFAF4 /* JLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B18D4842269D1B31005EFAF4 /* LibraryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */; };
+		B18D4843269D1B38005EFAF4 /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
+		B18D4844269D1B38005EFAF4 /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
+		B18D4845269D1B38005EFAF4 /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CE26865ADA006E060A /* LibraryRepository.swift */; };
+		B18D4846269D1B38005EFAF4 /* LibraryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE76226868F7E00FAFF5D /* LibraryEndpoint.swift */; };
+		B18D4847269D1B3D005EFAF4 /* LearningStrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23CB2686536C006E060A /* LearningStrand.swift */; };
+		B18D4848269D1B3D005EFAF4 /* LearningGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C02687ACB200FAFF5D /* LearningGoal.swift */; };
+		B18D4849269D1B3D005EFAF4 /* LearningObjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C22687ACC900FAFF5D /* LearningObjective.swift */; };
+		B18D484A269D1B4A005EFAF4 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BE2687A5EC00FAFF5D /* Mocks.swift */; };
+		B18D484B269D1B4A005EFAF4 /* LibraryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */; };
+		B18D484C269D1B4A005EFAF4 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BC2687A54600FAFF5D /* Fixtures.swift */; };
+		B18D484D269D1B4A005EFAF4 /* ScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */; };
+		B18D484E269D1B5E005EFAF4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
+		B18D484F269D1B5E005EFAF4 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C026864FCD006E060A /* LibraryView.swift */; };
+		B18D4850269D1B5E005EFAF4 /* LearningStrandRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7B72687775D00FAFF5D /* LearningStrandRow.swift */; };
+		B18D4851269D1B5E005EFAF4 /* FetchStrandsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C8268652A2006E060A /* FetchStrandsUseCase.swift */; };
+		B18D4852269D1B5E005EFAF4 /* LibraryAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C42686500E006E060A /* LibraryAssembler.swift */; };
+		B18D4853269D1B5E005EFAF4 /* LearningGoalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7B9268777B700FAFF5D /* LearningGoalCard.swift */; };
+		B18D4854269D1B6B005EFAF4 /* ObjectiveCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D9268923FD00FAFF5D /* ObjectiveCard.swift */; };
+		B18D4855269D1B6B005EFAF4 /* LearnedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DB26892A6B00FAFF5D /* LearnedButtonStyle.swift */; };
+		B18D4856269D1B6B005EFAF4 /* ObjectivesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7CB2687E79300FAFF5D /* ObjectivesListViewModel.swift */; };
+		B18D4857269D1B6B005EFAF4 /* FetchObjectivesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7CE2687E83D00FAFF5D /* FetchObjectivesUseCase.swift */; };
+		B18D4858269D1B6B005EFAF4 /* ToggleLearnUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7DD2689316C00FAFF5D /* ToggleLearnUseCase.swift */; };
+		B18D4859269D1B6B005EFAF4 /* ObjectivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */; };
+		B18D485A269D1B6B005EFAF4 /* ObjectivesListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */; };
 		B1E6FA22269BAE42001AB07F /* TokenPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6FA21269BAE42001AB07F /* TokenPayload.swift */; };
 		B1E6FA32269BAEEC001AB07F /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
 		B1E6FA39269BAEEC001AB07F /* CoreEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6FA38269BAEEC001AB07F /* CoreEnvironmentTests.swift */; };
@@ -219,6 +224,27 @@
 			remoteGlobalIDString = B123DA23269BAB5D00671D11;
 			remoteInfo = CoreNetworking;
 		};
+		B18D4827269D1AC1005EFAF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18D481C269D1AC1005EFAF4;
+			remoteInfo = JLibrary;
+		};
+		B18D4829269D1AC1005EFAF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18C4CAF2683F5D100A150CD;
+			remoteInfo = LearningJourney;
+		};
+		B18D4830269D1AC2005EFAF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18D481C269D1AC1005EFAF4;
+			remoteInfo = JLibrary;
+		};
 		B1E6FA33269BAEEC001AB07F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
@@ -254,6 +280,7 @@
 				B18D4167269C7CDC000C3826 /* UI.framework in Embed Frameworks */,
 				B123DA61269BACAC00671D11 /* CoreAdapters.framework in Embed Frameworks */,
 				B123DA8B269BAD5B00671D11 /* CoreAuthentication.framework in Embed Frameworks */,
+				B18D4833269D1AC2005EFAF4 /* JLibrary.framework in Embed Frameworks */,
 				B1E6FA3F269BAEEC001AB07F /* CoreEnvironment.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -352,6 +379,12 @@
 		B18D41F8269CA881000C3826 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		B18D41FA269CBD78000C3826 /* TokenCacheServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCacheServiceTests.swift; sourceTree = "<group>"; };
 		B18D41FC269CC3C3000C3826 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		B18D481D269D1AC1005EFAF4 /* JLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18D481F269D1AC1005EFAF4 /* JLibrary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLibrary.h; sourceTree = "<group>"; };
+		B18D4820269D1AC1005EFAF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B18D4825269D1AC1005EFAF4 /* JLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18D482C269D1AC2005EFAF4 /* JLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JLibraryTests.swift; sourceTree = "<group>"; };
+		B18D482E269D1AC2005EFAF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationService.swift; sourceTree = "<group>"; };
 		B19AC3FB269351520095AF06 /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
 		B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
@@ -460,6 +493,7 @@
 				B18D4166269C7CDC000C3826 /* UI.framework in Frameworks */,
 				B123DA60269BACAC00671D11 /* CoreAdapters.framework in Frameworks */,
 				B123DA8A269BAD5B00671D11 /* CoreAuthentication.framework in Frameworks */,
+				B18D4832269D1AC2005EFAF4 /* JLibrary.framework in Frameworks */,
 				B1E6FA3E269BAEEC001AB07F /* CoreEnvironment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +530,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B18D481A269D1AC1005EFAF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18D4822269D1AC1005EFAF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18D4826269D1AC1005EFAF4 /* JLibrary.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1E6FA26269BAEEC001AB07F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -525,9 +574,8 @@
 		B123DA25269BAB5D00671D11 /* CoreNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA26269BAB5D00671D11 /* CoreNetworking.h */,
-				B1EF15A7269BB20500422192 /* Resources */,
 				B123DA40269BAB9B00671D11 /* Sources */,
+				B1EF15A7269BB20500422192 /* Resources */,
 				B1EF15A6269BB1B800422192 /* Tests */,
 			);
 			path = CoreNetworking;
@@ -552,9 +600,8 @@
 		B123DA4C269BACAB00671D11 /* CoreAdapters */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA4D269BACAB00671D11 /* CoreAdapters.h */,
-				B1EF15AC269BCF0200422192 /* Resources */,
 				B123DA68269BACB600671D11 /* Sources */,
+				B1EF15AC269BCF0200422192 /* Resources */,
 				B123DA59269BACAB00671D11 /* Tests */,
 			);
 			path = CoreAdapters;
@@ -592,9 +639,8 @@
 		B15F7831269C7819009315A3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B18D4153269C7CDB000C3826 /* UI.h */,
-				B15F7832269C7823009315A3 /* Resources */,
 				B15F7833269C7827009315A3 /* Sources */,
+				B15F7832269C7823009315A3 /* Resources */,
 				B15F7834269C782C009315A3 /* Tests */,
 			);
 			path = UI;
@@ -603,6 +649,7 @@
 		B15F7832269C7823009315A3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B18D4153269C7CDB000C3826 /* UI.h */,
 				B18D4154269C7CDB000C3826 /* Info.plist */,
 			);
 			path = Resources;
@@ -639,27 +686,6 @@
 				B18D4162269C7CDB000C3826 /* Info.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B17B23BD26864FA5006E060A /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				B17B23BE26864FBA006E060A /* Library */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		B17B23BE26864FBA006E060A /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */,
-				B17B23CD26865ACD006E060A /* Data */,
-				B17B23CA2686535F006E060A /* Model */,
-				B1BFE7BB2687A53E00FAFF5D /* Preview */,
-				B1BFE7D02688CD2A00FAFF5D /* Routing */,
-				B17B23BF26864FC2006E060A /* Scenes */,
-			);
-			path = Library;
 			sourceTree = "<group>";
 		};
 		B17B23BF26864FC2006E060A /* Scenes */ = {
@@ -746,6 +772,8 @@
 				B18D4159269C7CDB000C3826 /* UITests.xctest */,
 				B18D41A9269C8167000C3826 /* JAuthentication.framework */,
 				B18D41B1269C8167000C3826 /* JAuthenticationTests.xctest */,
+				B18D481D269D1AC1005EFAF4 /* JLibrary.framework */,
+				B18D4825269D1AC1005EFAF4 /* JLibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -753,10 +781,9 @@
 		B18C4CB22683F5D100A150CD /* App */ = {
 			isa = PBXGroup;
 			children = (
-				B18D4175269C7E72000C3826 /* Resources */,
 				B18D4174269C7E6E000C3826 /* Sources */,
+				B18D4175269C7E72000C3826 /* Resources */,
 				B18D4176269C7E76000C3826 /* Tests */,
-				B17B23BD26864FA5006E060A /* Features */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -808,6 +835,7 @@
 		B18D417A269C7F7B000C3826 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B18D481E269D1AC1005EFAF4 /* JLibrary */,
 				B18D4181269C7FF7000C3826 /* JAuthentication */,
 			);
 			path = Features;
@@ -816,9 +844,8 @@
 		B18D4181269C7FF7000C3826 /* JAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				B18D41AB269C8167000C3826 /* JAuthentication.h */,
-				B18D419D269C8030000C3826 /* Resources */,
 				B18D419E269C8039000C3826 /* Sources */,
+				B18D419D269C8030000C3826 /* Resources */,
 				B18D419F269C8041000C3826 /* Tests */,
 			);
 			path = JAuthentication;
@@ -827,6 +854,7 @@
 		B18D419D269C8030000C3826 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B18D41AB269C8167000C3826 /* JAuthentication.h */,
 				B18D41AC269C8167000C3826 /* Info.plist */,
 			);
 			path = Resources;
@@ -921,6 +949,63 @@
 				B18D41F2269C9A6E000C3826 /* SignInWithAppleUseCaseTests.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		B18D481E269D1AC1005EFAF4 /* JLibrary */ = {
+			isa = PBXGroup;
+			children = (
+				B18D483B269D1AE5005EFAF4 /* Sources */,
+				B18D483A269D1AD6005EFAF4 /* Resources */,
+				B18D483C269D1AF1005EFAF4 /* Tests */,
+			);
+			path = JLibrary;
+			sourceTree = "<group>";
+		};
+		B18D483A269D1AD6005EFAF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B18D481F269D1AC1005EFAF4 /* JLibrary.h */,
+				B18D4820269D1AC1005EFAF4 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B18D483B269D1AE5005EFAF4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */,
+				B17B23CD26865ACD006E060A /* Data */,
+				B17B23CA2686535F006E060A /* Model */,
+				B1BFE7BB2687A53E00FAFF5D /* Preview */,
+				B1BFE7D02688CD2A00FAFF5D /* Routing */,
+				B17B23BF26864FC2006E060A /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B18D483C269D1AF1005EFAF4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B18D483E269D1B06005EFAF4 /* Sources */,
+				B18D483D269D1AF8005EFAF4 /* Resources */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		B18D483D269D1AF8005EFAF4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B18D482E269D1AC2005EFAF4 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B18D483E269D1B06005EFAF4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B18D482C269D1AC2005EFAF4 /* JLibraryTests.swift */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		B19AC3F92693513E0095AF06 /* Service */ = {
@@ -1041,9 +1126,8 @@
 		B1E6FA2A269BAEEC001AB07F /* CoreEnvironment */ = {
 			isa = PBXGroup;
 			children = (
-				B1E6FA2B269BAEEC001AB07F /* CoreEnvironment.h */,
-				B1EF15B5269BDAED00422192 /* Resources */,
 				B1E6FA46269BAF0B001AB07F /* Sources */,
+				B1EF15B5269BDAED00422192 /* Resources */,
 				B1EF15B6269BDB0A00422192 /* Tests */,
 			);
 			path = CoreEnvironment;
@@ -1069,6 +1153,7 @@
 		B1EF15A7269BB20500422192 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B123DA26269BAB5D00671D11 /* CoreNetworking.h */,
 				B123DA27269BAB5D00671D11 /* Info.plist */,
 			);
 			path = Resources;
@@ -1093,6 +1178,7 @@
 		B1EF15AC269BCF0200422192 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B123DA4D269BACAB00671D11 /* CoreAdapters.h */,
 				B123DA4E269BACAB00671D11 /* Info.plist */,
 			);
 			path = Resources;
@@ -1117,9 +1203,8 @@
 		B1EF15B0269BD0B500422192 /* CoreAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				B123DA77269BAD5A00671D11 /* CoreAuthentication.h */,
-				B1EF15B1269BD0D300422192 /* Resources */,
 				B123DA93269BAD6B00671D11 /* Sources */,
+				B1EF15B1269BD0D300422192 /* Resources */,
 				B1EF15B2269BD0DB00422192 /* Tests */,
 			);
 			path = CoreAuthentication;
@@ -1128,6 +1213,7 @@
 		B1EF15B1269BD0D300422192 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B123DA77269BAD5A00671D11 /* CoreAuthentication.h */,
 				B123DA78269BAD5A00671D11 /* Info.plist */,
 			);
 			path = Resources;
@@ -1162,6 +1248,7 @@
 		B1EF15B5269BDAED00422192 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B1E6FA2B269BAEEC001AB07F /* CoreEnvironment.h */,
 				B1E6FA49269BAF65001AB07F /* Development.plist */,
 				B18C4CC12683F5D200A150CD /* Production.plist */,
 				B12857A22699D22B00DF335D /* Development.xcconfig */,
@@ -1290,6 +1377,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18D41BB269C8167000C3826 /* JAuthentication.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18D4818269D1AC1005EFAF4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18D482F269D1AC2005EFAF4 /* JLibrary.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1452,6 +1547,7 @@
 				B1E6FA3D269BAEEC001AB07F /* PBXTargetDependency */,
 				B18D4165269C7CDB000C3826 /* PBXTargetDependency */,
 				B18D41BD269C8167000C3826 /* PBXTargetDependency */,
+				B18D4831269D1AC2005EFAF4 /* PBXTargetDependency */,
 			);
 			name = LearningJourney;
 			productName = LearningJourney;
@@ -1531,6 +1627,43 @@
 			name = JAuthenticationTests;
 			productName = JAuthenticationTests;
 			productReference = B18D41B1269C8167000C3826 /* JAuthenticationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B18D481C269D1AC1005EFAF4 /* JLibrary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B18D4834269D1AC2005EFAF4 /* Build configuration list for PBXNativeTarget "JLibrary" */;
+			buildPhases = (
+				B18D4818269D1AC1005EFAF4 /* Headers */,
+				B18D4819269D1AC1005EFAF4 /* Sources */,
+				B18D481A269D1AC1005EFAF4 /* Frameworks */,
+				B18D481B269D1AC1005EFAF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JLibrary;
+			productName = JLibrary;
+			productReference = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B18D4824269D1AC1005EFAF4 /* JLibraryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B18D4837269D1AC2005EFAF4 /* Build configuration list for PBXNativeTarget "JLibraryTests" */;
+			buildPhases = (
+				B18D4821269D1AC1005EFAF4 /* Sources */,
+				B18D4822269D1AC1005EFAF4 /* Frameworks */,
+				B18D4823269D1AC1005EFAF4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B18D4828269D1AC1005EFAF4 /* PBXTargetDependency */,
+				B18D482A269D1AC1005EFAF4 /* PBXTargetDependency */,
+			);
+			name = JLibraryTests;
+			productName = JLibraryTests;
+			productReference = B18D4825269D1AC1005EFAF4 /* JLibraryTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B1E6FA28269BAEEC001AB07F /* CoreEnvironment */ = {
@@ -1615,6 +1748,12 @@
 					B18D41B0269C8167000C3826 = {
 						CreatedOnToolsVersion = 12.5;
 					};
+					B18D481C269D1AC1005EFAF4 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					B18D4824269D1AC1005EFAF4 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					B1E6FA28269BAEEC001AB07F = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -1643,12 +1782,14 @@
 				B1E6FA28269BAEEC001AB07F /* CoreEnvironment */,
 				B123DA23269BAB5D00671D11 /* CoreNetworking */,
 				B18D41A8269C8167000C3826 /* JAuthentication */,
+				B18D481C269D1AC1005EFAF4 /* JLibrary */,
 				B18D4150269C7CDB000C3826 /* UI */,
 				B123DA52269BACAB00671D11 /* CoreAdaptersTests */,
 				B123DA7C269BAD5A00671D11 /* CoreAuthenticationTests */,
 				B1E6FA30269BAEEC001AB07F /* CoreEnvironmentTests */,
 				B123DA2B269BAB5D00671D11 /* CoreNetworkingTests */,
 				B18D41B0269C8167000C3826 /* JAuthenticationTests */,
+				B18D4824269D1AC1005EFAF4 /* JLibraryTests */,
 				B18D4158269C7CDB000C3826 /* UITests */,
 			);
 		};
@@ -1741,6 +1882,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B18D481B269D1AC1005EFAF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18D4823269D1AC1005EFAF4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B1E6FA27269BAEEC001AB07F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1826,32 +1981,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1BFE7D42688CD7200FAFF5D /* ObjectivesListAssembler.swift in Sources */,
-				B1BFE7DA268923FD00FAFF5D /* ObjectiveCard.swift in Sources */,
-				B1BFE7C52687D16D00FAFF5D /* LibraryCoordinator.swift in Sources */,
-				B1BFE7BA268777B700FAFF5D /* LearningGoalCard.swift in Sources */,
-				B1BFE7BD2687A54600FAFF5D /* Fixtures.swift in Sources */,
-				B1BFE7CC2687E79300FAFF5D /* ObjectivesListViewModel.swift in Sources */,
-				B17B23C326864FE9006E060A /* LibraryViewModel.swift in Sources */,
-				B1BFE7D22688CD3700FAFF5D /* ScenesFactory.swift in Sources */,
-				B17B23C9268652A2006E060A /* FetchStrandsUseCase.swift in Sources */,
-				B1BFE75926866E2100FAFF5D /* LibraryParser.swift in Sources */,
-				B1BFE76326868F7E00FAFF5D /* LibraryEndpoint.swift in Sources */,
-				B1BFE7CF2687E83D00FAFF5D /* FetchObjectivesUseCase.swift in Sources */,
-				B1BFE7C32687ACC900FAFF5D /* LearningObjective.swift in Sources */,
-				B1BFE7DE2689316C00FAFF5D /* ToggleLearnUseCase.swift in Sources */,
-				B1BFE7D62688D59200FAFF5D /* LibraryFeature.swift in Sources */,
-				B17B23C52686500E006E060A /* LibraryAssembler.swift in Sources */,
-				B1BFE75726866D4000FAFF5D /* LibraryRemoteService.swift in Sources */,
-				B17B23CC2686536C006E060A /* LearningStrand.swift in Sources */,
-				B17B23C126864FCD006E060A /* LibraryView.swift in Sources */,
-				B1BFE7C72687E6EF00FAFF5D /* ObjectivesListView.swift in Sources */,
-				B1BFE7DC26892A6B00FAFF5D /* LearnedButtonStyle.swift in Sources */,
-				B17B23CF26865ADA006E060A /* LibraryRepository.swift in Sources */,
 				B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */,
-				B1BFE7C12687ACB200FAFF5D /* LearningGoal.swift in Sources */,
-				B1BFE7B82687775D00FAFF5D /* LearningStrandRow.swift in Sources */,
-				B1BFE7BF2687A5EC00FAFF5D /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1905,6 +2035,46 @@
 				B18D41F4269C9A73000C3826 /* SignInWithAppleUseCaseTests.swift in Sources */,
 				B18D41F9269CA881000C3826 /* LoginViewModelTests.swift in Sources */,
 				B18D41F1269C97AC000C3826 /* ValidateTokenUseCaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18D4819269D1AC1005EFAF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18D4859269D1B6B005EFAF4 /* ObjectivesListView.swift in Sources */,
+				B18D4853269D1B5E005EFAF4 /* LearningGoalCard.swift in Sources */,
+				B18D484F269D1B5E005EFAF4 /* LibraryView.swift in Sources */,
+				B18D484B269D1B4A005EFAF4 /* LibraryCoordinator.swift in Sources */,
+				B18D4843269D1B38005EFAF4 /* LibraryParser.swift in Sources */,
+				B18D4857269D1B6B005EFAF4 /* FetchObjectivesUseCase.swift in Sources */,
+				B18D4847269D1B3D005EFAF4 /* LearningStrand.swift in Sources */,
+				B18D4846269D1B38005EFAF4 /* LibraryEndpoint.swift in Sources */,
+				B18D4842269D1B31005EFAF4 /* LibraryFeature.swift in Sources */,
+				B18D4851269D1B5E005EFAF4 /* FetchStrandsUseCase.swift in Sources */,
+				B18D484E269D1B5E005EFAF4 /* LibraryViewModel.swift in Sources */,
+				B18D4856269D1B6B005EFAF4 /* ObjectivesListViewModel.swift in Sources */,
+				B18D4848269D1B3D005EFAF4 /* LearningGoal.swift in Sources */,
+				B18D484A269D1B4A005EFAF4 /* Mocks.swift in Sources */,
+				B18D4855269D1B6B005EFAF4 /* LearnedButtonStyle.swift in Sources */,
+				B18D485A269D1B6B005EFAF4 /* ObjectivesListAssembler.swift in Sources */,
+				B18D4858269D1B6B005EFAF4 /* ToggleLearnUseCase.swift in Sources */,
+				B18D484C269D1B4A005EFAF4 /* Fixtures.swift in Sources */,
+				B18D4852269D1B5E005EFAF4 /* LibraryAssembler.swift in Sources */,
+				B18D4849269D1B3D005EFAF4 /* LearningObjective.swift in Sources */,
+				B18D4850269D1B5E005EFAF4 /* LearningStrandRow.swift in Sources */,
+				B18D4854269D1B6B005EFAF4 /* ObjectiveCard.swift in Sources */,
+				B18D4844269D1B38005EFAF4 /* LibraryRemoteService.swift in Sources */,
+				B18D4845269D1B38005EFAF4 /* LibraryRepository.swift in Sources */,
+				B18D484D269D1B4A005EFAF4 /* ScenesFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B18D4821269D1AC1005EFAF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B18D482D269D1AC2005EFAF4 /* JLibraryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2001,6 +2171,21 @@
 			isa = PBXTargetDependency;
 			target = B123DA23269BAB5D00671D11 /* CoreNetworking */;
 			targetProxy = B18D41E0269C85C0000C3826 /* PBXContainerItemProxy */;
+		};
+		B18D4828269D1AC1005EFAF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18D481C269D1AC1005EFAF4 /* JLibrary */;
+			targetProxy = B18D4827269D1AC1005EFAF4 /* PBXContainerItemProxy */;
+		};
+		B18D482A269D1AC1005EFAF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18C4CAF2683F5D100A150CD /* LearningJourney */;
+			targetProxy = B18D4829269D1AC1005EFAF4 /* PBXContainerItemProxy */;
+		};
+		B18D4831269D1AC2005EFAF4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18D481C269D1AC1005EFAF4 /* JLibrary */;
+			targetProxy = B18D4830269D1AC2005EFAF4 /* PBXContainerItemProxy */;
 		};
 		B1E6FA34269BAEEC001AB07F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2714,6 +2899,100 @@
 			};
 			name = Release;
 		};
+		B18D4835269D1AC2005EFAF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Features/JLibrary/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.JLibrary;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B18D4836269D1AC2005EFAF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = QM43B7QRF9;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Features/JLibrary/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.JLibrary;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B18D4838269D1AC2005EFAF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QM43B7QRF9;
+				INFOPLIST_FILE = Features/JLibrary/Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.JLibraryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B18D4839269D1AC2005EFAF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QM43B7QRF9;
+				INFOPLIST_FILE = Features/JLibrary/Tests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.JLibraryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B1E6FA41269BAEEC001AB07F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2928,6 +3207,24 @@
 			buildConfigurations = (
 				B18D41C4269C8167000C3826 /* Debug */,
 				B18D41C5269C8167000C3826 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B18D4834269D1AC2005EFAF4 /* Build configuration list for PBXNativeTarget "JLibrary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B18D4835269D1AC2005EFAF4 /* Debug */,
+				B18D4836269D1AC2005EFAF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B18D4837269D1AC2005EFAF4 /* Build configuration list for PBXNativeTarget "JLibraryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B18D4838269D1AC2005EFAF4 /* Debug */,
+				B18D4839269D1AC2005EFAF4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
