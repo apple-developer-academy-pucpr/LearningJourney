@@ -1,8 +1,11 @@
 import SwiftUI
 
-struct LearningStrandRow<Coordinator>: View where Coordinator: LibraryCoordinating {
+import CoreInjector
+
+struct LearningStrandRow: View {
     
-    @EnvironmentObject var coordinator: Coordinator
+    let service: RoutingService
+    
     let strand: LearningStrand
     
     var body: some View {
@@ -13,9 +16,9 @@ struct LearningStrandRow<Coordinator>: View where Coordinator: LibraryCoordinati
             ScrollView(.horizontal) {
                 HStack {
                     ForEach(strand.goals) { goal in
-                        NavigationLink(
-                            destination: coordinator.objectivesView(goal: goal)
-                        ) {
+                        service.link(for: ObjectivesRoute(
+                                        
+                                        goal: goal)) {
                             LearningGoalCard(goal: goal)
                         }
                         .buttonStyle(PlainButtonStyle())
@@ -26,10 +29,11 @@ struct LearningStrandRow<Coordinator>: View where Coordinator: LibraryCoordinati
     }
 }
 
+#if DEBUG
 
 struct LearningStrandRow_Previews: PreviewProvider {
     static var previews: some View {
-        LearningStrandRow<LibraryCoordinator>(strand: .init(
+        LearningStrandRow(service: DummyRoutingService(), strand: .init(
             id: 1,
             name: "Technical",
             goals: [
@@ -51,3 +55,5 @@ struct LearningStrandRow_Previews: PreviewProvider {
         ))
     }
 }
+
+#endif

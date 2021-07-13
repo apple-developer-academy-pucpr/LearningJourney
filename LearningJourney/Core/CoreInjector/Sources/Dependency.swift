@@ -1,4 +1,6 @@
-protocol Resolvable {}
+protocol Resolvable {
+    func resolve(using container: DependencyContainer)
+}
 
 public enum DependencyInjectionError<T>: Error {
     case unresolvedYet(_ forType: T.Type)

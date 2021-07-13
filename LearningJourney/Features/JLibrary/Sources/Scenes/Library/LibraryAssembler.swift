@@ -3,12 +3,12 @@ import SwiftUI
 import CoreNetworking
 
 protocol LibraryAssembling {
-    func assemble() -> AnyView
+    func assemble(using feature: LibraryFeature) -> AnyView
 }
 
 final class LibraryAssembler: LibraryAssembling {
 
-    func assemble() -> AnyView {
+    func assemble(using feature: LibraryFeature) -> AnyView {
         let parser = LibraryParser()
         
         let service = LibraryRemoteService(
@@ -24,7 +24,9 @@ final class LibraryAssembler: LibraryAssembling {
                 )
             )
         )
-        let view = LibraryView<LibraryViewModel, LibraryCoordinator>(viewModel: viewModel)
+        let view = LibraryView<LibraryViewModel>(
+            viewModel: viewModel,
+            routingService: feature.routingService)
         
         return AnyView(view)
     }

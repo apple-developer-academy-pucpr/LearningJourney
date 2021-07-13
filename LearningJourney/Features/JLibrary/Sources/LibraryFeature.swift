@@ -1,16 +1,12 @@
 import SwiftUI
+import CoreInjector
 
-public enum LibraryFeatureFactory {
-    public static func make() -> AnyView { LibraryFeature<LibraryCoordinator>()
-            .resolve()
-    }
-}
-
-struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
+public struct LibraryFeature: Feature {
     
     // MARK: - Dependencies
+    @Dependency var routingService: RoutingService
     
-    private let coordinator: Coordinator?
+    private let scenesFactory: LibraryScenesFactoryProtocol
     
     // MARK: - Initialization
     
@@ -19,24 +15,50 @@ struct LibraryFeature<Coordinator> where Coordinator: LibraryCoordinating {
             libraryAssembler: LibraryAssembler(),
             objectivesListAssembler: ObjectivesListAssembler()
         )
-        let coordinator = LibraryCoordinator(scenesFactory: factory)
         self.init(
-            coordinator: coordinator as? Coordinator
+            scenesFactory: factory
         )
     }
     
-    init(coordinator: Coordinator?) {
-        self.coordinator = coordinator
+    init(scenesFactory: LibraryScenesFactoryProtocol) {
+        self.scenesFactory = scenesFactory
     }
     
     // MARK: - Feature resolving
     
-    func resolve() -> AnyView {
-        guard let coordinator = coordinator else {
-            fatalError("Coordinator not configured for Library feature")
+    public func build(using route: Route?) -> AnyView {
+        if let route = route as? ObjectivesRoute {
+            return scenesFactory.resolveObjectivesListScene(using: route)
         }
-        return AnyView(coordinator
-                        .start()
-                        .environmentObject(coordinator))
+        
+        if route == nil {
+            return scenesFactory.resolveLibraryScene(for: self, using: nil)
+        }
+        preconditionFailure("Trying to resolve feature for unkown route \(String(describing: route))")
     }
+}
+
+public struct LibraryRouteHandler: RouteHandling {
+    
+    public var routes: [Route.Type] {
+        [
+            LibraryRoute.self,
+            ObjectivesRoute.self
+        ]
+    }
+    
+    public func destination(for route: Route) -> Feature.Type {
+        LibraryFeature.self
+    }
+    
+    public init() {}
+}
+
+struct LibraryRoute: Route {
+    static var identifier: String  { "library.libraryRoute" }
+}
+
+struct ObjectivesRoute: Route {
+    static var identifier: String { "library.objectivesRoute" }
+    let goal: LearningGoal
 }

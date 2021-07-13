@@ -1,12 +1,8 @@
 import SwiftUI
 import UI
 
-struct ObjectivesListView<ViewModel, Coordinator>: View where
-    ViewModel: ObjectivesListViewModelProtocol, Coordinator: LibraryCoordinating {
-
-    // MARK: - Environment
-    
-    @EnvironmentObject var coordinator: Coordinator
+struct ObjectivesListView<ViewModel>: View where
+    ViewModel: ObjectivesListViewModelProtocol {
     
     // MARK: - Dependencies
     
@@ -52,7 +48,7 @@ struct ObjectivesListView<ViewModel, Coordinator>: View where
 
 struct ObjectivesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ObjectivesListView<ObjectivesListViewModelMock, LibraryCoordinator>(viewModel: ObjectivesListViewModelMock())
+        ObjectivesListView<ObjectivesListViewModelMock>(viewModel: ObjectivesListViewModelMock())
     }
 }
 

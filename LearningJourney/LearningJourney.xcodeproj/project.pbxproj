@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B11A589E269DC48A0015DC1B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A589B269DC2D10015DC1B /* Route.swift */; };
+		B11A589F269DD2000015DC1B /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; };
+		B11A58A0269DD2000015DC1B /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B11A58A4269DD2090015DC1B /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
+		B11A58A5269DD2090015DC1B /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B11A58A8269DD2130015DC1B /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
+		B11A58A9269DD2130015DC1B /* CoreInjector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B123D9A2269BA88E00671D11 /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123D9A1269BA88E00671D11 /* LearningJourneyTests.swift */; };
 		B123DA2D269BAB5D00671D11 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
 		B123DA34269BAB5D00671D11 /* CoreNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B123DA26269BAB5D00671D11 /* CoreNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -126,6 +133,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B11A58A1269DD2000015DC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18D4150269C7CDB000C3826;
+			remoteInfo = UI;
+		};
+		B11A58A6269DD2090015DC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B123DA23269BAB5D00671D11;
+			remoteInfo = CoreNetworking;
+		};
+		B11A58AA269DD2130015DC1B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18D48E0269DB688005EFAF4;
+			remoteInfo = CoreInjector;
+		};
 		B123D9A4269BA88E00671D11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
@@ -297,6 +325,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B11A58A3269DD2000015DC1B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B11A58A0269DD2000015DC1B /* UI.framework in Embed Frameworks */,
+				B11A58A5269DD2090015DC1B /* CoreNetworking.framework in Embed Frameworks */,
+				B11A58A9269DD2130015DC1B /* CoreInjector.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B123DA1B269BAA6D00671D11 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +386,7 @@
 /* Begin PBXFileReference section */
 		110730112698FB5600B7D261 /* LoginViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelMock.swift; sourceTree = "<group>"; };
 		110730132699025A00B7D261 /* FeatureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRow.swift; sourceTree = "<group>"; };
+		B11A589B269DC2D10015DC1B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B123D997269BA7E100671D11 /* Dispatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatching.swift; sourceTree = "<group>"; };
 		B123D998269BA7E100671D11 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		B123D99F269BA88E00671D11 /* LearningJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -572,6 +614,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11A589F269DD2000015DC1B /* UI.framework in Frameworks */,
+				B11A58A4269DD2090015DC1B /* CoreNetworking.framework in Frameworks */,
+				B11A58A8269DD2130015DC1B /* CoreInjector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,6 +1132,7 @@
 			children = (
 				B18D4900269DB6AC005EFAF4 /* Dependency.swift */,
 				B18D4901269DB6AC005EFAF4 /* DependencyContainer.swift */,
+				B11A589B269DC2D10015DC1B /* Route.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1755,10 +1801,14 @@
 				B18D4819269D1AC1005EFAF4 /* Sources */,
 				B18D481A269D1AC1005EFAF4 /* Frameworks */,
 				B18D481B269D1AC1005EFAF4 /* Resources */,
+				B11A58A3269DD2000015DC1B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B11A58A2269DD2000015DC1B /* PBXTargetDependency */,
+				B11A58A7269DD2090015DC1B /* PBXTargetDependency */,
+				B11A58AB269DD2130015DC1B /* PBXTargetDependency */,
 			);
 			name = JLibrary;
 			productName = JLibrary;
@@ -2260,6 +2310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B11A589E269DC48A0015DC1B /* Route.swift in Sources */,
 				B18D4903269DB6AD005EFAF4 /* DependencyContainer.swift in Sources */,
 				B18D4902269DB6AD005EFAF4 /* Dependency.swift in Sources */,
 			);
@@ -2292,6 +2343,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B11A58A2269DD2000015DC1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18D4150269C7CDB000C3826 /* UI */;
+			targetProxy = B11A58A1269DD2000015DC1B /* PBXContainerItemProxy */;
+		};
+		B11A58A7269DD2090015DC1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B123DA23269BAB5D00671D11 /* CoreNetworking */;
+			targetProxy = B11A58A6269DD2090015DC1B /* PBXContainerItemProxy */;
+		};
+		B11A58AB269DD2130015DC1B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18D48E0269DB688005EFAF4 /* CoreInjector */;
+			targetProxy = B11A58AA269DD2130015DC1B /* PBXContainerItemProxy */;
+		};
 		B123D9A5269BA88E00671D11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B18C4CAF2683F5D100A150CD /* LearningJourney */;
@@ -2871,7 +2937,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LearningJourney/LearningJourney.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
@@ -2879,7 +2945,7 @@
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2898,7 +2964,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = LearningJourney/LearningJourney.entitlements;
+				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
@@ -2906,7 +2972,7 @@
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3028,6 +3094,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Features/JAuthentication/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3056,6 +3123,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Features/JAuthentication/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3113,6 +3181,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3122,6 +3191,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Features/JLibrary/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3141,6 +3211,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -3150,6 +3221,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Features/JLibrary/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3217,6 +3289,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/CoreInjector/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3247,6 +3320,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Core/CoreInjector/Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

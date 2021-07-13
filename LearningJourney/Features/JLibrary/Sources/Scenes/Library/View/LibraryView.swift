@@ -1,16 +1,14 @@
 import SwiftUI
+import CoreInjector
 
-struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewModelProtocol, Coordinator: LibraryCoordinating  {
-    
-    // MARK: - Environment
-    
-    @EnvironmentObject
-    var coordinator: Coordinator
+struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     
     // MARK: - Dependencies
     
     @ObservedObject
     var viewModel: ViewModel
+    
+    let routingService: RoutingService
     
     // MARK: - View
     var body: some View {
@@ -48,7 +46,7 @@ struct LibraryView<ViewModel, Coordinator>: View where ViewModel: LibraryViewMod
                 searchBar
                     .padding(.vertical, 18)
                 ForEach(strands) { strand in
-                    LearningStrandRow<LibraryCoordinator>(strand: strand)                    
+                    LearningStrandRow(service: routingService, strand: strand)
                     Spacer()
                         .frame(height: 20)
                 }
@@ -79,7 +77,7 @@ extension PresentationMode: Equatable {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView<LibraryViewModelMock, LibraryCoordinatorMock>(viewModel: LibraryViewModelMock(resultToUse: [
+        LibraryView<LibraryViewModelMock>(viewModel: LibraryViewModelMock(resultToUse: [
             .fixture(goals: [
                         .fixture(),
                         .fixture(),
@@ -100,8 +98,21 @@ struct ContentView_Previews: PreviewProvider {
                 .fixture(),
                 .fixture(),
             ]),
-        ]))
-        .environmentObject(LibraryCoordinatorMock())
+        ]), routingService: DummyRoutingService())
+    }
+}
+
+final class DummyRoutingService: RoutingService {
+    func register<T>(_ factory: @escaping DependencyFactory, for type: T.Type) {}
+    
+    func register(routeHandler: RouteHandling) {}
+    
+    func initialize(using feature: Feature.Type) -> AnyView { AnyView(Text("Dummy")) }
+    
+    func link<Body>(for route: Route, body: () -> Body) -> NavigationLink<Body, AnyView> where Body : View {
+        NavigationLink(
+            destination: AnyView(Text("Destination")),
+            label: body)
     }
 }
 

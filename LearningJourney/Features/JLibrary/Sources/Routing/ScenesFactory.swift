@@ -1,8 +1,8 @@
 import SwiftUI
 
 protocol LibraryScenesFactoryProtocol: AnyObject {
-    func resolveLibraryScene() -> AnyView
-    func resolveObjectivesListScene(using goal: LearningGoal) -> AnyView
+    func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView
+    func resolveObjectivesListScene(using route: ObjectivesRoute) -> AnyView
 }
 
 final class LibraryScenesFactory: LibraryScenesFactoryProtocol {
@@ -24,9 +24,9 @@ final class LibraryScenesFactory: LibraryScenesFactoryProtocol {
     
     // MARK: - Factory methods
     
-    func resolveLibraryScene() -> AnyView { libraryAssembler.assemble() }
+    func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView { libraryAssembler.assemble(using: feature) }
     
-    func resolveObjectivesListScene(using goal: LearningGoal) -> AnyView {
-        objectivesListAssembler.assemble(learningGoal: goal)
+    func resolveObjectivesListScene(using route: ObjectivesRoute) -> AnyView {
+        objectivesListAssembler.assemble(learningGoal: route.goal)
     }
 }
