@@ -2,7 +2,7 @@ import SwiftUI
 
 protocol LibraryScenesFactoryProtocol: AnyObject {
     func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView
-    func resolveObjectivesListScene(using route: ObjectivesRoute) -> AnyView
+    func resolveObjectivesListScene(for feature: LibraryFeature, using route: ObjectivesRoute) -> AnyView
 }
 
 final class LibraryScenesFactory: LibraryScenesFactoryProtocol {
@@ -26,7 +26,7 @@ final class LibraryScenesFactory: LibraryScenesFactoryProtocol {
     
     func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView { libraryAssembler.assemble(using: feature) }
     
-    func resolveObjectivesListScene(using route: ObjectivesRoute) -> AnyView {
-        objectivesListAssembler.assemble(learningGoal: route.goal)
+    func resolveObjectivesListScene(for feature: LibraryFeature, using route: ObjectivesRoute) -> AnyView {
+        objectivesListAssembler.assemble(using: feature, learningGoal: route.goal)
     }
 }

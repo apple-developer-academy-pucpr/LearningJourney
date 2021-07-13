@@ -21,7 +21,16 @@ public protocol ApiProtocol {
     func make(completion: @escaping Completion) -> ApiProtocol?
 }
 
-public typealias ApiFactory = (ApiEndpoint) -> ApiProtocol
+public protocol ApiFactoryProtocol {
+    func make(_ endpoint: ApiEndpoint) -> ApiProtocol
+}
+
+public final class ApiFactory: ApiFactoryProtocol {
+    public init() {}
+    public func make(_ endpoint: ApiEndpoint) -> ApiProtocol {
+        ApiRequest(endpoint)
+    }
+}
 
 public final class ApiRequest: ApiProtocol {
     

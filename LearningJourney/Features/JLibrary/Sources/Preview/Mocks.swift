@@ -23,13 +23,14 @@ final class LibraryViewModelMock: LibraryViewModelProtocol {
 }
 
 final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
+    func resolveObjectivesListScene(for feature: LibraryFeature, using route: ObjectivesRoute) -> AnyView {
+        .init(Text("Dummy"))
+    }
+    
     func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView {
         .init(Text("Dummy"))
     }
     
-    func resolveObjectivesListScene(using route: ObjectivesRoute) -> AnyView {
-        .init(Text("Dummy"))
-    }
 }
 
 final class ObjectivesListViewModelMock: ObjectivesListViewModelProtocol {

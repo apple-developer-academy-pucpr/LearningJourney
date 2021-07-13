@@ -14,6 +14,9 @@
 		B11A58A5269DD2090015DC1B /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B11A58A8269DD2130015DC1B /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
 		B11A58A9269DD2130015DC1B /* CoreInjector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B11A58AD269DE8720015DC1B /* LibraryRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A58AC269DE8720015DC1B /* LibraryRouteHandler.swift */; };
+		B11A58B0269DE8B40015DC1B /* LibraryRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A58AF269DE8B40015DC1B /* LibraryRoute.swift */; };
+		B11A58B2269DE8D00015DC1B /* ObjectivesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A58B1269DE8D00015DC1B /* ObjectivesRoute.swift */; };
 		B123D9A2269BA88E00671D11 /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123D9A1269BA88E00671D11 /* LearningJourneyTests.swift */; };
 		B123DA2D269BAB5D00671D11 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
 		B123DA34269BAB5D00671D11 /* CoreNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B123DA26269BAB5D00671D11 /* CoreNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -96,7 +99,6 @@
 		B18D4848269D1B3D005EFAF4 /* LearningGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C02687ACB200FAFF5D /* LearningGoal.swift */; };
 		B18D4849269D1B3D005EFAF4 /* LearningObjective.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C22687ACC900FAFF5D /* LearningObjective.swift */; };
 		B18D484A269D1B4A005EFAF4 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BE2687A5EC00FAFF5D /* Mocks.swift */; };
-		B18D484B269D1B4A005EFAF4 /* LibraryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */; };
 		B18D484C269D1B4A005EFAF4 /* Fixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7BC2687A54600FAFF5D /* Fixtures.swift */; };
 		B18D484D269D1B4A005EFAF4 /* ScenesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */; };
 		B18D484E269D1B5E005EFAF4 /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17B23C226864FE9006E060A /* LibraryViewModel.swift */; };
@@ -387,6 +389,9 @@
 		110730112698FB5600B7D261 /* LoginViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelMock.swift; sourceTree = "<group>"; };
 		110730132699025A00B7D261 /* FeatureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRow.swift; sourceTree = "<group>"; };
 		B11A589B269DC2D10015DC1B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		B11A58AC269DE8720015DC1B /* LibraryRouteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRouteHandler.swift; sourceTree = "<group>"; };
+		B11A58AF269DE8B40015DC1B /* LibraryRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRoute.swift; sourceTree = "<group>"; };
+		B11A58B1269DE8D00015DC1B /* ObjectivesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesRoute.swift; sourceTree = "<group>"; };
 		B123D997269BA7E100671D11 /* Dispatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatching.swift; sourceTree = "<group>"; };
 		B123D998269BA7E100671D11 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		B123D99F269BA88E00671D11 /* LearningJourneyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -480,7 +485,6 @@
 		B1BFE7BE2687A5EC00FAFF5D /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		B1BFE7C02687ACB200FAFF5D /* LearningGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningGoal.swift; sourceTree = "<group>"; };
 		B1BFE7C22687ACC900FAFF5D /* LearningObjective.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningObjective.swift; sourceTree = "<group>"; };
-		B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCoordinator.swift; sourceTree = "<group>"; };
 		B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListView.swift; sourceTree = "<group>"; };
 		B1BFE7CB2687E79300FAFF5D /* ObjectivesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectivesListViewModel.swift; sourceTree = "<group>"; };
 		B1BFE7CE2687E83D00FAFF5D /* FetchObjectivesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchObjectivesUseCase.swift; sourceTree = "<group>"; };
@@ -667,6 +671,15 @@
 				110730112698FB5600B7D261 /* LoginViewModelMock.swift */,
 			);
 			path = Preview;
+			sourceTree = "<group>";
+		};
+		B11A58AE269DE8A30015DC1B /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				B11A58AF269DE8B40015DC1B /* LibraryRoute.swift */,
+				B11A58B1269DE8D00015DC1B /* ObjectivesRoute.swift */,
+			);
+			path = Routes;
 			sourceTree = "<group>";
 		};
 		B123DA25269BAB5D00671D11 /* CoreNetworking */ = {
@@ -1241,8 +1254,9 @@
 		B1BFE7D02688CD2A00FAFF5D /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				B11A58AE269DE8A30015DC1B /* Routes */,
 				B1BFE7D12688CD3700FAFF5D /* ScenesFactory.swift */,
-				B1BFE7C42687D16D00FAFF5D /* LibraryCoordinator.swift */,
+				B11A58AC269DE8720015DC1B /* LibraryRouteHandler.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -1992,6 +2006,7 @@
 				B123DA4A269BACAB00671D11 /* CoreAdapters */,
 				B123DA74269BAD5A00671D11 /* CoreAuthentication */,
 				B1E6FA28269BAEEC001AB07F /* CoreEnvironment */,
+				B18D48E0269DB688005EFAF4 /* CoreInjector */,
 				B123DA23269BAB5D00671D11 /* CoreNetworking */,
 				B18D41A8269C8167000C3826 /* JAuthentication */,
 				B18D481C269D1AC1005EFAF4 /* JLibrary */,
@@ -1999,12 +2014,11 @@
 				B123DA52269BACAB00671D11 /* CoreAdaptersTests */,
 				B123DA7C269BAD5A00671D11 /* CoreAuthenticationTests */,
 				B1E6FA30269BAEEC001AB07F /* CoreEnvironmentTests */,
+				B18D48E8269DB688005EFAF4 /* CoreInjectorTests */,
 				B123DA2B269BAB5D00671D11 /* CoreNetworkingTests */,
 				B18D41B0269C8167000C3826 /* JAuthenticationTests */,
 				B18D4824269D1AC1005EFAF4 /* JLibraryTests */,
 				B18D4158269C7CDB000C3826 /* UITests */,
-				B18D48E0269DB688005EFAF4 /* CoreInjector */,
-				B18D48E8269DB688005EFAF4 /* CoreInjectorTests */,
 			);
 		};
 /* End PBXProject section */
@@ -2273,13 +2287,15 @@
 				B18D4859269D1B6B005EFAF4 /* ObjectivesListView.swift in Sources */,
 				B18D4853269D1B5E005EFAF4 /* LearningGoalCard.swift in Sources */,
 				B18D484F269D1B5E005EFAF4 /* LibraryView.swift in Sources */,
-				B18D484B269D1B4A005EFAF4 /* LibraryCoordinator.swift in Sources */,
+				B11A58B0269DE8B40015DC1B /* LibraryRoute.swift in Sources */,
 				B18D4843269D1B38005EFAF4 /* LibraryParser.swift in Sources */,
 				B18D4857269D1B6B005EFAF4 /* FetchObjectivesUseCase.swift in Sources */,
+				B11A58AD269DE8720015DC1B /* LibraryRouteHandler.swift in Sources */,
 				B18D4847269D1B3D005EFAF4 /* LearningStrand.swift in Sources */,
 				B18D4846269D1B38005EFAF4 /* LibraryEndpoint.swift in Sources */,
 				B18D4842269D1B31005EFAF4 /* LibraryFeature.swift in Sources */,
 				B18D4851269D1B5E005EFAF4 /* FetchStrandsUseCase.swift in Sources */,
+				B11A58B2269DE8D00015DC1B /* ObjectivesRoute.swift in Sources */,
 				B18D484E269D1B5E005EFAF4 /* LibraryViewModel.swift in Sources */,
 				B18D4856269D1B6B005EFAF4 /* ObjectivesListViewModel.swift in Sources */,
 				B18D4848269D1B3D005EFAF4 /* LearningGoal.swift in Sources */,

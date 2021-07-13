@@ -9,7 +9,7 @@ protocol LoginAssembling {
 
 final class LoginAssembler: LoginAssembling {
     func assemble() -> LoginView<LoginViewModel> {
-        let service = RemoteAuthenticationService(apiFactory: { ApiRequest(endpoint: $0) })
+        let service = RemoteAuthenticationService(apiFactory: ApiFactory()) // TODO Inject this
         let repository = AuthenticationRepository(
             parser: AuthenticationParser(),
             remoteService: service

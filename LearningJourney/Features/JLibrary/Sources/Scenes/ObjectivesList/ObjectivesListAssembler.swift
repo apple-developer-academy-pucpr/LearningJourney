@@ -3,15 +3,15 @@ import SwiftUI
 import CoreNetworking
 
 protocol ObjectivesListAssembling {
-    func assemble(learningGoal: LearningGoal) -> AnyView
+    func assemble(using feature: LibraryFeature, learningGoal: LearningGoal) -> AnyView
 }
 
 final class ObjectivesListAssembler: ObjectivesListAssembling{
-    func assemble(learningGoal: LearningGoal) -> AnyView {
+    func assemble(using feature: LibraryFeature, learningGoal: LearningGoal) -> AnyView {
         let parser = LibraryParser()
         
         let service = LibraryRemoteService(
-            apiFactory: { ApiRequest(endpoint: $0) })
+            apiFactory: feature.api)
         let repository = LibraryRepository(
             remoteService: service,
             parser: parser)

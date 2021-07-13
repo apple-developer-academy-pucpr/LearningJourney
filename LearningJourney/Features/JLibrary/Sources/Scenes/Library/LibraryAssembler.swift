@@ -12,7 +12,7 @@ final class LibraryAssembler: LibraryAssembling {
         let parser = LibraryParser()
         
         let service = LibraryRemoteService(
-            apiFactory: { ApiRequest(endpoint: $0) })
+            apiFactory: feature.api)
         let repository = LibraryRepository(
             remoteService: service,
             parser: parser)

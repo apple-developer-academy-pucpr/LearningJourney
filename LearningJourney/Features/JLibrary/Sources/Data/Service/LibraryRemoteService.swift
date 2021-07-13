@@ -13,7 +13,7 @@ final class LibraryRemoteService: LibraryRemoteServiceProtocol {
     
     // MARK: - Dependencies
     
-    private let apiFactory: ApiFactory
+    private let apiFactory: ApiFactoryProtocol
     
     // MARK: - Properties
     
@@ -21,19 +21,19 @@ final class LibraryRemoteService: LibraryRemoteServiceProtocol {
     
     // MARK: - Initialization
     
-    init(apiFactory: @escaping ApiFactory) {
+    init(apiFactory: ApiFactoryProtocol) {
         self.apiFactory = apiFactory
     }
     
     func learningStrands(completion: @escaping Completion ) {
         let endpoint: LibraryEndpoint = .fetchStrand
-        let apiRequest = apiFactory(endpoint)
+        let apiRequest = apiFactory.make(endpoint)
         currentRequest = apiRequest.make(completion: completion)
     }
     
     func learningObjectives(using strandId: Int, completion: @escaping Completion) {
         let endpoint: LibraryEndpoint = .fetchObjectives(strandId)
-        let apiRequest = apiFactory(endpoint)
+        let apiRequest = apiFactory.make(endpoint)
         currentRequest = apiRequest.make(completion: completion)
     }
     
@@ -42,7 +42,7 @@ final class LibraryRemoteService: LibraryRemoteServiceProtocol {
             id: objective.id,
             isComplete: objective.isComplete
         ))
-        let apiRequest = apiFactory(endpoint)
+        let apiRequest = apiFactory.make(endpoint)
         currentRequest = apiRequest.make(completion: completion)
     }
 }

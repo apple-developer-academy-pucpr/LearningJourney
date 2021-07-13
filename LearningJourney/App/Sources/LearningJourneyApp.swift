@@ -1,6 +1,7 @@
 import SwiftUI
 
 import CoreAuthentication
+import CoreNetworking
 import CoreEnvironment
 import CoreInjector
 import JAuthentication
@@ -14,8 +15,8 @@ fileprivate let routerService = RouterService() // TODO handle this
 struct LearningJourneyApp: App {
     init() {
         print(DefaultEnvironment.baseUrl)
-        routerService.register({ routerService }, for: RoutingService.self)
-        routerService.register(routeHandler: LibraryRouteHandler())
+        registerDependencies()
+        registerRouteHandlers()
     }
     
     var body: some Scene {
@@ -24,5 +25,14 @@ struct LearningJourneyApp: App {
                 .initialize(using: LibraryFeature.self)
                 .authenticationSheet()
         }
+    }
+    
+    private func registerDependencies() {
+        routerService.register({ routerService }, for: RoutingService.self)
+        routerService.register({ ApiFactory() }, for: ApiFactoryProtocol.self)
+    }
+    
+    private func registerRouteHandlers() {
+        routerService.register(routeHandler: LibraryRouteHandler())
     }
 }

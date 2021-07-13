@@ -41,7 +41,6 @@ public protocol RoutingService {
     func link<Body>(for route: Route, @ViewBuilder body: () -> Body) -> NavigationLink<Body, AnyView>
 }
 
-
 public final class RouterService: RoutingService {
     
     private let container: DependencyContainer

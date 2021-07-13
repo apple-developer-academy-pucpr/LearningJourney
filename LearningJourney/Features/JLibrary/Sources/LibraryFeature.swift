@@ -1,9 +1,12 @@
 import SwiftUI
 import CoreInjector
+import CoreNetworking
 
 public struct LibraryFeature: Feature {
     
     // MARK: - Dependencies
+    
+    @Dependency var api: ApiFactoryProtocol
     @Dependency var routingService: RoutingService
     
     private let scenesFactory: LibraryScenesFactoryProtocol
@@ -28,7 +31,7 @@ public struct LibraryFeature: Feature {
     
     public func build(using route: Route?) -> AnyView {
         if let route = route as? ObjectivesRoute {
-            return scenesFactory.resolveObjectivesListScene(using: route)
+            return scenesFactory.resolveObjectivesListScene(for: self, using: route)
         }
         
         if route == nil {
@@ -36,29 +39,4 @@ public struct LibraryFeature: Feature {
         }
         preconditionFailure("Trying to resolve feature for unkown route \(String(describing: route))")
     }
-}
-
-public struct LibraryRouteHandler: RouteHandling {
-    
-    public var routes: [Route.Type] {
-        [
-            LibraryRoute.self,
-            ObjectivesRoute.self
-        ]
-    }
-    
-    public func destination(for route: Route) -> Feature.Type {
-        LibraryFeature.self
-    }
-    
-    public init() {}
-}
-
-struct LibraryRoute: Route {
-    static var identifier: String  { "library.libraryRoute" }
-}
-
-struct ObjectivesRoute: Route {
-    static var identifier: String { "library.objectivesRoute" }
-    let goal: LearningGoal
 }
