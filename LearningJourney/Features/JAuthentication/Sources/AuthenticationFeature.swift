@@ -31,6 +31,6 @@ public struct AuthenticationFeature: Feature {
             return scenesFactory.loginScene(self, for: route)
         }
         
-        preconditionFailure("Unhandled route \(route) sent for feature \(self)")
+        preconditionFailure("Unhandled route \(String(describing: route)) sent for feature \(self)")
     }
 }

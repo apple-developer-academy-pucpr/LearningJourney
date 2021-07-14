@@ -9,57 +9,40 @@
 /* Begin PBXBuildFile section */
 		B11A589E269DC48A0015DC1B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A589B269DC2D10015DC1B /* Route.swift */; };
 		B11A589F269DD2000015DC1B /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; };
-		B11A58A0269DD2000015DC1B /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B11A58A4269DD2090015DC1B /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
-		B11A58A5269DD2090015DC1B /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B11A58A8269DD2130015DC1B /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
-		B11A58A9269DD2130015DC1B /* CoreInjector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B11A58AD269DE8720015DC1B /* LibraryRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A58AC269DE8720015DC1B /* LibraryRouteHandler.swift */; };
 		B11A58B0269DE8B40015DC1B /* LibraryRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A58AF269DE8B40015DC1B /* LibraryRoute.swift */; };
 		B11A58B2269DE8D00015DC1B /* ObjectivesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A58B1269DE8D00015DC1B /* ObjectivesRoute.swift */; };
 		B123D9A2269BA88E00671D11 /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123D9A1269BA88E00671D11 /* LearningJourneyTests.swift */; };
 		B123DA2D269BAB5D00671D11 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
 		B123DA34269BAB5D00671D11 /* CoreNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = B123DA26269BAB5D00671D11 /* CoreNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B123DA3C269BAB8200671D11 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
-		B123DA3D269BAB8200671D11 /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B123DA43269BAC1D00671D11 /* ApiRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123DA42269BAC1C00671D11 /* ApiRequestTests.swift */; };
 		B123DA44269BAC7900671D11 /* ApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75F26867BB000FAFF5D /* ApiEndpoint.swift */; };
 		B123DA45269BAC7C00671D11 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */; };
 		B123DA54269BACAB00671D11 /* CoreAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; };
 		B123DA5B269BACAC00671D11 /* CoreAdaptersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123DA5A269BACAB00671D11 /* CoreAdaptersTests.swift */; };
 		B123DA5D269BACAC00671D11 /* CoreAdapters.h in Headers */ = {isa = PBXBuildFile; fileRef = B123DA4D269BACAB00671D11 /* CoreAdapters.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B123DA60269BACAC00671D11 /* CoreAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; };
-		B123DA61269BACAC00671D11 /* CoreAdapters.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B123DA69269BACC600671D11 /* Dispatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123D997269BA7E100671D11 /* Dispatching.swift */; };
 		B123DA6A269BACC600671D11 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123D998269BA7E100671D11 /* URLSessionProtocol.swift */; };
 		B123DA6B269BAD0A00671D11 /* CoreAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; };
-		B123DA6C269BAD0A00671D11 /* CoreAdapters.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B123DA7E269BAD5B00671D11 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
 		B123DA85269BAD5B00671D11 /* TokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B123DA84269BAD5B00671D11 /* TokenManagerTests.swift */; };
 		B123DA87269BAD5B00671D11 /* CoreAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = B123DA77269BAD5A00671D11 /* CoreAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B123DA8A269BAD5B00671D11 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
-		B123DA8B269BAD5B00671D11 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B123DA94269BAD7600671D11 /* TokenCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AC455269359FD0095AF06 /* TokenCacheService.swift */; };
 		B123DA95269BAD7600671D11 /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A194F2694D8EE00507E15 /* TokenManager.swift */; };
 		B123DA9B269BADA100671D11 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
-		B123DA9C269BADA100671D11 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1481A97269E85F5005B77F2 /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
-		B1481A98269E85F5005B77F2 /* CoreInjector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1481A9D269E88B2005B77F2 /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1481A9B269E8870005B77F2 /* LoginRoute.swift */; };
 		B18C4CB42683F5D100A150CD /* LearningJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18C4CB32683F5D100A150CD /* LearningJourneyApp.swift */; };
-		B18C4CB82683F5D200A150CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CB72683F5D200A150CD /* Assets.xcassets */; };
 		B18C4CBB2683F5D200A150CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CBA2683F5D200A150CD /* Preview Assets.xcassets */; };
 		B18D415A269C7CDB000C3826 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; };
 		B18D4163269C7CDB000C3826 /* UI.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D4153269C7CDB000C3826 /* UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B18D4166269C7CDC000C3826 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; };
-		B18D4167269C7CDC000C3826 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D4170269C7D1D000C3826 /* ViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A19AB2695F28200507E15 /* ViewError.swift */; };
 		B18D4171269C7D1D000C3826 /* UnknownErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18A19AE2695F34F00507E15 /* UnknownErrorView.swift */; };
 		B18D4173269C7DC5000C3826 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15F7823269C780E009315A3 /* UITests.swift */; };
 		B18D41B2269C8167000C3826 /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; };
 		B18D41BB269C8167000C3826 /* JAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D41AB269C8167000C3826 /* JAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B18D41BE269C8167000C3826 /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; };
-		B18D41BF269C8167000C3826 /* JAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D41CA269C81BB000C3826 /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D418F269C7FF7000C3826 /* AuthenticationTests.swift */; };
 		B18D41CC269C826A000C3826 /* AuthenticationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */; };
 		B18D41CD269C826F000C3826 /* LoginViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730112698FB5600B7D261 /* LoginViewModelMock.swift */; };
@@ -76,9 +59,7 @@
 		B18D41D8269C828C000C3826 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EF263E26910B9300D8EA87 /* LoginView.swift */; };
 		B18D41D9269C828C000C3826 /* FeatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110730132699025A00B7D261 /* FeatureRow.swift */; };
 		B18D41DA269C85C0000C3826 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
-		B18D41DB269C85C0000C3826 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D41DE269C85C0000C3826 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
-		B18D41DF269C85C0000C3826 /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D41E5269C8666000C3826 /* AuthenticationRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E4269C8666000C3826 /* AuthenticationRepositoryTests.swift */; };
 		B18D41E7269C925D000C3826 /* AuthenticationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E6269C925D000C3826 /* AuthenticationParserTests.swift */; };
 		B18D41EA269C947F000C3826 /* RemoteAuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D41E9269C947F000C3826 /* RemoteAuthenticationServiceTests.swift */; };
@@ -91,8 +72,6 @@
 		B18D4826269D1AC1005EFAF4 /* JLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; };
 		B18D482D269D1AC2005EFAF4 /* JLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D482C269D1AC2005EFAF4 /* JLibraryTests.swift */; };
 		B18D482F269D1AC2005EFAF4 /* JLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D481F269D1AC1005EFAF4 /* JLibrary.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B18D4832269D1AC2005EFAF4 /* JLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; };
-		B18D4833269D1AC2005EFAF4 /* JLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D4842269D1B31005EFAF4 /* LibraryFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D52688D59200FAFF5D /* LibraryFeature.swift */; };
 		B18D4843269D1B38005EFAF4 /* LibraryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75826866E2100FAFF5D /* LibraryParser.swift */; };
 		B18D4844269D1B38005EFAF4 /* LibraryRemoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */; };
@@ -120,18 +99,30 @@
 		B18D48EA269DB688005EFAF4 /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
 		B18D48F1269DB688005EFAF4 /* CoreInjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D48F0269DB688005EFAF4 /* CoreInjectorTests.swift */; };
 		B18D48F3269DB688005EFAF4 /* CoreInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D48E3269DB688005EFAF4 /* CoreInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B18D48F6269DB688005EFAF4 /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
-		B18D48F7269DB688005EFAF4 /* CoreInjector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B18D4902269DB6AD005EFAF4 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D4900269DB6AC005EFAF4 /* Dependency.swift */; };
 		B18D4903269DB6AD005EFAF4 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D4901269DB6AC005EFAF4 /* DependencyContainer.swift */; };
+		B1D72B9B269F203500971CE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CB72683F5D200A150CD /* Assets.xcassets */; };
+		B1D72BA7269F2C4900971CE6 /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; };
+		B1D72BA8269F2C4900971CE6 /* JAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D72BA9269F2C4900971CE6 /* JLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; };
+		B1D72BAA269F2C4900971CE6 /* JLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D481D269D1AC1005EFAF4 /* JLibrary.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D72BAE269F702600971CE6 /* CoreAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; };
+		B1D72BAF269F702600971CE6 /* CoreAdapters.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA4B269BACAB00671D11 /* CoreAdapters.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D72BB2269F702600971CE6 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; };
+		B1D72BB3269F702600971CE6 /* CoreAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA75269BAD5A00671D11 /* CoreAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D72BB6269F702600971CE6 /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
+		B1D72BB7269F702600971CE6 /* CoreEnvironment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D72BBA269F702600971CE6 /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
+		B1D72BBB269F702600971CE6 /* CoreInjector.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D72BBE269F702600971CE6 /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
+		B1D72BBF269F702600971CE6 /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B1D72BC2269F702600971CE6 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; };
+		B1D72BC3269F702600971CE6 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1E6FA22269BAE42001AB07F /* TokenPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6FA21269BAE42001AB07F /* TokenPayload.swift */; };
 		B1E6FA32269BAEEC001AB07F /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
 		B1E6FA39269BAEEC001AB07F /* CoreEnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E6FA38269BAEEC001AB07F /* CoreEnvironmentTests.swift */; };
 		B1E6FA3B269BAEEC001AB07F /* CoreEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E6FA2B269BAEEC001AB07F /* CoreEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B1E6FA3E269BAEEC001AB07F /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
-		B1E6FA3F269BAEEC001AB07F /* CoreEnvironment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1E6FA4A269BB03B001AB07F /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
-		B1E6FA4B269BB03B001AB07F /* CoreEnvironment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B1E6FA4E269BB067001AB07F /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */; };
 		B1EF15BB269BDC5F00422192 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A22699D22B00DF335D /* Development.xcconfig */; };
 		B1EF15BC269BDC5F00422192 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A32699D26800DF335D /* Production.xcconfig */; };
@@ -173,21 +164,7 @@
 			remoteGlobalIDString = B123DA23269BAB5D00671D11;
 			remoteInfo = CoreNetworking;
 		};
-		B123DA3E269BAB8200671D11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B123DA23269BAB5D00671D11;
-			remoteInfo = CoreNetworking;
-		};
 		B123DA55269BACAB00671D11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B123DA4A269BACAB00671D11;
-			remoteInfo = CoreAdapters;
-		};
-		B123DA5E269BACAC00671D11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
 			proxyType = 1;
@@ -202,13 +179,6 @@
 			remoteInfo = CoreAdapters;
 		};
 		B123DA7F269BAD5B00671D11 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B123DA74269BAD5A00671D11;
-			remoteInfo = CoreAuthentication;
-		};
-		B123DA88269BAD5B00671D11 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
 			proxyType = 1;
@@ -230,13 +200,6 @@
 			remoteInfo = CoreInjector;
 		};
 		B18D415B269C7CDB000C3826 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B18D4150269C7CDB000C3826;
-			remoteInfo = UI;
-		};
-		B18D4164269C7CDB000C3826 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
 			proxyType = 1;
@@ -306,21 +269,49 @@
 			remoteGlobalIDString = B18C4CAF2683F5D100A150CD;
 			remoteInfo = LearningJourney;
 		};
-		B18D48F4269DB688005EFAF4 /* PBXContainerItemProxy */ = {
+		B1D72BB0269F702600971CE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B18D48E0269DB688005EFAF4;
-			remoteInfo = CoreInjector;
+			remoteGlobalIDString = B123DA4A269BACAB00671D11;
+			remoteInfo = CoreAdapters;
 		};
-		B1E6FA33269BAEEC001AB07F /* PBXContainerItemProxy */ = {
+		B1D72BB4269F702600971CE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B123DA74269BAD5A00671D11;
+			remoteInfo = CoreAuthentication;
+		};
+		B1D72BB8269F702600971CE6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = B1E6FA28269BAEEC001AB07F;
 			remoteInfo = CoreEnvironment;
 		};
-		B1E6FA3C269BAEEC001AB07F /* PBXContainerItemProxy */ = {
+		B1D72BBC269F702600971CE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18D48E0269DB688005EFAF4;
+			remoteInfo = CoreInjector;
+		};
+		B1D72BC0269F702600971CE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B123DA23269BAB5D00671D11;
+			remoteInfo = CoreNetworking;
+		};
+		B1D72BC4269F702600971CE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B18D4150269C7CDB000C3826;
+			remoteInfo = UI;
+		};
+		B1E6FA33269BAEEC001AB07F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B18C4CA82683F5D100A150CD /* Project object */;
 			proxyType = 1;
@@ -337,59 +328,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B11A58A3269DD2000015DC1B /* Embed Frameworks */ = {
+		B1D72BAD269F2C4A00971CE6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B11A58A0269DD2000015DC1B /* UI.framework in Embed Frameworks */,
-				B11A58A5269DD2090015DC1B /* CoreNetworking.framework in Embed Frameworks */,
-				B11A58A9269DD2130015DC1B /* CoreInjector.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B123DA1B269BAA6D00671D11 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B123DA3D269BAB8200671D11 /* CoreNetworking.framework in Embed Frameworks */,
-				B18D48F7269DB688005EFAF4 /* CoreInjector.framework in Embed Frameworks */,
-				B18D41BF269C8167000C3826 /* JAuthentication.framework in Embed Frameworks */,
-				B18D4167269C7CDC000C3826 /* UI.framework in Embed Frameworks */,
-				B123DA61269BACAC00671D11 /* CoreAdapters.framework in Embed Frameworks */,
-				B123DA8B269BAD5B00671D11 /* CoreAuthentication.framework in Embed Frameworks */,
-				B18D4833269D1AC2005EFAF4 /* JLibrary.framework in Embed Frameworks */,
-				B1E6FA3F269BAEEC001AB07F /* CoreEnvironment.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B123DA6F269BAD0B00671D11 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B123DA6C269BAD0A00671D11 /* CoreAdapters.framework in Embed Frameworks */,
-				B1E6FA4B269BB03B001AB07F /* CoreEnvironment.framework in Embed Frameworks */,
-				B123DA9C269BADA100671D11 /* CoreAuthentication.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B18D41E2269C85C0000C3826 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				B18D41DB269C85C0000C3826 /* CoreAuthentication.framework in Embed Frameworks */,
-				B18D41DF269C85C0000C3826 /* CoreNetworking.framework in Embed Frameworks */,
-				B1481A98269E85F5005B77F2 /* CoreInjector.framework in Embed Frameworks */,
+				B1D72BBF269F702600971CE6 /* CoreNetworking.framework in Embed Frameworks */,
+				B1D72BB7269F702600971CE6 /* CoreEnvironment.framework in Embed Frameworks */,
+				B1D72BA8269F2C4900971CE6 /* JAuthentication.framework in Embed Frameworks */,
+				B1D72BB3269F702600971CE6 /* CoreAuthentication.framework in Embed Frameworks */,
+				B1D72BAF269F702600971CE6 /* CoreAdapters.framework in Embed Frameworks */,
+				B1D72BAA269F2C4900971CE6 /* JLibrary.framework in Embed Frameworks */,
+				B1D72BC3269F702600971CE6 /* UI.framework in Embed Frameworks */,
+				B1D72BBB269F702600971CE6 /* CoreInjector.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -583,14 +535,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B123DA3C269BAB8200671D11 /* CoreNetworking.framework in Frameworks */,
-				B18D48F6269DB688005EFAF4 /* CoreInjector.framework in Frameworks */,
-				B18D41BE269C8167000C3826 /* JAuthentication.framework in Frameworks */,
-				B18D4166269C7CDC000C3826 /* UI.framework in Frameworks */,
-				B123DA60269BACAC00671D11 /* CoreAdapters.framework in Frameworks */,
-				B123DA8A269BAD5B00671D11 /* CoreAuthentication.framework in Frameworks */,
-				B18D4832269D1AC2005EFAF4 /* JLibrary.framework in Frameworks */,
-				B1E6FA3E269BAEEC001AB07F /* CoreEnvironment.framework in Frameworks */,
+				B1D72BBE269F702600971CE6 /* CoreNetworking.framework in Frameworks */,
+				B1D72BB6269F702600971CE6 /* CoreEnvironment.framework in Frameworks */,
+				B1D72BA9269F2C4900971CE6 /* JLibrary.framework in Frameworks */,
+				B1D72BB2269F702600971CE6 /* CoreAuthentication.framework in Frameworks */,
+				B1D72BAE269F702600971CE6 /* CoreAdapters.framework in Frameworks */,
+				B1D72BA7269F2C4900971CE6 /* JAuthentication.framework in Frameworks */,
+				B1D72BC2269F702600971CE6 /* UI.framework in Frameworks */,
+				B1D72BBA269F702600971CE6 /* CoreInjector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1616,7 +1568,6 @@
 				B123DA20269BAB5D00671D11 /* Sources */,
 				B123DA21269BAB5D00671D11 /* Frameworks */,
 				B123DA22269BAB5D00671D11 /* Resources */,
-				B123DA6F269BAD0B00671D11 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1727,19 +1678,19 @@
 				B18C4CAC2683F5D100A150CD /* Sources */,
 				B18C4CAD2683F5D100A150CD /* Frameworks */,
 				B18C4CAE2683F5D100A150CD /* Resources */,
-				B123DA1B269BAA6D00671D11 /* Embed Frameworks */,
+				B1D72BAD269F2C4A00971CE6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				B123DA3F269BAB8200671D11 /* PBXTargetDependency */,
-				B123DA5F269BACAC00671D11 /* PBXTargetDependency */,
-				B123DA89269BAD5B00671D11 /* PBXTargetDependency */,
-				B1E6FA3D269BAEEC001AB07F /* PBXTargetDependency */,
-				B18D4165269C7CDB000C3826 /* PBXTargetDependency */,
 				B18D41BD269C8167000C3826 /* PBXTargetDependency */,
 				B18D4831269D1AC2005EFAF4 /* PBXTargetDependency */,
-				B18D48F5269DB688005EFAF4 /* PBXTargetDependency */,
+				B1D72BB1269F702600971CE6 /* PBXTargetDependency */,
+				B1D72BB5269F702600971CE6 /* PBXTargetDependency */,
+				B1D72BB9269F702600971CE6 /* PBXTargetDependency */,
+				B1D72BBD269F702600971CE6 /* PBXTargetDependency */,
+				B1D72BC1269F702600971CE6 /* PBXTargetDependency */,
+				B1D72BC5269F702600971CE6 /* PBXTargetDependency */,
 			);
 			name = LearningJourney;
 			productName = LearningJourney;
@@ -1790,7 +1741,6 @@
 				B18D41A5269C8167000C3826 /* Sources */,
 				B18D41A6269C8167000C3826 /* Frameworks */,
 				B18D41A7269C8167000C3826 /* Resources */,
-				B18D41E2269C85C0000C3826 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1830,7 +1780,6 @@
 				B18D4819269D1AC1005EFAF4 /* Sources */,
 				B18D481A269D1AC1005EFAF4 /* Frameworks */,
 				B18D481B269D1AC1005EFAF4 /* Resources */,
-				B11A58A3269DD2000015DC1B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2092,8 +2041,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D72B9B269F203500971CE6 /* Assets.xcassets in Resources */,
 				B18C4CBB2683F5D200A150CD /* Preview Assets.xcassets in Resources */,
-				B18C4CB82683F5D200A150CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2400,20 +2349,10 @@
 			target = B123DA23269BAB5D00671D11 /* CoreNetworking */;
 			targetProxy = B123DA2E269BAB5D00671D11 /* PBXContainerItemProxy */;
 		};
-		B123DA3F269BAB8200671D11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B123DA23269BAB5D00671D11 /* CoreNetworking */;
-			targetProxy = B123DA3E269BAB8200671D11 /* PBXContainerItemProxy */;
-		};
 		B123DA56269BACAB00671D11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B123DA4A269BACAB00671D11 /* CoreAdapters */;
 			targetProxy = B123DA55269BACAB00671D11 /* PBXContainerItemProxy */;
-		};
-		B123DA5F269BACAC00671D11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B123DA4A269BACAB00671D11 /* CoreAdapters */;
-			targetProxy = B123DA5E269BACAC00671D11 /* PBXContainerItemProxy */;
 		};
 		B123DA6E269BAD0A00671D11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2424,11 +2363,6 @@
 			isa = PBXTargetDependency;
 			target = B123DA74269BAD5A00671D11 /* CoreAuthentication */;
 			targetProxy = B123DA7F269BAD5B00671D11 /* PBXContainerItemProxy */;
-		};
-		B123DA89269BAD5B00671D11 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B123DA74269BAD5A00671D11 /* CoreAuthentication */;
-			targetProxy = B123DA88269BAD5B00671D11 /* PBXContainerItemProxy */;
 		};
 		B123DA9E269BADA100671D11 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2444,11 +2378,6 @@
 			isa = PBXTargetDependency;
 			target = B18D4150269C7CDB000C3826 /* UI */;
 			targetProxy = B18D415B269C7CDB000C3826 /* PBXContainerItemProxy */;
-		};
-		B18D4165269C7CDB000C3826 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B18D4150269C7CDB000C3826 /* UI */;
-			targetProxy = B18D4164269C7CDB000C3826 /* PBXContainerItemProxy */;
 		};
 		B18D41B4269C8167000C3826 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2495,20 +2424,40 @@
 			target = B18C4CAF2683F5D100A150CD /* LearningJourney */;
 			targetProxy = B18D48ED269DB688005EFAF4 /* PBXContainerItemProxy */;
 		};
-		B18D48F5269DB688005EFAF4 /* PBXTargetDependency */ = {
+		B1D72BB1269F702600971CE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B123DA4A269BACAB00671D11 /* CoreAdapters */;
+			targetProxy = B1D72BB0269F702600971CE6 /* PBXContainerItemProxy */;
+		};
+		B1D72BB5269F702600971CE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B123DA74269BAD5A00671D11 /* CoreAuthentication */;
+			targetProxy = B1D72BB4269F702600971CE6 /* PBXContainerItemProxy */;
+		};
+		B1D72BB9269F702600971CE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1E6FA28269BAEEC001AB07F /* CoreEnvironment */;
+			targetProxy = B1D72BB8269F702600971CE6 /* PBXContainerItemProxy */;
+		};
+		B1D72BBD269F702600971CE6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B18D48E0269DB688005EFAF4 /* CoreInjector */;
-			targetProxy = B18D48F4269DB688005EFAF4 /* PBXContainerItemProxy */;
+			targetProxy = B1D72BBC269F702600971CE6 /* PBXContainerItemProxy */;
+		};
+		B1D72BC1269F702600971CE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B123DA23269BAB5D00671D11 /* CoreNetworking */;
+			targetProxy = B1D72BC0269F702600971CE6 /* PBXContainerItemProxy */;
+		};
+		B1D72BC5269F702600971CE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B18D4150269C7CDB000C3826 /* UI */;
+			targetProxy = B1D72BC4269F702600971CE6 /* PBXContainerItemProxy */;
 		};
 		B1E6FA34269BAEEC001AB07F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B1E6FA28269BAEEC001AB07F /* CoreEnvironment */;
 			targetProxy = B1E6FA33269BAEEC001AB07F /* PBXContainerItemProxy */;
-		};
-		B1E6FA3D269BAEEC001AB07F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B1E6FA28269BAEEC001AB07F /* CoreEnvironment */;
-			targetProxy = B1E6FA3C269BAEEC001AB07F /* PBXContainerItemProxy */;
 		};
 		B1E6FA4D269BB03B001AB07F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2726,7 +2675,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreAdaptersTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreAdapters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2745,7 +2694,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreAdaptersTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreAdapters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2971,18 +2920,16 @@
 		B18C4CDB2683F5D200A150CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Resources\"";
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2998,18 +2945,16 @@
 		B18C4CDC2683F5D200A150CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_ASSET_PATHS = "\"App/Resources\"";
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3483,7 +3428,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreEnvironmentTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreEnvironment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -3502,7 +3447,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreEnvironmentTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourneyapp.CoreEnvironment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

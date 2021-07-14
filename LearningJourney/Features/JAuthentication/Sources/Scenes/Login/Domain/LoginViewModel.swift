@@ -78,10 +78,12 @@ final class LoginViewModel: LoginViewModeling {
     
     private func dismiss() {
         isPresented = false
-        NotificationCenter.default.post(
-            name: .authDidChange,
-            object: nil,
-            userInfo: nil)
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(
+                name: .authDidChange,
+                object: nil,
+                userInfo: nil)
+        }
         objectWillChange.send()
     }
 }

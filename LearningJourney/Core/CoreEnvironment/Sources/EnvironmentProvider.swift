@@ -4,10 +4,14 @@ public protocol EnvironmentProvider {
     static var baseUrl: String { get }
 }
 
-public enum DefaultEnvironment: EnvironmentProvider {
+public final class DefaultEnvironment: EnvironmentProvider {
+    
+    private static let bundle: Bundle = {
+        Bundle(for: DefaultEnvironment.self)
+    }()
     
     private static let infoDictionary: [String : Any] = {
-        guard let dict = Bundle.main.infoDictionary else {
+        guard let dict = bundle.infoDictionary else {
             fatalError("Plist not found! Check your environment settings")
         }
         return dict
