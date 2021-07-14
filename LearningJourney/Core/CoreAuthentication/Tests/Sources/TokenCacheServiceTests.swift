@@ -18,6 +18,7 @@ final class TokenCacheServiceTests: XCTestCase {
         
         // Then
         XCTAssertNil(token)
+        XCTAssertEqual(keychainMock.copyCallCount, 1)
     }
     
     func test_token_whenCached_itShouldReturnData() throws {
@@ -29,6 +30,7 @@ final class TokenCacheServiceTests: XCTestCase {
         
         // Then
         XCTAssertNotNil(token)
+        XCTAssertEqual(keychainMock.copyCallCount, 1)
     }
     
     func test_cache_itShouldDeleteCurrentItem_andAddNewItem() throws {
@@ -40,6 +42,7 @@ final class TokenCacheServiceTests: XCTestCase {
         
         // Then
         XCTAssertEqual(keychainMock.addCallCount, 1)
+        XCTAssertEqual(keychainMock.copyCallCount, 0)
         XCTAssertEqual(keychainMock.deleteCallCount, 1)
         
     }
@@ -50,6 +53,7 @@ final class KeychainManagerMock: KeychainManaging {
     // MARK: - Properties
 
     private(set) var addCallCount = 0
+    private(set) var copyCallCount = 0
     private(set) var deleteCallCount = 0
     
     // MARK: - Initialization
@@ -70,6 +74,7 @@ final class KeychainManagerMock: KeychainManaging {
     
     private func _copy(_ dict: CFDictionary, res: UnsafeMutablePointer<CFTypeRef?>?) -> OSStatus {
         res?.pointee = dataToCopy as CFTypeRef?
+        copyCallCount += 1
         return noErr
     }
     

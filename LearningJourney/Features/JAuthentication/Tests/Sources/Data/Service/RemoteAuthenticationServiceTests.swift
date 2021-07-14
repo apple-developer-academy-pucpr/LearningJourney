@@ -8,7 +8,7 @@ final class RemoteAuthenticationServiceTests: XCTestCase {
     
     // MARK: - Properties
     private let apiSpy = ApiSpy()
-    private lazy var sut = RemoteAuthenticationService(apiFactory:  { _ in self.apiSpy })
+    private lazy var sut = RemoteAuthenticationService(apiFactory:  ApiFactoryDummy(api: apiSpy))
     
     // MARK: - Unit tests
     
@@ -52,3 +52,18 @@ enum DummyEndpoint: ApiEndpoint {
     
     case dummy
 }
+
+final class ApiFactoryDummy: ApiFactoryProtocol {
+    
+    private let apiToUse: ApiProtocol
+    
+    init(api: ApiProtocol) {
+        apiToUse = api
+    }
+    
+    func make(_ endpoint: ApiEndpoint) -> ApiProtocol {
+        apiToUse
+    }
+}
+
+

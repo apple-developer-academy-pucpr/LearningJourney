@@ -1,109 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1250"
-   version = "1.7">
+   version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B123DA52269BACAB00671D11"
-               BuildableName = "CoreAdaptersTests.xctest"
-               BlueprintName = "CoreAdaptersTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B123DA7C269BAD5A00671D11"
-               BuildableName = "CoreAuthenticationTests.xctest"
-               BlueprintName = "CoreAuthenticationTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B1E6FA30269BAEEC001AB07F"
-               BuildableName = "CoreEnvironmentTests.xctest"
-               BlueprintName = "CoreEnvironmentTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B123DA2B269BAB5D00671D11"
-               BuildableName = "CoreNetworkingTests.xctest"
-               BlueprintName = "CoreNetworkingTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B18D41B0269C8167000C3826"
-               BuildableName = "JAuthenticationTests.xctest"
-               BlueprintName = "JAuthenticationTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B18D4158269C7CDB000C3826"
-               BuildableName = "UITests.xctest"
-               BlueprintName = "UITests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
+      systemAttachmentLifetime = "keepNever"
+      userAttachmentLifetime = "keepAlways"
       codeCoverageEnabled = "YES">
-      <TestPlans>
-         <TestPlanReference
-            reference = "container:App/Tests.xctestplan"
-            default = "YES">
-         </TestPlanReference>
-      </TestPlans>
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -139,6 +49,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B18D48E8269DB688005EFAF4"
+               BuildableName = "CoreInjectorTests.xctest"
+               BlueprintName = "CoreInjectorTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B123DA2B269BAB5D00671D11"
                BuildableName = "CoreNetworkingTests.xctest"
                BlueprintName = "CoreNetworkingTests"
@@ -152,6 +72,16 @@
                BlueprintIdentifier = "B18D41B0269C8167000C3826"
                BuildableName = "JAuthenticationTests.xctest"
                BlueprintName = "JAuthenticationTests"
+               ReferencedContainer = "container:LearningJourney.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B18D4824269D1AC1005EFAF4"
+               BuildableName = "JLibraryTests.xctest"
+               BlueprintName = "JLibraryTests"
                ReferencedContainer = "container:LearningJourney.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -184,15 +114,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B123DA52269BACAB00671D11"
-            BuildableName = "CoreAdaptersTests.xctest"
-            BlueprintName = "CoreAdaptersTests"
-            ReferencedContainer = "container:LearningJourney.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

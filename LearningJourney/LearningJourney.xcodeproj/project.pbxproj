@@ -961,8 +961,8 @@
 		B18D417A269C7F7B000C3826 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B18D481E269D1AC1005EFAF4 /* JLibrary */,
 				B18D4181269C7FF7000C3826 /* JAuthentication */,
+				B18D481E269D1AC1005EFAF4 /* JLibrary */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -2977,7 +2977,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Resources\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
@@ -3004,7 +3004,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Resources\"";
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;

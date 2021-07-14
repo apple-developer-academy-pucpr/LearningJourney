@@ -32,26 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B123D99E269BA88E00671D11"
-               BuildableName = "LearningJourneyTests.xctest"
-               BlueprintName = "LearningJourneyTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B123DA08269BAA6C00671D11"
-               BuildableName = "LibraryTests.xctest"
-               BlueprintName = "LibraryTests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B123DA52269BACAB00671D11"
                BuildableName = "CoreAdaptersTests.xctest"
                BlueprintName = "CoreAdaptersTests"
@@ -82,29 +62,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B15F781B269C780E009315A3"
-               BuildableName = "LJUITests.xctest"
-               BlueprintName = "LJUITests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B18D4158269C7CDB000C3826"
                BuildableName = "UITests.xctest"
                BlueprintName = "UITests"
-               ReferencedContainer = "container:LearningJourney.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B18D4187269C7FF7000C3826"
-               BuildableName = "AuthenticationTests.xctest"
-               BlueprintName = "AuthenticationTests"
                ReferencedContainer = "container:LearningJourney.xcodeproj">
             </BuildableReference>
          </TestableReference>
