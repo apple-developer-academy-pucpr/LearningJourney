@@ -23,7 +23,7 @@ struct LearningJourneyApp: App {
         WindowGroup {
             routerService
                 .initialize(using: LibraryFeature.self)
-                .authenticationSheet()
+                .authenticationSheet(using: routerService.feature(for: AuthenticationFeature.self))
         }
     }
     
@@ -34,5 +34,6 @@ struct LearningJourneyApp: App {
     
     private func registerRouteHandlers() {
         routerService.register(routeHandler: LibraryRouteHandler())
+        routerService.register(routeHandler: AuthenticationRouteHandler())
     }
 }

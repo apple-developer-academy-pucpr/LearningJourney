@@ -37,6 +37,7 @@ public protocol RoutingService {
     func register<T>(_ factory: @escaping DependencyFactory, for type: T.Type)
     func register(routeHandler: RouteHandling)
     
+    func feature(for featureType: Feature.Type) -> Feature
     func initialize(using feature: Feature.Type) -> AnyView
     func link<Body>(for route: Route, @ViewBuilder body: () -> Body) -> NavigationLink<Body, AnyView>
 }
@@ -64,6 +65,10 @@ public final class RouterService: RoutingService {
         routeHandler.routes.forEach {
             registeredRoutes[$0.identifier] = ($0, routeHandler)
         }
+    }
+    
+    public func feature(for featureType: Feature.Type) -> Feature {
+        featureType.initialize(using: container)
     }
     
     public func initialize(using feature: Feature.Type) -> AnyView {

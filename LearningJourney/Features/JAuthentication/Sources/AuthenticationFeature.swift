@@ -1,10 +1,14 @@
 import SwiftUI
+import CoreInjector
+import CoreNetworking
 
-struct AuthenticationFeature<Coordinator> where Coordinator: AuthenticationCoordinating {
+public struct AuthenticationFeature: Feature {
     
     // MARK: - Dependencies
     
-    private let coordinator: Coordinator?
+    @Dependency var apiFactory: ApiFactoryProtocol
+    
+    private let scenesFactory: AuthenticationSceneFactoryProtocol
     
     // MARK: - Initialization
     
@@ -13,22 +17,20 @@ struct AuthenticationFeature<Coordinator> where Coordinator: AuthenticationCoord
         let factory = AuthenticationSceneFactory(
             loginAssembler: LoginAssembler()
         )
-        let coordinator = AuthenticationCoordinator(sceneFactory: factory)
-        
-        self.init(coordinator: coordinator as? Coordinator)
+        self.init(scenesFactory: factory)
     }
     
-    init(coordinator: Coordinator?) {
-        self.coordinator = coordinator
+    init(scenesFactory: AuthenticationSceneFactoryProtocol) {
+        self.scenesFactory = scenesFactory
     }
     
     // MARK: - Feature resolving
-    func resolve() -> AnyView {
-        guard let coordinator = coordinator else {
-            fatalError("Coordinator not configured for Library feature")
+    
+    public func build(using route: Route?) -> AnyView {
+        if let route = route as? LoginRoute {
+            return scenesFactory.loginScene(self, for: route)
         }
-        return AnyView(coordinator
-                        .start()
-                        .environmentObject(coordinator))
+        
+        preconditionFailure("Unhandled route \(route) sent for feature \(self)")
     }
 }

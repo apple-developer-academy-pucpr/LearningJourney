@@ -1,11 +1,13 @@
 import SwiftUI
 import AuthenticationServices
+import CoreInjector
 
 struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
     
     // MARK: - Dependencies
     
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject
+    var viewModel: ViewModel
     
     @Environment (\.colorScheme)
     var colorScheme
@@ -57,9 +59,6 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
             }
             .padding(30)
         }
-        
-        
-       
     }
 }
 
@@ -69,7 +68,6 @@ struct LoginPresentationModifier<ViewModel>: ViewModifier where ViewModel: Login
     
     @ObservedObject
     var viewModel: ViewModel
-    
     let loginView: AnyView
     
     // MARK: - ViewModifier
@@ -84,11 +82,15 @@ struct LoginPresentationModifier<ViewModel>: ViewModifier where ViewModel: Login
 }
 
 public extension View {
-    func authenticationSheet() -> some View {
-        let view = LoginAssembler().assemble()
+    func authenticationSheet(using feature: Feature) -> some View {
+        guard let feature = feature as? AuthenticationFeature else {
+            fatalError("Tried to assemble using wrong feature!")
+        }
+        let view = LoginAssembler().assemble(using: feature)
         return modifier(LoginPresentationModifier(
-                        viewModel: view.viewModel,
-                        loginView: AnyView(view)))
+            viewModel: view.viewModel,
+            loginView: AnyView(view)
+        ))
     }
 }
 

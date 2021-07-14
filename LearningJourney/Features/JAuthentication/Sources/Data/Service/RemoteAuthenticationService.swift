@@ -11,7 +11,7 @@ final class RemoteAuthenticationService: RemoteAuthenticationServicing {
     
     // MARK: - Dependencies
     
-    private let apiFactory: ApiFactory
+    private let apiFactory: ApiFactoryProtocol
     
     // MARK: - Properties
     
@@ -19,7 +19,7 @@ final class RemoteAuthenticationService: RemoteAuthenticationServicing {
     
     // MARK: - Initialization
     
-    init(apiFactory: ApiFactory) {
+    init(apiFactory: ApiFactoryProtocol) {
         self.apiFactory = apiFactory
     }
     

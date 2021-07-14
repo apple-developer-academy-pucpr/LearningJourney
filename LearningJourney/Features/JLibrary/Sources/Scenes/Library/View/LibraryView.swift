@@ -103,6 +103,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 final class DummyRoutingService: RoutingService {
+    func feature(for featureType: Feature.Type) -> Feature { DummyFeature() }
+    
     func register<T>(_ factory: @escaping DependencyFactory, for type: T.Type) {}
     
     func register(routeHandler: RouteHandling) {}
@@ -114,6 +116,10 @@ final class DummyRoutingService: RoutingService {
             destination: AnyView(Text("Destination")),
             label: body)
     }
+}
+
+struct DummyFeature: Feature {
+    func build(using route: Route?) -> AnyView { AnyView(Text("Dummy")) }
 }
 
 #endif
