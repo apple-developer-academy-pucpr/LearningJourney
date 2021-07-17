@@ -11,7 +11,7 @@ public final class DefaultDependencyContainer: DependencyContainer {
     
     // MARK: - Properties
     
-    private var dependencyCreators = [NSString : DependencyFactory]()
+    private var dependencyFactories = [NSString : DependencyFactory]()
     private var dependencies = NSMapTable<NSString, AnyObject>(
         keyOptions: .strongMemory,
         valueOptions: .weakMemory)
@@ -25,7 +25,7 @@ public final class DefaultDependencyContainer: DependencyContainer {
         
         if object != nil { return object as? T }
         
-        guard let instance = dependencyCreators[name]?()
+        guard let instance = dependencyFactories[name]?()
         else { return nil }
         
         dependencies.setObject(instance, forKey: name)
@@ -34,7 +34,7 @@ public final class DefaultDependencyContainer: DependencyContainer {
     
     public func register<T>(factory: @escaping DependencyFactory, for type: T.Type) {
         let name = name(for: type)
-        dependencyCreators[name] = factory
+        dependencyFactories[name] = factory
     }
     
     // MARK: - Helpers

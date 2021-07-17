@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B1175AEB26A07E690004CFB0 /* RoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1175AEA26A07E690004CFB0 /* RoutingService.swift */; };
+		B1175AED26A07EB70004CFB0 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1175AEC26A07EB70004CFB0 /* Feature.swift */; };
+		B1175AEF26A08DFA0004CFB0 /* DependencyContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1175AEE26A08DFA0004CFB0 /* DependencyContainerTests.swift */; };
+		B1175AF126A0A9E10004CFB0 /* FeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1175AF026A0A9E10004CFB0 /* FeatureTests.swift */; };
 		B11A589E269DC48A0015DC1B /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11A589B269DC2D10015DC1B /* Route.swift */; };
 		B11A589F269DD2000015DC1B /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D4151269C7CDB000C3826 /* UI.framework */; };
 		B11A58A4269DD2090015DC1B /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B123DA24269BAB5D00671D11 /* CoreNetworking.framework */; };
@@ -97,7 +101,7 @@
 		B18D4859269D1B6B005EFAF4 /* ObjectivesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7C62687E6EF00FAFF5D /* ObjectivesListView.swift */; };
 		B18D485A269D1B6B005EFAF4 /* ObjectivesListAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFE7D32688CD7200FAFF5D /* ObjectivesListAssembler.swift */; };
 		B18D48EA269DB688005EFAF4 /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D48E1269DB688005EFAF4 /* CoreInjector.framework */; };
-		B18D48F1269DB688005EFAF4 /* CoreInjectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D48F0269DB688005EFAF4 /* CoreInjectorTests.swift */; };
+		B18D48F1269DB688005EFAF4 /* DependencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D48F0269DB688005EFAF4 /* DependencyTests.swift */; };
 		B18D48F3269DB688005EFAF4 /* CoreInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D48E3269DB688005EFAF4 /* CoreInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B18D4902269DB6AD005EFAF4 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D4900269DB6AC005EFAF4 /* Dependency.swift */; };
 		B18D4903269DB6AD005EFAF4 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D4901269DB6AC005EFAF4 /* DependencyContainer.swift */; };
@@ -351,6 +355,10 @@
 /* Begin PBXFileReference section */
 		110730112698FB5600B7D261 /* LoginViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelMock.swift; sourceTree = "<group>"; };
 		110730132699025A00B7D261 /* FeatureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRow.swift; sourceTree = "<group>"; };
+		B1175AEA26A07E690004CFB0 /* RoutingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutingService.swift; sourceTree = "<group>"; };
+		B1175AEC26A07EB70004CFB0 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		B1175AEE26A08DFA0004CFB0 /* DependencyContainerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainerTests.swift; sourceTree = "<group>"; };
+		B1175AF026A0A9E10004CFB0 /* FeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTests.swift; sourceTree = "<group>"; };
 		B11A589B269DC2D10015DC1B /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		B11A58AC269DE8720015DC1B /* LibraryRouteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRouteHandler.swift; sourceTree = "<group>"; };
 		B11A58AF269DE8B40015DC1B /* LibraryRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRoute.swift; sourceTree = "<group>"; };
@@ -429,7 +437,7 @@
 		B18D48E3269DB688005EFAF4 /* CoreInjector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreInjector.h; sourceTree = "<group>"; };
 		B18D48E4269DB688005EFAF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B18D48E9269DB688005EFAF4 /* CoreInjectorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreInjectorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B18D48F0269DB688005EFAF4 /* CoreInjectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreInjectorTests.swift; sourceTree = "<group>"; };
+		B18D48F0269DB688005EFAF4 /* DependencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyTests.swift; sourceTree = "<group>"; };
 		B18D48F2269DB688005EFAF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B18D4900269DB6AC005EFAF4 /* Dependency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 		B18D4901269DB6AC005EFAF4 /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
@@ -1111,6 +1119,8 @@
 				B18D4900269DB6AC005EFAF4 /* Dependency.swift */,
 				B18D4901269DB6AC005EFAF4 /* DependencyContainer.swift */,
 				B11A589B269DC2D10015DC1B /* Route.swift */,
+				B1175AEC26A07EB70004CFB0 /* Feature.swift */,
+				B1175AEA26A07E690004CFB0 /* RoutingService.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1135,7 +1145,9 @@
 		B18D4906269DB6E8005EFAF4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B18D48F0269DB688005EFAF4 /* CoreInjectorTests.swift */,
+				B18D48F0269DB688005EFAF4 /* DependencyTests.swift */,
+				B1175AEE26A08DFA0004CFB0 /* DependencyContainerTests.swift */,
+				B1175AF026A0A9E10004CFB0 /* FeatureTests.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -2291,7 +2303,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1175AEB26A07E690004CFB0 /* RoutingService.swift in Sources */,
 				B11A589E269DC48A0015DC1B /* Route.swift in Sources */,
+				B1175AED26A07EB70004CFB0 /* Feature.swift in Sources */,
 				B18D4903269DB6AD005EFAF4 /* DependencyContainer.swift in Sources */,
 				B18D4902269DB6AD005EFAF4 /* Dependency.swift in Sources */,
 			);
@@ -2301,7 +2315,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B18D48F1269DB688005EFAF4 /* CoreInjectorTests.swift in Sources */,
+				B1175AEF26A08DFA0004CFB0 /* DependencyContainerTests.swift in Sources */,
+				B18D48F1269DB688005EFAF4 /* DependencyTests.swift in Sources */,
+				B1175AF126A0A9E10004CFB0 /* FeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
