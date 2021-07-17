@@ -128,6 +128,7 @@
 		B1E6FA3B269BAEEC001AB07F /* CoreEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E6FA2B269BAEEC001AB07F /* CoreEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1E6FA4A269BB03B001AB07F /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
 		B1E6FA4E269BB067001AB07F /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */; };
+		B1EA12AC26A32AE5006CD4AF /* LibraryRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA12A926A32A83006CD4AF /* LibraryRemoteServiceTests.swift */; };
 		B1EF15BB269BDC5F00422192 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A22699D22B00DF335D /* Development.xcconfig */; };
 		B1EF15BC269BDC5F00422192 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A32699D26800DF335D /* Production.xcconfig */; };
 /* End PBXBuildFile section */
@@ -473,6 +474,7 @@
 		B1E6FA38269BAEEC001AB07F /* CoreEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEnvironmentTests.swift; sourceTree = "<group>"; };
 		B1E6FA3A269BAEEC001AB07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1E6FA49269BAF65001AB07F /* Development.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
+		B1EA12A926A32A83006CD4AF /* LibraryRemoteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRemoteServiceTests.swift; sourceTree = "<group>"; };
 		D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFeature.swift; sourceTree = "<group>"; };
 		D7EF26382691085D00D8EA87 /* AuthenticationRouteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouteHandler.swift; sourceTree = "<group>"; };
 		D7EF263A2691089400D8EA87 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
@@ -1089,6 +1091,7 @@
 		B18D483E269D1B06005EFAF4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B1EA12A726A32A6B006CD4AF /* Data */,
 				B18D482C269D1AC2005EFAF4 /* JLibraryTests.swift */,
 			);
 			path = Sources;
@@ -1285,6 +1288,22 @@
 				B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		B1EA12A726A32A6B006CD4AF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA12A826A32A6F006CD4AF /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B1EA12A826A32A6F006CD4AF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA12A926A32A83006CD4AF /* LibraryRemoteServiceTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B1EF15A6269BB1B800422192 /* Tests */ = {
@@ -2296,6 +2315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18D482D269D1AC2005EFAF4 /* JLibraryTests.swift in Sources */,
+				B1EA12AC26A32AE5006CD4AF /* LibraryRemoteServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
