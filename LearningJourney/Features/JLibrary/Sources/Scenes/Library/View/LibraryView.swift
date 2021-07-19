@@ -47,7 +47,9 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
 //                searchBar
 //                    .padding(.vertical, 18)
                 ForEach(strands) { strand in
-                    LearningStrandRow(service: routingService, strand: strand)
+                    LearningStrandRow(
+                        service: routingService,
+                        strand: strand)
                     Spacer()
                         .frame(height: 20)
                 }
@@ -79,30 +81,34 @@ extension PresentationMode: Equatable {
 #if DEBUG
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        LibraryView<LibraryViewModelMock>(viewModel: LibraryViewModelMock(resultToUse: [
-            .fixture(goals: [
-                        .fixture(),
-                        .fixture(),
-                        .fixture(),
-            ]),
-            .fixture(goals: [
-                .fixture(),
-                .fixture(),
-                .fixture(),
-            ]),
-            .fixture(goals: [
-                .fixture(),
-                .fixture(),
-                .fixture(),
-            ]),
-            .fixture(goals: [
-                .fixture(),
-                .fixture(),
-                .fixture(),
-            ]),
-        ]), routingService: DummyRoutingService())
+    
+    static var contentPreview: some View {
+            LibraryView<LibraryViewModelMock>(viewModel: LibraryViewModelMock(resultToUse: [
+                .fixture(goals: [
+                            .fixture(),
+                            .fixture(),
+                            .fixture(),
+                ]),
+                .fixture(goals: [
+                    .fixture(),
+                    .fixture(),
+                    .fixture(),
+                ]),
+                .fixture(goals: [
+                    .fixture(),
+                    .fixture(),
+                    .fixture(),
+                ]),
+                .fixture(goals: [
+                    .fixture(),
+                    .fixture(),
+                    .fixture(),
+                ]),
+            ]), routingService: DummyRoutingService())
+        
     }
+    
+    static var previews: some View { contentPreview }
 }
 
 final class DummyRoutingService: RoutingService {
