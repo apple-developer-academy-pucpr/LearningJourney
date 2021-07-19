@@ -105,6 +105,7 @@
 		B18D48F3269DB688005EFAF4 /* CoreInjector.h in Headers */ = {isa = PBXBuildFile; fileRef = B18D48E3269DB688005EFAF4 /* CoreInjector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B18D4902269DB6AD005EFAF4 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D4900269DB6AC005EFAF4 /* Dependency.swift */; };
 		B18D4903269DB6AD005EFAF4 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18D4901269DB6AC005EFAF4 /* DependencyContainer.swift */; };
+		B19F7EB326A5B5E200C971C2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19F7EB226A5B5E200C971C2 /* LoadingView.swift */; };
 		B1D72B9B269F203500971CE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18C4CB72683F5D200A150CD /* Assets.xcassets */; };
 		B1D72BA7269F2C4900971CE6 /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; };
 		B1D72BA8269F2C4900971CE6 /* JAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B18D41A9269C8167000C3826 /* JAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -128,6 +129,7 @@
 		B1E6FA3B269BAEEC001AB07F /* CoreEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = B1E6FA2B269BAEEC001AB07F /* CoreEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B1E6FA4A269BB03B001AB07F /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E6FA29269BAEEC001AB07F /* CoreEnvironment.framework */; };
 		B1E6FA4E269BB067001AB07F /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */; };
+		B1EA12AC26A32AE5006CD4AF /* LibraryRemoteServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EA12A926A32A83006CD4AF /* LibraryRemoteServiceTests.swift */; };
 		B1EF15BB269BDC5F00422192 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A22699D22B00DF335D /* Development.xcconfig */; };
 		B1EF15BC269BDC5F00422192 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B12857A32699D26800DF335D /* Production.xcconfig */; };
 /* End PBXBuildFile section */
@@ -446,6 +448,7 @@
 		B19AC3FD269351B90095AF06 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
 		B19AC3FF269351DB0095AF06 /* AuthenticationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParser.swift; sourceTree = "<group>"; };
 		B19AC455269359FD0095AF06 /* TokenCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenCacheService.swift; sourceTree = "<group>"; };
+		B19F7EB226A5B5E200C971C2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B1BFE75626866D4000FAFF5D /* LibraryRemoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRemoteService.swift; sourceTree = "<group>"; };
 		B1BFE75826866E2100FAFF5D /* LibraryParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryParser.swift; sourceTree = "<group>"; };
 		B1BFE75A26866E5700FAFF5D /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
@@ -473,6 +476,7 @@
 		B1E6FA38269BAEEC001AB07F /* CoreEnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreEnvironmentTests.swift; sourceTree = "<group>"; };
 		B1E6FA3A269BAEEC001AB07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1E6FA49269BAF65001AB07F /* Development.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
+		B1EA12A926A32A83006CD4AF /* LibraryRemoteServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRemoteServiceTests.swift; sourceTree = "<group>"; };
 		D7EF26352691082D00D8EA87 /* AuthenticationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFeature.swift; sourceTree = "<group>"; };
 		D7EF26382691085D00D8EA87 /* AuthenticationRouteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouteHandler.swift; sourceTree = "<group>"; };
 		D7EF263A2691089400D8EA87 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
@@ -742,6 +746,7 @@
 		B15F7833269C7827009315A3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B19F7EB126A5B5D500C971C2 /* Loading */,
 				B18A19AD2695F2D100507E15 /* Error */,
 			);
 			path = Sources;
@@ -1089,6 +1094,7 @@
 		B18D483E269D1B06005EFAF4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B1EA12A726A32A6B006CD4AF /* Data */,
 				B18D482C269D1AC2005EFAF4 /* JLibraryTests.swift */,
 			);
 			path = Sources;
@@ -1159,6 +1165,14 @@
 				B19AC3FA269351420095AF06 /* RemoteAuthenticationService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		B19F7EB126A5B5D500C971C2 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				B19F7EB226A5B5E200C971C2 /* LoadingView.swift */,
+			);
+			path = Loading;
 			sourceTree = "<group>";
 		};
 		B1BFE76126868F7100FAFF5D /* Service */ = {
@@ -1285,6 +1299,22 @@
 				B12857A42699D2AA00DF335D /* EnvironmentProvider.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		B1EA12A726A32A6B006CD4AF /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA12A826A32A6F006CD4AF /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B1EA12A826A32A6F006CD4AF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA12A926A32A83006CD4AF /* LibraryRemoteServiceTests.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B1EF15A6269BB1B800422192 /* Tests */ = {
@@ -2209,6 +2239,7 @@
 			files = (
 				B18D4171269C7D1D000C3826 /* UnknownErrorView.swift in Sources */,
 				B18D4170269C7D1D000C3826 /* ViewError.swift in Sources */,
+				B19F7EB326A5B5E200C971C2 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2296,6 +2327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18D482D269D1AC2005EFAF4 /* JLibraryTests.swift in Sources */,
+				B1EA12AC26A32AE5006CD4AF /* LibraryRemoteServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2941,7 +2973,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;
@@ -2966,7 +2998,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Resources/LearningJourney.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = QM43B7QRF9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Resources/Info.plist;

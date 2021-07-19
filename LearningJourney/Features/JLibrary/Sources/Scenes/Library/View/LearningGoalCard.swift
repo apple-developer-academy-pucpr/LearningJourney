@@ -13,7 +13,7 @@ struct LearningGoalCard: View {
             progressChart
             Text(goal.name)
                 .fontWeight(.semibold)
-                .font(.system(size: 19))
+                .font(.headline)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(2)

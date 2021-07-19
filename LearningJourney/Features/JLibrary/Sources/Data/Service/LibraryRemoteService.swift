@@ -6,7 +6,7 @@ protocol LibraryRemoteServiceProtocol {
     typealias Completion = (Result<Data, ApiError>) -> Void
     func learningStrands(completion: @escaping Completion)
     func learningObjectives(using strandId: Int, completion: @escaping Completion)
-    func updateObjective(using objective: LearningObjective, completion: @escaping Completion)
+    func updateObjective(using objective: LibraryEndpoint.UpdateObjectiveModel, completion: @escaping Completion)
 }
 
 final class LibraryRemoteService: LibraryRemoteServiceProtocol {
@@ -37,11 +37,8 @@ final class LibraryRemoteService: LibraryRemoteServiceProtocol {
         currentRequest = apiRequest.make(completion: completion)
     }
     
-    func updateObjective(using objective: LearningObjective, completion: @escaping Completion) {
-        let endpoint: LibraryEndpoint = .updateObjective(.init(
-            id: objective.id,
-            isComplete: objective.isComplete
-        ))
+    func updateObjective(using objective: LibraryEndpoint.UpdateObjectiveModel, completion: @escaping Completion) {
+        let endpoint: LibraryEndpoint = .updateObjective(objective)
         let apiRequest = apiFactory.make(endpoint)
         currentRequest = apiRequest.make(completion: completion)
     }

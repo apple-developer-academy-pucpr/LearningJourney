@@ -11,7 +11,7 @@ struct LearningStrandRow: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(strand.name)
-                .font(.headline)
+                .font(.system(size: 19))
                 .bold()
             ScrollView(.horizontal) {
                 HStack {
@@ -33,6 +33,9 @@ struct LearningStrandRow: View {
 
 struct LearningStrandRow_Previews: PreviewProvider {
     static var previews: some View {
+        
+        ContentView_Previews.contentPreview
+        
         LearningStrandRow(service: DummyRoutingService(), strand: .init(
             id: 1,
             name: "Technical",

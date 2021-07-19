@@ -1,6 +1,7 @@
 import SwiftUI
 import AuthenticationServices
 import CoreInjector
+import UI
 
 struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
     
@@ -18,9 +19,9 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
         Group {
             switch viewModel.viewState {
             case .loading:
-                Text("Loading")
+                LoadingView()
             case .error:
-                Text("Error")
+                Text("Oops! There was an error!")
             case .result:
                 contentView
             }
