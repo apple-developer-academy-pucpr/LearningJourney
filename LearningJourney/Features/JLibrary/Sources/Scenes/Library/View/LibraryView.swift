@@ -52,6 +52,8 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
                         .frame(height: 20)
                 }
             }
+            .padding(.top, 20)
+            .padding(.bottom, 80)
         }
     }
     
