@@ -44,8 +44,8 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     private func strandsView(using strands: [LearningStrand]) -> some View {
         ScrollView {
             VStack {
-                searchBar
-                    .padding(.vertical, 18)
+//                searchBar
+//                    .padding(.vertical, 18)
                 ForEach(strands) { strand in
                     LearningStrandRow(service: routingService, strand: strand)
                     Spacer()
