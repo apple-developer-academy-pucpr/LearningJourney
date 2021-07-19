@@ -1,4 +1,5 @@
 import SwiftUI
+import UI
 
 struct ObjectiveCard: View {
     
@@ -16,7 +17,7 @@ struct ObjectiveCard: View {
         Group {
             switch objective {
             case .loading:
-                Text("Loading")
+                LoadingView()
             case .error:
                 Text("Error")
             case let .result(objective):

@@ -20,7 +20,7 @@ struct ObjectivesListView<ViewModel>: View where
         Group {
             switch viewModel.objectives {
             case .loading:
-                Text("Loading")
+                LoadingView()
             case let .error(error):
                 errorView(for: error)
             case let .result(objectives):

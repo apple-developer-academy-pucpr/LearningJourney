@@ -1,5 +1,6 @@
 import SwiftUI
 import CoreInjector
+import UI
 
 struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     
@@ -33,7 +34,7 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             case let .result(strands):
                 strandsView(using: strands)
             case .loading:
-                Text("Loading")
+                LoadingView()
             case let .error(error):
                 errorView(for: error)
             }
