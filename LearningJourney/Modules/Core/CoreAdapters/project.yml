@@ -1,0 +1,53 @@
+name: CoreAdapters
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  CoreAdapters:
+    type: framework
+    platform: iOS
+    sources:
+      - path: Sources
+        excludes:
+          - "**/*.md"
+      - path: Resources
+
+  CoreAdaptersTests:
+    type: bundle.unit-test
+    platform: iOS
+
+    sources:
+      - path: Tests
+
+    dependencies:
+      - target: CoreAdapters
+
+  CoreAdaptersSample:
+    type: application
+    platform: iOS
+    sources: Sample
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    info: 
+      path: Sample/Info.plist
+      properties:
+        CFBundleIdentifier: dev.pastre.learningjourneyapp.CoreAdapters
+    dependencies:
+      - target: CoreAdapters
+
+schemes:
+  CoreAdapters:
+    build:
+      targets:
+        CoreAdapters: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CoreAdaptersTests
+          parallelizable: true
+          randomExecutionOrder: true
