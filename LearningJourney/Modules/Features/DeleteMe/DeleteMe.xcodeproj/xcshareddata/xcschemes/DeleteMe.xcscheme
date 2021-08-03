@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A41CCEE241205E18A9AD307"
-               BuildableName = "CoreAdaptersSample.app"
-               BlueprintName = "CoreAdaptersSample"
-               ReferencedContainer = "container:CoreAdapters.xcodeproj">
+               BlueprintIdentifier = "76661A70A21EA475F09C82F7"
+               BuildableName = "DeleteMe.framework"
+               BlueprintName = "DeleteMe"
+               ReferencedContainer = "container:DeleteMe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,19 +26,34 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       onlyGenerateCoverageForSpecifiedTargets = "NO"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E842CA7329059A3B8A42E347"
+               BuildableName = "DeleteMeTests.xctest"
+               BlueprintName = "DeleteMeTests"
+               ReferencedContainer = "container:DeleteMe.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A41CCEE241205E18A9AD307"
-            BuildableName = "CoreAdaptersSample.app"
-            BlueprintName = "CoreAdaptersSample"
-            ReferencedContainer = "container:CoreAdapters.xcodeproj">
+            BlueprintIdentifier = "76661A70A21EA475F09C82F7"
+            BuildableName = "DeleteMe.framework"
+            BlueprintName = "DeleteMe"
+            ReferencedContainer = "container:DeleteMe.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -50,18 +65,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A41CCEE241205E18A9AD307"
-            BuildableName = "CoreAdaptersSample.app"
-            BlueprintName = "CoreAdaptersSample"
-            ReferencedContainer = "container:CoreAdapters.xcodeproj">
+            BlueprintIdentifier = "76661A70A21EA475F09C82F7"
+            BuildableName = "DeleteMe.framework"
+            BlueprintName = "DeleteMe"
+            ReferencedContainer = "container:DeleteMe.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
-      <CommandLineArguments>
-      </CommandLineArguments>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -73,10 +85,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7A41CCEE241205E18A9AD307"
-            BuildableName = "CoreAdaptersSample.app"
-            BlueprintName = "CoreAdaptersSample"
-            ReferencedContainer = "container:CoreAdapters.xcodeproj">
+            BlueprintIdentifier = "76661A70A21EA475F09C82F7"
+            BuildableName = "DeleteMe.framework"
+            BlueprintName = "DeleteMe"
+            ReferencedContainer = "container:DeleteMe.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

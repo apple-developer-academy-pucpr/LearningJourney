@@ -11,7 +11,6 @@ final class SceneDelegate: UIResponder, UISceneDelegate {
     // MARK: - SceneDelegate
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
         guard let windowScene = scene as? UIWindowScene else { return }
         let contentView = Text("salve")
         let window = UIWindow(windowScene: windowScene)
