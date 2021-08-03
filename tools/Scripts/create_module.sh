@@ -7,6 +7,10 @@ cd "$(git rev-parse --show-toplevel)"
 moduleName=$1
 moduleType=$2
 
+if [ -z "${moduleName}" ]; then
+    echo "You must provide a module name"
+fi
+
 # Copy and enten on template folder
 templatePath="tools/ModuleTemplate"
 
