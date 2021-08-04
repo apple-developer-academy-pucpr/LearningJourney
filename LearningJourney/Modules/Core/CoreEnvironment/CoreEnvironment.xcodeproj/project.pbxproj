@@ -336,6 +336,7 @@
 /* Begin XCBuildConfiguration section */
 		1F8C492266588D1633D1B1C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22163B93E95580FA13C793FA /* Development.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -437,6 +438,7 @@
 		};
 		691681BFDDD52A2330468ECB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF4CDABBD758E127CB880342 /* Production.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;

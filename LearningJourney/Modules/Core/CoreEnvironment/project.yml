@@ -12,6 +12,9 @@ targets:
     type: framework
     platform: iOS
     bundleIdPrefix: dev.pastre.learningjourney
+    configFiles:
+      Debug: CoreEnvironment/Resources/Development.xcconfig
+      Release: CoreEnvironment/Resources/Production.xcconfig
     settings:
       base:
         INFOPLIST_FILE: CoreEnvironment/Resources/Info.plist

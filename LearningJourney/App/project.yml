@@ -6,6 +6,10 @@ targets:
     platform: iOS
     sources: LearningJourney
     onlyCopyFilesOnInstall: true
+    settings:
+      base:
+        INFOPLIST_FILE: LearningJourney/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney
     dependencies:
       - framework: CoreAdapters.framework
         implict: true
@@ -75,29 +79,29 @@ schemes:
       coverageTargets: [LearningJourney, CoreAdapters/CoreAdapters, CoreAuthentication/CoreAuthenticationTests, CoreEnvironment/CoreEnvironmentTests, CoreInjector/CoreInjectorTests, CoreNetworking/CoreNetworkingTests, UI/UITests, JAuthentication/JAuthenticationTests, JLibrary/JLibraryTests]
       targets:
         - name: LearningJourneyTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: CoreAdapters/CoreAdaptersTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: CoreAuthentication/CoreAuthenticationTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: CoreEnvironment/CoreEnvironmentTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: CoreInjector/CoreInjectorTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: CoreNetworking/CoreNetworkingTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: UI/UITests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: JAuthentication/JAuthenticationTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
         - name: JLibrary/JLibraryTests
-          parallelizable: false
+          parallelizable: true
           randomExecutionOrder: true
