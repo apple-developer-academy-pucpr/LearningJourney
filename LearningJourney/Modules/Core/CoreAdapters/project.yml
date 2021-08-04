@@ -1,4 +1,4 @@
-name: <module_name>
+name: CoreAdapters
 
 options:
   xcodeVersion: '9999'
@@ -8,58 +8,58 @@ configs:
   Release: release
   
 targets:
-  <module_name>:
+  CoreAdapters:
     type: framework
     platform: iOS
     bundleIdPrefix: dev.pastre.learningjourney
     settings:
       base:
-        INFOPLIST_FILE: Module/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.<module_name>
-    sources: <module_name>
+        INFOPLIST_FILE: CoreAdapters/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdapters
+    sources: CoreAdapters
 
-  <module_name>Tests:
+  CoreAdaptersTests:
     type: bundle.unit-test
     platform: iOS
     bundleIdPrefix: dev.pastre.learningjourney
     settings:
       base:
-        INFOPLIST_FILE: Tests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.<module_name>Tests
+        INFOPLIST_FILE: CoreAdaptersTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdaptersTests
     sources:
-      - path: <module_name>Tests
+      - path: CoreAdaptersTests
 
     dependencies:
-      - target: <module_name>
+      - target: CoreAdapters
 
-  <module_name>Sample:
+  CoreAdaptersSample:
     type: application
     platform: iOS
-    sources: <module_name>Sample
+    sources: CoreAdaptersSample
     settings:
       base:
-        INFOPLIST_FILE: Sample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.<module_name>Sample
+        INFOPLIST_FILE: CoreAdaptersSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdaptersSample
     dependencies:
-      - target: <module_name>
+      - target: CoreAdapters
         embed: false
 
 schemes:
-  <module_name>Sample:
+  CoreAdaptersSample:
     build:
         targets:
-            <module_name>Sample: all
+            CoreAdaptersSample: all
     run:
         targets:
-            <module_name>Sample: all
-  <module_name>:
+            CoreAdaptersSample: all
+  CoreAdapters:
     build:
       targets:
-        <module_name>: all
+        CoreAdapters: all
     test:
       config: Debug
       gatherCoverageData: true
       targets:
-        - name: <module_name>Tests
+        - name: CoreAdaptersTests
           parallelizable: true
           randomExecutionOrder: true

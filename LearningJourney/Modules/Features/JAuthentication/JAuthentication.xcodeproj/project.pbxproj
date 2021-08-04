@@ -1,0 +1,834 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0D8F44F3CF0160486FEBDD92 /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBBFE08D22153D27267B076 /* CoreInjector.framework */; };
+		1360762350941017FCD9F73C /* RemoteAuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE840D89A177596C39BF5786 /* RemoteAuthenticationServiceTests.swift */; };
+		2E1E7B215B2ED5CF48D21AA5 /* JAuthentication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 803A7D863F93CAB64C40A0D2 /* JAuthentication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		314CDF80B8D482C62FDC452F /* AuthenticationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89ACC6621984A0E3D91606C6 /* AuthenticationTests.swift */; };
+		3743DA47CFAA0DB02CCF7AE0 /* SceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32E3F47B1CE1FE9A292F315 /* SceneFactory.swift */; };
+		3AF1F40F8CE08A1A8C5785A7 /* FeatureRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22E305A04F21D6B20629A04 /* FeatureRow.swift */; };
+		401DB0F40D243F5FAD911560 /* ValidateTokenUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64289A1471BAE620E3E01864 /* ValidateTokenUseCaseTests.swift */; };
+		47604384B4477EE6D4EF7DD4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78340EFECC9DC541FA393457 /* LoginView.swift */; };
+		476A03B9F05C7F22EF2C6A3C /* AuthenticationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47174FFF0178146B4392C0DB /* AuthenticationParser.swift */; };
+		5460A593AA440400A777F4EC /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 089581457A70FA72C66F3D85 /* CoreAuthentication.framework */; };
+		5852106E46DA63B30C5BC99F /* JAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = 19582623F892470F1E55603F /* JAuthentication.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60BF69A60B133B7142F66764 /* AuthenticationFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A025A8DCB2653B7FF1474A4 /* AuthenticationFeature.swift */; };
+		6CF052D70A73793D16DFD410 /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 537AD78C214BA6096F7CCD9C /* AuthenticationEndpoint.swift */; };
+		7A31A8B1CF15AA765F7BBB4D /* ValidateTokenUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740EDE4DD60E682EEEC5BCF9 /* ValidateTokenUseCase.swift */; };
+		7A48710B372E6B8C87F67602 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F32765024415F0F5D6FB516 /* AppDelegate.swift */; };
+		7D855758DF79A48D829BF702 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603B49C1599CF2A5D085354 /* LoginViewModelTests.swift */; };
+		87932B1218DD8E6E13328C28 /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803A7D863F93CAB64C40A0D2 /* JAuthentication.framework */; };
+		8BBB1F51B5B8E8382BB1FCAE /* AuthenticationRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9E8474C72CADB2608EA742 /* AuthenticationRepositoryTests.swift */; };
+		8FE458D5076A0932206DEB85 /* RemoteAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56675F54E74323C31555197 /* RemoteAuthenticationService.swift */; };
+		979814894AAF0CD8A6CDFC50 /* LoginViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB18D52F8D9343943EF98709 /* LoginViewModelMock.swift */; };
+		9840C146BEBB3956DE688D66 /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278BC18791C2510FEEABEEF8 /* LoginAssembler.swift */; };
+		A561D515BECF1E06ACEFBE56 /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D81A6208B2C953270B5B2C0 /* LoginRoute.swift */; };
+		A8E37E3CC825539FAFFE8DD8 /* AuthenticationRouteHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAABC3FCF2C7D20A40F0544 /* AuthenticationRouteHandler.swift */; };
+		B19F11A69B56E6DB8F967F1A /* CoreNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B357CB58C1A053E436E53E /* CoreNetworking.framework */; };
+		B5E0491546AE3019B697D72A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CB63CBBE2FCBCACBE236B86 /* Assets.xcassets */; };
+		B9B97016B83A3D54D1644037 /* SignInWithAppleUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48892FB48BFE3A77C0BDB2DF /* SignInWithAppleUseCaseTests.swift */; };
+		C5DB4D291C61EC772B249338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD1EE199DDC48A44129C7D6 /* SceneDelegate.swift */; };
+		C6C47B601BEFEBB6E02E42BD /* Adapters.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4A095CAD4F042568A81D0A /* Adapters.swift */; };
+		D32A596333F2E5F1B61F9862 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BA5DC8E5E1D6C7DC8682F4 /* LoginViewModel.swift */; };
+		D4DDC09D328CE2D9833C26C2 /* AuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9096447A7C51C14AA0DCB057 /* AuthenticationRepository.swift */; };
+		E5F2C1495A8F95B60A9E3615 /* SignInWithAppleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171453B0051B3311316FC1AB /* SignInWithAppleUseCase.swift */; };
+		EA7819EDCD6EFE34D4CC7632 /* AuthenticationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3991B901743EA4087780F6 /* AuthenticationParserTests.swift */; };
+		F447F9C84CD72FFFCDEE1831 /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803A7D863F93CAB64C40A0D2 /* JAuthentication.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CB70D4F93BBFFB0705FB7EE8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A0944647630E27A41D0293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BD3BD857FF7E3FFFEC5D264;
+			remoteInfo = JAuthentication;
+		};
+		CD4061EB1DA2DE05CBB25AB0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A0944647630E27A41D0293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4BD3BD857FF7E3FFFEC5D264;
+			remoteInfo = JAuthentication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F9DBDDA4E93035F3587DCE70 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2E1E7B215B2ED5CF48D21AA5 /* JAuthentication.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089581457A70FA72C66F3D85 /* CoreAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreAuthentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09303F9F3C28BCFB7771F37C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		171453B0051B3311316FC1AB /* SignInWithAppleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleUseCase.swift; sourceTree = "<group>"; };
+		19582623F892470F1E55603F /* JAuthentication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JAuthentication.h; sourceTree = "<group>"; };
+		278BC18791C2510FEEABEEF8 /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		2A025A8DCB2653B7FF1474A4 /* AuthenticationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFeature.swift; sourceTree = "<group>"; };
+		47174FFF0178146B4392C0DB /* AuthenticationParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParser.swift; sourceTree = "<group>"; };
+		47BA5DC8E5E1D6C7DC8682F4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		48892FB48BFE3A77C0BDB2DF /* SignInWithAppleUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleUseCaseTests.swift; sourceTree = "<group>"; };
+		4F32765024415F0F5D6FB516 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4FD1EE199DDC48A44129C7D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		537AD78C214BA6096F7CCD9C /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
+		64289A1471BAE620E3E01864 /* ValidateTokenUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTokenUseCaseTests.swift; sourceTree = "<group>"; };
+		6D81A6208B2C953270B5B2C0 /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
+		74087AA22D3CBCC39A7F85EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		740EDE4DD60E682EEEC5BCF9 /* ValidateTokenUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateTokenUseCase.swift; sourceTree = "<group>"; };
+		78340EFECC9DC541FA393457 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		803A7D863F93CAB64C40A0D2 /* JAuthentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JAuthentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8603B49C1599CF2A5D085354 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		89ACC6621984A0E3D91606C6 /* AuthenticationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationTests.swift; sourceTree = "<group>"; };
+		8CB63CBBE2FCBCACBE236B86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8F9E8474C72CADB2608EA742 /* AuthenticationRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepositoryTests.swift; sourceTree = "<group>"; };
+		9096447A7C51C14AA0DCB057 /* AuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRepository.swift; sourceTree = "<group>"; };
+		9E3991B901743EA4087780F6 /* AuthenticationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationParserTests.swift; sourceTree = "<group>"; };
+		9EAABC3FCF2C7D20A40F0544 /* AuthenticationRouteHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationRouteHandler.swift; sourceTree = "<group>"; };
+		B22E305A04F21D6B20629A04 /* FeatureRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureRow.swift; sourceTree = "<group>"; };
+		BB18D52F8D9343943EF98709 /* LoginViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelMock.swift; sourceTree = "<group>"; };
+		BE840D89A177596C39BF5786 /* RemoteAuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationServiceTests.swift; sourceTree = "<group>"; };
+		C32E3F47B1CE1FE9A292F315 /* SceneFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneFactory.swift; sourceTree = "<group>"; };
+		C56675F54E74323C31555197 /* RemoteAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthenticationService.swift; sourceTree = "<group>"; };
+		CDBBFE08D22153D27267B076 /* CoreInjector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreInjector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB8AEF416B158BD59670F701 /* JAuthenticationTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = JAuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD4A095CAD4F042568A81D0A /* Adapters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adapters.swift; sourceTree = "<group>"; };
+		E1B357CB58C1A053E436E53E /* CoreNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F672BFB013BCC00A4CB72BE8 /* JAuthenticationSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = JAuthenticationSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC8063B55FF20D7F84033977 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		513724D6DB219054496338C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5460A593AA440400A777F4EC /* CoreAuthentication.framework in Frameworks */,
+				0D8F44F3CF0160486FEBDD92 /* CoreInjector.framework in Frameworks */,
+				B19F11A69B56E6DB8F967F1A /* CoreNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A2E9B499854722AD73DF4A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F447F9C84CD72FFFCDEE1831 /* JAuthentication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4232832DA3CED044BF88D4C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87932B1218DD8E6E13328C28 /* JAuthentication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0214BF878CD17CC46B2AE74E = {
+			isa = PBXGroup;
+			children = (
+				6384A28BBC8741E00CE308CE /* JAuthentication */,
+				C7C06777AB97FAD87D274953 /* JAuthenticationSample */,
+				6CC4C4F3B7E580D1F2904318 /* JAuthenticationTests */,
+				CE38718E7CC4104C2DC2A4C7 /* Frameworks */,
+				E6B62E4207F567D137FDB509 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0C0CE1DDACF283AACA7E3138 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4F32765024415F0F5D6FB516 /* AppDelegate.swift */,
+				4FD1EE199DDC48A44129C7D6 /* SceneDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		214505D206E177E25EA6E019 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				278BC18791C2510FEEABEEF8 /* LoginAssembler.swift */,
+				5261907CA9AFE6E51001CAC4 /* Domain */,
+				5EA1399CA28A69D07B3AE2D5 /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		22CACCB5D91FF464BF9F3B84 /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				BB18D52F8D9343943EF98709 /* LoginViewModelMock.swift */,
+			);
+			path = Preview;
+			sourceTree = "<group>";
+		};
+		246CA3FD0426D93D2C20F647 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				8603B49C1599CF2A5D085354 /* LoginViewModelTests.swift */,
+				4C49034C09C24B354F4706D5 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2BCA47B1F341FD48B23C8394 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2A025A8DCB2653B7FF1474A4 /* AuthenticationFeature.swift */,
+				D9B04FF6C3F91795A22AE863 /* Data */,
+				22CACCB5D91FF464BF9F3B84 /* Preview */,
+				C4D202E1009E1D65F0806F78 /* Routing */,
+				C1C73080463B854FE91EBD0B /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		4C49034C09C24B354F4706D5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				48892FB48BFE3A77C0BDB2DF /* SignInWithAppleUseCaseTests.swift */,
+				64289A1471BAE620E3E01864 /* ValidateTokenUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		5261907CA9AFE6E51001CAC4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				DD4A095CAD4F042568A81D0A /* Adapters.swift */,
+				47BA5DC8E5E1D6C7DC8682F4 /* LoginViewModel.swift */,
+				883C1725D4EE903C1320751A /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5EA1399CA28A69D07B3AE2D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B22E305A04F21D6B20629A04 /* FeatureRow.swift */,
+				78340EFECC9DC541FA393457 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6384A28BBC8741E00CE308CE /* JAuthentication */ = {
+			isa = PBXGroup;
+			children = (
+				D1E04D583349C87E62B3EB40 /* Resources */,
+				2BCA47B1F341FD48B23C8394 /* Sources */,
+			);
+			path = JAuthentication;
+			sourceTree = "<group>";
+		};
+		65FD9012C2B5C14CF48AD23D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				89ACC6621984A0E3D91606C6 /* AuthenticationTests.swift */,
+				E957AA043C33D5369463C557 /* Data */,
+				F93AA5E69F9BF73FB491167C /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		6A11FF889C43EE3896A845D6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FC8063B55FF20D7F84033977 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6CC4C4F3B7E580D1F2904318 /* JAuthenticationTests */ = {
+			isa = PBXGroup;
+			children = (
+				6A11FF889C43EE3896A845D6 /* Resources */,
+				65FD9012C2B5C14CF48AD23D /* Sources */,
+			);
+			path = JAuthenticationTests;
+			sourceTree = "<group>";
+		};
+		883C1725D4EE903C1320751A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				171453B0051B3311316FC1AB /* SignInWithAppleUseCase.swift */,
+				740EDE4DD60E682EEEC5BCF9 /* ValidateTokenUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		C1C73080463B854FE91EBD0B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				214505D206E177E25EA6E019 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		C4D202E1009E1D65F0806F78 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				9EAABC3FCF2C7D20A40F0544 /* AuthenticationRouteHandler.swift */,
+				6D81A6208B2C953270B5B2C0 /* LoginRoute.swift */,
+				C32E3F47B1CE1FE9A292F315 /* SceneFactory.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		C7C06777AB97FAD87D274953 /* JAuthenticationSample */ = {
+			isa = PBXGroup;
+			children = (
+				E9160C24689E8A6F94EFF1D2 /* Resources */,
+				0C0CE1DDACF283AACA7E3138 /* Sources */,
+			);
+			path = JAuthenticationSample;
+			sourceTree = "<group>";
+		};
+		CE38718E7CC4104C2DC2A4C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				089581457A70FA72C66F3D85 /* CoreAuthentication.framework */,
+				CDBBFE08D22153D27267B076 /* CoreInjector.framework */,
+				E1B357CB58C1A053E436E53E /* CoreNetworking.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D1E04D583349C87E62B3EB40 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				09303F9F3C28BCFB7771F37C /* Info.plist */,
+				19582623F892470F1E55603F /* JAuthentication.h */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D9B04FF6C3F91795A22AE863 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				47174FFF0178146B4392C0DB /* AuthenticationParser.swift */,
+				9096447A7C51C14AA0DCB057 /* AuthenticationRepository.swift */,
+				F8E3F0AE76EB40AAF0D10BCE /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E6B62E4207F567D137FDB509 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				803A7D863F93CAB64C40A0D2 /* JAuthentication.framework */,
+				F672BFB013BCC00A4CB72BE8 /* JAuthenticationSample.app */,
+				DB8AEF416B158BD59670F701 /* JAuthenticationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9160C24689E8A6F94EFF1D2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8CB63CBBE2FCBCACBE236B86 /* Assets.xcassets */,
+				74087AA22D3CBCC39A7F85EB /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E957AA043C33D5369463C557 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9E3991B901743EA4087780F6 /* AuthenticationParserTests.swift */,
+				8F9E8474C72CADB2608EA742 /* AuthenticationRepositoryTests.swift */,
+				E9E39343B254EBA587B57EA8 /* Service */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E9E39343B254EBA587B57EA8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BE840D89A177596C39BF5786 /* RemoteAuthenticationServiceTests.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F5F5452005375ECBB5FE1321 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				246CA3FD0426D93D2C20F647 /* Domain */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F8E3F0AE76EB40AAF0D10BCE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				537AD78C214BA6096F7CCD9C /* AuthenticationEndpoint.swift */,
+				C56675F54E74323C31555197 /* RemoteAuthenticationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F93AA5E69F9BF73FB491167C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F5F5452005375ECBB5FE1321 /* Login */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1A087D341A355487B98E411A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5852106E46DA63B30C5BC99F /* JAuthentication.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		01778C8A922D0FF6206CC5A4 /* JAuthenticationSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5E541348A191EAB07793D55 /* Build configuration list for PBXNativeTarget "JAuthenticationSample" */;
+			buildPhases = (
+				7A5C0580E097424C7151111D /* Sources */,
+				731570545D8C57864CB1C26B /* Resources */,
+				9A2E9B499854722AD73DF4A5 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				885B4B56917C5F0E7A065CB2 /* PBXTargetDependency */,
+			);
+			name = JAuthenticationSample;
+			productName = JAuthenticationSample;
+			productReference = F672BFB013BCC00A4CB72BE8 /* JAuthenticationSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4BD3BD857FF7E3FFFEC5D264 /* JAuthentication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40CB8EBBE9BBF468B0ED823A /* Build configuration list for PBXNativeTarget "JAuthentication" */;
+			buildPhases = (
+				1A087D341A355487B98E411A /* Headers */,
+				911671F0CECABD66A85020FE /* Sources */,
+				513724D6DB219054496338C9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JAuthentication;
+			productName = JAuthentication;
+			productReference = 803A7D863F93CAB64C40A0D2 /* JAuthentication.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A069472AFF5A87A0CB4E5624 /* JAuthenticationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C73A152092DDB8284276372 /* Build configuration list for PBXNativeTarget "JAuthenticationTests" */;
+			buildPhases = (
+				EEF469EEA82B97D4C99FCABD /* Sources */,
+				A4232832DA3CED044BF88D4C /* Frameworks */,
+				F9DBDDA4E93035F3587DCE70 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E3BE266382450C736CED35E /* PBXTargetDependency */,
+			);
+			name = JAuthenticationTests;
+			productName = JAuthenticationTests;
+			productReference = DB8AEF416B158BD59670F701 /* JAuthenticationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47A0944647630E27A41D0293 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = CC642EAF5E8ADCEA74E6CB90 /* Build configuration list for PBXProject "JAuthentication" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 0214BF878CD17CC46B2AE74E;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4BD3BD857FF7E3FFFEC5D264 /* JAuthentication */,
+				01778C8A922D0FF6206CC5A4 /* JAuthenticationSample */,
+				A069472AFF5A87A0CB4E5624 /* JAuthenticationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		731570545D8C57864CB1C26B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E0491546AE3019B697D72A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7A5C0580E097424C7151111D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A48710B372E6B8C87F67602 /* AppDelegate.swift in Sources */,
+				C5DB4D291C61EC772B249338 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		911671F0CECABD66A85020FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6C47B601BEFEBB6E02E42BD /* Adapters.swift in Sources */,
+				6CF052D70A73793D16DFD410 /* AuthenticationEndpoint.swift in Sources */,
+				60BF69A60B133B7142F66764 /* AuthenticationFeature.swift in Sources */,
+				476A03B9F05C7F22EF2C6A3C /* AuthenticationParser.swift in Sources */,
+				D4DDC09D328CE2D9833C26C2 /* AuthenticationRepository.swift in Sources */,
+				A8E37E3CC825539FAFFE8DD8 /* AuthenticationRouteHandler.swift in Sources */,
+				3AF1F40F8CE08A1A8C5785A7 /* FeatureRow.swift in Sources */,
+				9840C146BEBB3956DE688D66 /* LoginAssembler.swift in Sources */,
+				A561D515BECF1E06ACEFBE56 /* LoginRoute.swift in Sources */,
+				47604384B4477EE6D4EF7DD4 /* LoginView.swift in Sources */,
+				D32A596333F2E5F1B61F9862 /* LoginViewModel.swift in Sources */,
+				979814894AAF0CD8A6CDFC50 /* LoginViewModelMock.swift in Sources */,
+				8FE458D5076A0932206DEB85 /* RemoteAuthenticationService.swift in Sources */,
+				3743DA47CFAA0DB02CCF7AE0 /* SceneFactory.swift in Sources */,
+				E5F2C1495A8F95B60A9E3615 /* SignInWithAppleUseCase.swift in Sources */,
+				7A31A8B1CF15AA765F7BBB4D /* ValidateTokenUseCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF469EEA82B97D4C99FCABD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7819EDCD6EFE34D4CC7632 /* AuthenticationParserTests.swift in Sources */,
+				8BBB1F51B5B8E8382BB1FCAE /* AuthenticationRepositoryTests.swift in Sources */,
+				314CDF80B8D482C62FDC452F /* AuthenticationTests.swift in Sources */,
+				7D855758DF79A48D829BF702 /* LoginViewModelTests.swift in Sources */,
+				1360762350941017FCD9F73C /* RemoteAuthenticationServiceTests.swift in Sources */,
+				B9B97016B83A3D54D1644037 /* SignInWithAppleUseCaseTests.swift in Sources */,
+				401DB0F40D243F5FAD911560 /* ValidateTokenUseCaseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		885B4B56917C5F0E7A065CB2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BD3BD857FF7E3FFFEC5D264 /* JAuthentication */;
+			targetProxy = CB70D4F93BBFFB0705FB7EE8 /* PBXContainerItemProxy */;
+		};
+		9E3BE266382450C736CED35E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4BD3BD857FF7E3FFFEC5D264 /* JAuthentication */;
+			targetProxy = CD4061EB1DA2DE05CBB25AB0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		30F55C2AE064574F6A02CE09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JAuthenticationTests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourney.JAuthenticationTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		40B06880ECB094C53DD8E76F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		720DB5033928F9BFF9A1D601 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = JAuthenticationSample/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourney.JAuthenticationSample;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A8F7A601A80D74F0DF7488F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JAuthentication/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourney.JAuthentication;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		ADFAF12F0E7ED6BB9358589C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = JAuthenticationSample/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourney.JAuthenticationSample;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CFD6BBEE083048989F013135 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = JAuthenticationTests/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourney.JAuthenticationTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB7878B28931381E8220F043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		FABBFA360BD7F2F6B92953F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = JAuthentication/Resources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.pastre.learningjourney.JAuthentication;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C73A152092DDB8284276372 /* Build configuration list for PBXNativeTarget "JAuthenticationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CFD6BBEE083048989F013135 /* Debug */,
+				30F55C2AE064574F6A02CE09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		40CB8EBBE9BBF468B0ED823A /* Build configuration list for PBXNativeTarget "JAuthentication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8F7A601A80D74F0DF7488F4 /* Debug */,
+				FABBFA360BD7F2F6B92953F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CC642EAF5E8ADCEA74E6CB90 /* Build configuration list for PBXProject "JAuthentication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40B06880ECB094C53DD8E76F /* Debug */,
+				EB7878B28931381E8220F043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D5E541348A191EAB07793D55 /* Build configuration list for PBXNativeTarget "JAuthenticationSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				720DB5033928F9BFF9A1D601 /* Debug */,
+				ADFAF12F0E7ED6BB9358589C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47A0944647630E27A41D0293 /* Project object */;
+}

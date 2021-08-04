@@ -1,0 +1,65 @@
+name: CoreInjector
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  CoreInjector:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: CoreInjector/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreInjector
+    sources: CoreInjector
+
+  CoreInjectorTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: CoreInjectorTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreInjectorTests
+    sources:
+      - path: CoreInjectorTests
+
+    dependencies:
+      - target: CoreInjector
+
+  CoreInjectorSample:
+    type: application
+    platform: iOS
+    sources: CoreInjectorSample
+    settings:
+      base:
+        INFOPLIST_FILE: CoreInjectorSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreInjectorSample
+    dependencies:
+      - target: CoreInjector
+        embed: false
+
+schemes:
+  CoreInjectorSample:
+    build:
+        targets:
+            CoreInjectorSample: all
+    run:
+        targets:
+            CoreInjectorSample: all
+  CoreInjector:
+    build:
+      targets:
+        CoreInjector: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CoreInjectorTests
+          parallelizable: true
+          randomExecutionOrder: true

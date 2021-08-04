@@ -6,8 +6,8 @@ generateprojects: ## Generate only .xcodeproj projects using Xcodegen
 	@echo "\nGenerating modules projects"
 	@find LearningJourney/Modules -type d -depth 2 -exec sh -c "cd {}; [ -f ./project.yml ] && xcodegen" \;
 	
-	# @echo "\nGenerating main projects"
-	# @(cd AppPicPay; xcodegen)
+	@echo "\nGenerating main projects"
+	@(cd LearningJourney/App; xcodegen)
 
 create_module:
-	./tools/Scripts/create_module.sh NAME TYPE
+	./tools/Scripts/create_module.sh ${NAME} ${TYPE}

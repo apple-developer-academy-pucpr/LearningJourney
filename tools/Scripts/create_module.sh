@@ -15,9 +15,9 @@ fi
 templatePath="tools/ModuleTemplate"
 
 case "$moduleType" in
-core) modulePath="LearningJourney/Modules/Core/${moduleName}" ;;
-feature) modulePath="LearningJourney/Modules/Features/${moduleName}" ;;
-*) echo "Module type must be either CORE or FEATURE"; exit 1 ;;
+CORE) modulePath="LearningJourney/Modules/Core/${moduleName}" ;;
+FEATURE) modulePath="LearningJourney/Modules/Features/${moduleName}" ;;
+*) echo "Module type must be either CORE or FEATURE. $moduleType is invalid"; exit 1 ;;
 esac
 
 cp -R "${templatePath}" "${modulePath}"

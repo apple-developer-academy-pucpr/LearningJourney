@@ -1,0 +1,65 @@
+name: CoreAuthentication
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  CoreAuthentication:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAuthentication/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAuthentication
+    sources: CoreAuthentication
+
+  CoreAuthenticationTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAuthenticationTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAuthenticationTests
+    sources:
+      - path: CoreAuthenticationTests
+
+    dependencies:
+      - target: CoreAuthentication
+
+  CoreAuthenticationSample:
+    type: application
+    platform: iOS
+    sources: CoreAuthenticationSample
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAuthenticationSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAuthenticationSample
+    dependencies:
+      - target: CoreAuthentication
+        embed: false
+
+schemes:
+  CoreAuthenticationSample:
+    build:
+        targets:
+            CoreAuthenticationSample: all
+    run:
+        targets:
+            CoreAuthenticationSample: all
+  CoreAuthentication:
+    build:
+      targets:
+        CoreAuthentication: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CoreAuthenticationTests
+          parallelizable: true
+          randomExecutionOrder: true

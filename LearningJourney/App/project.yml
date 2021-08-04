@@ -1,0 +1,102 @@
+name: LearningJourney
+
+targets:
+  LearningJourney:
+    type: application
+    platform: iOS
+    sources: LearningJourney
+    dependencies:
+      - framework: CoreAdapters.framework
+        implict: true
+      - framework: CoreAuthentication.framework
+        implict: true
+      - framework: CoreEnvironment.framework
+        implict: true
+      - framework: CoreInjector.framework
+        implict: true
+      - framework: CoreNetworking.framework
+        implict: true
+      - framework: UI.framework
+        implict: true
+      - framework: JAuthentication.framework
+        implict: true
+      - framework: JLibrary.framework
+        implict: true
+
+  LearningJourneyTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: LearningJourneyTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.LearningJourneyTests
+    sources:
+      - path: LearningJourneyTests
+
+    dependencies:
+      - target: LearningJourney
+
+projectReferences:
+  CoreAdapters:
+    path: ../Modules/Core/CoreAdapters/CoreAdapters.xcodeproj
+  CoreAuthentication:
+    path: ../Modules/Core/CoreAuthentication/CoreAuthentication.xcodeproj
+  CoreEnvironment:
+    path: ../Modules/Core/CoreEnvironment/CoreEnvironment.xcodeproj
+  CoreInjector:
+    path: ../Modules/Core/CoreInjector/CoreInjector.xcodeproj
+  CoreNetworking:
+    path: ../Modules/Core/CoreNetworking/CoreNetworking.xcodeproj
+  UI:
+    path: ../Modules/Core/UI/UI.xcodeproj
+  JAuthentication:
+    path: ../Modules/Features/JAuthentication/JAuthentication.xcodeproj
+  JLibrary:
+    path: ../Modules/Features/JLibrary/JLibrary.xcodeproj
+
+schemes:
+  LearningJourney:
+    build:
+      targets:
+        LearningJourney: all
+    run:
+      config: Debug
+    profile:
+      config: Debug
+    analyze:
+      config: Debug
+    archive:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets: [LearningJourney, CoreAdapters/CoreAdapters, CoreAuthentication/CoreAuthenticationTests, CoreEnvironment/CoreEnvironmentTests, CoreInjector/CoreInjectorTests, CoreNetworking/CoreNetworkingTests, UI/UITests, JAuthentication/JAuthenticationTests, JLibrary/JLibraryTests]
+      targets:
+        - name: LearningJourneyTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreAdapters/CoreAdaptersTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreAuthentication/CoreAuthenticationTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreEnvironment/CoreEnvironmentTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreInjector/CoreInjectorTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreNetworking/CoreNetworkingTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: UI/UITests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: JAuthentication/JAuthenticationTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: JLibrary/JLibraryTests
+          parallelizable: false
+          randomExecutionOrder: true
