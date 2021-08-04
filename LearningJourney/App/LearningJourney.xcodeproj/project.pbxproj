@@ -16,8 +16,10 @@
 		569162EAA7CC3BA37A611F26 /* CoreInjector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A09B61B1B4A3C5D1972FA6 /* CoreInjector.framework */; };
 		6DE91AD32F7FE5EF18753122 /* CoreNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B631DD3A46D767CAE362DBA9 /* CoreNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		78FD4A5E8D5A30579069BBBF /* JAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10381B3A5AFC491573225563 /* JAuthentication.framework */; };
+		7C25946CA6C274A74AB36074 /* CoreAdapters.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F538E9E90A6D772E40A48F88 /* CoreAdapters.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		832F90C6E3B4B97EEE03CADA /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5110D5CF7DB426C31025BAA6 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		87460665F0B04CB6EDB3D9F4 /* CoreAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12F1A8BD8583ACAE08655650 /* CoreAuthentication.framework */; };
+		8F23D1E718B77AF1F2344E66 /* CoreAdapters.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F538E9E90A6D772E40A48F88 /* CoreAdapters.framework */; };
 		AD5AE0DFAD1D960AA98BE1C9 /* LearningJourneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0E85978F22388F4C17BEDE /* LearningJourneyApp.swift */; };
 		B5813D0C3451D2A1E828FCF0 /* LearningJourneyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7739829D86A76F3DAEA39438 /* LearningJourneyTests.swift */; };
 		D652E5E64A39D59623894D2F /* JLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70B080E6F04E5C1718B5DF7F /* JLibrary.framework */; };
@@ -28,168 +30,168 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B1A6D24626BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B174749726BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 32B6B19E6F4B37D8F923FD8B /* CoreAdapters */;
 			proxyType = 2;
 			remoteGlobalIDString = 54CC0B192D7ACA0801E83B65;
 			remoteInfo = CoreAdapters;
 		};
-		B1A6D24826BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B174749926BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 32B6B19E6F4B37D8F923FD8B /* CoreAdapters */;
 			proxyType = 2;
 			remoteGlobalIDString = 21EE9B7ADAA30EA4EF9F08FD;
 			remoteInfo = CoreAdaptersSample;
 		};
-		B1A6D24A26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B174749B26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 32B6B19E6F4B37D8F923FD8B /* CoreAdapters */;
 			proxyType = 2;
 			remoteGlobalIDString = 5783F346047A030B1F5BDEAD;
 			remoteInfo = CoreAdaptersTests;
 		};
-		B1A6D24F26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474A026BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76828952D8EC987598D324A7 /* CoreAuthentication */;
 			proxyType = 2;
 			remoteGlobalIDString = 2E40C2EFCB0B82E99FC627B4;
 			remoteInfo = CoreAuthentication;
 		};
-		B1A6D25126BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474A226BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76828952D8EC987598D324A7 /* CoreAuthentication */;
 			proxyType = 2;
 			remoteGlobalIDString = E90DE6F69648146F9CACD8DF;
 			remoteInfo = CoreAuthenticationSample;
 		};
-		B1A6D25326BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474A426BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76828952D8EC987598D324A7 /* CoreAuthentication */;
 			proxyType = 2;
 			remoteGlobalIDString = FF9D7A962DF74FAA03049BEA;
 			remoteInfo = CoreAuthenticationTests;
 		};
-		B1A6D25826BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474A926BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AA20D2118B0DE86AFDC76E5 /* CoreEnvironment */;
 			proxyType = 2;
 			remoteGlobalIDString = 298C1BFAE5ECA00A78462D0C;
 			remoteInfo = CoreEnvironment;
 		};
-		B1A6D25A26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474AB26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AA20D2118B0DE86AFDC76E5 /* CoreEnvironment */;
 			proxyType = 2;
 			remoteGlobalIDString = 5834F95F912BDD5024A6D0C6;
 			remoteInfo = CoreEnvironmentSample;
 		};
-		B1A6D25C26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474AD26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9AA20D2118B0DE86AFDC76E5 /* CoreEnvironment */;
 			proxyType = 2;
 			remoteGlobalIDString = 0AC7D0338BF79649E70776CA;
 			remoteInfo = CoreEnvironmentTests;
 		};
-		B1A6D26126BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474B226BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17DEB6213003DB9D9E7D7BF2 /* CoreInjector */;
 			proxyType = 2;
 			remoteGlobalIDString = CBC0BAE78BD01BFDCC2DF610;
 			remoteInfo = CoreInjector;
 		};
-		B1A6D26326BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474B426BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17DEB6213003DB9D9E7D7BF2 /* CoreInjector */;
 			proxyType = 2;
 			remoteGlobalIDString = 93FAC1968887F5E28FC4F25D;
 			remoteInfo = CoreInjectorSample;
 		};
-		B1A6D26526BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474B626BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 17DEB6213003DB9D9E7D7BF2 /* CoreInjector */;
 			proxyType = 2;
 			remoteGlobalIDString = 3A1D7E146AFD8F2645BBB00B;
 			remoteInfo = CoreInjectorTests;
 		};
-		B1A6D26A26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474BB26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C53B07155153A41FDEB33696 /* CoreNetworking */;
 			proxyType = 2;
 			remoteGlobalIDString = CD79B4D3C232AAFD99136BD8;
 			remoteInfo = CoreNetworking;
 		};
-		B1A6D26C26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474BD26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C53B07155153A41FDEB33696 /* CoreNetworking */;
 			proxyType = 2;
 			remoteGlobalIDString = 6FC0BC2C4A1505340892495F;
 			remoteInfo = CoreNetworkingSample;
 		};
-		B1A6D26E26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474BF26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C53B07155153A41FDEB33696 /* CoreNetworking */;
 			proxyType = 2;
 			remoteGlobalIDString = D94BFAEC14C9035783AE2CAE;
 			remoteInfo = CoreNetworkingTests;
 		};
-		B1A6D27326BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474C426BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43F314B7C76FB95EE6CAC5A6 /* JAuthentication */;
 			proxyType = 2;
 			remoteGlobalIDString = 803A7D863F93CAB64C40A0D2;
 			remoteInfo = JAuthentication;
 		};
-		B1A6D27526BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474C626BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43F314B7C76FB95EE6CAC5A6 /* JAuthentication */;
 			proxyType = 2;
 			remoteGlobalIDString = F672BFB013BCC00A4CB72BE8;
 			remoteInfo = JAuthenticationSample;
 		};
-		B1A6D27726BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474C826BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 43F314B7C76FB95EE6CAC5A6 /* JAuthentication */;
 			proxyType = 2;
 			remoteGlobalIDString = DB8AEF416B158BD59670F701;
 			remoteInfo = JAuthenticationTests;
 		};
-		B1A6D27C26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474CD26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4D318D1D3282101AA99E51B /* JLibrary */;
 			proxyType = 2;
 			remoteGlobalIDString = 47F5BCF9BB27DCE920298143;
 			remoteInfo = JLibrary;
 		};
-		B1A6D27E26BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474CF26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4D318D1D3282101AA99E51B /* JLibrary */;
 			proxyType = 2;
 			remoteGlobalIDString = 024F09E1A87849FBD56A1ABC;
 			remoteInfo = JLibrarySample;
 		};
-		B1A6D28026BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474D126BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C4D318D1D3282101AA99E51B /* JLibrary */;
 			proxyType = 2;
 			remoteGlobalIDString = C6896474F7BA8D28338CF915;
 			remoteInfo = JLibraryTests;
 		};
-		B1A6D28526BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474D626BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58F6D68A925B8FF5073F4347 /* UI */;
 			proxyType = 2;
 			remoteGlobalIDString = 299F893EA0E102E226A63030;
 			remoteInfo = UI;
 		};
-		B1A6D28726BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474D826BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58F6D68A925B8FF5073F4347 /* UI */;
 			proxyType = 2;
 			remoteGlobalIDString = 67C03B8FFABBCE2B5A192209;
 			remoteInfo = UISample;
 		};
-		B1A6D28926BACDC300A9B8E3 /* PBXContainerItemProxy */ = {
+		B17474DA26BAF0C000B0297F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 58F6D68A925B8FF5073F4347 /* UI */;
 			proxyType = 2;
@@ -208,10 +210,11 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		B8A70C89BE29E4F47C1AEA2D /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				7C25946CA6C274A74AB36074 /* CoreAdapters.framework in Embed Frameworks */,
 				ED72CFD7DA5A9B38440D92E6 /* CoreAuthentication.framework in Embed Frameworks */,
 				3C0BA1E773E36AF9954DECAE /* CoreEnvironment.framework in Embed Frameworks */,
 				083AB45665D3B4D17BD51FDC /* CoreInjector.framework in Embed Frameworks */,
@@ -221,35 +224,35 @@
 				DB44E82A20EF647189B008A5 /* JLibrary.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		10381B3A5AFC491573225563 /* JAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JAuthentication.framework; path = ../Modules/Features/JAuthentication/JAuthentication.framework; sourceTree = "<group>"; };
-		12F1A8BD8583ACAE08655650 /* CoreAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAuthentication.framework; path = ../Modules/Core/CoreAuthentication/CoreAuthentication.framework; sourceTree = "<group>"; };
+		10381B3A5AFC491573225563 /* JAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JAuthentication.framework; sourceTree = "<group>"; };
+		12F1A8BD8583ACAE08655650 /* CoreAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreAuthentication.framework; sourceTree = "<group>"; };
 		17DEB6213003DB9D9E7D7BF2 /* CoreInjector */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreInjector; path = ../Modules/Core/CoreInjector/CoreInjector.xcodeproj; sourceTree = "<group>"; };
 		1A0E85978F22388F4C17BEDE /* LearningJourneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyApp.swift; sourceTree = "<group>"; };
 		32B6B19E6F4B37D8F923FD8B /* CoreAdapters */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreAdapters; path = ../Modules/Core/CoreAdapters/CoreAdapters.xcodeproj; sourceTree = "<group>"; };
 		43F314B7C76FB95EE6CAC5A6 /* JAuthentication */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JAuthentication; path = ../Modules/Features/JAuthentication/JAuthentication.xcodeproj; sourceTree = "<group>"; };
 		46BADB44E9F67D7695EF8DB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D7F73167372967B59CE7321 /* LearningJourney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningJourney.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5110D5CF7DB426C31025BAA6 /* UI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UI.framework; path = ../Modules/Core/UI/UI.framework; sourceTree = "<group>"; };
+		5110D5CF7DB426C31025BAA6 /* UI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UI.framework; sourceTree = "<group>"; };
 		58F6D68A925B8FF5073F4347 /* UI */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UI; path = ../Modules/Core/UI/UI.xcodeproj; sourceTree = "<group>"; };
-		70B080E6F04E5C1718B5DF7F /* JLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JLibrary.framework; path = ../Modules/Features/JLibrary/JLibrary.framework; sourceTree = "<group>"; };
+		70B080E6F04E5C1718B5DF7F /* JLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JLibrary.framework; sourceTree = "<group>"; };
 		76828952D8EC987598D324A7 /* CoreAuthentication */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreAuthentication; path = ../Modules/Core/CoreAuthentication/CoreAuthentication.xcodeproj; sourceTree = "<group>"; };
 		771484940E4EDA900806D231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7739829D86A76F3DAEA39438 /* LearningJourneyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningJourneyTests.swift; sourceTree = "<group>"; };
-		81A09B61B1B4A3C5D1972FA6 /* CoreInjector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreInjector.framework; path = ../Modules/Core/CoreInjector/CoreInjector.framework; sourceTree = "<group>"; };
+		81A09B61B1B4A3C5D1972FA6 /* CoreInjector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreInjector.framework; sourceTree = "<group>"; };
 		9AA20D2118B0DE86AFDC76E5 /* CoreEnvironment */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreEnvironment; path = ../Modules/Core/CoreEnvironment/CoreEnvironment.xcodeproj; sourceTree = "<group>"; };
-		B631DD3A46D767CAE362DBA9 /* CoreNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNetworking.framework; path = ../Modules/Core/CoreNetworking/CoreNetworking.framework; sourceTree = "<group>"; };
+		B631DD3A46D767CAE362DBA9 /* CoreNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreNetworking.framework; sourceTree = "<group>"; };
 		C4D318D1D3282101AA99E51B /* JLibrary */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JLibrary; path = ../Modules/Features/JLibrary/JLibrary.xcodeproj; sourceTree = "<group>"; };
 		C53B07155153A41FDEB33696 /* CoreNetworking */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CoreNetworking; path = ../Modules/Core/CoreNetworking/CoreNetworking.xcodeproj; sourceTree = "<group>"; };
-		DE7B87E14D37FB726EB39065 /* CoreEnvironment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreEnvironment.framework; path = ../Modules/Core/CoreEnvironment/CoreEnvironment.framework; sourceTree = "<group>"; };
+		DE7B87E14D37FB726EB39065 /* CoreEnvironment.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreEnvironment.framework; sourceTree = "<group>"; };
 		E237FAC78E05E35AA9DE6B6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EB9A70794F162228CFF5EB1B /* LearningJourneyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = LearningJourneyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF720528892B954C8EDAE73B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		F538E9E90A6D772E40A48F88 /* CoreAdapters.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAdapters.framework; path = ../Modules/Core/CoreAdapters/CoreAdapters.framework; sourceTree = "<group>"; };
+		F538E9E90A6D772E40A48F88 /* CoreAdapters.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CoreAdapters.framework; sourceTree = "<group>"; };
 		F9BBEA06BCF54B71377860BA /* LearningJourney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LearningJourney.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F23D1E718B77AF1F2344E66 /* CoreAdapters.framework in Frameworks */,
 				87460665F0B04CB6EDB3D9F4 /* CoreAuthentication.framework in Frameworks */,
 				4921E14F66BE6EF27BC22E4E /* CoreEnvironment.framework in Frameworks */,
 				569162EAA7CC3BA37A611F26 /* CoreInjector.framework in Frameworks */,
@@ -298,9 +302,9 @@
 		424EA8E285B60FCF0E444695 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D27426BACDC300A9B8E3 /* JAuthentication.framework */,
-				B1A6D27626BACDC300A9B8E3 /* JAuthenticationSample.app */,
-				B1A6D27826BACDC300A9B8E3 /* JAuthenticationTests.xctest */,
+				B17474C526BAF0C000B0297F /* JAuthentication.framework */,
+				B17474C726BAF0C000B0297F /* JAuthenticationSample.app */,
+				B17474C926BAF0C000B0297F /* JAuthenticationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,9 +340,9 @@
 		6DA9D50037C6CB35DFCE7901 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D26226BACDC300A9B8E3 /* CoreInjector.framework */,
-				B1A6D26426BACDC300A9B8E3 /* CoreInjectorSample.app */,
-				B1A6D26626BACDC300A9B8E3 /* CoreInjectorTests.xctest */,
+				B17474B326BAF0C000B0297F /* CoreInjector.framework */,
+				B17474B526BAF0C000B0297F /* CoreInjectorSample.app */,
+				B17474B726BAF0C000B0297F /* CoreInjectorTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,9 +359,9 @@
 		7E191D9C9A26DE91615824D3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D28626BACDC300A9B8E3 /* UI.framework */,
-				B1A6D28826BACDC300A9B8E3 /* UISample.app */,
-				B1A6D28A26BACDC300A9B8E3 /* UITests.xctest */,
+				B17474D726BAF0C000B0297F /* UI.framework */,
+				B17474D926BAF0C000B0297F /* UISample.app */,
+				B17474DB26BAF0C000B0297F /* UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -391,9 +395,9 @@
 		A9E410C5BF97D3AB68FEC418 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D25026BACDC300A9B8E3 /* CoreAuthentication.framework */,
-				B1A6D25226BACDC300A9B8E3 /* CoreAuthenticationSample.app */,
-				B1A6D25426BACDC300A9B8E3 /* CoreAuthenticationTests.xctest */,
+				B17474A126BAF0C000B0297F /* CoreAuthentication.framework */,
+				B17474A326BAF0C000B0297F /* CoreAuthenticationSample.app */,
+				B17474A526BAF0C000B0297F /* CoreAuthenticationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -401,9 +405,9 @@
 		AC67B8BDC60950580F803956 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D25926BACDC300A9B8E3 /* CoreEnvironment.framework */,
-				B1A6D25B26BACDC300A9B8E3 /* CoreEnvironmentSample.app */,
-				B1A6D25D26BACDC300A9B8E3 /* CoreEnvironmentTests.xctest */,
+				B17474AA26BAF0C000B0297F /* CoreEnvironment.framework */,
+				B17474AC26BAF0C000B0297F /* CoreEnvironmentSample.app */,
+				B17474AE26BAF0C000B0297F /* CoreEnvironmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -419,9 +423,9 @@
 		DA71FF6B08C7B0D69274706A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D26B26BACDC300A9B8E3 /* CoreNetworking.framework */,
-				B1A6D26D26BACDC300A9B8E3 /* CoreNetworkingSample.app */,
-				B1A6D26F26BACDC300A9B8E3 /* CoreNetworkingTests.xctest */,
+				B17474BC26BAF0C000B0297F /* CoreNetworking.framework */,
+				B17474BE26BAF0C000B0297F /* CoreNetworkingSample.app */,
+				B17474C026BAF0C000B0297F /* CoreNetworkingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -429,9 +433,9 @@
 		DE7D4163528E4A7BB2B4B2CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D24726BACDC300A9B8E3 /* CoreAdapters.framework */,
-				B1A6D24926BACDC300A9B8E3 /* CoreAdaptersSample.app */,
-				B1A6D24B26BACDC300A9B8E3 /* CoreAdaptersTests.xctest */,
+				B174749826BAF0C000B0297F /* CoreAdapters.framework */,
+				B174749A26BAF0C000B0297F /* CoreAdaptersSample.app */,
+				B174749C26BAF0C000B0297F /* CoreAdaptersTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -439,9 +443,9 @@
 		E8A0C03949FE97F9F2124790 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B1A6D27D26BACDC300A9B8E3 /* JLibrary.framework */,
-				B1A6D27F26BACDC300A9B8E3 /* JLibrarySample.app */,
-				B1A6D28126BACDC300A9B8E3 /* JLibraryTests.xctest */,
+				B17474CE26BAF0C000B0297F /* JLibrary.framework */,
+				B17474D026BAF0C000B0297F /* JLibrarySample.app */,
+				B17474D226BAF0C000B0297F /* JLibraryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,172 +556,172 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B1A6D24726BACDC300A9B8E3 /* CoreAdapters.framework */ = {
+		B174749826BAF0C000B0297F /* CoreAdapters.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CoreAdapters.framework;
-			remoteRef = B1A6D24626BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B174749726BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D24926BACDC300A9B8E3 /* CoreAdaptersSample.app */ = {
+		B174749A26BAF0C000B0297F /* CoreAdaptersSample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = CoreAdaptersSample.app;
-			remoteRef = B1A6D24826BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B174749926BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D24B26BACDC300A9B8E3 /* CoreAdaptersTests.xctest */ = {
+		B174749C26BAF0C000B0297F /* CoreAdaptersTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CoreAdaptersTests.xctest;
-			remoteRef = B1A6D24A26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B174749B26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D25026BACDC300A9B8E3 /* CoreAuthentication.framework */ = {
+		B17474A126BAF0C000B0297F /* CoreAuthentication.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CoreAuthentication.framework;
-			remoteRef = B1A6D24F26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474A026BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D25226BACDC300A9B8E3 /* CoreAuthenticationSample.app */ = {
+		B17474A326BAF0C000B0297F /* CoreAuthenticationSample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = CoreAuthenticationSample.app;
-			remoteRef = B1A6D25126BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474A226BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D25426BACDC300A9B8E3 /* CoreAuthenticationTests.xctest */ = {
+		B17474A526BAF0C000B0297F /* CoreAuthenticationTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CoreAuthenticationTests.xctest;
-			remoteRef = B1A6D25326BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474A426BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D25926BACDC300A9B8E3 /* CoreEnvironment.framework */ = {
+		B17474AA26BAF0C000B0297F /* CoreEnvironment.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CoreEnvironment.framework;
-			remoteRef = B1A6D25826BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474A926BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D25B26BACDC300A9B8E3 /* CoreEnvironmentSample.app */ = {
+		B17474AC26BAF0C000B0297F /* CoreEnvironmentSample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = CoreEnvironmentSample.app;
-			remoteRef = B1A6D25A26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474AB26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D25D26BACDC300A9B8E3 /* CoreEnvironmentTests.xctest */ = {
+		B17474AE26BAF0C000B0297F /* CoreEnvironmentTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CoreEnvironmentTests.xctest;
-			remoteRef = B1A6D25C26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474AD26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D26226BACDC300A9B8E3 /* CoreInjector.framework */ = {
+		B17474B326BAF0C000B0297F /* CoreInjector.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CoreInjector.framework;
-			remoteRef = B1A6D26126BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474B226BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D26426BACDC300A9B8E3 /* CoreInjectorSample.app */ = {
+		B17474B526BAF0C000B0297F /* CoreInjectorSample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = CoreInjectorSample.app;
-			remoteRef = B1A6D26326BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474B426BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D26626BACDC300A9B8E3 /* CoreInjectorTests.xctest */ = {
+		B17474B726BAF0C000B0297F /* CoreInjectorTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CoreInjectorTests.xctest;
-			remoteRef = B1A6D26526BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474B626BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D26B26BACDC300A9B8E3 /* CoreNetworking.framework */ = {
+		B17474BC26BAF0C000B0297F /* CoreNetworking.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = CoreNetworking.framework;
-			remoteRef = B1A6D26A26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474BB26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D26D26BACDC300A9B8E3 /* CoreNetworkingSample.app */ = {
+		B17474BE26BAF0C000B0297F /* CoreNetworkingSample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = CoreNetworkingSample.app;
-			remoteRef = B1A6D26C26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474BD26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D26F26BACDC300A9B8E3 /* CoreNetworkingTests.xctest */ = {
+		B17474C026BAF0C000B0297F /* CoreNetworkingTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = CoreNetworkingTests.xctest;
-			remoteRef = B1A6D26E26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474BF26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D27426BACDC300A9B8E3 /* JAuthentication.framework */ = {
+		B17474C526BAF0C000B0297F /* JAuthentication.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = JAuthentication.framework;
-			remoteRef = B1A6D27326BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474C426BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D27626BACDC300A9B8E3 /* JAuthenticationSample.app */ = {
+		B17474C726BAF0C000B0297F /* JAuthenticationSample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = JAuthenticationSample.app;
-			remoteRef = B1A6D27526BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474C626BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D27826BACDC300A9B8E3 /* JAuthenticationTests.xctest */ = {
+		B17474C926BAF0C000B0297F /* JAuthenticationTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = JAuthenticationTests.xctest;
-			remoteRef = B1A6D27726BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474C826BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D27D26BACDC300A9B8E3 /* JLibrary.framework */ = {
+		B17474CE26BAF0C000B0297F /* JLibrary.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = JLibrary.framework;
-			remoteRef = B1A6D27C26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474CD26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D27F26BACDC300A9B8E3 /* JLibrarySample.app */ = {
+		B17474D026BAF0C000B0297F /* JLibrarySample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = JLibrarySample.app;
-			remoteRef = B1A6D27E26BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474CF26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D28126BACDC300A9B8E3 /* JLibraryTests.xctest */ = {
+		B17474D226BAF0C000B0297F /* JLibraryTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = JLibraryTests.xctest;
-			remoteRef = B1A6D28026BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474D126BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D28626BACDC300A9B8E3 /* UI.framework */ = {
+		B17474D726BAF0C000B0297F /* UI.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = UI.framework;
-			remoteRef = B1A6D28526BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474D626BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D28826BACDC300A9B8E3 /* UISample.app */ = {
+		B17474D926BAF0C000B0297F /* UISample.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = UISample.app;
-			remoteRef = B1A6D28726BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474D826BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B1A6D28A26BACDC300A9B8E3 /* UITests.xctest */ = {
+		B17474DB26BAF0C000B0297F /* UITests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = UITests.xctest;
-			remoteRef = B1A6D28926BACDC300A9B8E3 /* PBXContainerItemProxy */;
+			remoteRef = B17474DA26BAF0C000B0297F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -770,14 +774,7 @@
 				CURRENT_PROJECT_VERSION = 20;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"../Modules/Core/CoreAdapters\"",
-					"\"../Modules/Core/CoreAuthentication\"",
-					"\"../Modules/Core/CoreEnvironment\"",
-					"\"../Modules/Core/CoreInjector\"",
-					"\"../Modules/Core/CoreNetworking\"",
-					"\"../Modules/Core/UI\"",
-					"\"../Modules/Features/JAuthentication\"",
-					"\"../Modules/Features/JLibrary\"",
+					"\".\"",
 				);
 				INFOPLIST_FILE = LearningJourney/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -833,14 +830,7 @@
 				CURRENT_PROJECT_VERSION = 20;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"../Modules/Core/CoreAdapters\"",
-					"\"../Modules/Core/CoreAuthentication\"",
-					"\"../Modules/Core/CoreEnvironment\"",
-					"\"../Modules/Core/CoreInjector\"",
-					"\"../Modules/Core/CoreNetworking\"",
-					"\"../Modules/Core/UI\"",
-					"\"../Modules/Features/JAuthentication\"",
-					"\"../Modules/Features/JLibrary\"",
+					"\".\"",
 				);
 				INFOPLIST_FILE = LearningJourney/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
