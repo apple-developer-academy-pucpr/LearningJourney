@@ -5,6 +5,7 @@ targets:
     type: application
     platform: iOS
     sources: LearningJourney
+    onlyCopyFilesOnInstall: true
     dependencies:
       - framework: CoreAdapters.framework
         implict: true

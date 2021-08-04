@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F51C462473D9D005C0E54AE /* Development.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C620009D1889DF94D6ABBDE /* Development.plist */; };
 		1FFE9947465272440F609887 /* EnvironmentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD388E1E2F6724A91B5B4C9 /* EnvironmentProvider.swift */; };
 		20DF919E59C0A425B94EB669 /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298C1BFAE5ECA00A78462D0C /* CoreEnvironment.framework */; };
 		275E4189D531B737D0C68274 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E8B95CF1FB431517447E48 /* SceneDelegate.swift */; };
 		55C74D19E1743D564A035681 /* CoreEnvironment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 298C1BFAE5ECA00A78462D0C /* CoreEnvironment.framework */; };
 		7B928F98583C1BB7C19F85A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 613A6FF708A25C2A58213BF6 /* Assets.xcassets */; };
 		AAFE3BBF4F82D3F2E80BC4AA /* CoreEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 32D91FFE5EF6A0821B38429A /* CoreEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B17016B726BAF3D8000EBE45 /* Production.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = B17016B526BAF3D8000EBE45 /* Production.xcconfig */; };
+		B17016B826BAF3D8000EBE45 /* Production.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17016B626BAF3D8000EBE45 /* Production.plist */; };
 		BB1839A59958E48E02656AF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1370D5DFE6AA4CB020412343 /* AppDelegate.swift */; };
 		F042520943115C8CB3E058EF /* Dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6161EC1AE1DBA6FF363651CC /* Dummy.swift */; };
 		FE5A711EA8D13A94052BE9C7 /* CoreEnvironment.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 298C1BFAE5ECA00A78462D0C /* CoreEnvironment.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -53,15 +56,18 @@
 		01FEED840F2054E9ABA4B351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0AC7D0338BF79649E70776CA /* CoreEnvironmentTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = CoreEnvironmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1370D5DFE6AA4CB020412343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		22163B93E95580FA13C793FA /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		298C1BFAE5ECA00A78462D0C /* CoreEnvironment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoreEnvironment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		29FAD3D7091FEA4D34DCA6BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		31E8B95CF1FB431517447E48 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		32D91FFE5EF6A0821B38429A /* CoreEnvironment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreEnvironment.h; sourceTree = "<group>"; };
 		4BD8218E410AFF999EA9E8E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4C620009D1889DF94D6ABBDE /* Development.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Development.plist; sourceTree = "<group>"; };
 		5834F95F912BDD5024A6D0C6 /* CoreEnvironmentSample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = CoreEnvironmentSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		613A6FF708A25C2A58213BF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6161EC1AE1DBA6FF363651CC /* Dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dummy.swift; sourceTree = "<group>"; };
 		6DD388E1E2F6724A91B5B4C9 /* EnvironmentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentProvider.swift; sourceTree = "<group>"; };
+		B17016B526BAF3D8000EBE45 /* Production.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
+		B17016B626BAF3D8000EBE45 /* Production.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Production.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +123,10 @@
 			isa = PBXGroup;
 			children = (
 				32D91FFE5EF6A0821B38429A /* CoreEnvironment.h */,
-				29FAD3D7091FEA4D34DCA6BF /* Info.plist */,
+				B17016B626BAF3D8000EBE45 /* Production.plist */,
+				B17016B526BAF3D8000EBE45 /* Production.xcconfig */,
+				4C620009D1889DF94D6ABBDE /* Development.plist */,
+				22163B93E95580FA13C793FA /* Development.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			buildPhases = (
 				AD647AA42EB3BCEE38A31C67 /* Headers */,
 				D260460AFDB780B535ECD68E /* Sources */,
+				1CAE94C8309BF4427F34D07F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -255,8 +265,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = E03E25457CADDD5A6FF381FA /* Build configuration list for PBXProject "CoreEnvironment" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -278,6 +286,16 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1CAE94C8309BF4427F34D07F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F51C462473D9D005C0E54AE /* Development.plist in Resources */,
+				B17016B826BAF3D8000EBE45 /* Production.plist in Resources */,
+				B17016B726BAF3D8000EBE45 /* Production.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9879E339726FC739B67E6B7A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,7 +357,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CoreEnvironment/Resources/Info.plist;
+				INFOPLIST_FILE = CoreEnvironment/Resources/Development.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -440,7 +458,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = CoreEnvironment/Resources/Info.plist;
+				INFOPLIST_FILE = CoreEnvironment/Resources/Production.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
