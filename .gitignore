@@ -1,1 +1,110 @@
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## AppCode stuff
+.idea/*
+
+## project files and workspace files
 *.xcodeproj
+*.xcworkspace
+*.xcworkspace/
+*.orig
+
+## Build generated
+.build
+build/*
+DerivedData/
+
+xcov_output/
+MVVMTemplate/install
+*.profraw
+*/*.profraw
+upload_dsym_results
+
+
+## Bazel specific
+
+xchammer-includes/
+bazel-cache/
+bazel-output-base/
+bazel-bin
+bazel-out
+bazel-PicPay
+bazel-picpay-ios
+bazel-testlogs
+--experimental_guard_against_concurrent_changes/
+--experimental_guard_against_concurrent_changes=true/
+
+graph.in
+pfdepgraph.png
+pjdepgraph.png
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
+
+## Changelog
+CHANGELOG-GENERATED.md
+CHANGELOG.json
+CHANGELOG.md
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. However
+# you should judge for yourself, the pros and cons are mentioned at:
+# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+Pods/
+
+# Project files
+# Add this line if you want to avoid checking in source code from the Xcode workspace
+*.xcworkspace
+*.xcodeproj
+*/*.xcodeproj
+
+
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+
+#Generated Files
+*.generated.swift
+
+env.sh
