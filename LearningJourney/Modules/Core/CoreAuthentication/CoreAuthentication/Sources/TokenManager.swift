@@ -13,7 +13,11 @@ public protocol TokenSaving {
     func cache(token data: Data) -> Bool
 }
 
-public typealias TokenManaging = TokenProviding & TokenSaving
+public protocol TokenCleaning {
+    func clear()
+}
+
+public typealias TokenManaging = TokenProviding & TokenSaving & TokenCleaning
 
 public final class TokenManager: TokenManaging {
     
@@ -45,6 +49,11 @@ public final class TokenManager: TokenManaging {
     @discardableResult
     public func cache(token data: Data) -> Bool {
         cacheService.cache(token: data)
+    }
+    
+    // MARK: - Token cleaning
+    public func clear() {
+        cacheService.clear()
     }
 
     // MARK: - Helpers
