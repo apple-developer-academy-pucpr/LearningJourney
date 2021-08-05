@@ -1,1 +1,1 @@
-
+final class Dummy {}

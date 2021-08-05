@@ -11,3 +11,7 @@ generateprojects: ## Generate only .xcodeproj projects using Xcodegen
 
 create_module:
 	./tools/Scripts/create_module.sh ${NAME} ${TYPE}
+
+dep_graph:
+	@((cd LearningJourney/App; xcodegen dump --type graphviz) | pbcopy)
+	

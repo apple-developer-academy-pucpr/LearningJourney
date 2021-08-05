@@ -76,32 +76,29 @@ schemes:
     test:
       config: Debug
       gatherCoverageData: true
-      coverageTargets: [LearningJourney, CoreAdapters/CoreAdapters, CoreAuthentication/CoreAuthenticationTests, CoreEnvironment/CoreEnvironmentTests, CoreInjector/CoreInjectorTests, CoreNetworking/CoreNetworkingTests, UI/UITests, JAuthentication/JAuthenticationTests, JLibrary/JLibraryTests]
+      coverageTargets: [CoreAdapters/CoreAdapters, CoreAuthentication/CoreAuthentication, CoreEnvironment/CoreEnvironment, CoreInjector/CoreInjector, CoreNetworking/CoreNetworking, UI/UI, JAuthentication/JAuthentication, JLibrary/JLibrary]
       targets:
-        - name: LearningJourneyTests
-          parallelizable: true
-          randomExecutionOrder: true
         - name: CoreAdapters/CoreAdaptersTests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
         - name: CoreAuthentication/CoreAuthenticationTests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
         - name: CoreEnvironment/CoreEnvironmentTests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
         - name: CoreInjector/CoreInjectorTests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
         - name: CoreNetworking/CoreNetworkingTests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
         - name: UI/UITests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
         - name: JAuthentication/JAuthenticationTests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
         - name: JLibrary/JLibraryTests
-          parallelizable: true
+          parallelizable: false
           randomExecutionOrder: true
