@@ -1,0 +1,68 @@
+name: CoreEnvironment
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  CoreEnvironment:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    configFiles:
+      Debug: CoreEnvironment/Resources/Development.xcconfig
+      Release: CoreEnvironment/Resources/Production.xcconfig
+    settings:
+      base:
+        INFOPLIST_FILE: CoreEnvironment/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreEnvironment
+    sources: CoreEnvironment
+
+  CoreEnvironmentTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: CoreEnvironmentTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreEnvironmentTests
+    sources:
+      - path: CoreEnvironmentTests
+
+    dependencies:
+      - target: CoreEnvironment
+
+  CoreEnvironmentSample:
+    type: application
+    platform: iOS
+    sources: CoreEnvironmentSample
+    settings:
+      base:
+        INFOPLIST_FILE: CoreEnvironmentSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreEnvironmentSample
+    dependencies:
+      - target: CoreEnvironment
+        embed: false
+
+schemes:
+  CoreEnvironmentSample:
+    build:
+        targets:
+            CoreEnvironmentSample: all
+    run:
+        targets:
+            CoreEnvironmentSample: all
+  CoreEnvironment:
+    build:
+      targets:
+        CoreEnvironment: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CoreEnvironmentTests
+          parallelizable: true
+          randomExecutionOrder: true

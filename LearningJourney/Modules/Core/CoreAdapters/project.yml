@@ -1,0 +1,65 @@
+name: CoreAdapters
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  CoreAdapters:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAdapters/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdapters
+    sources: CoreAdapters
+
+  CoreAdaptersTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAdaptersTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdaptersTests
+    sources:
+      - path: CoreAdaptersTests
+
+    dependencies:
+      - target: CoreAdapters
+
+  CoreAdaptersSample:
+    type: application
+    platform: iOS
+    sources: CoreAdaptersSample
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAdaptersSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdaptersSample
+    dependencies:
+      - target: CoreAdapters
+        embed: false
+
+schemes:
+  CoreAdaptersSample:
+    build:
+        targets:
+            CoreAdaptersSample: all
+    run:
+        targets:
+            CoreAdaptersSample: all
+  CoreAdapters:
+    build:
+      targets:
+        CoreAdapters: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CoreAdaptersTests
+          parallelizable: true
+          randomExecutionOrder: true

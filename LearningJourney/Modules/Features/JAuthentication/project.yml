@@ -1,0 +1,72 @@
+name: JAuthentication
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  JAuthentication:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: JAuthentication/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JAuthentication
+    sources: JAuthentication
+    dependencies:
+      - framework: CoreAuthentication.framework
+        implicit: true
+      - framework: CoreInjector.framework
+        implicit: true
+      - framework: CoreNetworking.framework
+        implicit: true
+
+  JAuthenticationTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: JAuthenticationTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JAuthenticationTests
+    sources:
+      - path: JAuthenticationTests
+
+    dependencies:
+      - target: JAuthentication
+
+  JAuthenticationSample:
+    type: application
+    platform: iOS
+    sources: JAuthenticationSample
+    settings:
+      base:
+        INFOPLIST_FILE: JAuthenticationSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JAuthenticationSample
+    dependencies:
+      - target: JAuthentication
+        embed: false
+
+schemes:
+  JAuthenticationSample:
+    build:
+        targets:
+            JAuthenticationSample: all
+    run:
+        targets:
+            JAuthenticationSample: all
+  JAuthentication:
+    build:
+      targets:
+        JAuthentication: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: JAuthenticationTests
+          parallelizable: true
+          randomExecutionOrder: true
