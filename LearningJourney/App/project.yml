@@ -1,47 +1,5 @@
 name: LearningJourney
 
-targets:
-  LearningJourney:
-    type: application
-    platform: iOS
-    sources: LearningJourney
-    onlyCopyFilesOnInstall: true
-    settings:
-      base:
-        INFOPLIST_FILE: LearningJourney/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney
-    dependencies:
-      - framework: CoreAdapters.framework
-        implict: true
-      - framework: CoreAuthentication.framework
-        implict: true
-      - framework: CoreEnvironment.framework
-        implict: true
-      - framework: CoreInjector.framework
-        implict: true
-      - framework: CoreNetworking.framework
-        implict: true
-      - framework: UI.framework
-        implict: true
-      - framework: JAuthentication.framework
-        implict: true
-      - framework: JLibrary.framework
-        implict: true
-
-  LearningJourneyTests:
-    type: bundle.unit-test
-    platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
-    settings:
-      base:
-        INFOPLIST_FILE: LearningJourneyTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.LearningJourneyTests
-    sources:
-      - path: LearningJourneyTests
-
-    dependencies:
-      - target: LearningJourney
-
 projectReferences:
   CoreAdapters:
     path: ../Modules/Core/CoreAdapters/CoreAdapters.xcodeproj
@@ -59,6 +17,49 @@ projectReferences:
     path: ../Modules/Features/JAuthentication/JAuthentication.xcodeproj
   JLibrary:
     path: ../Modules/Features/JLibrary/JLibrary.xcodeproj
+
+targets:
+  LearningJourney:
+    type: application
+    platform: iOS
+    sources: LearningJourney
+    configFiles:
+      Release: LearningJourney/Resources/AppRelease.xcconfig
+    settings:
+      base:
+        INFOPLIST_FILE: LearningJourney/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp
+    dependencies:
+      - target: CoreAdapters/CoreAdapters
+        implict: true
+      - target: CoreAuthentication/CoreAuthentication
+        implict: true
+      - target: CoreEnvironment/CoreEnvironment
+        implict: true
+      - target: CoreInjector/CoreInjector
+        implict: true
+      - target: CoreNetworking/CoreNetworking
+        implict: true
+      - target: UI/UI
+        implict: true
+      - target: JAuthentication/JAuthentication
+        implict: true
+      - target: JLibrary/JLibrary
+        implict: true
+
+  LearningJourneyTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourney
+    settings:
+      base:
+        INFOPLIST_FILE: LearningJourneyTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.LearningJourneyTests
+    sources:
+      - path: LearningJourneyTests
+
+    dependencies:
+      - target: LearningJourney
 
 schemes:
   LearningJourney:

@@ -75,10 +75,7 @@ public final class ApiRequest: ApiProtocol {
             request.addValue(header.formatted.1, forHTTPHeaderField: header.formatted.0)
         }
         let task = session.dataTask(request: request) { [weak self] data, response, error in
-            guard let self = self else {
-                completion(.failure(.unknown))
-                return
-            }
+            guard let self = self else { return }
             let result = self.handleResponse(
                 data: data,
                 response: response,
@@ -88,7 +85,6 @@ public final class ApiRequest: ApiProtocol {
                 completion(result)
             }
         }
-        
         task?.resume()
         return self
     }
@@ -120,6 +116,5 @@ public final class ApiRequest: ApiProtocol {
         default:
             return .failure(.unknown)
         }
-              
     }
 }
