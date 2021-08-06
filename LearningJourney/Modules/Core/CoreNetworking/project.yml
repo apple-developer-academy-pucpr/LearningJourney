@@ -19,11 +19,11 @@ targets:
   CoreNetworking:
     type: framework
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: CoreNetworking/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreNetworking
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreNetworking
     sources: CoreNetworking
     dependencies:
       - target: CoreAdapters/CoreAdapters
@@ -36,11 +36,11 @@ targets:
   CoreNetworkingTests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: CoreNetworkingTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreNetworkingTests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreNetworkingTests
     sources:
       - path: CoreNetworkingTests
 
@@ -54,7 +54,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: CoreNetworkingSample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreNetworkingSample
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreNetworkingSample
     dependencies:
       - target: CoreNetworking
         embed: false

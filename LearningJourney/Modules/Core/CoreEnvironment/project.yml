@@ -11,24 +11,24 @@ targets:
   CoreEnvironment:
     type: framework
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     configFiles:
       Debug: CoreEnvironment/Resources/Development.xcconfig
       Release: CoreEnvironment/Resources/Production.xcconfig
     settings:
       base:
         INFOPLIST_FILE: CoreEnvironment/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreEnvironment
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreEnvironment
     sources: CoreEnvironment
 
   CoreEnvironmentTests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: CoreEnvironmentTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreEnvironmentTests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreEnvironmentTests
     sources:
       - path: CoreEnvironmentTests
 
@@ -42,7 +42,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: CoreEnvironmentSample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreEnvironmentSample
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreEnvironmentSample
     dependencies:
       - target: CoreEnvironment
         embed: false

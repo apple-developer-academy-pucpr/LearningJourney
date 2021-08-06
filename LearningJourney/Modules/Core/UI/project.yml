@@ -11,21 +11,21 @@ targets:
   UI:
     type: framework
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: UI/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.UI
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.UI
     sources: UI
 
   UITests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: UITests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.UITests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.UITests
     sources:
       - path: UITests
 
@@ -39,7 +39,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: UISample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.UISample
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.UISample
     dependencies:
       - target: UI
         embed: false

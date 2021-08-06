@@ -50,11 +50,11 @@ targets:
   LearningJourneyTests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: LearningJourneyTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.LearningJourneyTests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.LearningJourneyTests
     sources:
       - path: LearningJourneyTests
 

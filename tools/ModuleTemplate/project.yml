@@ -11,21 +11,21 @@ targets:
   <module_name>:
     type: framework
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: <module_name>/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.<module_name>
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.<module_name>
     sources: <module_name>
 
   <module_name>Tests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: <module_name>Tests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.<module_name>Tests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.<module_name>Tests
     sources:
       - path: <module_name>Tests
 
@@ -39,7 +39,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: <module_name>Sample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.<module_name>Sample
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.<module_name>Sample
     dependencies:
       - target: <module_name>
         embed: false

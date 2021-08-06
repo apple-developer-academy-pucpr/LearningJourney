@@ -21,11 +21,11 @@ targets:
   JLibrary:
     type: framework
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: JLibrary/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JLibrary
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JLibrary
     sources: JLibrary
     dependencies:
       - target: CoreInjector/CoreInjector
@@ -38,11 +38,11 @@ targets:
   JLibraryTests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: JLibraryTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JLibraryTests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JLibraryTests
     sources:
       - path: JLibraryTests
 
@@ -56,7 +56,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: JLibrarySample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JLibrarySample
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JLibrarySample
     dependencies:
       - target: JLibrary
         embed: false

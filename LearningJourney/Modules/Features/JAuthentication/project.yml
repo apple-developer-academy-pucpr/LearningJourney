@@ -19,11 +19,11 @@ targets:
   JAuthentication:
     type: framework
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: JAuthentication/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JAuthentication
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JAuthentication
     sources: JAuthentication
     dependencies:
       - target: CoreAuthentication/CoreAuthentication
@@ -36,11 +36,11 @@ targets:
   JAuthenticationTests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: JAuthenticationTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JAuthenticationTests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JAuthenticationTests
     sources:
       - path: JAuthenticationTests
 
@@ -54,7 +54,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: JAuthenticationSample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JAuthenticationSample
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JAuthenticationSample
     dependencies:
       - target: JAuthentication
         embed: false

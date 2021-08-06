@@ -11,21 +11,21 @@ targets:
   CoreAdapters:
     type: framework
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: CoreAdapters/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdapters
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAdapters
     sources: CoreAdapters
 
   CoreAdaptersTests:
     type: bundle.unit-test
     platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourney
+    bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
         INFOPLIST_FILE: CoreAdaptersTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdaptersTests
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAdaptersTests
     sources:
       - path: CoreAdaptersTests
 
@@ -39,7 +39,7 @@ targets:
     settings:
       base:
         INFOPLIST_FILE: CoreAdaptersSample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.CoreAdaptersSample
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAdaptersSample
     dependencies:
       - target: CoreAdapters
         embed: false
