@@ -29,6 +29,7 @@ targets:
       base:
         INFOPLIST_FILE: LearningJourney/Resources/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp
+        CODE_SIGN_ENTITLEMENTS: LearningJourney/Resources/LearningJourney.entitlements
     dependencies:
       - target: CoreAdapters/CoreAdapters
         implict: true
@@ -46,7 +47,6 @@ targets:
         implict: true
       - target: JLibrary/JLibrary
         implict: true
-
   LearningJourneyTests:
     type: bundle.unit-test
     platform: iOS
@@ -62,7 +62,7 @@ targets:
       - target: LearningJourney
 
 schemes:
-  LearningJourney:
+  LearningJourney - Debug:
     build:
       targets:
         LearningJourney: all
@@ -76,6 +76,48 @@ schemes:
       config: Debug
     test:
       config: Debug
+      gatherCoverageData: true
+      coverageTargets: [CoreAdapters/CoreAdapters, CoreAuthentication/CoreAuthentication, CoreEnvironment/CoreEnvironment, CoreInjector/CoreInjector, CoreNetworking/CoreNetworking, UI/UI, JAuthentication/JAuthentication, JLibrary/JLibrary]
+      targets:
+        - name: CoreAdapters/CoreAdaptersTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreAuthentication/CoreAuthenticationTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreEnvironment/CoreEnvironmentTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreInjector/CoreInjectorTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: CoreNetworking/CoreNetworkingTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: UI/UITests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: JAuthentication/JAuthenticationTests
+          parallelizable: false
+          randomExecutionOrder: true
+        - name: JLibrary/JLibraryTests
+          parallelizable: false
+          randomExecutionOrder: true
+
+  LearningJourney - Release:
+    build:
+      targets:
+        LearningJourney: all
+    run:
+      config: Release
+    profile:
+      config: Release
+    analyze:
+      config: Release
+    archive:
+      config: Release
+    test:
+      config: Release
       gatherCoverageData: true
       coverageTargets: [CoreAdapters/CoreAdapters, CoreAuthentication/CoreAuthentication, CoreEnvironment/CoreEnvironment, CoreInjector/CoreInjector, CoreNetworking/CoreNetworking, UI/UI, JAuthentication/JAuthentication, JLibrary/JLibrary]
       targets:

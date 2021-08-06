@@ -9,4 +9,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 SLASH=/
-BASE_URL=http:$(SLASH)/localhost:5000/api/
+BASE_URL=https:$(SLASH)/learning-journey-app.herokuapp.com/api/
+ENV_NAME=DEV

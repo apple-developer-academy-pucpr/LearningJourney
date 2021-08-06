@@ -10,4 +10,4 @@
 
 SLASH=/
 BASE_URL = https:$(SLASH)/learning-journey-app.herokuapp.com/api/
-
+ENV_NAME=PROD
