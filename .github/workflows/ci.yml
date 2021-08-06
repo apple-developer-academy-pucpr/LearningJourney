@@ -2,11 +2,7 @@ name: Codecov Demo
 
 on:
   push:
-    branches:
-develop
-  pull_request:
-    branches:
-develop
+    branches: develop
 
 jobs:
   build:
