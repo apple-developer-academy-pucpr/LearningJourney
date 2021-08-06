@@ -1,0 +1,82 @@
+name: JLibrary
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+
+projectReferences:
+  CoreAuthentication:
+    path: ../../Core/CoreAuthentication/CoreAuthentication.xcodeproj
+  CoreInjector:
+    path: ../../Core/CoreInjector/CoreInjector.xcodeproj
+  CoreNetworking:
+    path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
+  UI:
+    path: ../../Core/UI/UI.xcodeproj
+
+targets:
+  JLibrary:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: JLibrary/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JLibrary
+    sources: JLibrary
+    dependencies:
+      - target: CoreInjector/CoreInjector
+        implicit: true
+      - target: CoreNetworking/CoreNetworking
+        implicit: true
+      - target: UI/UI
+        implicit: true
+
+  JLibraryTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: JLibraryTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JLibraryTests
+    sources:
+      - path: JLibraryTests
+
+    dependencies:
+      - target: JLibrary
+
+  JLibrarySample:
+    type: application
+    platform: iOS
+    sources: JLibrarySample
+    settings:
+      base:
+        INFOPLIST_FILE: JLibrarySample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JLibrarySample
+    dependencies:
+      - target: JLibrary
+        embed: false
+
+schemes:
+  JLibrarySample:
+    build:
+        targets:
+            JLibrarySample: all
+    run:
+        targets:
+            JLibrarySample: all
+  JLibrary:
+    build:
+      targets:
+        JLibrary: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: JLibraryTests
+          parallelizable: true
+          randomExecutionOrder: true

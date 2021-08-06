@@ -1,0 +1,13 @@
+//
+//  Production.xcconfig
+//  LearningJourney
+//
+//  Created by Bruno Pastre on 10/07/21.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SLASH=/
+BASE_URL = https:$(SLASH)/learning-journey-app.herokuapp.com/api/
+ENV_NAME=PROD

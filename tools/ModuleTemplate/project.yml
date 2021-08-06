@@ -1,0 +1,65 @@
+name: <module_name>
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  <module_name>:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: <module_name>/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.<module_name>
+    sources: <module_name>
+
+  <module_name>Tests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: <module_name>Tests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.<module_name>Tests
+    sources:
+      - path: <module_name>Tests
+
+    dependencies:
+      - target: <module_name>
+
+  <module_name>Sample:
+    type: application
+    platform: iOS
+    sources: <module_name>Sample
+    settings:
+      base:
+        INFOPLIST_FILE: <module_name>Sample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.<module_name>Sample
+    dependencies:
+      - target: <module_name>
+        embed: false
+
+schemes:
+  <module_name>Sample:
+    build:
+        targets:
+            <module_name>Sample: all
+    run:
+        targets:
+            <module_name>Sample: all
+  <module_name>:
+    build:
+      targets:
+        <module_name>: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: <module_name>Tests
+          parallelizable: true
+          randomExecutionOrder: true

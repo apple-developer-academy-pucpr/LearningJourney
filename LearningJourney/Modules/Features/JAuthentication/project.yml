@@ -1,0 +1,80 @@
+name: JAuthentication
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+projectReferences:
+  CoreAuthentication:
+    path: ../../Core/CoreAuthentication/CoreAuthentication.xcodeproj
+  CoreInjector:
+    path: ../../Core/CoreInjector/CoreInjector.xcodeproj
+  CoreNetworking:
+    path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
+
+targets:
+  JAuthentication:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: JAuthentication/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JAuthentication
+    sources: JAuthentication
+    dependencies:
+      - target: CoreAuthentication/CoreAuthentication
+        implicit: true
+      - target: CoreInjector/CoreInjector
+        implicit: true
+      - target: CoreNetworking/CoreNetworking
+        implicit: true
+
+  JAuthenticationTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: JAuthenticationTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JAuthenticationTests
+    sources:
+      - path: JAuthenticationTests
+
+    dependencies:
+      - target: JAuthentication
+
+  JAuthenticationSample:
+    type: application
+    platform: iOS
+    sources: JAuthenticationSample
+    settings:
+      base:
+        INFOPLIST_FILE: JAuthenticationSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JAuthenticationSample
+    dependencies:
+      - target: JAuthentication
+        embed: false
+
+schemes:
+  JAuthenticationSample:
+    build:
+        targets:
+            JAuthenticationSample: all
+    run:
+        targets:
+            JAuthenticationSample: all
+  JAuthentication:
+    build:
+      targets:
+        JAuthentication: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: JAuthenticationTests
+          parallelizable: true
+          randomExecutionOrder: true

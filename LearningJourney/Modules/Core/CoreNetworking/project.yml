@@ -1,0 +1,80 @@
+name: CoreNetworking
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+projectReferences:
+  CoreAdapters:
+    path: ../../Core/CoreAdapters/CoreAdapters.xcodeproj
+  CoreAuthentication:
+    path: ../../Core/CoreAuthentication/CoreAuthentication.xcodeproj
+  CoreEnvironment:
+    path: ../../Core/CoreEnvironment/CoreEnvironment.xcodeproj
+
+targets:
+  CoreNetworking:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: CoreNetworking/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreNetworking
+    sources: CoreNetworking
+    dependencies:
+      - target: CoreAdapters/CoreAdapters
+        implicit: true
+      - target: CoreAuthentication/CoreAuthentication
+        implicit: true
+      - target: CoreEnvironment/CoreEnvironment
+        implicit: true
+
+  CoreNetworkingTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: CoreNetworkingTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreNetworkingTests
+    sources:
+      - path: CoreNetworkingTests
+
+    dependencies:
+      - target: CoreNetworking
+
+  CoreNetworkingSample:
+    type: application
+    platform: iOS
+    sources: CoreNetworkingSample
+    settings:
+      base:
+        INFOPLIST_FILE: CoreNetworkingSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreNetworkingSample
+    dependencies:
+      - target: CoreNetworking
+        embed: false
+
+schemes:
+  CoreNetworkingSample:
+    build:
+        targets:
+            CoreNetworkingSample: all
+    run:
+        targets:
+            CoreNetworkingSample: all
+  CoreNetworking:
+    build:
+      targets:
+        CoreNetworking: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CoreNetworkingTests
+          parallelizable: true
+          randomExecutionOrder: true

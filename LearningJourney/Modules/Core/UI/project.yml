@@ -1,0 +1,65 @@
+name: UI
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  UI:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: UI/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.UI
+    sources: UI
+
+  UITests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: UITests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.UITests
+    sources:
+      - path: UITests
+
+    dependencies:
+      - target: UI
+
+  UISample:
+    type: application
+    platform: iOS
+    sources: UISample
+    settings:
+      base:
+        INFOPLIST_FILE: UISample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.UISample
+    dependencies:
+      - target: UI
+        embed: false
+
+schemes:
+  UISample:
+    build:
+        targets:
+            UISample: all
+    run:
+        targets:
+            UISample: all
+  UI:
+    build:
+      targets:
+        UI: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: UITests
+          parallelizable: true
+          randomExecutionOrder: true
