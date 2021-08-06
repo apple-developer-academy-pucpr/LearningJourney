@@ -3,6 +3,10 @@
 import SwiftUI
 
 final class LibraryViewModelMock: LibraryViewModelProtocol {
+    func handleSignout() {
+        
+    }
+    
     func handleUserDidChange() {
         
     }

@@ -16,7 +16,7 @@ struct ObjectiveCard: View {
     private var resultView: some View {
         Group {
             switch objective {
-            case .loading:
+            case .loading, .empty:
                 LoadingView()
             case .error:
                 Text("Error")

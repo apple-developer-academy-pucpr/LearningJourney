@@ -6,7 +6,17 @@ options:
 configs:
   Debug: debug
   Release: release
-  
+
+projectReferences:
+  CoreAuthentication:
+    path: ../../Core/CoreAuthentication/CoreAuthentication.xcodeproj
+  CoreInjector:
+    path: ../../Core/CoreInjector/CoreInjector.xcodeproj
+  CoreNetworking:
+    path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
+  UI:
+    path: ../../Core/UI/UI.xcodeproj
+
 targets:
   JLibrary:
     type: framework
@@ -18,11 +28,11 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourney.JLibrary
     sources: JLibrary
     dependencies:
-      - framework: CoreInjector.framework
+      - target: CoreInjector/CoreInjector
         implicit: true
-      - framework: CoreNetworking.framework
+      - target: CoreNetworking/CoreNetworking
         implicit: true
-      - framework: UI.framework
+      - target: UI/UI
         implicit: true
 
   JLibraryTests:

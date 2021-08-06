@@ -76,6 +76,9 @@ struct LoginPresentationModifier<ViewModel>: ViewModifier where ViewModel: Login
     func body(content: Content) -> some View {
         content
             .onAppear(perform: viewModel.handleOnAppear)
+            .onReceive(
+                NotificationCenter.default.publisher(for: .authDidChange),
+                perform: viewModel.handleAuthStatusChange)
             .fullScreenCover(isPresented: $viewModel.isPresented) {
                 loginView
             }

@@ -46,6 +46,16 @@ final class TokenCacheServiceTests: XCTestCase {
         XCTAssertEqual(keychainMock.deleteCallCount, 1)
         
     }
+    
+    func test_clear_itShouldDeleteCurrentItem() {
+        // Given / When
+        sut.clear()
+        
+        // Then
+        XCTAssertEqual(keychainMock.deleteCallCount, 1)
+        XCTAssertEqual(keychainMock.addCallCount, 0)
+        XCTAssertEqual(keychainMock.copyCallCount, 0)
+    }
 }
 
 final class KeychainManagerMock: KeychainManaging {
@@ -56,17 +66,18 @@ final class KeychainManagerMock: KeychainManaging {
     private(set) var copyCallCount = 0
     private(set) var deleteCallCount = 0
     
-    // MARK: - Initialization
+    // MARK: - Keychain managing
     
-    init() {}
-    
-    // MARK: - Leychain managing
     var add: (CFDictionary, UnsafeMutablePointer<CFTypeRef?>?) -> OSStatus { _add }
     var copy: (CFDictionary, UnsafeMutablePointer<CFTypeRef?>?) -> OSStatus { _copy }
     var delete: (CFDictionary) -> OSStatus { _delete }
+    
+    // MARK: - Stubs
+    
     var dataToCopy: Data?
     
-    // MARK: - Helpers
+    // MARK: - Keychain managing
+    
     private func _add(_ dict: CFDictionary, res: UnsafeMutablePointer<CFTypeRef?>?) -> OSStatus {
         addCallCount += 1
         return noErr
@@ -82,6 +93,4 @@ final class KeychainManagerMock: KeychainManaging {
         deleteCallCount += 1
         return noErr
     }
-    
-    
 }

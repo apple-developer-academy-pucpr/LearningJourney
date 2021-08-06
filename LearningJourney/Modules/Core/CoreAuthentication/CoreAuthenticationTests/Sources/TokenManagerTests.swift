@@ -66,6 +66,14 @@ final class TokenManagerTests: XCTestCase {
         // Then
         XCTAssertEqual(spy.cacheCallCount, 1)
     }
+    
+    func test_clear_itShouldCallCacheService() {
+        // Given / When
+        sut.cache(token: .init())
+        
+        // Then
+        XCTAssertEqual(spy.cacheCallCount, 1)
+    }
 }
 
 
@@ -76,6 +84,11 @@ final class TokenCacheMock: TokenCacheServicing {
     func cache(token: Data) -> Bool {
         cacheCallCount += 1
         return true
+    }
+    
+    private(set) var clearCallCount = 0
+    func clear() {
+        clearCallCount += 1
     }
 }
 

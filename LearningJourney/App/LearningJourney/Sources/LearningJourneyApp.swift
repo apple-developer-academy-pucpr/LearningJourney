@@ -30,6 +30,7 @@ struct LearningJourneyApp: App {
     private func registerDependencies() {
         routerService.register({ routerService }, for: RoutingService.self)
         routerService.register({ ApiFactory() }, for: ApiFactoryProtocol.self)
+        routerService.register({ TokenManager.shared }, for: TokenCleaning.self)
     }
     
     private func registerRouteHandlers() {

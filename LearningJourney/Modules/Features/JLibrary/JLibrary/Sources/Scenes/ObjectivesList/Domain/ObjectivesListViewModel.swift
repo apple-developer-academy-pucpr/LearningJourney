@@ -26,7 +26,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     typealias Objectives = LibraryViewModelState<[LibraryViewModelState<LearningObjective>]>
     
     @Published
-    var objectives: Objectives = .loading
+    var objectives: Objectives = .empty
     
     // MARK: - Dependencies
     
@@ -48,6 +48,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     var goalName: String { dependencies.goal.name }
     
     func handleOnAppear() {
+        if objectives == .loading { return }
         objectives = .loading
         useCases.fetchObjectivesUseCase.execute(using: dependencies.goal) { [weak self] in
             switch $0 {
