@@ -1,6 +1,7 @@
 import SwiftUI
 import CoreInjector
 import CoreNetworking
+import CoreAuthentication
 
 public struct LibraryFeature: Feature {
     
@@ -8,6 +9,7 @@ public struct LibraryFeature: Feature {
     
     @Dependency var api: ApiFactoryProtocol
     @Dependency var routingService: RoutingService
+    @Dependency var tokenCache: TokenCleaning
     
     private let scenesFactory: LibraryScenesFactoryProtocol
     

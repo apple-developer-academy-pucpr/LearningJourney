@@ -19,6 +19,7 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             }
             .padding(.leading)
             .navigationTitle("Library")
+            .navigationBarItems(trailing: signOutButton)
             .onAppear(perform: viewModel.handleOnAppear)
             .onReceive(NotificationCenter.default.publisher(for: .authDidChange), perform: { _ in
                 viewModel.handleUserDidChange() // TODO this should be replaced by `task`
@@ -33,12 +34,16 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             switch viewModel.strands {
             case let .result(strands):
                 strandsView(using: strands)
-            case .loading:
+            case .loading, .empty:
                 LoadingView()
             case let .error(error):
                 errorView(for: error)
             }
         }
+    }
+    
+    private var signOutButton: some View {
+        Button("Signout", action: viewModel.handleSignout)
     }
     
     private func strandsView(using strands: [LearningStrand]) -> some View {

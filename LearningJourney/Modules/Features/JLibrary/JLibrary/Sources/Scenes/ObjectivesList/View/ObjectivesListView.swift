@@ -13,14 +13,14 @@ struct ObjectivesListView<ViewModel>: View where
     var body: some View {
         contentView
             .navigationTitle(viewModel.goalName)
-            .onAppear(perform: viewModel.handleOnAppear)
     }
     
     private var contentView: some View {
         Group {
             switch viewModel.objectives {
-            case .loading:
+            case .loading, .empty:
                 LoadingView()
+                    .onAppear(perform: viewModel.handleOnAppear)
             case let .error(error):
                 errorView(for: error)
             case let .result(objectives):
@@ -34,8 +34,7 @@ struct ObjectivesListView<ViewModel>: View where
         ScrollView {
             VStack {
                 ForEach(objectives) { objective in
-                    ObjectiveCard(
-                        objective: objective) {
+                    ObjectiveCard(objective: objective) {
                         viewModel.handleDidLearnToggled(objective: objective)
                     }
                 }

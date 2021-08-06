@@ -8,8 +8,9 @@ enum LoginViewState {
 protocol LoginViewModeling: ObservableObject {
     func handleRequest(request: ASAuthorizationAppleIDRequest)
     func handleCompletion(result: Result<ASAuthorization, Error>)
-    
     func handleOnAppear()
+    func handleAuthStatusChange(_ output: NotificationCenter.Publisher.Output)
+    
     var isPresented: Bool { get set }
     var viewState: LoginViewState { get }
 }
@@ -43,16 +44,7 @@ final class LoginViewModel: LoginViewModeling {
     // MARK: - View modeling
     
     func handleOnAppear() {
-        let result = useCases
-            .validateTokenUseCase
-            .execute()
-        
-        switch result {
-        case .success:
-            dismiss()
-        case .failure:
-            viewState = .result
-        }
+        presentIfNeeded()
     }
     
     func handleRequest(request: ASAuthorizationAppleIDRequest) { // TODO this should be testable
@@ -70,13 +62,16 @@ final class LoginViewModel: LoginViewModeling {
                 self?.isPresented = true
             }
         }
-        
-        objectWillChange.send()
+    }
+    
+    func handleAuthStatusChange(_ output: NotificationCenter.Publisher.Output) {
+        presentIfNeeded()
     }
     
     // MARK: - Helpers
     
     private func dismiss() {
+        if !isPresented { return }
         isPresented = false
         DispatchQueue.main.async {
             NotificationCenter.default.post(
@@ -85,6 +80,20 @@ final class LoginViewModel: LoginViewModeling {
                 userInfo: nil)
         }
         objectWillChange.send()
+    }
+    
+    private func presentIfNeeded() {
+        let result = useCases
+            .validateTokenUseCase
+            .execute()
+        
+        switch result {
+        case .success:
+            dismiss()
+        case .failure:
+            isPresented = true
+            viewState = .result
+        }
     }
 }
 

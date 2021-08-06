@@ -6,10 +6,12 @@ protocol LibraryViewModelProtocol: ObservableObject {
     var searchQuery: String { get set }
     func handleOnAppear()
     func handleUserDidChange()
+    func handleSignout()
 }
 
 enum LibraryViewModelState<T: Equatable>: Equatable {
     case loading
+    case empty
     case error(ViewError)
     case result(T)
 }
@@ -24,12 +26,13 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     
     struct UseCases {
         let fetchStrandsUseCase: FetchStrandsUseCaseProtocol
+        let signoutUseCase: SignoutUseCaseProtocol
     }
     
     // MARK: - ViewModel properties
     
     @Published private(set)
-    var strands: LibraryViewModelState<[LearningStrand]> = .loading
+    var strands: LibraryViewModelState<[LearningStrand]> = .empty
     
     @Published
     var searchQuery: String = ""
@@ -54,9 +57,14 @@ final class LibraryViewModel: LibraryViewModelProtocol {
         fetchStrands()
     }
     
+    func handleSignout() {
+        useCases.signoutUseCase.execute()
+    }
+    
     // MARK: - Helper functions
     
     private func fetchStrands() {
+        if strands == .loading { return }
         strands = .loading
         useCases.fetchStrandsUseCase.execute { [weak self] in
             switch $0 {
