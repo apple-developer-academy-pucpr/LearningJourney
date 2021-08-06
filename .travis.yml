@@ -2,3 +2,7 @@ os: osx
 os_image: xcode12.2
 language: swift
 script: tools/Scripts/run_tests.sh
+addons:
+  homebrew:
+    packages:
+    - xcodegen
