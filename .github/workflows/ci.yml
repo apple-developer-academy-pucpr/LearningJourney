@@ -1,4 +1,4 @@
-name: Codecov Demo
+name: CI
 
 on:
   push:
@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
-      - name: Test
-        uses: actions/checkout@v1
+      - name: Install dependencies
+        run: brew install xcodegen
       - name: Build and Test
         run:  tools/Scripts/run_tests.sh
