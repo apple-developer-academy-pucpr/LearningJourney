@@ -5,10 +5,13 @@ on:
     branches: develop
 
 jobs:
-  build:
+  test:
     runs-on: macOS-latest
     steps:
       - name: Install dependencies
         run: brew install xcodegen
-      - name: Build and Test
-        run:  tools/Scripts/run_tests.sh
+      - name: Run tests
+        run:  |
+          chmod +x "${GITHUB_WORKSPACE}/tools/Scripts/run_tests.sh"
+          "${GITHUB_WORKSPACE}/tools/Scripts/run_tests.sh"
+          
