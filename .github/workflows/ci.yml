@@ -12,6 +12,9 @@ jobs:
         run: brew install xcodegen
       - name: Run tests
         run:  |
+          cd "$(git rev-parse --show-toplevel)"
           chmod +x "${GITHUB_WORKSPACE}/tools/Scripts/run_tests.sh"
           "${GITHUB_WORKSPACE}/tools/Scripts/run_tests.sh"
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1.2.1
           
