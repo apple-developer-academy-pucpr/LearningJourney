@@ -8,6 +8,8 @@ jobs:
   test:
     runs-on: macOS-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Install dependencies
         run: brew install xcodegen
       - name: Run tests
