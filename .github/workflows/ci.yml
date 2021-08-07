@@ -15,8 +15,6 @@ jobs:
         run:  |
           pwd
           ls -las
-          chmod +x "./run_tests.sh"
-          "./run_tests.sh"
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.2.1
           
