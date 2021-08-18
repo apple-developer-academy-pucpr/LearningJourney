@@ -1,5 +1,5 @@
 # LearningJourney
-[![CI](https://github.com/pastre/LearningJourney/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/pastre/LearningJourney/actions/workflows/ci.yml)
+[![CI](https://github.com/pastre/LearningJourney/actions/workflows/ci.yml/badge.svg)](https://github.com/pastre/LearningJourney/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/pastre/LearningJourney/branch/develop/graph/badge.svg?token=5QKMD3QOOU)](https://codecov.io/gh/pastre/LearningJourney)
 ## Overview
 This app allows students to track their progress on becoming a full stack iOS Developer. This project also serves as a study of iOS development best practices in terms of project structure and modularization
