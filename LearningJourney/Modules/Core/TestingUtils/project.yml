@@ -1,0 +1,65 @@
+name: TestingUtils
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  TestingUtils:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: TestingUtils/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.TestingUtils
+    sources: TestingUtils
+
+  TestingUtilsTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: TestingUtilsTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.TestingUtilsTests
+    sources:
+      - path: TestingUtilsTests
+
+    dependencies:
+      - target: TestingUtils
+
+  TestingUtilsSample:
+    type: application
+    platform: iOS
+    sources: TestingUtilsSample
+    settings:
+      base:
+        INFOPLIST_FILE: TestingUtilsSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.TestingUtilsSample
+    dependencies:
+      - target: TestingUtils
+        embed: false
+
+schemes:
+  TestingUtilsSample:
+    build:
+        targets:
+            TestingUtilsSample: all
+    run:
+        targets:
+            TestingUtilsSample: all
+  TestingUtils:
+    build:
+      targets:
+        TestingUtils: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: TestingUtilsTests
+          parallelizable: true
+          randomExecutionOrder: true
