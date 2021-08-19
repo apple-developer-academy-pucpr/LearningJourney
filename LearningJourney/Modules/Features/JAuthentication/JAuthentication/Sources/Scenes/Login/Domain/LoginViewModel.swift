@@ -1,5 +1,6 @@
 import Combine
 import AuthenticationServices
+import CoreAdapters
 
 enum LoginViewState {
     case loading, error, result
@@ -34,11 +35,16 @@ final class LoginViewModel: LoginViewModeling {
     // MARK: - Dependencies
     
     private let useCases: UseCases
+    private let notificationCenter: NotificationCenterProtocol
     
     // MARK: - Initialization
     
-    init(useCases: UseCases) {
+    init(
+        useCases: UseCases,
+        notificationCenter: NotificationCenterProtocol
+    ) {
         self.useCases = useCases
+        self.notificationCenter = notificationCenter
     }
     
     // MARK: - View modeling
@@ -74,10 +80,9 @@ final class LoginViewModel: LoginViewModeling {
         if !isPresented { return }
         isPresented = false
         DispatchQueue.main.async {
-            NotificationCenter.default.post(
+            self.notificationCenter.post(
                 name: .authDidChange,
-                object: nil,
-                userInfo: nil)
+                payload: nil)
         }
         objectWillChange.send()
     }
@@ -95,8 +100,4 @@ final class LoginViewModel: LoginViewModeling {
             viewState = .result
         }
     }
-}
-
-public extension Notification.Name {
-    static let authDidChange: Notification.Name = .init("authdidchange")
 }

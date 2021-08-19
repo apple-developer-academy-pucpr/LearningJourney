@@ -1,4 +1,5 @@
 import CoreAuthentication
+import CoreAdapters
 
 // TODO: consider moving this usecase to CoreAuthentication
 protocol SignoutUseCaseProtocol {
@@ -10,16 +11,19 @@ final class SignoutUseCase: SignoutUseCaseProtocol {
     // MARK: - Dependencies
     
     private let cache: TokenCleaning
+    private let notificationCenter: NotificationCenterProtocol
     
     // MARK: - Initialization
     
-    init(cache: TokenCleaning) {
+    init(cache: TokenCleaning,
+         notificationCenter: NotificationCenterProtocol) {
         self.cache = cache
+        self.notificationCenter = notificationCenter
     }
     
     // MARK: - Execute
     func execute() {
         cache.clear()
-        NotificationCenter.default.post(name: .authDidChange, object: nil)
+        notificationCenter.post(name: .authDidChange)
     }
 }

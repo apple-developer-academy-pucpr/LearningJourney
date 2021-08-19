@@ -1,12 +1,14 @@
 import SwiftUI
 import CoreInjector
 import CoreNetworking
+import CoreAdapters
 
 public struct AuthenticationFeature: Feature {
     
     // MARK: - Dependencies
     
     @Dependency var apiFactory: ApiFactoryProtocol
+    @Dependency var notificationCenter: NotificationCenterProtocol
     
     private let scenesFactory: AuthenticationSceneFactoryProtocol
     
