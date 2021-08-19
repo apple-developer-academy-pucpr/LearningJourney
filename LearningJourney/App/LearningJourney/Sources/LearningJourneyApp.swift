@@ -8,12 +8,11 @@ import CoreInjector
 import JAuthentication
 import JLibrary
 
-
-fileprivate let routerService = RouterService() // TODO handle this
-
-
 @main
 struct LearningJourneyApp: App {
+    
+    private let routerService = RouterService()
+    
     init() {
         print(DefaultEnvironment.baseUrl)
         registerDependencies()
