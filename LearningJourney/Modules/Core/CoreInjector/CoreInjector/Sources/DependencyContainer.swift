@@ -20,7 +20,7 @@ public final class DefaultDependencyContainer: DependencyContainer {
     // MARK: - Container methods
     
     public func make<T>(_ type: T.Type) -> T? {
-        let name = name(for: type)
+        let name = self.name(for: type)
         let object = dependencies.object(forKey: name)
         
         if object != nil { return object as? T }
@@ -33,7 +33,7 @@ public final class DefaultDependencyContainer: DependencyContainer {
     }
     
     public func register<T>(factory: @escaping DependencyFactory, for type: T.Type) {
-        let name = name(for: type)
+        let name = self.name(for: type)
         dependencyFactories[name] = factory
     }
     

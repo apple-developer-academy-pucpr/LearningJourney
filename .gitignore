@@ -1,4 +1,3 @@
 LearningJourney/**/*.xcodeproj
-
-
-*.DS_STORE
+.DS_STORE
+**/.DS_Store
