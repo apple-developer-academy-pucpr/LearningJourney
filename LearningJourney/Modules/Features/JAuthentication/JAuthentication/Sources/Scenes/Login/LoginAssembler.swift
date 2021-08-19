@@ -16,7 +16,8 @@ final class LoginAssembler: LoginAssembling {
         let viewModel = LoginViewModel(useCases: .init(
             signInWithAppleUseCase: SignInWithAppleUseCase(repository: repository),
             validateTokenUseCase: ValidateTokenUseCase(tokenProvider: TokenManager.shared) // TODO this should be injected!
-        ))
+        ),
+        notificationCenter: feature.notificationCenter)
         return LoginView(viewModel: viewModel)
     }
 }

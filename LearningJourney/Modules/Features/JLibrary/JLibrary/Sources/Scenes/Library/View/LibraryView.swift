@@ -1,6 +1,7 @@
 import SwiftUI
 import CoreInjector
 import UI
+import CoreAdapters
 
 struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     
@@ -10,6 +11,7 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     var viewModel: ViewModel
     
     let routingService: RoutingService
+    let notificationCenter: NotificationCenterProtocol
     
     // MARK: - View
     var body: some View {
@@ -21,7 +23,7 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             .navigationTitle("Library")
             .navigationBarItems(trailing: signOutButton)
             .onAppear(perform: viewModel.handleOnAppear)
-            .onReceive(NotificationCenter.default.publisher(for: .authDidChange), perform: { _ in
+            .onReceive(notificationCenter.publisher(for: .authDidChange), perform: { _ in
                 viewModel.handleUserDidChange() // TODO this should be replaced by `task`
             })
         }
@@ -109,7 +111,7 @@ struct ContentView_Previews: PreviewProvider {
                     .fixture(),
                     .fixture(),
                 ]),
-            ]), routingService: DummyRoutingService())
+            ]), routingService: DummyRoutingService(), notificationCenter: NotificationCenter.dummy)
         
     }
     

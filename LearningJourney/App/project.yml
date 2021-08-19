@@ -11,6 +11,8 @@ projectReferences:
     path: ../Modules/Core/CoreInjector/CoreInjector.xcodeproj
   CoreNetworking:
     path: ../Modules/Core/CoreNetworking/CoreNetworking.xcodeproj
+  TestingUtils:
+    path: ../Modules/Core/TestingUtils/TestingUtils.xcodeproj
   UI:
     path: ../Modules/Core/UI/UI.xcodeproj
   JAuthentication:

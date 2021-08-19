@@ -2,6 +2,7 @@ import SwiftUI
 import AuthenticationServices
 import CoreInjector
 import UI
+import CoreAdapters
 
 struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
     
@@ -70,6 +71,7 @@ struct LoginPresentationModifier<ViewModel>: ViewModifier where ViewModel: Login
     @ObservedObject
     var viewModel: ViewModel
     let loginView: AnyView
+    let notificationCenter: NotificationCenterProtocol
     
     // MARK: - ViewModifier
     
@@ -77,7 +79,7 @@ struct LoginPresentationModifier<ViewModel>: ViewModifier where ViewModel: Login
         content
             .onAppear(perform: viewModel.handleOnAppear)
             .onReceive(
-                NotificationCenter.default.publisher(for: .authDidChange),
+                notificationCenter.publisher(for: .authDidChange),
                 perform: viewModel.handleAuthStatusChange)
             .fullScreenCover(isPresented: $viewModel.isPresented) {
                 loginView
@@ -93,7 +95,8 @@ public extension View {
         let view = LoginAssembler().assemble(using: feature)
         return modifier(LoginPresentationModifier(
             viewModel: view.viewModel,
-            loginView: AnyView(view)
+            loginView: AnyView(view),
+            notificationCenter: feature.notificationCenter
         ))
     }
 }

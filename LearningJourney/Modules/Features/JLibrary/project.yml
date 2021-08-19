@@ -8,12 +8,16 @@ configs:
   Release: release
 
 projectReferences:
+  CoreAdapters:
+    path: ../../Core/CoreAdapters/CoreAdapters.xcodeproj
   CoreAuthentication:
     path: ../../Core/CoreAuthentication/CoreAuthentication.xcodeproj
   CoreInjector:
     path: ../../Core/CoreInjector/CoreInjector.xcodeproj
   CoreNetworking:
     path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
+  TestingUtils:
+    path: ../../Core/TestingUtils/TestingUtils.xcodeproj
   UI:
     path: ../../Core/UI/UI.xcodeproj
 
@@ -28,6 +32,10 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.JLibrary
     sources: JLibrary
     dependencies:
+      - target: CoreAdapters/CoreAdapters
+        implicit: true
+      - target: CoreAuthentication/CoreAuthentication
+        implicit: true
       - target: CoreInjector/CoreInjector
         implicit: true
       - target: CoreNetworking/CoreNetworking
@@ -48,6 +56,8 @@ targets:
 
     dependencies:
       - target: JLibrary
+      - target: TestingUtils/TestingUtils
+        implicit: true
 
   JLibrarySample:
     type: application

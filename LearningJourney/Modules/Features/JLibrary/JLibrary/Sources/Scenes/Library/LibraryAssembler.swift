@@ -20,13 +20,16 @@ final class LibraryAssembler: LibraryAssembling {
         let viewModel = LibraryViewModel(
             useCases: .init(
                 fetchStrandsUseCase: FetchStrandsUseCase(repository: repository),
-                signoutUseCase: SignoutUseCase(cache: feature.tokenCache)
+                signoutUseCase: SignoutUseCase(
+                    cache: feature.tokenCache,
+                    notificationCenter: feature.notificationCenter)
             )
         )
         
         let view = LibraryView<LibraryViewModel>(
             viewModel: viewModel,
-            routingService: feature.routingService)
+            routingService: feature.routingService,
+            notificationCenter: feature.notificationCenter)
         
         return AnyView(view)
     }

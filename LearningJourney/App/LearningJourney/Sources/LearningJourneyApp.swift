@@ -1,5 +1,6 @@
 import SwiftUI
 
+import CoreAdapters
 import CoreAuthentication
 import CoreNetworking
 import CoreEnvironment
@@ -7,12 +8,11 @@ import CoreInjector
 import JAuthentication
 import JLibrary
 
-
-fileprivate let routerService = RouterService() // TODO handle this
-
-
 @main
 struct LearningJourneyApp: App {
+    
+    private let routerService = RouterService()
+    
     init() {
         print(DefaultEnvironment.baseUrl)
         registerDependencies()
@@ -31,6 +31,7 @@ struct LearningJourneyApp: App {
         routerService.register({ routerService }, for: RoutingService.self)
         routerService.register({ ApiFactory() }, for: ApiFactoryProtocol.self)
         routerService.register({ TokenManager.shared }, for: TokenCleaning.self)
+        routerService.register({ NotificationCenter.default }, for: NotificationCenterProtocol.self)
     }
     
     private func registerRouteHandlers() {

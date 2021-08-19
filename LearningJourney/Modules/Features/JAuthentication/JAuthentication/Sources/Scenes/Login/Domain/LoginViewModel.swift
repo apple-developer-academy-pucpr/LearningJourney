@@ -1,12 +1,13 @@
 import Combine
 import AuthenticationServices
+import CoreAdapters
 
 enum LoginViewState {
     case loading, error, result
 }
 
 protocol LoginViewModeling: ObservableObject {
-    func handleRequest(request: ASAuthorizationAppleIDRequest)
+    func handleRequest(request: ASAuthorizationAppleIDRequestProtocol)
     func handleCompletion(result: Result<ASAuthorization, Error>)
     func handleOnAppear()
     func handleAuthStatusChange(_ output: NotificationCenter.Publisher.Output)
@@ -34,11 +35,16 @@ final class LoginViewModel: LoginViewModeling {
     // MARK: - Dependencies
     
     private let useCases: UseCases
+    private let notificationCenter: NotificationCenterProtocol
     
     // MARK: - Initialization
     
-    init(useCases: UseCases) {
+    init(
+        useCases: UseCases,
+        notificationCenter: NotificationCenterProtocol
+    ) {
         self.useCases = useCases
+        self.notificationCenter = notificationCenter
     }
     
     // MARK: - View modeling
@@ -47,7 +53,7 @@ final class LoginViewModel: LoginViewModeling {
         presentIfNeeded()
     }
     
-    func handleRequest(request: ASAuthorizationAppleIDRequest) { // TODO this should be testable
+    func handleRequest(request: ASAuthorizationAppleIDRequestProtocol) { // TODO this should be testable
         request.requestedScopes = [.email, .fullName]
     }
     
@@ -73,12 +79,8 @@ final class LoginViewModel: LoginViewModeling {
     private func dismiss() {
         if !isPresented { return }
         isPresented = false
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(
-                name: .authDidChange,
-                object: nil,
-                userInfo: nil)
-        }
+        notificationCenter.post(
+            name: .authDidChange)
         objectWillChange.send()
     }
     
@@ -97,6 +99,10 @@ final class LoginViewModel: LoginViewModeling {
     }
 }
 
-public extension Notification.Name {
-    static let authDidChange: Notification.Name = .init("authdidchange")
+// MARK: - Adapters
+
+protocol ASAuthorizationAppleIDRequestProtocol: AnyObject {
+    var requestedScopes: [ASAuthorization.Scope]? { get set }
 }
+
+extension ASAuthorizationAppleIDRequest: ASAuthorizationAppleIDRequestProtocol {}

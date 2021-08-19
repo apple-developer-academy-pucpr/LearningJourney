@@ -1,4 +1,6 @@
 import XCTest
+import TestingUtils
+import AuthenticationServices
 
 @testable import JAuthentication
 
@@ -8,11 +10,14 @@ final class LoginViewModelTests: XCTestCase {
     
     private let signInUseCase = SignInWithAppleUseCaseMock()
     private let validateTokenCaseStub = ValidateTokenUseCaseStub()
-    private lazy var  sut = LoginViewModel(
+    private let notificationCenterSpy = NotificationCenterSpy()
+    
+    private lazy var sut = LoginViewModel(
         useCases: .init(
             signInWithAppleUseCase: signInUseCase,
             validateTokenUseCase: validateTokenCaseStub
-        ))
+        ),
+        notificationCenter: notificationCenterSpy)
     
     // MARK: - Unit tests
     
@@ -22,6 +27,7 @@ final class LoginViewModelTests: XCTestCase {
         
         // Then
         XCTAssertFalse(sut.isPresented)
+        XCTAssertEqual(notificationCenterSpy.postCallCount, 1)
     }
     
     func test_handleCompletion_whenResultFails_itShouldPresentResult() {
@@ -54,6 +60,7 @@ final class LoginViewModelTests: XCTestCase {
         
         // Then
         XCTAssertFalse(sut.isPresented)
+        XCTAssertEqual(notificationCenterSpy.postCallCount, 1)
     }
     
     func test_handleCompletion_properlyLoads() {
@@ -65,6 +72,43 @@ final class LoginViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(sut.viewState, .loading)
+    }
+    
+    func test_handleAuthStatusChange_whenItSucceeds_itShouldDismiss() {
+        // Given
+        validateTokenCaseStub.errorToUse = nil
+        
+        // When
+        sut.handleAuthStatusChange(.fixture())
+        
+        // Then
+        XCTAssertFalse(sut.isPresented)
+        XCTAssertEqual(notificationCenterSpy.postCallCount, 1)
+    }
+    
+    func test_handleAuthStatusChange_whenItSucceeds_andViewIsAlreadyDismissed_itShouldNotDismiss() {
+        // Given
+        sut.isPresented = false
+        validateTokenCaseStub.errorToUse = nil
+        
+        // When
+        sut.handleAuthStatusChange(.fixture())
+        
+        // Then
+        XCTAssertEqual(notificationCenterSpy.postCallCount, 0)
+    }
+    
+    func test_handleRequest_properlyConfiguresRequest() {
+        // Given
+        let fakeRequest = ASAuthorizationAppleIDRequestFake()
+        
+        // When
+        sut.handleRequest(request: fakeRequest)
+        
+        // Then
+        XCTAssertEqual(fakeRequest.requestedScopes?.count, 2)
+        
+        
     }
 }
 
@@ -87,4 +131,22 @@ final class ValidateTokenUseCaseStub: ValidateTokenUseCaseProtocol {
         }
         return .success({}())
     }
+}
+
+extension NotificationCenter.Publisher.Output {
+    static func fixture(
+        name: Name = .init("asdad"),
+        object: AnyObject? = nil,
+        userInfo: [AnyHashable : Any]? = nil
+    ) -> Self {
+        NotificationCenter.Publisher.Output(
+            name: name,
+            object: object,
+            userInfo: userInfo
+        )
+    }
+}
+
+final class ASAuthorizationAppleIDRequestFake: ASAuthorizationAppleIDRequestProtocol {
+    var requestedScopes: [ASAuthorization.Scope]?
 }

@@ -4,7 +4,7 @@ import AuthenticationServices
 final class LoginViewModelMock: LoginViewModeling {
     func handleAuthStatusChange(_ output: NotificationCenter.Publisher.Output) {}
     
-    func handleRequest(request: ASAuthorizationAppleIDRequest) {}
+    func handleRequest(request: ASAuthorizationAppleIDRequestProtocol) {}
     
     func handleCompletion(result: Result<ASAuthorization, Error>) {}
     
