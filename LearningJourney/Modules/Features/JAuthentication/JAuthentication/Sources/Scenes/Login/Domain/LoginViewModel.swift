@@ -7,7 +7,7 @@ enum LoginViewState {
 }
 
 protocol LoginViewModeling: ObservableObject {
-    func handleRequest(request: ASAuthorizationAppleIDRequest)
+    func handleRequest(request: ASAuthorizationAppleIDRequestProtocol)
     func handleCompletion(result: Result<ASAuthorization, Error>)
     func handleOnAppear()
     func handleAuthStatusChange(_ output: NotificationCenter.Publisher.Output)
@@ -53,7 +53,7 @@ final class LoginViewModel: LoginViewModeling {
         presentIfNeeded()
     }
     
-    func handleRequest(request: ASAuthorizationAppleIDRequest) { // TODO this should be testable
+    func handleRequest(request: ASAuthorizationAppleIDRequestProtocol) { // TODO this should be testable
         request.requestedScopes = [.email, .fullName]
     }
     
@@ -79,11 +79,8 @@ final class LoginViewModel: LoginViewModeling {
     private func dismiss() {
         if !isPresented { return }
         isPresented = false
-        DispatchQueue.main.async {
-            self.notificationCenter.post(
-                name: .authDidChange,
-                payload: nil)
-        }
+        notificationCenter.post(
+            name: .authDidChange)
         objectWillChange.send()
     }
     
@@ -101,3 +98,11 @@ final class LoginViewModel: LoginViewModeling {
         }
     }
 }
+
+// MARK: - Adapters
+
+protocol ASAuthorizationAppleIDRequestProtocol: AnyObject {
+    var requestedScopes: [ASAuthorization.Scope]? { get set }
+}
+
+extension ASAuthorizationAppleIDRequest: ASAuthorizationAppleIDRequestProtocol {}

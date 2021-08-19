@@ -16,6 +16,8 @@ projectReferences:
     path: ../../Core/CoreInjector/CoreInjector.xcodeproj
   CoreNetworking:
     path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
+  TestingUtils:
+    path: ../../Core/TestingUtils/TestingUtils.xcodeproj
   UI:
     path: ../../Core/UI/UI.xcodeproj
 
@@ -31,6 +33,8 @@ targets:
     sources: JLibrary
     dependencies:
       - target: CoreAdapters/CoreAdapters
+        implicit: true
+      - target: CoreAuthentication/CoreAuthentication
         implicit: true
       - target: CoreInjector/CoreInjector
         implicit: true
@@ -52,6 +56,8 @@ targets:
 
     dependencies:
       - target: JLibrary
+      - target: TestingUtils/TestingUtils
+        implicit: true
 
   JLibrarySample:
     type: application

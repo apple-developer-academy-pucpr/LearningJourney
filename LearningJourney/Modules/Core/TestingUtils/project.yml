@@ -6,7 +6,15 @@ options:
 configs:
   Debug: debug
   Release: release
-  
+
+projectReferences:
+  CoreAdapters:
+    path: ../../Core/CoreAdapters/CoreAdapters.xcodeproj
+  CoreInjector:
+    path: ../../Core/CoreInjector/CoreInjector.xcodeproj
+  CoreNetworking:
+    path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
+
 targets:
   TestingUtils:
     type: framework
@@ -17,20 +25,13 @@ targets:
         INFOPLIST_FILE: TestingUtils/Resources/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.TestingUtils
     sources: TestingUtils
-
-  TestingUtilsTests:
-    type: bundle.unit-test
-    platform: iOS
-    bundleIdPrefix: dev.pastre.learningjourneyapp
-    settings:
-      base:
-        INFOPLIST_FILE: TestingUtilsTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.TestingUtilsTests
-    sources:
-      - path: TestingUtilsTests
-
     dependencies:
-      - target: TestingUtils
+      - target: CoreAdapters/CoreAdapters
+        implicit: true
+      - target: CoreInjector/CoreInjector
+        implicit: true
+      - target: CoreNetworking/CoreNetworking
+        implicit: true
 
   TestingUtilsSample:
     type: application
@@ -56,10 +57,3 @@ schemes:
     build:
       targets:
         TestingUtils: all
-    test:
-      config: Debug
-      gatherCoverageData: true
-      targets:
-        - name: TestingUtilsTests
-          parallelizable: true
-          randomExecutionOrder: true
