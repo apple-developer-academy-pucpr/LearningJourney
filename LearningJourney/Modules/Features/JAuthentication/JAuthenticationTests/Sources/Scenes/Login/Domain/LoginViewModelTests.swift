@@ -96,7 +96,6 @@ final class LoginViewModelTests: XCTestCase {
         
         // Then
         XCTAssertEqual(notificationCenterSpy.postCallCount, 0)
-        
     }
     
     func test_handleRequest_properlyConfiguresRequest() {
