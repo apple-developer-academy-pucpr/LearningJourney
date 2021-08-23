@@ -16,6 +16,8 @@ projectReferences:
     path: ../../Core/CoreInjector/CoreInjector.xcodeproj
   CoreNetworking:
     path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
+  TestingUtils:
+    path: ../../Core/TestingUtils/TestingUtils.xcodeproj
 
 targets:
   JAuthentication:
@@ -50,6 +52,8 @@ targets:
 
     dependencies:
       - target: JAuthentication
+      - target: TestingUtils/TestingUtils
+        implicit: true
 
   JAuthenticationSample:
     type: application

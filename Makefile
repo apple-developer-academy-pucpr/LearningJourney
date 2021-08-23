@@ -18,3 +18,5 @@ create_module:
 dep_graph:
 	@((cd LearningJourney/App; xcodegen dump --type graphviz) | pbcopy)
 	
+run_tests:
+	./tools/Scripts/run_tests.sh
