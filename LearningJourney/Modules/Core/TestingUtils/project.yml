@@ -7,14 +7,6 @@ configs:
   Debug: debug
   Release: release
 
-projectReferences:
-  CoreAdapters:
-    path: ../../Core/CoreAdapters/CoreAdapters.xcodeproj
-  CoreInjector:
-    path: ../../Core/CoreInjector/CoreInjector.xcodeproj
-  CoreNetworking:
-    path: ../../Core/CoreNetworking/CoreNetworking.xcodeproj
-
 targets:
   TestingUtils:
     type: framework
@@ -25,13 +17,6 @@ targets:
         INFOPLIST_FILE: TestingUtils/Resources/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.TestingUtils
     sources: TestingUtils
-    dependencies:
-      - target: CoreAdapters/CoreAdapters
-        implicit: true
-      - target: CoreInjector/CoreInjector
-        implicit: true
-      - target: CoreNetworking/CoreNetworking
-        implicit: true
 
   TestingUtilsSample:
     type: application
