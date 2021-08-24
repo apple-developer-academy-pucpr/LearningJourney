@@ -1,6 +1,6 @@
 source 'https://cdn.cocoapods.org/'
 
-platform :ios, '10.3'
+platform :ios, '12.0'
 use_frameworks!
 
 workspace 'LearningJourney'
@@ -26,6 +26,8 @@ end
 
 target 'CoreEnvironment' do
     project 'Modules/Core/CoreEnvironment/CoreEnvironment.project'
+
+    inherit! :complete
 end
 
 target 'CoreInjector' do
