@@ -1,0 +1,34 @@
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '10.3'
+use_frameworks!
+
+workspace 'Learning Journey'
+
+def firebase_pods
+    pod 'Firebase/Analytics'
+end
+
+target 'LearningJourney' do
+    project 'App/LearningJourney.project'
+
+    firebase_pods
+end
+
+target 'JLibrary' do
+    project 'Modules/Features/JLibrary/JLibrary.project'
+end
+
+target 'JAuthentication' do
+
+    project 'Modules/Features/JAuthentication/JAuthentication.project'
+
+    target 'JAuthenticationSample' do
+        inherit! :complete
+        platform :ios, '13.0'
+    end
+
+    target 'JAuthenticationTests' do
+        inherit! :search_paths
+    end
+end
