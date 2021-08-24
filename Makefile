@@ -30,4 +30,5 @@ run_tests: ## Run automated tests
 	./tools/Scripts/run_tests.sh
 
 clean: ## Cleanup projects 
+	rm -rf LearningJourney/LearningJourney.xcworkspace
 	-@find LearningJourney -maxdepth 10 -name "*.xcodeproj" -exec rm -r {} \;
