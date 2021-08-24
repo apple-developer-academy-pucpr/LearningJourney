@@ -1,0 +1,69 @@
+source 'https://cdn.cocoapods.org/'
+
+platform :ios, '12.0'
+use_frameworks!
+
+workspace 'LearningJourney'
+
+# Firebase pods group
+def firebase_pods
+    pod 'Firebase/Analytics'
+end
+
+# App target
+target 'LearningJourney' do
+    project 'App/LearningJourney.project'
+end
+
+## Core modules
+target 'CoreAdapters' do
+    project 'Modules/Core/CoreAdapters/CoreAdapters.project'
+end
+
+target 'CoreAuthentication' do
+    project 'Modules/Core/CoreAuthentication/CoreAuthentication.project'
+end
+
+target 'CoreEnvironment' do
+    project 'Modules/Core/CoreEnvironment/CoreEnvironment.project'
+
+    inherit! :complete
+end
+
+target 'CoreInjector' do
+    project 'Modules/Core/CoreInjector/CoreInjector.project'
+end
+
+target 'CoreNetworking' do
+    project 'Modules/Core/CoreNetworking/CoreNetworking.project'
+end
+
+target 'TestingUtils' do
+    project 'Modules/Core/TestingUtils/TestingUtils.project'
+end
+
+target 'UI' do
+    project 'Modules/Core/UI/UI.project'
+end
+
+## Feature modules
+
+target 'JLibrary' do
+    project 'Modules/Features/JLibrary/JLibrary.project'
+end
+
+target 'JAuthentication' do
+
+    project 'Modules/Features/JAuthentication/JAuthentication.project'
+
+    target 'JAuthenticationSample' do
+        # Sample target dependencies
+        inherit! :complete
+        platform :ios, '13.0'
+    end
+
+    target 'JAuthenticationTests' do
+        # Test target dependencies
+        inherit! :search_paths
+    end
+end
