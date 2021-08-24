@@ -3,4 +3,8 @@ LearningJourney/**/*.xcodeproj
 **/.DS_Store
 LearningJourney/Pods/
 
+LearningJourney/**/*.xcworkspace
+
 LearningJourney/Podfile.lock
+
+LearningJourney/Gemfile.lock
