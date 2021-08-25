@@ -1,4 +1,5 @@
 import FirebaseAnalytics
+import Firebase
 
 final class FirebaseLogger: ThirdPartyLogger {
     
@@ -8,7 +9,9 @@ final class FirebaseLogger: ThirdPartyLogger {
     
     // MARK: - Initialization
     
-    init(logger: FirebaseLogging.Type = Analytics.self) {
+    init(
+        logger: FirebaseLogging.Type = Analytics.self
+    ) {
         self.logger = logger
     }
     

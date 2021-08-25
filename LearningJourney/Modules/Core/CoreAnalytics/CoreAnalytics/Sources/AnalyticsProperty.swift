@@ -1,4 +1,4 @@
-public protocol AnalyticsProperty {
-    var name: String { get }
-    var value: Any { get }
+public struct AnalyticsProperty {
+    var name: String
+    var value: AnyHashable
 }
