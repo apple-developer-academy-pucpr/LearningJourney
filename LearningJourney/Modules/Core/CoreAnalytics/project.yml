@@ -1,0 +1,65 @@
+name: CoreAnalytics
+
+options:
+  xcodeVersion: '9999'
+
+configs:
+  Debug: debug
+  Release: release
+  
+targets:
+  CoreAnalytics:
+    type: framework
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAnalytics/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAnalytics
+    sources: CoreAnalytics
+
+  CoreAnalyticsTests:
+    type: bundle.unit-test
+    platform: iOS
+    bundleIdPrefix: dev.pastre.learningjourneyapp
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAnalyticsTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAnalyticsTests
+    sources:
+      - path: CoreAnalyticsTests
+
+    dependencies:
+      - target: CoreAnalytics
+
+  CoreAnalyticsSample:
+    type: application
+    platform: iOS
+    sources: CoreAnalyticsSample
+    settings:
+      base:
+        INFOPLIST_FILE: CoreAnalyticsSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAnalyticsSample
+    dependencies:
+      - target: CoreAnalytics
+        embed: false
+
+schemes:
+  CoreAnalyticsSample:
+    build:
+        targets:
+            CoreAnalyticsSample: all
+    run:
+        targets:
+            CoreAnalyticsSample: all
+  CoreAnalytics:
+    build:
+      targets:
+        CoreAnalytics: all
+    test:
+      config: Debug
+      gatherCoverageData: true
+      targets:
+        - name: CoreAnalyticsTests
+          parallelizable: true
+          randomExecutionOrder: true
