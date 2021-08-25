@@ -2,10 +2,7 @@ public protocol AnalyticsLogging {
     func log(event: AnalyticsEvent)
 }
 
-protocol AnalyticsHandler {
-    var destination: AnalyticsDestination { get }
-    var logger: AnalyticsLogger { get }
-}
+public typealias AnalyticsEvent = AnalyticsPayload & AnalyticsDispatching
 
 public final class AnalyticsLogger: AnalyticsLogging {
     // MARK: - Dependencies
@@ -14,8 +11,8 @@ public final class AnalyticsLogger: AnalyticsLogging {
     
     // MARK: - Initialization
     
-    init(handlers: [AnalyticsHandler]) {
-        self.handlers = handlers
+    init(handlers: [AnalyticsHandler]? = nil) {
+        self.handlers = handlers ?? AnalyticsLogger.defaultHandlers
     }
     
     // MARK: - Logging
@@ -24,5 +21,14 @@ public final class AnalyticsLogger: AnalyticsLogging {
         handlers
             .filter { event.destinations.contains($0.destination) }
             .forEach { $0.logger.log(event: event) }
+    }
+}
+
+// TODO review if this is the best injection method
+private extension AnalyticsLogger {
+    static var defaultHandlers: [AnalyticsHandler] {
+        [
+            FirebaseHandler(),
+        ]
     }
 }

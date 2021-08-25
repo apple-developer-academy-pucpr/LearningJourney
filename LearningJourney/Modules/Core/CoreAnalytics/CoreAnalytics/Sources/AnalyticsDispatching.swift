@@ -2,13 +2,13 @@ public enum AnalyticsDestination {
     case firebase
 }
 
-public protocol AnalyticsEvent {
-    var name: String { get }
-    var properties: [AnalyticsProperty]? { get }
+public protocol AnalyticsDispatching {
     var destinations: [AnalyticsDestination] { get }
 }
 
-extension AnalyticsEvent {
+// MARK: - Default values
+
+extension AnalyticsDispatching {
     var destinations: [AnalyticsDestination] {
         [.firebase]
     }
