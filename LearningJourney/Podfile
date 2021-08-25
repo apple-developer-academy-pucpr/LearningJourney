@@ -31,6 +31,23 @@ target 'CoreAdapters' do
     end
 end
 
+target 'CoreAnalytics' do
+    project 'Modules/Core/CoreAnalytics/CoreAnalytics.project'
+
+    firebase_pods
+
+    target 'CoreAnalyticsSample' do
+        # Sample target dependencies
+        inherit! :complete
+        platform :ios, '13.0'
+    end
+
+    target 'CoreAnalyticsTests' do
+        # Test target dependencies
+        inherit! :search_paths
+    end
+end
+
 target 'CoreAuthentication' do
     project 'Modules/Core/CoreAuthentication/CoreAuthentication.project'
 
