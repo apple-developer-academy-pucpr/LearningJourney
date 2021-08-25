@@ -1,8 +1,11 @@
 # LearningJourney
 [![CI](https://github.com/pastre/LearningJourney/actions/workflows/ci.yml/badge.svg)](https://github.com/pastre/LearningJourney/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/pastre/LearningJourney/branch/develop/graph/badge.svg?token=5QKMD3QOOU)](https://codecov.io/gh/pastre/LearningJourney)
+[![codebeat badge](https://codebeat.co/badges/5c2771ac-412f-4906-859c-b399e0ef2115)](https://codebeat.co/projects/github-com-pastre-learningjourney-develop)
 ## Overview
-This app allows students to track their progress on becoming a full stack iOS Developer. This project also serves as a study of iOS development best practices in terms of project structure and modularization
+This app allows students to track their progress on becoming a complete Apple Developer Academer. 
+
+This project also serves as a study of iOS development best practices in terms of project structure, modularization and code quality
 
 ## Setup
 
