@@ -13,3 +13,4 @@ BASE_URL = https:$(SLASH)/learning-journey-app.herokuapp.com/api/
 ENV_NAME=PROD
 
 #include "../../../../../Pods/Target Support Files/Pods-CoreEnvironment/Pods-CoreEnvironment.debug.xcconfig"
+#include "../../../../../Pods/Target Support Files/Pods-CoreEnvironment/Pods-CoreEnvironment.release.xcconfig"

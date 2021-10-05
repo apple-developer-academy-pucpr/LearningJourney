@@ -22,3 +22,5 @@ ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 SWIFT_SWIFT3_OBJC_INFERENCE = Default
 OTHER_SWIFT_FLAGS = $(inherited)
+#include "../../../Pods/Target Support Files/Pods-LearningJourney/Pods-LearningJourney.release.xcconfig"
+
