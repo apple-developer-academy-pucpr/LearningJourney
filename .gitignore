@@ -8,3 +8,6 @@ LearningJourney/**/*.xcworkspace
 LearningJourney/Podfile.lock
 
 LearningJourney/Gemfile.lock
+
+LearningJourney/vendor/
+.bundle
