@@ -1,35 +1,37 @@
-//
-//  ToggleLearnUseCaseTests.swift
-//  JLibraryTests
-//
-//  Created by Vinícius Couto on 05/10/21.
-//
 
 import XCTest
 @testable import JLibrary
 
 final class ToggleLearnUseCaseTests: XCTestCase {
+    // MARK: - Properties
+    
     private let libraryRepositorySpy = LibraryRepositorySpy()
     private lazy var sut = ToggleLearnUseCase(repository: libraryRepositorySpy)
 
+    // MARK: - Unit tests
+    
     func test_execute_itShouldFlipLearnedFlag() {
         // Given
-        let flagStub = Bool.random()
+        let flagStub: Bool = .random()
         let expectedFlag = !flagStub
 
         let completionExpectation = expectation(description: "Completion should be called")
+        
         // When
+        
         sut.execute(objective: .fixture(isComplete: flagStub)) { _ in
             completionExpectation.fulfill()
         }
 
         // Then
+        
         waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual(libraryRepositorySpy.updateObjectiveCallCount, 1)
         XCTAssertEqual(expectedFlag, libraryRepositorySpy.updateObjectiveNewObjectivePassed?.isComplete)
     }
 }
 
+// MARK: - Testing doubles
 final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>) {
         fatalError("nyi")
