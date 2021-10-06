@@ -12,27 +12,31 @@ final class LibraryRepositoryTests: XCTestCase {
 
     func test_fetchStrands_itShouldHandleParsingErrors() {
         // Given
-        // libraryParsingStub.errorToUse
+
+        let fetchShouldFail = true
+        var didReturnError = !fetchShouldFail
 
         // When
 
         sut.fetchStrands { result in
             switch result {
             case .success(_):
-                XCTFail("Expected parsing error")
-            case .failure(_):
                 break
+            case .failure(_):
+                didReturnError = true
             }
         }
 
         // Then
 
-        XCTAssertEqual(libraryRemoteServiceSpy.learningStrandsCallCount, 1)
+        XCTAssertEqual(didReturnError, fetchShouldFail)
     }
 
     func test_fetchStrands_itShouldParsePayload() {
         // Given
 
+        let fetchShouldFail = false
+        var didReturnError = !fetchShouldFail
         libraryParsingStub.successToUse = [LearningStrand]()
 
         // When
@@ -40,27 +44,34 @@ final class LibraryRepositoryTests: XCTestCase {
         sut.fetchStrands { result in
             switch result {
             case .success(_):
-                break
+                didReturnError = false
             case .failure(_):
-                XCTFail("Expected parsed payload")
+                break
             }
         }
 
         // Then
 
-        XCTAssertEqual(libraryRemoteServiceSpy.learningStrandsCallCount, 1)
+        XCTAssertEqual(didReturnError, fetchShouldFail)
+    }
+
+    func test_fetchObjectives_itShould() {
+        // Given
+
+        // When
+
+        // Then
     }
 }
 
 // MARK: - Testing doubles
 
 final class LibraryRemoteServiceSpy: LibraryRemoteServiceProtocol {
-    private(set) var learningStrandsCallCount = 0
     func learningStrands(completion: @escaping Completion) {
-        learningStrandsCallCount += 1
         completion(.success(.init()))
     }
 
+    
     func learningObjectives(using strandId: Int, completion: @escaping Completion) {
         fatalError("not implemented")
     }
