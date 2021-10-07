@@ -12,6 +12,7 @@ generateprojects: ## Generate only .xcodeproj projects using Xcodegen
 
 generatepods:
 	@echo "\nRunning bundle install"
+	@bundle config set --local path 'vendor/bundle'
 	@bundle install --quiet --gemfile=LearningJourney/Gemfile
 	
 	@echo "\nInstalling Pods"
