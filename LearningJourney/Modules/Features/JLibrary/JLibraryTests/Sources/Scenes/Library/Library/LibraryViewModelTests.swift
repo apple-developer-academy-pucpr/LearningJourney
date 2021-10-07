@@ -5,8 +5,8 @@ final class LibraryViewModelTests: XCTestCase {
 
     // MARK: - Properties
 
-    private let fetchStrandsUseCase = FetchStrandsUseCaseMock()
-    private let signoutUseCase = SignoutUseCaseStub()
+    private let fetchStrandsUseCase = FetchStrandsUseCaseStub()
+    private let signoutUseCase = SignoutUseCaseDummy()
 
     private lazy var sut = LibraryViewModel(
         useCases: .init(
@@ -28,7 +28,7 @@ final class LibraryViewModelTests: XCTestCase {
     }
 }
 
-final class FetchStrandsUseCaseMock: FetchStrandsUseCaseProtocol {
+final class FetchStrandsUseCaseStub: FetchStrandsUseCaseProtocol {
     var resultToUse: Result<[LearningStrand], LibraryRepositoryError> = .failure(.unknown)
 
     func execute(then handle: @escaping Completion) {
@@ -36,6 +36,6 @@ final class FetchStrandsUseCaseMock: FetchStrandsUseCaseProtocol {
     }
 }
 
-final class SignoutUseCaseStub: SignoutUseCaseProtocol {
+final class SignoutUseCaseDummy: SignoutUseCaseProtocol {
     func execute() {}
 }
