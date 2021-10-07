@@ -5,8 +5,8 @@ final class LibraryViewModelTests: XCTestCase {
 
     // MARK: - Properties
 
-    private let fetchStrandsUseCase = FetchStrandsUseCaseStub()
-    private let signoutUseCase = SignoutUseCaseDummy()
+    private let fetchStrandsUseCase = FetchStrandsUseCaseMock()
+    private let signoutUseCase = SignoutUseCaseMock()
 
     private lazy var sut = LibraryViewModel(
         useCases: .init(
@@ -26,16 +26,66 @@ final class LibraryViewModelTests: XCTestCase {
         // Then
         XCTAssertEqual(sut.strands, .result([]))
     }
+
+    func test_handleOnAppear_whenResultFails_strandsAreSetToError() {
+        // Given
+        fetchStrandsUseCase.resultToUse = .failure(.unauthorized)
+
+        // When
+        sut.handleOnAppear()
+
+        // Then
+        XCTAssertEqual(sut.strands, .error(.notAuthenticated))
+    }
+
+    func test_handleOnAppear_whenAlreadyLoading_secondCallIgnored() {
+        // Given
+        fetchStrandsUseCase.shouldHandle = false
+        sut.handleOnAppear()
+
+        // When
+        fetchStrandsUseCase.shouldHandle = true
+        sut.handleOnAppear()
+
+        // Then
+        XCTAssertEqual(sut.strands, .loading)
+    }
+
+    func test_handleUserDidChange_whenResultSucceeds_strandsChanged() {
+        // Given
+        fetchStrandsUseCase.resultToUse = .success([])
+        sut.handleOnAppear()
+
+        // When
+        fetchStrandsUseCase.resultToUse = .success([LearningStrand.fixture()])
+        sut.handleUserDidChange()
+
+        // Then
+        XCTAssertEqual(sut.strands, .result([LearningStrand.fixture()]))
+    }
+
+    func test_handleSignout_signoutUseCaseExecuted() {
+        // Given / When
+        sut.handleSignout()
+
+        // Then
+        XCTAssertTrue(signoutUseCase.executed)
+    }
 }
 
-final class FetchStrandsUseCaseStub: FetchStrandsUseCaseProtocol {
+final class FetchStrandsUseCaseMock: FetchStrandsUseCaseProtocol {
     var resultToUse: Result<[LearningStrand], LibraryRepositoryError> = .failure(.unknown)
 
+    var shouldHandle = true
     func execute(then handle: @escaping Completion) {
+        guard shouldHandle else { return }
         handle(resultToUse)
     }
 }
 
-final class SignoutUseCaseDummy: SignoutUseCaseProtocol {
-    func execute() {}
+final class SignoutUseCaseMock: SignoutUseCaseProtocol {
+    var executed = false
+    func execute() {
+        executed = true
+    }
 }
