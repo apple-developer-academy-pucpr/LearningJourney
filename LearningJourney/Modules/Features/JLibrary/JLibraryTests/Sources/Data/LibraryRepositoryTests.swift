@@ -1,83 +1,136 @@
 import XCTest
+import CoreNetworking
 @testable import JLibrary
+
 
 final class LibraryRepositoryTests: XCTestCase {
     // MARK: - Properties
 
-    private var libraryRemoteServiceSpy = LibraryRemoteServiceSpy()
+    private var libraryRemoteServiceStub = LibraryRemoteServiceStub()
     private var libraryParsingStub = LibraryParsingStub()
-    private lazy var sut = LibraryRepository(remoteService: libraryRemoteServiceSpy, parser: libraryParsingStub)
+    private lazy var sut = LibraryRepository(remoteService: libraryRemoteServiceStub, parser: libraryParsingStub)
 
     // MARK: - Unit tests
 
-    func test_fetchStrands_itShouldHandleParsingErrors() {
+    func test_fetchStrands_whenNotAllowed_itShouldCompleteWithUnauthorizedError() {
         // Given
 
-        let fetchShouldFail = true
-        var didReturnError = !fetchShouldFail
+        let stubError: ApiError = .notAllowed
+        libraryRemoteServiceStub.resultToUse = .failure(stubError)
+        let expectedError: LibraryRepositoryError = .unauthorized
+        var actualError: Error?
 
         // When
 
         sut.fetchStrands { result in
-            switch result {
-            case .success(_):
-                break
-            case .failure(_):
-                didReturnError = true
+            guard case let .failure(error) = result else {
+                return XCTFail("Expected test to fail")
             }
+            actualError = error
         }
 
         // Then
 
-        XCTAssertEqual(didReturnError, fetchShouldFail)
+        XCTAssertEqual(expectedError.localizedDescription, actualError?.localizedDescription)
+    }
+
+    func test_fetchStrands_itShouldHandleLearningStrandsErrors() {
+        // Given
+
+        let expectedError: ApiError = .unknown
+        let wrappedError: LibraryRepositoryError = .api(expectedError)
+        libraryRemoteServiceStub.resultToUse = .failure(expectedError)
+        var actualError: Error?
+
+        // When
+
+        sut.fetchStrands { result in
+            guard case let .failure(error) = result else {
+                return XCTFail("Expected test to fail")
+            }
+            actualError = error
+        }
+
+        // Then
+
+        XCTAssertEqual(wrappedError.localizedDescription, actualError?.localizedDescription)
+    }
+
+    func test_fetchStrands_itShouldHandleParsingErrors() {
+        // Given
+
+        let expectedError: LibraryRepositoryError = .parsing(.invalidData(DummyError.dummy))
+        libraryParsingStub.errorToUse = .invalidData(expectedError)
+        libraryRemoteServiceStub.resultToUse = .success(.init())
+        var actualError: Error?
+
+        // When
+
+        sut.fetchStrands { result in
+            guard case let .failure(error) = result else {
+                return XCTFail("Expected test to fail")
+            }
+            actualError = error
+        }
+
+        // Then
+
+        XCTAssertEqual(expectedError.localizedDescription,
+                       actualError?.localizedDescription)
     }
 
     func test_fetchStrands_itShouldParsePayload() {
         // Given
 
-        let fetchShouldFail = false
-        var didReturnError = !fetchShouldFail
+        libraryRemoteServiceStub.resultToUse = .success(.init())
         libraryParsingStub.successToUse = [LearningStrand]()
+        var actualResult: [LearningStrand]?
 
         // When
 
         sut.fetchStrands { result in
-            switch result {
-            case .success(_):
-                didReturnError = false
-            case .failure(_):
-                break
-            }
+            actualResult = try? result.get()
         }
 
         // Then
 
-        XCTAssertEqual(didReturnError, fetchShouldFail)
+        XCTAssertNotNil(actualResult)
     }
 
-    func test_fetchObjectives_itShould() {
+    func test_fetchObjectives_itShouldCallCompletion() {
         // Given
+
+        let completionExpectation = expectation(description: "Completion should be called")
 
         // When
 
+        sut.fetchObjectives(using: .fixture()) { _ in
+            completionExpectation.fulfill()
+        }
+
         // Then
+
+        waitForExpectations(timeout: 1, handler: nil)
     }
 }
 
 // MARK: - Testing doubles
 
-final class LibraryRemoteServiceSpy: LibraryRemoteServiceProtocol {
+final class LibraryRemoteServiceStub: LibraryRemoteServiceProtocol {
+    var resultToUse: Result<Data, ApiError> = .failure(.unknown)
     func learningStrands(completion: @escaping Completion) {
-        completion(.success(.init()))
+        completion(resultToUse)
     }
 
     
     func learningObjectives(using strandId: Int, completion: @escaping Completion) {
-        fatalError("not implemented")
+        completion(resultToUse)
     }
 
+
+
     func updateObjective(using objective: LibraryEndpoint.UpdateObjectiveModel, completion: @escaping Completion) {
-        fatalError("not implemented")
+        completion(resultToUse)
     }
 }
 
@@ -99,4 +152,8 @@ final class LibraryParsingStub: LibraryParsing {
 
         return .failure(errorToUse)
   }
+}
+
+enum DummyError: Error {
+    case dummy
 }
