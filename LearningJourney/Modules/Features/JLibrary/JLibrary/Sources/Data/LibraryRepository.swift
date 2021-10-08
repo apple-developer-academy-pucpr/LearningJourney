@@ -49,6 +49,7 @@ final class LibraryRepository: LibraryRepositoryProtocol {
             case let .failure(error):
                 if case .notAllowed = error {
                     completion(.failure(.unauthorized))
+                    return
                 }
                 completion(.failure(.api(error)))
             }
