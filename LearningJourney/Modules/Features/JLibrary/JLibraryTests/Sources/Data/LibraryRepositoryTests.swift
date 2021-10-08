@@ -161,6 +161,71 @@ final class LibraryRepositoryTests: XCTestCase {
 
         XCTAssertNotNil(actualResult)
     }
+
+    func test_updateObjective_whenApiSucceeds_andParsingFails_itShouldCompleteWithParsingError() {
+        // Given
+
+        libraryRemoteServiceStub.resultToUse = .success(.init())
+        let dummyError: ParsingError = .invalidData(DummyError.dummy)
+        let expectedError: LibraryRepositoryError = .parsing(dummyError)
+        libraryParsingStub.errorToUse = dummyError
+        var actualError: Error?
+
+        // When
+
+        sut.updateObjective(newObjective: .fixture()) { result in
+            guard case let .failure(error) = result else {
+                return XCTFail("Expected test to fail")
+            }
+            actualError = error
+        }
+
+        // Then
+
+        XCTAssertEqual(expectedError.localizedDescription,
+                       actualError?.localizedDescription)
+    }
+
+    func test_updateObjective_whenApiFails_itShouldCompleteWithApiError() {
+        // Given
+
+        let dummyError: ApiError = .unknown
+        libraryRemoteServiceStub.resultToUse = .failure(dummyError)
+        let expectedError: LibraryRepositoryError = .api(dummyError)
+        var actualError: Error?
+
+        // When
+
+        sut.updateObjective(newObjective: .fixture()) { result in
+            guard case let .failure(error) = result else {
+                return XCTFail("Expected test to fail")
+            }
+            actualError = error
+        }
+
+        // Then
+
+        XCTAssertEqual(expectedError.localizedDescription,
+                       actualError?.localizedDescription)
+    }
+
+    func test_updateObjective_whenItSucceeds_itShouldReturnParsedData() {
+        // Given
+
+        libraryParsingStub.successToUse = LearningObjective.fixture()
+        libraryRemoteServiceStub.resultToUse = .success(.init())
+        var actualResult: LearningObjective?
+
+        // When
+
+        sut.updateObjective(newObjective: .fixture()) { result in
+            actualResult = try? result.get()
+        }
+
+        // Then
+
+        XCTAssertNotNil(actualResult)
+    }
 }
 
 // MARK: - Testing doubles
