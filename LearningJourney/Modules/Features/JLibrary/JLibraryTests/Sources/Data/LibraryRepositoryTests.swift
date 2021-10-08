@@ -6,8 +6,8 @@ import CoreNetworking
 final class LibraryRepositoryTests: XCTestCase {
     // MARK: - Properties
 
-    private var libraryRemoteServiceStub = LibraryRemoteServiceStub()
-    private var libraryParsingStub = LibraryParsingStub()
+    private let libraryRemoteServiceStub = LibraryRemoteServiceStub()
+    private let libraryParsingStub = LibraryParsingStub()
     private lazy var sut = LibraryRepository(remoteService: libraryRemoteServiceStub, parser: libraryParsingStub)
 
     // MARK: - Unit tests
@@ -34,7 +34,7 @@ final class LibraryRepositoryTests: XCTestCase {
         XCTAssertEqual(expectedError.localizedDescription, actualError?.localizedDescription)
     }
 
-    func test_fetchStrands_itShouldHandleLearningStrandsErrors() {
+    func test_fetchStrands_whenApiFails_itShouldCompleteWithApiError() {
         // Given
 
         let dummyError: ApiError = .unknown
@@ -56,7 +56,7 @@ final class LibraryRepositoryTests: XCTestCase {
         XCTAssertEqual(expectedError.localizedDescription, actualError?.localizedDescription)
     }
 
-    func test_fetchStrands_itShouldHandleParsingErrors() {
+    func test_fetchStrands_whenParsingFails_itShouldCompleteWithParsingError() {
         // Given
 
         let expectedError: LibraryRepositoryError = .parsing(.invalidData(DummyError.dummy))
@@ -79,7 +79,7 @@ final class LibraryRepositoryTests: XCTestCase {
                        actualError?.localizedDescription)
     }
 
-    func test_fetchStrands_itShouldParsePayload() {
+    func test_fetchStrands_whenItSucceeds_itShouldCompleteWithParsedPayload() {
         // Given
 
         libraryRemoteServiceStub.resultToUse = .success(.init())
