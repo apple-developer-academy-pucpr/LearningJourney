@@ -37,9 +37,9 @@ final class LibraryRepositoryTests: XCTestCase {
     func test_fetchStrands_itShouldHandleLearningStrandsErrors() {
         // Given
 
-        let expectedError: ApiError = .unknown
-        let wrappedError: LibraryRepositoryError = .api(expectedError)
-        libraryRemoteServiceStub.resultToUse = .failure(expectedError)
+        let dummyError: ApiError = .unknown
+        let expectedError: LibraryRepositoryError = .api(dummyError)
+        libraryRemoteServiceStub.resultToUse = .failure(dummyError)
         var actualError: Error?
 
         // When
@@ -53,7 +53,7 @@ final class LibraryRepositoryTests: XCTestCase {
 
         // Then
 
-        XCTAssertEqual(wrappedError.localizedDescription, actualError?.localizedDescription)
+        XCTAssertEqual(expectedError.localizedDescription, actualError?.localizedDescription)
     }
 
     func test_fetchStrands_itShouldHandleParsingErrors() {
@@ -97,20 +97,69 @@ final class LibraryRepositoryTests: XCTestCase {
         XCTAssertNotNil(actualResult)
     }
 
-    func test_fetchObjectives_itShouldCallCompletion() {
+    func test_fetchObjectives_whenApiSucceeds_andParsingFails_itShouldCompleteWithParsingError() {
         // Given
 
-        let completionExpectation = expectation(description: "Completion should be called")
+        libraryRemoteServiceStub.resultToUse = .success(.init())
+        let dummyError: ParsingError = .invalidData(DummyError.dummy)
+        let expectedError: LibraryRepositoryError = .parsing(dummyError)
+        libraryParsingStub.errorToUse = dummyError
+        var actualError: Error?
 
         // When
 
-        sut.fetchObjectives(using: .fixture()) { _ in
-            completionExpectation.fulfill()
+        sut.fetchObjectives(using: .fixture()) { result in
+            guard case let .failure(error) = result else {
+                return XCTFail("Expected test to fail")
+            }
+            actualError = error
         }
 
         // Then
 
-        waitForExpectations(timeout: 1, handler: nil)
+        XCTAssertEqual(expectedError.localizedDescription,
+                       actualError?.localizedDescription)
+    }
+
+    func test_fetchObjectives_whenApiFails_itShouldCompleteWithApiError() {
+        // Given
+
+        let dummyError: ApiError = .unknown
+        libraryRemoteServiceStub.resultToUse = .failure(dummyError)
+        let expectedError: LibraryRepositoryError = .api(dummyError)
+        var actualError: Error?
+
+        // When
+
+        sut.fetchObjectives(using: .fixture()) { result in
+            guard case let .failure(error) = result else {
+                return XCTFail("Expected test to fail")
+            }
+            actualError = error
+        }
+
+        // Then
+
+        XCTAssertEqual(expectedError.localizedDescription,
+                       actualError?.localizedDescription)
+    }
+
+    func test_fetchObjectives_whenItSucceeds_itShouldReturnParsedData() {
+        // Given
+
+        libraryParsingStub.successToUse = [LearningObjective]()
+        libraryRemoteServiceStub.resultToUse = .success(.init())
+        var actualResult: [LearningObjective]?
+
+        // When
+
+        sut.fetchObjectives(using: .fixture()) { result in
+            actualResult = try? result.get()
+        }
+
+        // Then
+
+        XCTAssertNotNil(actualResult)
     }
 }
 
@@ -131,14 +180,6 @@ final class LibraryRemoteServiceStub: LibraryRemoteServiceProtocol {
 
     func updateObjective(using objective: LibraryEndpoint.UpdateObjectiveModel, completion: @escaping Completion) {
         completion(resultToUse)
-    }
-}
-
-final class LibraryParsingSpy: LibraryParsing {
-    private(set) var parseDataCallCount = 0
-    func parse<T>(_ data: Data) -> Result<T, ParsingError> where T : Decodable {
-        parseDataCallCount += 1
-        return .failure(.invalidData(LibraryRepositoryError.unknown))
     }
 }
 
