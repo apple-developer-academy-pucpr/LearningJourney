@@ -5,7 +5,9 @@
 //  Created by Maria Fernanda Azolin on 08/10/21.
 //
 
+import TestingUtils
 import XCTest
+
 @testable import JLibrary
 
 final class ObjectivesListViewModelTests: XCTestCase {
