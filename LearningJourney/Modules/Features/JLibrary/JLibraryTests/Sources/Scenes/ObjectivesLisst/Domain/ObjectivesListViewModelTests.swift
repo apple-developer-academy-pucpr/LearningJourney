@@ -12,15 +12,14 @@ final class ObjectivesListViewModelTests: XCTestCase {
     
     private let fetchObjectivesUseCaseSpy = FetchObjectivesUseCaseSpy()
     private let toggleLearnUseCaseSpy = ToggleLearnUseCaseSpy()
+    private let goalMock: LearningGoal = .init(id: 1, name: "goal", progress: 0.0)
     
     private lazy var sut = ObjectivesListViewModel(
         useCases: .init(
             fetchObjectivesUseCase: fetchObjectivesUseCaseSpy,
             toggleLearnUseCase: toggleLearnUseCaseSpy
         ),
-        dependencies: .init(
-            goal: .init(id: 1, name: "goal", progress: 0)
-        )
+        dependencies: .init(goal: goalMock)
     )
     
     // MARK: - handleOnAppear
