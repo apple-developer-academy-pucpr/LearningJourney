@@ -5,13 +5,12 @@ public enum ViewError: Equatable {
     case unknown (UnknownErrorCallback)
     
     public static func == (lhs: ViewError, rhs: ViewError) -> Bool {
-        switch lhs {
-        case .notAuthenticated:
-            return rhs == .notAuthenticated
-        case .unknown:
-            if case .unknown = rhs {
-                return true
-            }
+        switch (lhs, rhs) {
+        case (.notAuthenticated, .notAuthenticated),
+             (.unknown, .unknown):
+            return true
+        default:
+            return false
         }
         return false
     }
