@@ -5,7 +5,8 @@ final class LibraryViewModelTests: XCTestCase {
 
     // MARK: - Properties
 
-    private let fetchStrandsUseCase = FetchStrandsUseCaseMock()
+    private let fetchStrandsSpy = FetchStrandsSpy()
+    private lazy var fetchStrandsUseCase = FetchStrandsUseCaseMock(spy: fetchStrandsSpy)
     private let signoutUseCase = SignoutUseCaseMock()
 
     private lazy var sut = LibraryViewModel(
@@ -48,7 +49,7 @@ final class LibraryViewModelTests: XCTestCase {
         sut.handleOnAppear()
 
         // Then
-        XCTAssertEqual(sut.strands, .loading)
+        XCTAssertEqual(fetchStrandsSpy.executeCount, 1)
     }
 
     func test_handleUserDidChange_whenResultSucceeds_strandsChanged() {
@@ -74,13 +75,24 @@ final class LibraryViewModelTests: XCTestCase {
 }
 
 final class FetchStrandsUseCaseMock: FetchStrandsUseCaseProtocol {
-    var resultToUse: Result<[LearningStrand], LibraryRepositoryError> = .failure(.unknown)
 
+    var resultToUse: Result<[LearningStrand], LibraryRepositoryError> = .failure(.unknown)
     var shouldHandle = true
+
+    let spy: FetchStrandsSpy
+    init(spy: FetchStrandsSpy) {
+        self.spy = spy
+    }
+
     func execute(then handle: @escaping Completion) {
+        spy.executeCount += 1
         guard shouldHandle else { return }
         handle(resultToUse)
     }
+}
+
+final class FetchStrandsSpy {
+    var executeCount = 0
 }
 
 final class SignoutUseCaseMock: SignoutUseCaseProtocol {
