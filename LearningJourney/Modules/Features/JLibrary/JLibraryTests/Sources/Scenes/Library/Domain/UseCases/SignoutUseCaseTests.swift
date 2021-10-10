@@ -12,28 +12,15 @@ final class SignoutUseCaseTests: XCTestCase {
 
     // MARK: - Unit tests
 
-    func test_execute_itShouldNotifyAuthChange() {
-        // Given
-
-        // When
-
-        sut.execute()
-
-        // Then
-
-        XCTAssertEqual(notificationCenterSpy.postedNotificationsCount, 1)
-    }
-
-    func test_execute_itShouldClearCache() {
-        // Given
-
-        // When
+    func test_execute_itShouldNotifyAuthChange_andClearToken() {
+        // Given / When
 
         sut.execute()
 
         // Then
 
         XCTAssertEqual(tokenCacheSpy.cacheClearedCount, 1)
+        XCTAssertEqual(notificationCenterSpy.postedNotificationsCount, 1)
     }
 }
 
