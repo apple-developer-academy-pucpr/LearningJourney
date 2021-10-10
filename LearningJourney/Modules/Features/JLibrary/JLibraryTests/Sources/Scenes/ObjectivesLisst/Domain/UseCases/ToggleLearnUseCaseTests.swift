@@ -11,6 +11,7 @@ final class ToggleLearnUseCaseTests: XCTestCase {
     
     func test_execute_itShouldFlipLearnedFlag() {
         // Given
+
         let flagStub: Bool = .random()
         let expectedFlag = !flagStub
 
@@ -31,13 +32,14 @@ final class ToggleLearnUseCaseTests: XCTestCase {
 }
 
 // MARK: - Testing doubles
-final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
+
+private final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>) {
-        fatalError("nyi")
+        fatalError("not implemented")
     }
 
     func fetchObjectives(using goal: LearningGoal, completion: @escaping Completion<[LearningObjective]>) {
-        fatalError("nyi")
+        fatalError("not implemented")
     }
 
     private(set) var updateObjectiveCallCount = 0
