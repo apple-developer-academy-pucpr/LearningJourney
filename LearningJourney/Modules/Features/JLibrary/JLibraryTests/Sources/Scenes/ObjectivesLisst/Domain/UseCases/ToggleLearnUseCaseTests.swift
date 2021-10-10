@@ -33,7 +33,7 @@ final class ToggleLearnUseCaseTests: XCTestCase {
 
 // MARK: - Testing doubles
 
-private final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
+final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>) {
         fatalError("not implemented")
     }

@@ -32,7 +32,7 @@ final class FetchObjectivesUseCaseTests: XCTestCase {
 
 // MARK: - Testing doubles
 
-fileprivate final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
+final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>) {
         fatalError("not implemented")
     }
