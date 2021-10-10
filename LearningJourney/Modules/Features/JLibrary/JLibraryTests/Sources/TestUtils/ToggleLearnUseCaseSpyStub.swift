@@ -1,8 +1,6 @@
 @testable import JLibrary
 
-final class ToggleLearnUseCaseSpy: ToggleLearnUseCaseProtocol {
-    
-    init() {}
+final class ToggleLearnUseCaseSpyStub: ToggleLearnUseCaseProtocol {
     
     var resultToUse: Result<LearningObjective, LibraryRepositoryError> = .failure(.unknown)
     private(set) var objectivePassed: LearningObjective?

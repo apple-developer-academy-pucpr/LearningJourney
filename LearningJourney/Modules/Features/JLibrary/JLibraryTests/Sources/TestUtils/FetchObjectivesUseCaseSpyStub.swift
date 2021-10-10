@@ -1,8 +1,6 @@
 @testable import JLibrary
 
-final class FetchObjectivesUseCaseSpy: FetchObjectivesUseCaseProtocol {
-    
-    init() {}
+final class FetchObjectivesUseCaseSpyStub: FetchObjectivesUseCaseProtocol {
     
     var objectiveToUse: Result<[LearningObjective], LibraryRepositoryError> = .failure(.unknown)
     private(set) var learningGoalPassed: LearningGoal?

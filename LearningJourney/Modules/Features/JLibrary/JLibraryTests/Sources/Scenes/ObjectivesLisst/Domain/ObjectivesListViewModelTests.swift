@@ -7,8 +7,8 @@ final class ObjectivesListViewModelTests: XCTestCase {
     
     // MARK: - Properties
     
-    private let fetchObjectivesUseCaseSpy = FetchObjectivesUseCaseSpy()
-    private let toggleLearnUseCaseSpy = ToggleLearnUseCaseSpy()
+    private let fetchObjectivesUseCaseSpy = FetchObjectivesUseCaseSpyStub()
+    private let toggleLearnUseCaseSpy = ToggleLearnUseCaseSpyStub()
     private let goalMock: LearningGoal = .fixture()
     
     private lazy var sut = ObjectivesListViewModel(
