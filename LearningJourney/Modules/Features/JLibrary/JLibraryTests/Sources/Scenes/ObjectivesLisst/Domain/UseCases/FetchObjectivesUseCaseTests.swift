@@ -29,21 +29,3 @@ final class FetchObjectivesUseCaseTests: XCTestCase {
     }
     
 }
-
-// MARK: - Testing doubles
-
-final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
-    func fetchStrands(completion: @escaping Completion<[LearningStrand]>) {
-        fatalError("not implemented")
-    }
-
-    private(set) var fetchObjectivesCallCount = 0
-    func fetchObjectives(using goal: LearningGoal, completion: @escaping Completion<[LearningObjective]>) {
-        fetchObjectivesCallCount += 1
-        completion(.failure(.unknown))
-    }
-
-    func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>) {
-        fatalError("not implemented")
-    }
-}

@@ -38,8 +38,10 @@ final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
         fatalError("not implemented")
     }
 
+    private(set) var fetchObjectivesCallCount = 0
     func fetchObjectives(using goal: LearningGoal, completion: @escaping Completion<[LearningObjective]>) {
-        fatalError("not implemented")
+        fetchObjectivesCallCount += 1
+        completion(.failure(.unknown))
     }
 
     private(set) var updateObjectiveCallCount = 0
