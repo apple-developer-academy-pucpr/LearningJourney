@@ -22,9 +22,9 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             .padding(.leading)
             .navigationTitle("Library")
             .navigationBarItems(trailing: signOutButton)
-            .onAppear(perform: viewModel.handleOnAppear)
-            .onReceive(notificationCenter.publisher(for: .authDidChange), perform: { _ in
-                viewModel.handleUserDidChange() // TODO this should be replaced by `task`
+            .onAppear(perform: viewModel.handleOnAppear) // TODO this should be replaced by `task`
+            .onReceive(notificationCenter.publisher(for: .authDidChange),
+                       perform: { _ in viewModel.handleUserDidChange()
             })
         }
     }
@@ -57,8 +57,7 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
                     LearningStrandRow(
                         service: routingService,
                         strand: strand)
-                    Spacer()
-                        .frame(height: 20)
+                        .padding(.top)
                 }
             }
             .padding(.top, 20)
