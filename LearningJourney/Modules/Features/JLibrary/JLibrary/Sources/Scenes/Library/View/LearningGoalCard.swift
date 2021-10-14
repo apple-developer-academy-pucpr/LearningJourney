@@ -17,14 +17,14 @@ struct LearningGoalCard: View {
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(2)
-                .layoutPriority(1000)
                 .padding(.top)
         }
         .padding(.horizontal, 16)
-        .padding(.vertical, 24)
+        .padding(.vertical, 16)
         .background(Layout.backgroundColor)
         .cornerRadius(14)
         .aspectRatio(1, contentMode: .fill)
+        .frame(height: 200) // TODO Check responsivity
     }
     
     private var progressChart: some View {
@@ -68,18 +68,71 @@ struct LearningGoalCard: View {
     }
 }
 
-
+#if DEBUG
 struct LearningGoalCard_Previews: PreviewProvider {
     static var previews: some View {
-        LearningGoalCard(goal: .init(
-            id: 1,
-            name: "Logic and Programming",
-            progress: 0.5
-        ))
+        LibraryView(
+            viewModel: DummyViewModel(),
+            routingService: DummyRoutingService(),
+            notificationCenter: NotificationCenter.default)
+    }
+    
+    final class DummyViewModel: LibraryViewModelProtocol {
+        var strands: LibraryViewModelState<[LearningStrand]> = .result([
+            .fixture(goals: [
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+            ]),
+            .fixture(goals: [
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+            ]),
+            .fixture(goals: [
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+            ]),
+            .fixture(goals: [
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+                .fixture(name: UUID().uuidString),
+            ]),
+        ])
+        
+        var searchQuery: String = ""
+        
+        func handleOnAppear() {}
+        
+        func handleUserDidChange() {}
+        
+        func handleSignout() {}
     }
 }
+#endif
 
-extension Color {
+extension Color { // TODO This should be moved to the proper place
     init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
