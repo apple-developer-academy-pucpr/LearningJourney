@@ -115,7 +115,7 @@ end
 
 target 'TestingUtils' do
     project 'Modules/Core/TestingUtils/TestingUtils.project'
-    
+
     test_pods
 end
 
