@@ -30,16 +30,16 @@ extension LearningObjective {
     static func fixture(
         id: Int = 0,
         code: String = "TMD300",
-        isCore: Bool = false,
+        type: LearningObjectiveType = .core,
         description: String = "I can describe the features and benefits of the subscription model and know when it is appropriate to use it.",
-        isComplete: Bool = false
+        status: LearningObjectiveStatus = .untutored
     ) -> Self {
         .init(
             id: id,
             code: code,
             description: description,
-            isCore: isCore,
-            isComplete: isComplete)
+            type: type,
+            status: status)
     }
 }
 

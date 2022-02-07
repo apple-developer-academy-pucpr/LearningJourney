@@ -13,13 +13,13 @@ final class ToggleLearnUseCaseTests: XCTestCase {
         // Given
 
         let flagStub: Bool = .random()
-        let expectedFlag = !flagStub
+        let expectedFlag = LearningObjectiveStatus.learning
 
         let completionExpectation = expectation(description: "Completion should be called")
         
         // When
         
-        sut.execute(objective: .fixture(isComplete: flagStub)) { _ in
+        sut.execute(objective: .fixture(status: .untutored)) { _ in
             completionExpectation.fulfill()
         }
 
@@ -27,7 +27,7 @@ final class ToggleLearnUseCaseTests: XCTestCase {
         
         waitForExpectations(timeout: 1, handler: nil)
         XCTAssertEqual(libraryRepositorySpy.updateObjectiveCallCount, 1)
-        XCTAssertEqual(expectedFlag, libraryRepositorySpy.updateObjectiveNewObjectivePassed?.isComplete)
+        XCTAssertEqual(expectedFlag, libraryRepositorySpy.updateObjectiveNewObjectivePassed?.status)
     }
 }
 

@@ -48,6 +48,7 @@ struct ObjectivesListView<ViewModel>: View where
 struct ObjectivesListView_Previews: PreviewProvider {
     static var previews: some View {
         ObjectivesListView<ObjectivesListViewModelMock>(viewModel: ObjectivesListViewModelMock())
+            .previewDevice(.init(rawValue: "iPhone 12 mini"))
     }
 }
 

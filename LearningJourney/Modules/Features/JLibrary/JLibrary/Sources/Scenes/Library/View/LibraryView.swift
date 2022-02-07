@@ -27,17 +27,21 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
                        perform: { _ in viewModel.handleUserDidChange()
             })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     // MARK: - Component Views
+    
     
     private var contentView: some View {
         Group {
             switch viewModel.strands {
             case let .result(strands):
                 strandsView(using: strands)
-            case .loading, .empty:
+            case .loading:
                 LoadingView()
+            case .empty:
+                Text("Please, refresh your login credentials. To do that, go to Settings, your account, Password & Security and Apple ID login, then sign in back in the app")
             case let .error(error):
                 errorView(for: error)
             }

@@ -75,7 +75,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
                 objectives[selectedIndex] = .result(objective)
                 self?.objectives = .result(objectives)
             case .failure:
-                objectives[selectedIndex] = .result(oldObjective) // TODO this should present a button so that the user can try again
+                objectives[selectedIndex] = .result(oldObjective)
                 self?.objectives = .result(objectives)
             }
         }
