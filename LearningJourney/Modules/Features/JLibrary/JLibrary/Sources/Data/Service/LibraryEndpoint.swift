@@ -48,6 +48,6 @@ extension LibraryEndpoint: ApiEndpoint {
 extension LibraryEndpoint {
     struct UpdateObjectiveModel: Encodable {
         let id: Int
-        let isComplete: Bool
+        let newStatus: LearningObjectiveStatus
     }
 }

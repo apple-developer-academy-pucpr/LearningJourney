@@ -49,7 +49,7 @@ final class LibraryRemoteServiceTests: XCTestCase {
         let expectation = XCTestExpectation()
         let objectiveDummy: LibraryEndpoint.UpdateObjectiveModel = .init(
             id: 1,
-            isComplete: true)
+            newStatus: .untutored)
         let expectedEndpoint = LibraryEndpoint.updateObjective(objectiveDummy)
         
         // When

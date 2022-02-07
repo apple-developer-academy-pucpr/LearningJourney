@@ -27,24 +27,34 @@ struct ObjectiveCard: View {
     }
     
     private func contentView(learningObjective objective: LearningObjective) -> some View {
-        VStack(alignment: .leading) {
+        GroupBox {
+            Text(objective.description)
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+        } label: {
             HStack(alignment: .top) {
                 VStack (alignment: .leading) {
                     Text(objective.code)
                         .font(.system(size: 15, weight: .semibold, design: .default))
-                    Text(objective.isCore ? "Core" : "Elective")
+                    Text(objective.type == .core ? "Core" : "Elective")
                         .font(.system(size: 12, weight: .regular, design: .default))
                         .foregroundColor(Color("SecondaryText"))
                 }
-                
                 Spacer()
-                Button("Learned") {
+                Button(objective.status.rawValue.capitalized) {
                     buttonAction()
                 }
-                .buttonStyle(LearnedButtonStyle(isHightlighted: objective.isComplete))
+                .buttonStyle(LearningStatusButtonStyle(status: objective.status))
             }
-            .padding(.bottom, 20)
-            Text(objective.description)
+        }.groupBoxStyle(PlainGroupBoxStyle())
+    }
+}
+
+struct PlainGroupBoxStyle: GroupBoxStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        VStack(alignment: .leading) {
+            configuration.label
+            configuration.content
         }
     }
 }
@@ -56,6 +66,11 @@ struct ObjectiveCard_Previews: PreviewProvider {
         ObjectiveCard(
             objective: .result(.fixture()),
             buttonAction: {})
+        
+            ObjectiveCard(
+                objective: .result(.fixture()),
+                buttonAction: {})
+            .previewDevice("iPad Pro (12.9-inch) (2nd generation)")
     }
 }
 

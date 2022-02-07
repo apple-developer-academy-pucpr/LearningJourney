@@ -72,7 +72,7 @@ final class LibraryRepository: LibraryRepositoryProtocol {
     func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>) {
         remoteService.updateObjective(using: .init(
             id: newObjective.id,
-            isComplete: newObjective.isComplete
+            newStatus: newObjective.status
         )) { [weak self] result in
             guard let self = self else {
                 completion(.failure(.unknown))
@@ -87,8 +87,8 @@ final class LibraryRepository: LibraryRepositoryProtocol {
     private func mapResult<T: Decodable>(from result: Result<Data, ApiError>) -> Result<T, LibraryRepositoryError> {
         switch result {
         case let .success(payload):
-            return (self.parser.parse(payload)
-                        .mapError { .parsing($0) })
+            return self.parser.parse(payload)
+                        .mapError { .parsing($0) }
         case let .failure(error):
             return (.failure(.api(error)))
         }
