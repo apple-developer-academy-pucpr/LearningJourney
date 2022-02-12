@@ -1,11 +1,6 @@
 import SwiftUI
 
 struct LearningGoalCard: View {
-    
-    private enum Layout {
-        static let backgroundColor = Color("CardBackground") // TODO swiftgen
-    }
-    
     let goal: LearningGoal
     
     var body: some View {

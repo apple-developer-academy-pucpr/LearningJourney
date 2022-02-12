@@ -20,8 +20,7 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
                 contentView
             }
             .padding(.leading)
-            .navigationTitle("Library")
-            .navigationBarItems(trailing: signOutButton)
+            .navigationBarItems(leading: signOutButton)
             .onAppear(perform: viewModel.handleOnAppear) // TODO this should be replaced by `task`
             .onReceive(notificationCenter.publisher(for: .authDidChange),
                        perform: { _ in viewModel.handleUserDidChange()
@@ -50,22 +49,22 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     
     private var signOutButton: some View {
         Button("Signout", action: viewModel.handleSignout)
+            .foregroundColor(.red)
     }
     
     private func strandsView(using strands: [LearningStrand]) -> some View {
         ScrollView {
             VStack {
-//                searchBar
-//                    .padding(.vertical, 18)
                 ForEach(strands) { strand in
                     LearningStrandRow(
                         service: routingService,
                         strand: strand)
                         .padding(.top)
                 }
+                signOutButton
+                    .padding(EdgeInsets(top: 100, leading: 0, bottom: 20, trailing: 0))
             }
             .padding(.top, 20)
-            .padding(.bottom, 80)
         }
     }
     
