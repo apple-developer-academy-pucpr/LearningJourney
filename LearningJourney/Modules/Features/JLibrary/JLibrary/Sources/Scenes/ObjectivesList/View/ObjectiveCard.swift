@@ -49,13 +49,15 @@ struct ObjectiveCard: View {
                 }
                 .buttonStyle(LearningStatusButtonStyle(status: objective.status))
             }
-        }.groupBoxStyle(PlainGroupBoxStyle())
+        }.groupBoxStyle(ObjectiveGroupBoxStyle())
     }
     
     
     private func imageName(for status: LearningObjectiveStatus) -> String {
         switch status {
         case .untutored:
+            return "circle"
+        case .eagerToLearn:
             return "circle"
         case .learning:
             return "circle.lefthalf.filled"
@@ -70,6 +72,8 @@ struct ObjectiveCard: View {
         switch status {
         case .untutored:
             return "Não sei"
+        case .eagerToLearn:
+            return "Quero Aprender"
         case .learning:
             return "Aprendendo"
         case .learned:
@@ -80,7 +84,7 @@ struct ObjectiveCard: View {
     }
 }
 
-struct PlainGroupBoxStyle: GroupBoxStyle {
+struct ObjectiveGroupBoxStyle: GroupBoxStyle {
     func makeBody(configuration: Configuration) -> some View {
         VStack(alignment: .leading) {
             configuration.label

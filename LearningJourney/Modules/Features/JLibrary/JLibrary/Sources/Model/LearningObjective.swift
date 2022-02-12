@@ -8,6 +8,7 @@ enum LearningObjectiveType: String, Decodable {
 
 enum LearningObjectiveStatus: String, Codable {
     case untutored
+    case eagerToLearn
     case learning
     case learned
     case mastered

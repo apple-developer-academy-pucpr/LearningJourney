@@ -9,23 +9,22 @@ struct LearningStatusButtonStyle: ButtonStyle {
                 configuration.label
                     .foregroundColor(.white)
                     .background(Color(hex: "#BBBBCD"))
-                    .cornerRadius(5)
+            case.eagerToLearn:
+                configuration.label
             case .learning:
                 configuration.label
                     .foregroundColor(.white)
                     .background(.blue)
-                    .cornerRadius(5)
             case .learned:
                 configuration.label
                     .foregroundColor(.white)
                     .background(.pink)
-                    .cornerRadius(5)
             case .mastered:
                 configuration.label
                     .foregroundColor(.white)
                     .background(.purple)
-                    .cornerRadius(5)
             }
         }
+        .cornerRadius(5)
     }
 }
