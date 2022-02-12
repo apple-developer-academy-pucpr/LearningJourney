@@ -1,20 +1,29 @@
 import SwiftUI
 
 struct LearningGoalCard: View {
+    
+    private enum Layout {
+        static let backgroundColor = Color("CardBackground") // TODO swiftgen
+    }
+    
     let goal: LearningGoal
     
     var body: some View {
-        GroupBox {
+        VStack {
+            progressChart
+                .padding(.top)
             Text(goal.name)
                 .bold()
                 .font(.body)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(2)
-                .padding(.top)
-        } label: {
-            progressChart
+                .padding()
         }
+        .background(Layout.backgroundColor)
+        .cornerRadius(14)
+        .aspectRatio(1, contentMode: .fill)
+        .frame(height: 175)
     }
     
     private var progressChart: some View {
@@ -33,10 +42,9 @@ struct LearningGoalCard: View {
                 ))
                 .rotation(
                     Angle(radians: 3 * .pi / 2))
-                .fill(Color(hex: "#2F76DF"))
+                .fill(.blue)
             Text("\(Int(goal.progress * 100))%")
-                .font(.system(size: 18, weight: .heavy, design: .default))
-                .padding(32)
+                .font(.system(size: 16, weight: .heavy, design: .default))
         }
     }
 }

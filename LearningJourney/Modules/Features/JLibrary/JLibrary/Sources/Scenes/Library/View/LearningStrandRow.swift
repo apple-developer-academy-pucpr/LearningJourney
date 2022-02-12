@@ -13,17 +13,16 @@ struct LearningStrandRow: View {
             Text(strand.name)
                 .font(.system(size: 19))
                 .bold()
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(strand.goals) { goal in
-                        service.link(for: ObjectivesRoute(
-                                        
-                                        goal: goal)) {
+                        service.link(for: ObjectivesRoute(goal: goal)) {
                             LearningGoalCard(goal: goal)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
+                .padding(.trailing)
             }
         }
     }

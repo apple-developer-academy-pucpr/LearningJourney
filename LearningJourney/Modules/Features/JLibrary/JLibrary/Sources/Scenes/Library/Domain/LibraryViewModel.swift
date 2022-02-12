@@ -4,9 +4,11 @@ import UI
 protocol LibraryViewModelProtocol: ObservableObject {
     var strands: LibraryViewModelState<[LearningStrand]> { get }
     var searchQuery: String { get set }
+    var isList: Bool { get }
     func handleOnAppear()
     func handleUserDidChange()
     func handleSignout()
+    func togglePresentationMode()
 }
 
 enum LibraryViewModelState<T: Equatable>: Equatable {
@@ -37,6 +39,9 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     @Published
     var searchQuery: String = ""
     
+    @Published
+    var isList: Bool = true
+    
     // MARK: - Dependencies
     
     private let useCases: UseCases
@@ -59,6 +64,10 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     
     func handleSignout() {
         useCases.signoutUseCase.execute()
+    }
+    
+    func togglePresentationMode() {
+        isList.toggle()
     }
     
     // MARK: - Helper functions
