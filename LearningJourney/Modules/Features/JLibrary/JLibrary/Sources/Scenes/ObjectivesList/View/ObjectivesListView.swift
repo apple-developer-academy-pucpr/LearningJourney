@@ -1,8 +1,7 @@
 import SwiftUI
 import UI
 
-struct ObjectivesListView<ViewModel>: View where
-    ViewModel: ObjectivesListViewModelProtocol {
+struct ObjectivesListView<ViewModel>: View where ViewModel: ObjectivesListViewModelProtocol {
     
     // MARK: - Dependencies
     
@@ -27,7 +26,6 @@ struct ObjectivesListView<ViewModel>: View where
                 resultView(objectives)
             }
         }
-        .padding()
     }
     
     private func resultView(_ objectives: [LibraryViewModelState<LearningObjective>]) -> some View {
@@ -37,8 +35,10 @@ struct ObjectivesListView<ViewModel>: View where
                     ObjectiveCard(objective: objective) {
                         viewModel.handleDidLearnToggled(objective: objective)
                     }
+                    .padding(.horizontal)
                 }
             }
+            .padding(.vertical)
         }
     }
 }

@@ -41,12 +41,42 @@ struct ObjectiveCard: View {
                         .foregroundColor(Color("SecondaryText"))
                 }
                 Spacer()
-                Button(objective.status.rawValue.capitalized) {
+                Button {
                     buttonAction()
+                } label: {
+                    Label(buttonName(for: objective.status), systemImage: imageName(for: objective.status))
+                        .labelStyle(ObjectiveStatusLabelStyle())
                 }
                 .buttonStyle(LearningStatusButtonStyle(status: objective.status))
             }
         }.groupBoxStyle(PlainGroupBoxStyle())
+    }
+    
+    
+    private func imageName(for status: LearningObjectiveStatus) -> String {
+        switch status {
+        case .untutored:
+            return "circle"
+        case .learning:
+            return "circle.lefthalf.filled"
+        case .learned:
+            return "circle.fill"
+        case .mastered:
+            return "diamond.fill"
+        }
+    }
+    
+    private func buttonName(for status: LearningObjectiveStatus) -> String {
+        switch status {
+        case .untutored:
+            return "Não sei"
+        case .learning:
+            return "Aprendendo"
+        case .learned:
+            return "Aprendi"
+        case .mastered:
+            return "Sei ensinar"
+        }
     }
 }
 
@@ -56,6 +86,18 @@ struct PlainGroupBoxStyle: GroupBoxStyle {
             configuration.label
             configuration.content
         }
+    }
+}
+
+struct ObjectiveStatusLabelStyle: LabelStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        HStack(spacing: 4) {
+            configuration.icon
+                .font(.system(size: 8))
+            configuration.title
+                .font(.system(size: 14, weight: .regular))
+        }
+        .frame(width: 136, height: 28)
     }
 }
 
