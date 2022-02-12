@@ -23,12 +23,13 @@ final class ToggleLearnUseCase: ToggleLearnUseCaseProtocol {
             code: objective.code,
             description: objective.description,
             type: objective.type,
-            status: status(after: objective.status)), completion: handle)
+            status: status(after: objective.status),
+            isBookmarked: objective.isBookmarked), completion: handle)
     }
     
     private func status(after oldStatus: LearningObjectiveStatus) -> LearningObjectiveStatus {
         switch oldStatus {
-        case .untutored, .eagerToLearn:
+        case .untutored:
             return .learning
         case .learning:
             return .learned

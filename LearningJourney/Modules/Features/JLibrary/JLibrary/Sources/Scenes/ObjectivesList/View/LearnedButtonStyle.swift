@@ -2,15 +2,17 @@ import SwiftUI
 
 struct LearningStatusButtonStyle: ButtonStyle {
     let status: LearningObjectiveStatus
+    let isBookmarked: Bool
     func makeBody(configuration: Configuration) -> some View {
         Group {
             switch status {
+            case .untutored where isBookmarked:
+                configuration.label
+                    .background(.orange)
             case .untutored:
                 configuration.label
                     .foregroundColor(.white)
                     .background(Color(hex: "#BBBBCD"))
-            case.eagerToLearn:
-                configuration.label
             case .learning:
                 configuration.label
                     .foregroundColor(.white)
@@ -25,6 +27,7 @@ struct LearningStatusButtonStyle: ButtonStyle {
                     .background(.purple)
             }
         }
+        .foregroundColor(.white)
         .cornerRadius(5)
     }
 }

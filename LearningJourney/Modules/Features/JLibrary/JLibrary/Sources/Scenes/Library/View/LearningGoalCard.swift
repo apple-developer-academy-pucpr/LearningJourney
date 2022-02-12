@@ -59,6 +59,12 @@ struct LearningGoalCard_Previews: PreviewProvider {
     }
     
     final class DummyViewModel: LibraryViewModelProtocol {
+        var isList: Bool = false
+        
+        func togglePresentationMode() {
+            
+        }
+        
         var strands: LibraryViewModelState<[LearningStrand]> = .result([
             .fixture(goals: [
                 .fixture(name: UUID().uuidString),

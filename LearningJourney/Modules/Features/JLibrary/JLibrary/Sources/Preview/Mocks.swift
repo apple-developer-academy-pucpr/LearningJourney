@@ -3,6 +3,12 @@
 import SwiftUI
 
 final class LibraryViewModelMock: LibraryViewModelProtocol {
+    var isList: Bool = false
+    
+    func togglePresentationMode() {
+        
+    }
+    
     func handleSignout() {
         
     }
@@ -38,7 +44,9 @@ final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
 }
 
 final class ObjectivesListViewModelMock: ObjectivesListViewModelProtocol {
-    func handleDidLearnToggled(objective: LibraryViewModelState<LearningObjective>) {}
+    func handleWantToLearnToggled(objective state: LibraryViewModelState<LearningObjective>) {}
+    
+    func handleLearnStatusToggled(objective: LibraryViewModelState<LearningObjective>) {}
     
     
     @Published

@@ -8,7 +8,6 @@ enum LearningObjectiveType: String, Decodable {
 
 enum LearningObjectiveStatus: String, Codable {
     case untutored
-    case eagerToLearn
     case learning
     case learned
     case mastered
@@ -20,4 +19,5 @@ struct LearningObjective: Decodable, Identifiable, Equatable {
     let description: String
     let type: LearningObjectiveType
     let status: LearningObjectiveStatus
+    let isBookmarked: Bool
 }

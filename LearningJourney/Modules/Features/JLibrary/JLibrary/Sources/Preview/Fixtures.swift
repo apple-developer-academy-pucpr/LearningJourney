@@ -32,14 +32,16 @@ extension LearningObjective {
         code: String = "TMD300",
         type: LearningObjectiveType = .core,
         description: String = "I can describe the features and benefits of the subscription model and know when it is appropriate to use it.",
-        status: LearningObjectiveStatus = .untutored
+        status: LearningObjectiveStatus = .untutored,
+        isBookmarked: Bool = true
     ) -> Self {
         .init(
             id: id,
             code: code,
             description: description,
             type: type,
-            status: status)
+            status: status,
+            isBookmarked: isBookmarked)
     }
 }
 

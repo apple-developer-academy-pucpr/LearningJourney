@@ -5,12 +5,10 @@ struct ObjectiveCard: View {
     
     let objective: LibraryViewModelState<LearningObjective>
     let buttonAction: () -> Void
+    let tapAction: () -> Void
     
     var body: some View {
         resultView
-        .padding()
-        .background(Color ("CardBackground"))
-        .cornerRadius(14)
     }
     
     private var resultView: some View {
@@ -22,6 +20,10 @@ struct ObjectiveCard: View {
                 Text("Error")
             case let .result(objective):
                 contentView(learningObjective: objective)
+                    .onTapGesture {
+                        tapAction()
+                    }
+                    .padding()
             }
         }
     }
@@ -44,21 +46,24 @@ struct ObjectiveCard: View {
                 Button {
                     buttonAction()
                 } label: {
-                    Label(buttonName(for: objective.status), systemImage: imageName(for: objective.status))
+                    Label(buttonName(for: objective.status, isBookmarked: objective.isBookmarked),
+                          systemImage: imageName(for: objective.status, isBookmarked: objective.isBookmarked))
                         .labelStyle(ObjectiveStatusLabelStyle())
                 }
-                .buttonStyle(LearningStatusButtonStyle(status: objective.status))
+                .buttonStyle(LearningStatusButtonStyle(
+                    status: objective.status,
+                    isBookmarked: objective.isBookmarked))
             }
-        }.groupBoxStyle(ObjectiveGroupBoxStyle())
+        }.groupBoxStyle(ObjectiveGroupBoxStyle(isBookmarked: objective.isBookmarked))
     }
     
     
-    private func imageName(for status: LearningObjectiveStatus) -> String {
+    private func imageName(for status: LearningObjectiveStatus, isBookmarked: Bool) -> String {
         switch status {
+        case .untutored where isBookmarked:
+            return "circle"
         case .untutored:
-            return "circle"
-        case .eagerToLearn:
-            return "circle"
+            return ""
         case .learning:
             return "circle.lefthalf.filled"
         case .learned:
@@ -68,12 +73,12 @@ struct ObjectiveCard: View {
         }
     }
     
-    private func buttonName(for status: LearningObjectiveStatus) -> String {
+    private func buttonName(for status: LearningObjectiveStatus, isBookmarked: Bool) -> String {
         switch status {
+        case .untutored where isBookmarked:
+            return "Quero Aprender"
         case .untutored:
             return "Não sei"
-        case .eagerToLearn:
-            return "Quero Aprender"
         case .learning:
             return "Aprendendo"
         case .learned:
@@ -85,11 +90,21 @@ struct ObjectiveCard: View {
 }
 
 struct ObjectiveGroupBoxStyle: GroupBoxStyle {
+    let isBookmarked: Bool
     func makeBody(configuration: Configuration) -> some View {
         VStack(alignment: .leading) {
             configuration.label
+                .background(.clear)
             configuration.content
+                .background(.clear)
         }
+        .padding()
+        .background(isBookmarked ? Color(hex: "#F2F2F7") : .clear)
+        .cornerRadius(14)
+        .overlay(
+            RoundedRectangle(cornerRadius: 14)
+                .stroke(Color(hex: "#F2F2F7"), lineWidth: 2)
+        )
     }
 }
 
@@ -111,11 +126,13 @@ struct ObjectiveCard_Previews: PreviewProvider {
     static var previews: some View {
         ObjectiveCard(
             objective: .result(.fixture()),
-            buttonAction: {})
+            buttonAction: {},
+            tapAction: {})
         
             ObjectiveCard(
                 objective: .result(.fixture()),
-                buttonAction: {})
+                buttonAction: {},
+                tapAction: {})
             .previewDevice("iPad Pro (12.9-inch) (2nd generation)")
     }
 }

@@ -49,5 +49,6 @@ extension LibraryEndpoint {
     struct UpdateObjectiveModel: Encodable {
         let id: Int
         let newStatus: LearningObjectiveStatus
+        let isBookmarked: Bool
     }
 }

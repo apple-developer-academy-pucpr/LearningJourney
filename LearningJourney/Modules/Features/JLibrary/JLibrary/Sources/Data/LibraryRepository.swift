@@ -72,7 +72,8 @@ final class LibraryRepository: LibraryRepositoryProtocol {
     func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>) {
         remoteService.updateObjective(using: .init(
             id: newObjective.id,
-            newStatus: newObjective.status
+            newStatus: newObjective.status,
+            isBookmarked: newObjective.isBookmarked
         )) { [weak self] result in
             guard let self = self else {
                 completion(.failure(.unknown))

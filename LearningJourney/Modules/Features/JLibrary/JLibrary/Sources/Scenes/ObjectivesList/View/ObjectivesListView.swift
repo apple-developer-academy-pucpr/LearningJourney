@@ -33,12 +33,14 @@ struct ObjectivesListView<ViewModel>: View where ViewModel: ObjectivesListViewMo
             VStack {
                 ForEach(objectives) { objective in
                     ObjectiveCard(objective: objective) {
-                        viewModel.handleDidLearnToggled(objective: objective)
+                        viewModel.handleLearnStatusToggled(objective: objective)
+                    } tapAction: {
+                        viewModel.handleWantToLearnToggled(objective: objective)
                     }
-                    .padding(.horizontal)
+//                    .padding(.horizontal)
                 }
             }
-            .padding(.vertical)
+//            .padding(.vertical)
         }
     }
 }
