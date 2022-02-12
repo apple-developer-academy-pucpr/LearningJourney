@@ -9,62 +9,40 @@ struct LearningGoalCard: View {
     let goal: LearningGoal
     
     var body: some View {
-        VStack {
-            progressChart
+        GroupBox {
             Text(goal.name)
-                .fontWeight(.semibold)
-                .font(.headline)
+                .bold()
+                .font(.body)
                 .multilineTextAlignment(.center)
                 .fixedSize(horizontal: false, vertical: true)
                 .lineLimit(2)
                 .padding(.top)
+        } label: {
+            progressChart
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 16)
-        .background(Layout.backgroundColor)
-        .cornerRadius(14)
-        .aspectRatio(1, contentMode: .fill)
-        .frame(height: 200) // TODO Check responsivity
     }
     
     private var progressChart: some View {
         ZStack {
             Circle()
-                .stroke(lineWidth: 8)
+                .stroke(lineWidth: 12)
                 .opacity(0.4)
                 .foregroundColor(.white)
             
             Circle()
                 .trim(from: 0, to: CGFloat(goal.progress))
                 .stroke(style: .init(
-                    lineWidth: 8,
+                    lineWidth: 12,
                     lineCap: .round,
                     lineJoin: .round
                 ))
                 .rotation(
                     Angle(radians: 3 * .pi / 2))
-                .fill(LinearGradient(
-                    gradient: Gradient(colors: [
-                        Color(hex: "A259FF"),
-                        Color(hex: "09F9BF")]),
-                    startPoint: .bottomTrailing,
-                    endPoint: .topLeading
-                ))
-            Group {
-                Text("\(Int(goal.progress * 100))")
-                    .bold()
-                    .font(.system(size: 18)) +
-                Text("%")
-                    .bold()
-                    .font(.system(size: 10))
-            }
-            .padding(24)
+                .fill(Color(hex: "#2F76DF"))
+            Text("\(Int(goal.progress * 100))%")
+                .font(.system(size: 18, weight: .heavy, design: .default))
+                .padding(32)
         }
-    }
-    
-    private var formattedProgress: String {
-        let percentage = Int(goal.progress * 100)
-        return String("\(percentage)%")
     }
 }
 
