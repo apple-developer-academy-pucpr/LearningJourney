@@ -23,7 +23,7 @@ struct ObjectiveCard: View {
                     .onTapGesture {
                         tapAction()
                     }
-                    .padding()
+                    .padding([.horizontal, .top])
             }
         }
     }

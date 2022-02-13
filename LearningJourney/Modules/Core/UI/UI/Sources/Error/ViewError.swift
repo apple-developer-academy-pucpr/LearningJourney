@@ -19,7 +19,7 @@ public extension ViewError {
     var view: AnyView {
         switch self {
         case .notAuthenticated:
-            return AnyView(Text("salve"))
+            return AnyView(Text("Loading..."))
         case let .unknown (callback):
             return AnyView(UnknownErrorView(action: callback))
         }

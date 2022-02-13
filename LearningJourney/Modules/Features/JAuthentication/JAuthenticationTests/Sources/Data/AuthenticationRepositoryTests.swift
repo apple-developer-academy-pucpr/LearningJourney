@@ -85,7 +85,7 @@ final class AuthenticationRepositoryTests: XCTestCase {
     func test_signInWithApple_whenSucceeds_itShouldCompleteWithTokenPayload() throws {
         // Given
         let expectation = XCTestExpectation()
-        let expectedTokenString = "salve"
+        let expectedTokenString = "dummy"
         let dummyToken = TokenPayload(token: expectedTokenString)
         
         remoteService.resultToUse = .success(.init())

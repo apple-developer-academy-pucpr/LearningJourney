@@ -72,6 +72,16 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     @ViewBuilder
     private func buildCollectionView(using strands: [LearningStrand]) -> some View {
         ForEach(strands) { strand in
+            LearningStrandRow(
+                service: routingService,
+                strand: strand)
+                .padding(.top)
+        }
+    }
+    
+    @ViewBuilder
+    private func buildListView(using strands: [LearningStrand]) -> some View {
+        ForEach(strands) { strand in
             HStack {
                 Text(strand.name)
                     .font(.system(size: 19))
@@ -82,24 +92,17 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             .padding(.bottom, 16)
             ForEach(strand.goals) { goal in
                 GroupBox {
-                    HStack {
-                        Spacer()
-                        Text(goal.name)
-                        Spacer()
+                    routingService.link(for: ObjectivesRoute(goal: goal)) {
+                        HStack {
+                            Spacer()
+                            Text(goal.name)
+                            Spacer()
+                        }
                     }
+                    .buttonStyle(PlainButtonStyle())
                 }
                 .padding(.trailing)
             }
-        }
-    }
-    
-    @ViewBuilder
-    private func buildListView(using strands: [LearningStrand]) -> some View {
-        ForEach(strands) { strand in
-            LearningStrandRow(
-                service: routingService,
-                strand: strand)
-                .padding(.top)
         }
     }
     
