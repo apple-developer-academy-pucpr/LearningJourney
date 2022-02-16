@@ -2,11 +2,9 @@ import SwiftUI
 import UI
 
 protocol ObjectivesListViewModelProtocol: ObservableObject {
-    var objectives: LibraryViewModelState<[LibraryViewModelState<LearningObjective>]> { get }
+    var objectives: LibraryViewModelState<[LearningObjective]> { get }
     var goalName: String { get }
     func handleOnAppear()
-    func handleLearnStatusToggled(objective state: LibraryViewModelState<LearningObjective>)
-    func handleWantToLearnToggled(objective state: LibraryViewModelState<LearningObjective>)
 }
 
 final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
@@ -15,8 +13,6 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     struct UseCases {
         let fetchObjectivesUseCase: FetchObjectivesUseCaseProtocol
-        let toggleLearnUseCase: ToggleLearnUseCaseProtocol
-        let toggleEagerToLearnUseCase: ToggleEagerToLearnUseCase
     }
     
     struct Dependencies {
@@ -25,7 +21,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     // MARK: - ViewModel properties
     
-    typealias Objectives = LibraryViewModelState<[LibraryViewModelState<LearningObjective>]>
+    typealias Objectives = LibraryViewModelState<[LearningObjective]>
     
     @Published
     var objectives: Objectives = .empty
@@ -55,54 +51,13 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
         useCases.fetchObjectivesUseCase.execute(using: dependencies.goal) { [weak self] in
             switch $0 {
             case let .success(objectives):
-                self?.objectives = .result(objectives.map { .result($0) })
+                self?.objectives = .result(objectives)
             case let .failure(error):
                 self?.handleError(error)
             }
         }
     }
     
-    func handleLearnStatusToggled(objective state: LibraryViewModelState<LearningObjective>) {
-        guard case let .result(oldObjective) = state,
-              case var .result(objectives) = objectives,
-              let selectedIndex = objectives.firstIndex(where: { $0 == state })
-        else { return }
-        
-        objectives[selectedIndex] = .loading
-        self.objectives = .result(objectives)
-        
-        useCases.toggleLearnUseCase.execute(objective: oldObjective) { [weak self] in
-            switch $0 {
-            case let .success(objective):
-                objectives[selectedIndex] = .result(objective)
-                self?.objectives = .result(objectives)
-            case .failure:
-                objectives[selectedIndex] = .result(oldObjective)
-                self?.objectives = .result(objectives)
-            }
-        }
-    }
-    
-    func handleWantToLearnToggled(objective state: LibraryViewModelState<LearningObjective>) {
-        guard case let .result(oldObjective) = state,
-              case var .result(objectives) = objectives,
-              let selectedIndex = objectives.firstIndex(where: { $0 == state })
-        else { return }
-        
-        objectives[selectedIndex] = .loading
-        self.objectives = .result(objectives)
-        
-        useCases.toggleEagerToLearnUseCase.execute(objective: oldObjective) { [weak self] in
-            switch $0 {
-            case let .success(objective):
-                objectives[selectedIndex] = .result(objective)
-                self?.objectives = .result(objectives)
-            case .failure:
-                objectives[selectedIndex] = .result(oldObjective)
-                self?.objectives = .result(objectives)
-            }
-        }
-    }
     
     // MARK: - Helper functions
     

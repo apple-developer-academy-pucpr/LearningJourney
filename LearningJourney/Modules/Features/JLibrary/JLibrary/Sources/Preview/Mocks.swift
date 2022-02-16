@@ -44,19 +44,18 @@ final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
 }
 
 final class ObjectivesListViewModelMock: ObjectivesListViewModelProtocol {
+    @Published
+    var objectives: LibraryViewModelState<[LearningObjective]> = .result([
+        .fixture(),
+        .fixture(),
+        .fixture(),
+        .fixture(),
+        .fixture(),
+    ])
+    
     func handleWantToLearnToggled(objective state: LibraryViewModelState<LearningObjective>) {}
     
     func handleLearnStatusToggled(objective: LibraryViewModelState<LearningObjective>) {}
-    
-    
-    @Published
-    var objectives: LibraryViewModelState<[LibraryViewModelState<LearningObjective>]> = .result([
-        .result(.fixture()),
-        .result(.fixture()),
-        .result(.fixture()),
-        .result(.fixture()),
-        .result(.fixture()),
-    ])
     
     var goalName: String = "Dummy"
     

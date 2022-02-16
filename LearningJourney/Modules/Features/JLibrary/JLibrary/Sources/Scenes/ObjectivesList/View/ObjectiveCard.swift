@@ -1,33 +1,25 @@
 import SwiftUI
 import UI
 
-struct ObjectiveCard: View {
+struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelProtocol {
     
-    let objective: LibraryViewModelState<LearningObjective>
-    let buttonAction: () -> Void
-    let tapAction: () -> Void
+    @ObservedObject
+    var viewModel: ViewModel
     
     var body: some View {
-        resultView
-    }
-    
-    private var resultView: some View {
         Group {
-            switch objective {
+            switch viewModel.state {
             case .loading, .empty:
                 LoadingView()
-            case .error:
-                Text("Error")
             case let .result(objective):
                 contentView(learningObjective: objective)
-                    .onTapGesture {
-                        tapAction()
-                    }
-                    .padding([.horizontal, .top])
+            case let .error(error):
+                errorView(for: error)
             }
         }
     }
     
+    @ViewBuilder
     private func contentView(learningObjective objective: LearningObjective) -> some View {
         GroupBox {
             Text(objective.description)
@@ -44,7 +36,7 @@ struct ObjectiveCard: View {
                 }
                 Spacer()
                 Button {
-                    buttonAction()
+                    viewModel.handleLearnStatusToggled()
                 } label: {
                     Label(buttonName(for: objective.status, isBookmarked: objective.isBookmarked),
                           systemImage: imageName(for: objective.status, isBookmarked: objective.isBookmarked))
@@ -125,12 +117,12 @@ struct ObjectiveStatusLabelStyle: LabelStyle {
 struct ObjectiveCard_Previews: PreviewProvider {
     static var previews: some View {
         ObjectiveCard(
-            objective: .result(.fixture()),
+            objective: .fixture(),
             buttonAction: {},
             tapAction: {})
         
             ObjectiveCard(
-                objective: .result(.fixture()),
+                objective: .fixture(),
                 buttonAction: {},
                 tapAction: {})
             .previewDevice("iPad Pro (12.9-inch) (2nd generation)")

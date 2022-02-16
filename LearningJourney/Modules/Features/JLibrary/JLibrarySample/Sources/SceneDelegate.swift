@@ -20,7 +20,6 @@ final class SceneDelegate: UIResponder, UISceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         
         registerDependencies()
-        
         let contentView = router.initialize(
             using: LibraryFeature.self)
         let window = UIWindow(windowScene: windowScene)
@@ -28,6 +27,7 @@ final class SceneDelegate: UIResponder, UISceneDelegate {
         window.makeKeyAndVisible()
     
         self.window = window
+        router.
     }
     
     private func registerDependencies() {

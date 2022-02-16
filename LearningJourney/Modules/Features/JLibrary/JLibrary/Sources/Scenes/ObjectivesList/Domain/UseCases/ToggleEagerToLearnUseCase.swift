@@ -1,9 +1,9 @@
 protocol ToggleEagerToLearnUseCaseProtocol {
     typealias Completion = (Result<LearningObjective, LibraryRepositoryError>) -> ()
-    func execute(using objective: LearningObjective, then handle: @escaping Completion)
+    func execute(objective: LearningObjective, then handle: @escaping Completion)
 }
 
-final class ToggleEagerToLearnUseCase: ToggleLearnUseCaseProtocol {
+final class ToggleEagerToLearnUseCase: ToggleEagerToLearnUseCaseProtocol {
     
     // MARK: - Dependencies
     

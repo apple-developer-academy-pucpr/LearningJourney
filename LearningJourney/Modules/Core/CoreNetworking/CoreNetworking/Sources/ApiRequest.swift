@@ -82,6 +82,7 @@ public final class ApiRequest: ApiProtocol {
                 error: error)
             
             self.dispatchQueue.async {
+                print("Got a result from \(self.endpoint.absoluteStringUrl): ", result)
                 completion(result)
             }
         }

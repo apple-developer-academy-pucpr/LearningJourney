@@ -1,11 +1,15 @@
 import SwiftUI
 import UI
 
-struct ObjectivesListView<ViewModel>: View where ViewModel: ObjectivesListViewModelProtocol {
+struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: ObjectivesListViewModelProtocol, ObjectiveView: View {
     
     // MARK: - Dependencies
     
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject
+    var viewModel: ViewModel
+    
+    @ViewBuilder
+    let objectiveView: (LearningObjective) -> ObjectiveView
     
     // MARK: - View
     
@@ -28,19 +32,13 @@ struct ObjectivesListView<ViewModel>: View where ViewModel: ObjectivesListViewMo
         }
     }
     
-    private func resultView(_ objectives: [LibraryViewModelState<LearningObjective>]) -> some View {
+    private func resultView(_ objectives: [LearningObjective]) -> some View {
         ScrollView {
             VStack {
                 ForEach(objectives) { objective in
-                    ObjectiveCard(objective: objective) {
-                        viewModel.handleLearnStatusToggled(objective: objective)
-                    } tapAction: {
-                        viewModel.handleWantToLearnToggled(objective: objective)
-                    }
-//                    .padding(.horizontal)
+                    objectiveView(objective)
                 }
             }
-//            .padding(.vertical)
         }
     }
 }
@@ -49,7 +47,7 @@ struct ObjectivesListView<ViewModel>: View where ViewModel: ObjectivesListViewMo
 
 struct ObjectivesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ObjectivesListView<ObjectivesListViewModelMock>(viewModel: ObjectivesListViewModelMock())
+        Text("Demo")
             .previewDevice(.init(rawValue: "iPhone 12 mini"))
     }
 }
