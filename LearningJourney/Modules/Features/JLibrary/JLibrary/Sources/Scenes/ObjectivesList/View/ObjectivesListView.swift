@@ -37,6 +37,7 @@ struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: Objec
             VStack {
                 ForEach(objectives) { objective in
                     objectiveView(objective)
+                        .padding(.horizontal)
                 }
             }
         }

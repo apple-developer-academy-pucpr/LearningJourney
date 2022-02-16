@@ -91,17 +91,18 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             }
             .padding(.bottom, 16)
             ForEach(strand.goals) { goal in
-                GroupBox {
-                    routingService.link(for: ObjectivesRoute(goal: goal)) {
+                routingService.link(for: ObjectivesRoute(goal: goal)) {
+                    GroupBox {
                         HStack {
                             Spacer()
                             Text(goal.name)
+                                .foregroundColor(.black)
+                                .padding(.vertical, 16)
                             Spacer()
                         }
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    .padding(.trailing)
                 }
-                .padding(.trailing)
             }
         }
     }
