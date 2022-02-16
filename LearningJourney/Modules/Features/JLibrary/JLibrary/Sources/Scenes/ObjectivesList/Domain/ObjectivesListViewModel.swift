@@ -58,7 +58,6 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
         }
     }
     
-    
     // MARK: - Helper functions
     
     private func handleError(_ error: LibraryRepositoryError) {

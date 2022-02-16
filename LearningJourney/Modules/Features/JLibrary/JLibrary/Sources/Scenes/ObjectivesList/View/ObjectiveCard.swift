@@ -21,25 +21,32 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
                         .foregroundColor(Color("SecondaryText"))
                 }
                 Spacer()
-                switch viewModel.buttonState {
-                case .loading, .empty:
-                    LoadingView(style: .medium)
-                case .error:
-                    LoadingView() // TODO
-                case let .result(state):
-                    Button {
-                        viewModel.handleLearnStatusToggled()
-                    } label: {
-                        Label(state.name, systemImage: state.imageName)
-                            .labelStyle(ObjectiveStatusLabelStyle())
-                    }
-                    .buttonStyle(state.learningStatusButtonStyle)
-                }
+                button
             }
         }.groupBoxStyle(ObjectiveGroupBoxStyle(isBookmarked: viewModel.isBookmarked))
             .onTapGesture {
                 viewModel.handleWantToLearnToggled()
             }
+    }
+    
+    @ViewBuilder
+    private var button: some View {
+        Group {
+            switch viewModel.buttonState {
+            case .loading, .empty:
+                LoadingView(style: .medium)
+            case .error:
+                LoadingView() // TODO
+            case let .result(state):
+                Button {
+                    viewModel.handleLearnStatusToggled()
+                } label: {
+                    Label(state.name, systemImage: state.imageName)
+                        .labelStyle(ObjectiveStatusLabelStyle())
+                }
+                .buttonStyle(state.learningStatusButtonStyle)
+            }
+        }
     }
 }
 

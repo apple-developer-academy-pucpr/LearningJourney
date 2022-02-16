@@ -13,8 +13,7 @@ final class ObjectivesListViewModelTests: XCTestCase {
     
     private lazy var sut = ObjectivesListViewModel(
         useCases: .init(
-            fetchObjectivesUseCase: fetchObjectivesUseCaseSpy,
-            toggleLearnUseCase: toggleLearnUseCaseSpy
+            fetchObjectivesUseCase: fetchObjectivesUseCaseSpy
         ),
         dependencies: .init(goal: goalMock)
     )
@@ -93,43 +92,5 @@ final class ObjectivesListViewModelTests: XCTestCase {
 
         //Then
         XCTAssertEqual(sut.objectives, .error(.unknown({})))
-    }
-    
-    // MARK: - handleDidLearnToggled
-    
-    func test_handleDidLearnToggled_shouldPassCorrectObjective() {
-        //Given
-        let firstLearningObjectiveDummy = LearningObjective.fixture(id: 1)
-        let secondLearningObjectiveStub = LearningObjective.fixture(id: 2)
-        
-        toggleLearnUseCaseSpy.resultToUse = .success(secondLearningObjectiveStub)
-        
-        sut.objectives = .result([
-            LibraryViewModelState.result(firstLearningObjectiveDummy),
-            LibraryViewModelState.result(secondLearningObjectiveStub)
-        ])
-        
-        //When
-        sut.handleDidLearnToggled(
-            objective: LibraryViewModelState.result(secondLearningObjectiveStub)
-        )
-        
-        //Then
-        XCTAssertEqual(toggleLearnUseCaseSpy.objectivePassed?.id, 2)
-    }
-    
-    func test_handleDidLearnToggled_whenObjectivesArrayIsEmpty_shouldNotCallExecute() {
-        //Given
-        let learningObjective = LearningObjective.fixture(id: 1)
-        toggleLearnUseCaseSpy.resultToUse = .success(learningObjective)
-        sut.objectives = .result([])
-                
-        //When
-        sut.handleDidLearnToggled(
-            objective: LibraryViewModelState.result(learningObjective)
-        )
-        
-        //Then
-        XCTAssertFalse(toggleLearnUseCaseSpy.executeCalled)
     }
 }
