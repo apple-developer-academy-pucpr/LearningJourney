@@ -23,7 +23,7 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
                 Spacer()
                 switch viewModel.buttonState {
                 case .loading, .empty:
-                    LoadingView()
+                    LoadingView(style: .medium)
                 case .error:
                     LoadingView() // TODO
                 case let .result(state):
