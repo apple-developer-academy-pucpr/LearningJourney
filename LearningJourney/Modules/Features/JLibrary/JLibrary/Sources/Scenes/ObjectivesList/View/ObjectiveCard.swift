@@ -21,20 +21,19 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
                         .foregroundColor(Color("SecondaryText"))
                 }
                 Spacer()
-                Button {
-                    viewModel.handleLearnStatusToggled()
-                } label: {
-                    switch viewModel.buttonState {
-                    case .loading, .empty:
-                        LoadingView()
-                    case .error:
-                        LoadingView() // TODO
-                    case let .result(state):
+                switch viewModel.buttonState {
+                case .loading, .empty:
+                    LoadingView()
+                case .error:
+                    LoadingView() // TODO
+                case let .result(state):
+                    Button {
+                        viewModel.handleLearnStatusToggled()
+                    } label: {
                         Label(state.name, systemImage: state.imageName)
                             .labelStyle(ObjectiveStatusLabelStyle())
-                            .buttonStyle(state.learningStatusButtonStyle)
-                        
                     }
+                    .buttonStyle(state.learningStatusButtonStyle)
                 }
             }
         }.groupBoxStyle(ObjectiveGroupBoxStyle(isBookmarked: viewModel.isBookmarked))
