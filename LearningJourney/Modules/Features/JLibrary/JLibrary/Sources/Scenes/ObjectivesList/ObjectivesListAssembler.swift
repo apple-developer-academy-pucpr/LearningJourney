@@ -19,7 +19,10 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
             useCases: .init(fetchObjectivesUseCase: FetchObjectivesUseCase(repository: repository)),
             dependencies: .init(goal: learningGoal))
         
-        let view = ObjectivesListView<ObjectivesListViewModel, ObjectiveCard>(viewModel: viewModel) {
+        let view = ObjectivesListView<ObjectivesListViewModel, ObjectiveCard>(
+            routingService: feature.routingService,
+            viewModel: viewModel
+        ) {
             ObjectiveCard(viewModel: ObjectiveCardViewModel(
                 useCases: .init(
                     toggleLearnUseCase: ToggleLearnUseCase(repository: repository),

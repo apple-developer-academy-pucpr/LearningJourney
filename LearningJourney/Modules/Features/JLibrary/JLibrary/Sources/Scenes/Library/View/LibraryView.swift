@@ -177,6 +177,10 @@ final class DummyRoutingService: RoutingService {
             destination: AnyView(Text("Destination")),
             label: body)
     }
+    
+    func view(for route: Route) -> AnyView {
+        AnyView(Text("Destination"))
+    }
 }
 
 struct DummyFeature: Feature {

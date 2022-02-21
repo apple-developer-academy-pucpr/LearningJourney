@@ -1,9 +1,11 @@
 import SwiftUI
 import UI
+import CoreInjector
 
 struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: ObjectivesListViewModelProtocol, ObjectiveView: View {
     
     // MARK: - Dependencies
+    let routingService: RoutingService
     
     @ObservedObject
     var viewModel: ViewModel
@@ -11,11 +13,23 @@ struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: Objec
     @ViewBuilder
     let objectiveView: (LearningObjective) -> ObjectiveView
     
+    
     // MARK: - View
     
     var body: some View {
         contentView
             .navigationTitle(viewModel.goalName)
+            .navigationBarItems(trailing: addObjectiveButton)
+            
+    }
+    
+    private var addObjectiveButton: some View {
+        Button {
+            
+        } label: {
+            Image(systemName: "plus")
+        }
+
     }
     
     private var contentView: some View {
