@@ -19,6 +19,8 @@ protocol ObjectiveCardViewModelProtocol: ObservableObject {
     var objectiveCode: String { get }
     var objectiveType: String { get }
     var isBookmarked: Bool { get }
+    var canShowEditingBar: Bool { get }
+    
     var buttonState: LibraryViewModelState<LearningStatusButtonState> { get }
     func handleLearnStatusToggled()
     func handleWantToLearnToggled()
@@ -40,6 +42,8 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     private(set) var isBookmarked: Bool = false
     @Published
     private(set) var buttonState: LibraryViewModelState<LearningStatusButtonState> = .loading
+    
+    var canShowEditingBar: Bool { objective.type == .custom }
     
     
     private let useCases: UseCases

@@ -38,10 +38,10 @@ struct ObjectiveGroupBoxStyle: GroupBoxStyle {
         VStack(alignment: .leading) {
             configuration.label
                 .background(.clear)
+                .padding()
             configuration.content
                 .background(.clear)
         }
-        .padding()
         .background(isBookmarked ? Color(hex: "#F2F2F7") : .clear)
         .cornerRadius(14)
         .overlay(

@@ -8,9 +8,15 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
     
     var body: some View {
         GroupBox {
-            Text(viewModel.objectiveDescription)
-                .lineLimit(nil)
-                .fixedSize(horizontal: false, vertical: true)
+            VStack {
+                Text(viewModel.objectiveDescription)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding()
+                if viewModel.canShowEditingBar {
+                    EditObjectiveView(didDelete: {}, didFinishEditing: {}, didCancelEditing: {})
+                }
+            }
         } label: {
             HStack(alignment: .top) {
                 VStack (alignment: .leading) {
