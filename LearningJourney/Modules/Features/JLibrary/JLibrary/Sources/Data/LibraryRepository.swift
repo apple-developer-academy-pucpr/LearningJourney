@@ -7,6 +7,8 @@ protocol LibraryRepositoryProtocol {
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>)
     func fetchObjectives(using goal: LearningGoal, completion: @escaping Completion<[LearningObjective]> )
     func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>)
+    func fetchNewObjectiveMetadata(goalId: String, completion: @escaping Completion<NewObjectiveMetadata>)
+    func createObjective(goalId: String, description: String, completion: @escaping Completion<LearningObjective>)
 }
 
 enum LibraryRepositoryError: Error {
@@ -80,6 +82,22 @@ final class LibraryRepository: LibraryRepositoryProtocol {
                 return
             }
             completion(self.mapResult(from: result))
+        }
+    }
+    
+    func fetchNewObjectiveMetadata(goalId: String, completion: @escaping Completion<NewObjectiveMetadata>) {
+        remoteService.newObjectiveMetadata(goalId: goalId) { [weak self] in
+            guard let self = self else { return }
+            completion(self.mapResult(from: $0))
+        }
+    }
+    
+    func createObjective(goalId: String, description: String, completion: @escaping Completion<LearningObjective>) {
+        remoteService.createObjective(using: .init(
+            description: description,
+            goalId: goalId
+        )) {
+            completion(self.mapResult(from: $0))
         }
     }
     

@@ -7,6 +7,7 @@ enum LibraryEndpoint {
     case fetchObjectives(_ goalId: String)
     case updateObjective(_ objectiveUpdate: UpdateObjectiveModel)
     case createObjective(NewObjectiveModel)
+    case newObjectiveMetadata(String)
 }
 
 extension LibraryEndpoint: ApiEndpoint {
@@ -20,12 +21,14 @@ extension LibraryEndpoint: ApiEndpoint {
             return "objective/\(objective.id)"
         case .createObjective:
             return "objectives/create"
+        case let .newObjectiveMetadata(goalId):
+            return "objectives/new?goalId=\(goalId)"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .fetchStrand, .fetchObjectives:
+        case .fetchStrand, .fetchObjectives, .newObjectiveMetadata:
             return .get
         case .updateObjective, .createObjective:
             return .post
@@ -34,7 +37,7 @@ extension LibraryEndpoint: ApiEndpoint {
     
     var body: Data? {
         switch self {
-        case .fetchStrand, .fetchObjectives:
+        case .fetchStrand, .fetchObjectives, .newObjectiveMetadata:
             return nil
         case let .updateObjective(model):
             return jsonEncoded(model)

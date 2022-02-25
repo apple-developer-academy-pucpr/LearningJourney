@@ -1,9 +1,10 @@
 import SwiftUI
+import CoreInjector
 
 protocol LibraryScenesFactoryProtocol: AnyObject {
     func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView
     func resolveObjectivesListScene(for feature: LibraryFeature, using route: ObjectivesRoute) -> AnyView
-    func resolveCreateObjectiveScene(for feature: LibraryFeature) -> AnyView
+    func resolveCreateObjectiveScene(for feature: LibraryFeature, route: Route?) -> AnyView
 }
 
 final class LibraryScenesFactory: LibraryScenesFactoryProtocol {
@@ -28,13 +29,15 @@ final class LibraryScenesFactory: LibraryScenesFactoryProtocol {
     
     // MARK: - Factory methods
     
-    func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView { libraryAssembler.assemble(using: feature) }
+    func resolveLibraryScene(for feature: LibraryFeature, using route: LibraryRoute?) -> AnyView {
+        libraryAssembler.assemble(using: feature)
+    }
     
     func resolveObjectivesListScene(for feature: LibraryFeature, using route: ObjectivesRoute) -> AnyView {
         objectivesListAssembler.assemble(using: feature, learningGoal: route.goal)
     }
     
-    func resolveCreateObjectiveScene(for feature: LibraryFeature) -> AnyView {
-        createObjectiveAssembler.assemble(using: feature)
+    func resolveCreateObjectiveScene(for feature: LibraryFeature, route: Route?) -> AnyView {
+        createObjectiveAssembler.assemble(using: feature, route: route as? NewObjectiveRoute)
     }
 }

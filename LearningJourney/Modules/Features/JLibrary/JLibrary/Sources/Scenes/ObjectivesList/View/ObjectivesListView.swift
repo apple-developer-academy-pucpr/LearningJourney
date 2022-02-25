@@ -23,7 +23,12 @@ struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: Objec
         contentView
             .navigationTitle(viewModel.goalName)
             .navigationBarItems(trailing: addObjectiveButton)
-            .sheet(for: NewObjectiveRoute(), using: routingService, isPresented: $isPresentingModal, onDismiss: nil)
+            .sheet(for: NewObjectiveRoute(
+                goal: viewModel.goal,
+                isPresented: self.$isPresentingModal
+            ), using: routingService, isPresented: $isPresentingModal) {
+                viewModel.handleOnAppear()
+            }
             
     }
     

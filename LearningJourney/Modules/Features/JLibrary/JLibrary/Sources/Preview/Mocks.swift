@@ -1,6 +1,7 @@
 #if DEBUG
 
 import SwiftUI
+import CoreInjector
 
 final class LibraryViewModelMock: LibraryViewModelProtocol {
     var isList: Bool = false
@@ -33,6 +34,10 @@ final class LibraryViewModelMock: LibraryViewModelProtocol {
 }
 
 final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
+    func resolveCreateObjectiveScene(for feature: LibraryFeature, route: Route?) -> AnyView {
+        .init(Text("Dummy"))
+    }
+    
     func resolveCreateObjectiveScene(for feature: LibraryFeature) -> AnyView {
         .init(Text("Dummy"))
     }
@@ -48,6 +53,8 @@ final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
 }
 
 final class ObjectivesListViewModelMock: ObjectivesListViewModelProtocol {
+    var goal: LearningGoal { .fixture() }
+    
     @Published
     var objectives: LibraryViewModelState<[LearningObjective]> = .result([
         .fixture(),

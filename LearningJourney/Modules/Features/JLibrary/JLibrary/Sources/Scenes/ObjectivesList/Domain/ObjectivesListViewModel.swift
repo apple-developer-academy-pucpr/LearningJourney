@@ -4,6 +4,7 @@ import UI
 protocol ObjectivesListViewModelProtocol: ObservableObject {
     var objectives: LibraryViewModelState<[LearningObjective]> { get }
     var goalName: String { get }
+    var goal: LearningGoal { get }
     func handleOnAppear()
 }
 
@@ -25,6 +26,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     @Published
     var objectives: Objectives = .empty
+    var goal: LearningGoal { dependencies.goal }
     
     // MARK: - Dependencies
     

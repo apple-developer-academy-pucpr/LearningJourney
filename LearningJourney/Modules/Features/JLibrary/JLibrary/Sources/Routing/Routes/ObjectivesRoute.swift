@@ -1,4 +1,5 @@
 import CoreInjector
+import SwiftUI
 
 struct ObjectivesRoute: Route {
     static var identifier: String { "library.objectivesRoute" }
@@ -7,4 +8,6 @@ struct ObjectivesRoute: Route {
 
 struct NewObjectiveRoute: Route {
     static var identifier: String { "library.newObjectiveRoute" }
+    let goal: LearningGoal
+    let isPresented: Binding<Bool>
 }

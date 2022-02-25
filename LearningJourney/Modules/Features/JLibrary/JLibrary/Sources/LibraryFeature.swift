@@ -40,7 +40,7 @@ public struct LibraryFeature: Feature {
         }
         
         if let route = route as? NewObjectiveRoute {
-            return scenesFactory.resolveCreateObjectiveScene(for: self)
+            return scenesFactory.resolveCreateObjectiveScene(for: self, route: route)
         }
         
         if route == nil {

@@ -5,10 +5,14 @@ import CoreNetworking
 protocol LibraryRemoteServiceProtocol {
     typealias Completion = (Result<Data, ApiError>) -> Void
     func learningStrands(completion: @escaping Completion)
-    func learningObjectives(using strandId: String, completion: @escaping Completion)
-    func updateObjective(using objective: LibraryEndpoint.UpdateObjectiveModel, completion: @escaping Completion)
+    func learningObjectives(using strandId: String,
+                            completion: @escaping Completion)
+    func updateObjective(using objective: LibraryEndpoint.UpdateObjectiveModel,
+                         completion: @escaping Completion)
     
-    func createObjective(using newObjectiveModel: LibraryEndpoint.NewObjectiveModel)
+    func newObjectiveMetadata(goalId: String, completion: @escaping Completion)
+    func createObjective(using newObjectiveModel: LibraryEndpoint.NewObjectiveModel,
+                         completion: @escaping Completion)
 }
 
 final class LibraryRemoteService: LibraryRemoteServiceProtocol {
@@ -45,11 +49,16 @@ final class LibraryRemoteService: LibraryRemoteServiceProtocol {
         currentRequest = apiRequest.make(completion: completion)
     }
     
-    func createObjective(using newObjectiveModel: LibraryEndpoint.NewObjectiveModel) {
+    func newObjectiveMetadata(goalId: String, completion: @escaping Completion) {
+        let endpoint: LibraryEndpoint = .newObjectiveMetadata(goalId)
+        let apiRequest = apiFactory.make(endpoint)
+        currentRequest = apiRequest.make(completion: completion)
+    }
+    
+    func createObjective(using newObjectiveModel: LibraryEndpoint.NewObjectiveModel,
+                         completion: @escaping Completion) {
         let endpoint: LibraryEndpoint = .createObjective(newObjectiveModel)
         let apiRequest = apiFactory.make(endpoint)
-        currentRequest = apiRequest.make(completion: {
-            print($0)
-        })
+        currentRequest = apiRequest.make(completion: completion)
     }
 }
