@@ -6,15 +6,38 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
     @ObservedObject
     var viewModel: ViewModel
     
+    @FocusState
+    var isEditingDescription: Bool
+    
     var body: some View {
         GroupBox {
             VStack {
-                Text(viewModel.objectiveDescription)
-                    .lineLimit(nil)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .padding()
+                ZStack {
+                    TextEditor(text: $viewModel.objectiveDescription)
+                        .opacity(viewModel.canEditDescription ? 1 : 0)
+                        .focused($isEditingDescription)
+                    Text(viewModel.objectiveDescription)
+                        .opacity(viewModel.canEditDescription ? 0 : 1)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .lineLimit(nil)
+                .padding()
+                .background(.clear)
                 if viewModel.canShowEditingBar {
-                    EditObjectiveView(didDelete: {}, didFinishEditing: {}, didCancelEditing: {})
+                    EditObjectiveView(
+                        didStartEditing: {
+                            isEditingDescription = true
+                            viewModel.didStartEditing()
+                        },
+                        didDelete: {
+                        
+                        }, didFinishEditing: {
+                            
+                        }, didCancelEditing: {
+                            isEditingDescription = false
+                            viewModel.didCancelEditing()
+                        }
+                    )
                 }
             }
         } label: {
@@ -42,7 +65,7 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
             case .loading, .empty:
                 LoadingView(style: .medium)
             case .error:
-                LoadingView() // TODO
+                LoadingView()
             case let .result(state):
                 Button {
                     viewModel.handleLearnStatusToggled()

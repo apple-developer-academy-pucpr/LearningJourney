@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct LearningStatusButtonState: Equatable {
     let name: String
@@ -15,15 +16,19 @@ struct LearningStatusButtonState: Equatable {
 
 protocol ObjectiveCardViewModelProtocol: ObservableObject {
 
-    var objectiveDescription: String { get }
+    var objectiveDescription: String { get set }
     var objectiveCode: String { get }
     var objectiveType: String { get }
     var isBookmarked: Bool { get }
     var canShowEditingBar: Bool { get }
+    var canEditDescription: Bool { get set }
     
     var buttonState: LibraryViewModelState<LearningStatusButtonState> { get }
     func handleLearnStatusToggled()
     func handleWantToLearnToggled()
+    
+    func didStartEditing()
+    func didCancelEditing()
 }
 
 final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
@@ -33,7 +38,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     }
     
     @Published
-    private(set) var objectiveDescription: String = ""
+    var objectiveDescription: String = ""
     @Published
     private(set) var objectiveCode: String = ""
     @Published
@@ -42,6 +47,9 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     private(set) var isBookmarked: Bool = false
     @Published
     private(set) var buttonState: LibraryViewModelState<LearningStatusButtonState> = .loading
+    @Published
+    var canEditDescription: Bool = false
+    
     
     var canShowEditingBar: Bool { objective.type == .custom }
     
@@ -60,6 +68,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     }
     
     func handleLearnStatusToggled() {
+        guard !canEditDescription else { return }
         buttonState = .loading
         useCases.toggleLearnUseCase.execute(objective: objective) { [weak self] in
             switch $0 {
@@ -73,6 +82,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     
     
     func handleWantToLearnToggled() {
+        guard !canEditDescription else { return }
         buttonState = .loading
         useCases.toggleEagerToLearnUseCase.execute(objective: objective) { [weak self] in
             switch $0 {
@@ -82,6 +92,17 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
                 self?.renderObjective()
             }
         }
+    }
+    
+    func didStartEditing() {
+        canEditDescription = true
+        objectWillChange.send()
+    }
+    
+    func didCancelEditing() {
+        canEditDescription = false
+        renderObjective()
+        objectWillChange.send()
     }
     
     private var buttonName: String {

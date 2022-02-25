@@ -71,7 +71,7 @@ struct CreateObjectiveView<ViewModel>: View where ViewModel: CreateObjectiveView
             disabledTextField(metadata.strandName)
             disabledTextField(metadata.goalName)
             disabledTextField(metadata.code)
-            BridgedTextField("Descrição", text: $viewModel.currentDescription) {
+            BridgedTextField("Descrição", text: $viewModel.currentDescription, minimumHeight: 111){
                 viewModel.descriptionDidCommit()
             }
                 .overlay(RoundedRectangle(cornerRadius: 10)

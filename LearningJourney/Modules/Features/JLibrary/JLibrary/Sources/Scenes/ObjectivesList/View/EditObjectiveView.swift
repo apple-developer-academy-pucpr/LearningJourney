@@ -2,6 +2,7 @@ import SwiftUI
 
 struct EditObjectiveView: View {
     
+    let didStartEditing: () -> Void
     let didDelete: () -> Void
     let didFinishEditing: () -> Void
     let didCancelEditing: () -> Void
@@ -19,7 +20,6 @@ struct EditObjectiveView: View {
                 .padding(.top, 12)
         }
         .background(isEditing ? Color(hex: "#F2F2F7") : .white)
-        
     }
     
     @ViewBuilder
@@ -65,6 +65,7 @@ struct EditObjectiveView: View {
     private var editButton: some View {
         Button {
             isEditing = true
+            didStartEditing()
         } label: {
             Label {
                 Text("Editar")
