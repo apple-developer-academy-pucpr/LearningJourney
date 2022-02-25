@@ -21,7 +21,7 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             }
             .padding(.leading)
             .navigationTitle("Library")
-            .navigationBarItems(trailing: listModeView)
+            .navigationBarItems(leading: signOutButton, trailing: listModeView)
             .onAppear(perform: viewModel.handleOnAppear) // TODO this should be replaced by `task`
             .onReceive(notificationCenter.publisher(for: .authDidChange),
                        perform: { _ in viewModel.handleUserDidChange()

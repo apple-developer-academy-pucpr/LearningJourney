@@ -13,6 +13,9 @@ struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: Objec
     @ViewBuilder
     let objectiveView: (LearningObjective) -> ObjectiveView
     
+    @State
+    private var isPresentingModal = false
+    
     
     // MARK: - View
     
@@ -20,12 +23,13 @@ struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: Objec
         contentView
             .navigationTitle(viewModel.goalName)
             .navigationBarItems(trailing: addObjectiveButton)
+            .sheet(for: NewObjectiveRoute(), using: routingService, isPresented: $isPresentingModal, onDismiss: nil)
             
     }
     
     private var addObjectiveButton: some View {
         Button {
-            
+            isPresentingModal = true
         } label: {
             Image(systemName: "plus")
         }

@@ -36,21 +36,21 @@ struct LearningStrandRow_Previews: PreviewProvider {
         ContentView_Previews.contentPreview
         
         LearningStrandRow(service: DummyRoutingService(), strand: .init(
-            id: 1,
+            id: "1",
             name: "Technical",
             goals: [
                 .init(
-                    id: 1,
+                    id: "1",
                     name: "App Programming",
                     progress: 0.1),
                 
                     .init(
-                        id:1,
+                        id: "1",
                         name: "App Programming",
                         progress: 0.5),
                 
                     .init(
-                        id:1,
+                        id: "1",
                         name: "App Programming",
                         progress: 0.75),
             ]

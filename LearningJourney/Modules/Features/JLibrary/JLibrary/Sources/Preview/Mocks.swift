@@ -33,6 +33,10 @@ final class LibraryViewModelMock: LibraryViewModelProtocol {
 }
 
 final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
+    func resolveCreateObjectiveScene(for feature: LibraryFeature) -> AnyView {
+        .init(Text("Dummy"))
+    }
+    
     func resolveObjectivesListScene(for feature: LibraryFeature, using route: ObjectivesRoute) -> AnyView {
         .init(Text("Dummy"))
     }

@@ -14,7 +14,7 @@ enum LearningObjectiveStatus: String, Codable {
 }
 
 struct LearningObjective: Decodable, Identifiable, Equatable {
-    let id: Int
+    let id: String
     let code: String
     let description: String
     let type: LearningObjectiveType

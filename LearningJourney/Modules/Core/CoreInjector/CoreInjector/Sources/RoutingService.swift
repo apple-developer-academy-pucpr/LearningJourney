@@ -73,11 +73,11 @@ public final class RouterService: RoutingService {
 }
 
 public extension View {
-    func sheet<Body>(for route: Route,
+    func sheet(for route: Route,
                      using serivce: RoutingService,
                      isPresented: Binding<Bool>,
                      onDismiss: (() -> Void)? = nil
-    ) -> some View where Body: View {
+    ) -> some View {
         let view = serivce.view(for: route)
         return modifier(RouterViewModifier(
             isPresented: isPresented,

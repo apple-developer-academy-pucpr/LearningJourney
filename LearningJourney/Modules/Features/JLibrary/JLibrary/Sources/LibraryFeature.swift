@@ -20,7 +20,8 @@ public struct LibraryFeature: Feature {
     public init() {
         let factory = LibraryScenesFactory(
             libraryAssembler: LibraryAssembler(),
-            objectivesListAssembler: ObjectivesListAssembler()
+            objectivesListAssembler: ObjectivesListAssembler(),
+            createObjectiveAssembler: CreateObjectiveAssembler()
         )
         self.init(
             scenesFactory: factory
@@ -36,6 +37,10 @@ public struct LibraryFeature: Feature {
     public func build(using route: Route?) -> AnyView {
         if let route = route as? ObjectivesRoute {
             return scenesFactory.resolveObjectivesListScene(for: self, using: route)
+        }
+        
+        if let route = route as? NewObjectiveRoute {
+            return scenesFactory.resolveCreateObjectiveScene(for: self)
         }
         
         if route == nil {

@@ -5,3 +5,6 @@ struct ObjectivesRoute: Route {
     let goal: LearningGoal
 }
 
+struct NewObjectiveRoute: Route {
+    static var identifier: String { "library.newObjectiveRoute" }
+}

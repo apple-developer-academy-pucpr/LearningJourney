@@ -4,8 +4,9 @@ import CoreNetworking
 
 enum LibraryEndpoint {
     case fetchStrand
-    case fetchObjectives(_ goalId: Int)
+    case fetchObjectives(_ goalId: String)
     case updateObjective(_ objectiveUpdate: UpdateObjectiveModel)
+    case createObjective(NewObjectiveModel)
 }
 
 extension LibraryEndpoint: ApiEndpoint {
@@ -17,6 +18,8 @@ extension LibraryEndpoint: ApiEndpoint {
             return "goals/\(goalId)"
         case let .updateObjective(objective):
             return "objective/\(objective.id)"
+        case .createObjective:
+            return "objectives/create"
         }
     }
     
@@ -24,7 +27,7 @@ extension LibraryEndpoint: ApiEndpoint {
         switch self {
         case .fetchStrand, .fetchObjectives:
             return .get
-        case .updateObjective:
+        case .updateObjective, .createObjective:
             return .post
         }
     }
@@ -34,11 +37,13 @@ extension LibraryEndpoint: ApiEndpoint {
         case .fetchStrand, .fetchObjectives:
             return nil
         case let .updateObjective(model):
-            return updateObjectiveBody(model)
+            return jsonEncoded(model)
+        case let .createObjective(newObjectiveModel):
+            return jsonEncoded(newObjectiveModel)
         }
     }
     
-    private func updateObjectiveBody(_ model: UpdateObjectiveModel) -> Data? {
+    private func jsonEncoded<Model>(_ model: Model) -> Data? where Model: Encodable {
         let encoder = JSONEncoder()
         let encoded = try? encoder.encode(model)
         return encoded
@@ -47,8 +52,13 @@ extension LibraryEndpoint: ApiEndpoint {
 
 extension LibraryEndpoint {
     struct UpdateObjectiveModel: Encodable {
-        let id: Int
+        let id: String
         let newStatus: LearningObjectiveStatus
         let isBookmarked: Bool
+    }
+    
+    struct NewObjectiveModel: Encodable {
+        let description: String
+        let goalId: String
     }
 }
