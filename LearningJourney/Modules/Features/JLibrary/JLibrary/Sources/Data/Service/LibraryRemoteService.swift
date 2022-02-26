@@ -13,6 +13,9 @@ protocol LibraryRemoteServiceProtocol {
     func newObjectiveMetadata(goalId: String, completion: @escaping Completion)
     func createObjective(using newObjectiveModel: LibraryEndpoint.NewObjectiveModel,
                          completion: @escaping Completion)
+    func updateObjectiveDescription(objectiveId: String,
+                                    newDescription: String,
+                                    completion: @escaping Completion)
 }
 
 final class LibraryRemoteService: LibraryRemoteServiceProtocol {
@@ -58,6 +61,15 @@ final class LibraryRemoteService: LibraryRemoteServiceProtocol {
     func createObjective(using newObjectiveModel: LibraryEndpoint.NewObjectiveModel,
                          completion: @escaping Completion) {
         let endpoint: LibraryEndpoint = .createObjective(newObjectiveModel)
+        let apiRequest = apiFactory.make(endpoint)
+        currentRequest = apiRequest.make(completion: completion)
+    }
+    
+    func updateObjectiveDescription(objectiveId: String,
+                                    newDescription: String,
+                                    completion: @escaping Completion
+    ) {
+        let endpoint: LibraryEndpoint = .updateObjectiveDescription(objectiveId, newDescription)
         let apiRequest = apiFactory.make(endpoint)
         currentRequest = apiRequest.make(completion: completion)
     }

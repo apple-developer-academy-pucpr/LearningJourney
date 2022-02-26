@@ -12,33 +12,8 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
     var body: some View {
         GroupBox {
             VStack {
-                ZStack {
-                    TextEditor(text: $viewModel.objectiveDescription)
-                        .opacity(viewModel.canEditDescription ? 1 : 0)
-                        .focused($isEditingDescription)
-                    Text(viewModel.objectiveDescription)
-                        .opacity(viewModel.canEditDescription ? 0 : 1)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                .lineLimit(nil)
-                .padding()
-                .background(.clear)
-                if viewModel.canShowEditingBar {
-                    EditObjectiveView(
-                        didStartEditing: {
-                            isEditingDescription = true
-                            viewModel.didStartEditing()
-                        },
-                        didDelete: {
-                        
-                        }, didFinishEditing: {
-                            
-                        }, didCancelEditing: {
-                            isEditingDescription = false
-                            viewModel.didCancelEditing()
-                        }
-                    )
-                }
+                descriptionView
+                editingBar
             }
         } label: {
             HStack(alignment: .top) {
@@ -56,6 +31,43 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
             .onTapGesture {
                 viewModel.handleWantToLearnToggled()
             }
+    }
+    
+    @ViewBuilder
+    private var editingBar: some View {
+        if viewModel.canShowEditingBar {
+            EditObjectiveView(
+                didStartEditing: {
+                    isEditingDescription = true
+                    viewModel.didStartEditing()
+                },
+                didDelete: {
+                
+                }, didFinishEditing: {
+                    isEditingDescription = false
+                    viewModel.didConfirmEditing()
+                }, didCancelEditing: {
+                    isEditingDescription = false
+                    viewModel.didCancelEditing()
+                },
+                loadingState: $viewModel.buttonState
+            )
+        }
+    }
+    
+    @ViewBuilder
+    private var descriptionView: some View {
+        ZStack {
+            TextEditor(text: $viewModel.objectiveDescription)
+                .opacity(viewModel.canEditDescription ? 1 : 0)
+                .focused($isEditingDescription)
+            Text(viewModel.objectiveDescription)
+                .opacity(viewModel.canEditDescription ? 0 : 1)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .lineLimit(nil)
+        .padding()
+        .background(.clear)
     }
     
     @ViewBuilder

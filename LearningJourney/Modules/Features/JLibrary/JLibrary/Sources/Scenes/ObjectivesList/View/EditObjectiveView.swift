@@ -7,7 +7,11 @@ struct EditObjectiveView: View {
     let didFinishEditing: () -> Void
     let didCancelEditing: () -> Void
     
-    @State private var isEditing: Bool = false
+    @State
+    private var isEditing: Bool = false
+    
+    @Binding
+    var loadingState: LibraryViewModelState<LearningStatusButtonState>
     
     var body: some View {
         VStack {
@@ -18,6 +22,7 @@ struct EditObjectiveView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
                 .padding(.top, 12)
+                .redacted(reason: loadingState == .loading ? .placeholder : [])
         }
         .background(isEditing ? Color(hex: "#F2F2F7") : .white)
     }

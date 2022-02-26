@@ -8,6 +8,7 @@ enum LibraryEndpoint {
     case updateObjective(_ objectiveUpdate: UpdateObjectiveModel)
     case createObjective(NewObjectiveModel)
     case newObjectiveMetadata(String)
+    case updateObjectiveDescription(String, String)
 }
 
 extension LibraryEndpoint: ApiEndpoint {
@@ -23,6 +24,8 @@ extension LibraryEndpoint: ApiEndpoint {
             return "objectives/create"
         case let .newObjectiveMetadata(goalId):
             return "objectives/new?goalId=\(goalId)"
+        case let .updateObjectiveDescription(objectiveId, _):
+            return "objectives/\(objectiveId)/description"
         }
     }
     
@@ -30,7 +33,7 @@ extension LibraryEndpoint: ApiEndpoint {
         switch self {
         case .fetchStrand, .fetchObjectives, .newObjectiveMetadata:
             return .get
-        case .updateObjective, .createObjective:
+        case .updateObjective, .createObjective, .updateObjectiveDescription:
             return .post
         }
     }
@@ -43,6 +46,8 @@ extension LibraryEndpoint: ApiEndpoint {
             return jsonEncoded(model)
         case let .createObjective(newObjectiveModel):
             return jsonEncoded(newObjectiveModel)
+        case let .updateObjectiveDescription(_, newDescription):
+            return jsonEncoded([ "description": newDescription ])
         }
     }
     

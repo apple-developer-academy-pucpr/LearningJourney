@@ -9,6 +9,7 @@ protocol LibraryRepositoryProtocol {
     func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>)
     func fetchNewObjectiveMetadata(goalId: String, completion: @escaping Completion<NewObjectiveMetadata>)
     func createObjective(goalId: String, description: String, completion: @escaping Completion<LearningObjective>)
+    func updateObjectiveDescriotion(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>)
 }
 
 enum LibraryRepositoryError: Error {
@@ -96,7 +97,15 @@ final class LibraryRepository: LibraryRepositoryProtocol {
         remoteService.createObjective(using: .init(
             description: description,
             goalId: goalId
-        )) {
+        )) { [weak self] in
+            guard let self = self else { return }
+            completion(self.mapResult(from: $0))
+        }
+    }
+    
+    func updateObjectiveDescriotion(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>) {
+        remoteService.updateObjectiveDescription(objectiveId: objective.id, newDescription: newDescription) { [weak self] in
+            guard let self = self else { return }
             completion(self.mapResult(from: $0))
         }
     }

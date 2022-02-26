@@ -26,7 +26,8 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
             ObjectiveCard(viewModel: ObjectiveCardViewModel(
                 useCases: .init(
                     toggleLearnUseCase: ToggleLearnUseCase(repository: repository),
-                    toggleEagerToLearnUseCase: ToggleEagerToLearnUseCase(repository: repository)),
+                    toggleEagerToLearnUseCase: ToggleEagerToLearnUseCase(repository: repository),
+                    updateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCase(repository: repository)),
                 objective: $0))
         }
         

@@ -21,20 +21,23 @@ protocol ObjectiveCardViewModelProtocol: ObservableObject {
     var objectiveType: String { get }
     var isBookmarked: Bool { get }
     var canShowEditingBar: Bool { get }
-    var canEditDescription: Bool { get set }
     
-    var buttonState: LibraryViewModelState<LearningStatusButtonState> { get }
+    var canEditDescription: Bool { get set }
+    var buttonState: LibraryViewModelState<LearningStatusButtonState> { get set }
+    
     func handleLearnStatusToggled()
     func handleWantToLearnToggled()
     
     func didStartEditing()
     func didCancelEditing()
+    func didConfirmEditing()
 }
 
 final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     struct UseCases {
         let toggleLearnUseCase: ToggleLearnUseCaseProtocol
         let toggleEagerToLearnUseCase: ToggleEagerToLearnUseCaseProtocol
+        let updateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCaseProtocol
     }
     
     @Published
@@ -46,7 +49,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     @Published
     private(set) var isBookmarked: Bool = false
     @Published
-    private(set) var buttonState: LibraryViewModelState<LearningStatusButtonState> = .loading
+    var buttonState: LibraryViewModelState<LearningStatusButtonState> = .loading
     @Published
     var canEditDescription: Bool = false
     
@@ -103,6 +106,23 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
         canEditDescription = false
         renderObjective()
         objectWillChange.send()
+    }
+    
+    
+    func didConfirmEditing() {
+        canEditDescription = false
+        buttonState = .loading
+        useCases.updateObjectiveDescriptionUseCase.execute(objective: objective,
+                                                           newDescription: objectiveDescription
+        ) { [weak self] in
+            switch $0 {
+            case let .success(newObjective):
+                self?.objective = newObjective
+                self?.renderObjective()
+            case let .failure(error):
+                self?.renderObjective()// TODO
+            }
+        }
     }
     
     private var buttonName: String {
