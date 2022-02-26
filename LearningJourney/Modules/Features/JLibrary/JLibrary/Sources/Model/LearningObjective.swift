@@ -13,7 +13,7 @@ enum LearningObjectiveStatus: String, Codable {
     case mastered
 }
 
-struct LearningObjective: Decodable, Identifiable, Equatable {
+struct LearningObjective: Decodable, Identifiable, Equatable, Hashable {
     let id: String
     let code: String
     let description: String

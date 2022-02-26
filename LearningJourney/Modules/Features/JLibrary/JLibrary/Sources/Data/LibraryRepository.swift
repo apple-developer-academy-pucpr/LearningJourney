@@ -10,6 +10,7 @@ protocol LibraryRepositoryProtocol {
     func fetchNewObjectiveMetadata(goalId: String, completion: @escaping Completion<NewObjectiveMetadata>)
     func createObjective(goalId: String, description: String, completion: @escaping Completion<LearningObjective>)
     func updateObjectiveDescriotion(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>)
+    func delete(objective: LearningObjective, completion: @escaping Completion<Void>)
 }
 
 enum LibraryRepositoryError: Error {
@@ -107,6 +108,15 @@ final class LibraryRepository: LibraryRepositoryProtocol {
         remoteService.updateObjectiveDescription(objectiveId: objective.id, newDescription: newDescription) { [weak self] in
             guard let self = self else { return }
             completion(self.mapResult(from: $0))
+        }
+    }
+    
+    func delete(objective: LearningObjective, completion: @escaping Completion<Void>) {
+        remoteService.delete(objectiveWithId: objective.id) {
+            completion($0
+                        .mapError { .api($0) }
+                        .map { _ in }
+            )
         }
     }
     

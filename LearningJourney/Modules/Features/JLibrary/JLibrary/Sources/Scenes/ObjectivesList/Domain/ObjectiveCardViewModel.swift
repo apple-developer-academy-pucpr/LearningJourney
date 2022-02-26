@@ -21,6 +21,7 @@ protocol ObjectiveCardViewModelProtocol: ObservableObject {
     var objectiveType: String { get }
     var isBookmarked: Bool { get }
     var canShowEditingBar: Bool { get }
+    var isDeleted: Bool { get }
     
     var canEditDescription: Bool { get set }
     var buttonState: LibraryViewModelState<LearningStatusButtonState> { get set }
@@ -31,6 +32,7 @@ protocol ObjectiveCardViewModelProtocol: ObservableObject {
     func didStartEditing()
     func didCancelEditing()
     func didConfirmEditing()
+    func didConfirmDeletion()
 }
 
 final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
@@ -38,24 +40,28 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
         let toggleLearnUseCase: ToggleLearnUseCaseProtocol
         let toggleEagerToLearnUseCase: ToggleEagerToLearnUseCaseProtocol
         let updateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCaseProtocol
+        let deleteObjectiveUseCase: DeleteObjectiveUseCaseProtocol
     }
     
-    @Published
-    var objectiveDescription: String = ""
     @Published
     private(set) var objectiveCode: String = ""
     @Published
     private(set) var objectiveType: String = ""
     @Published
     private(set) var isBookmarked: Bool = false
+    
+    @Published
+    private(set) var isDeleted: Bool = false
+    
     @Published
     var buttonState: LibraryViewModelState<LearningStatusButtonState> = .loading
     @Published
     var canEditDescription: Bool = false
+    @Published
+    var objectiveDescription: String = ""
     
     
     var canShowEditingBar: Bool { objective.type == .custom }
-    
     
     private let useCases: UseCases
     private var objective: LearningObjective {
@@ -64,7 +70,9 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
         }
     }
     
-    init(useCases: UseCases, objective: LearningObjective) {
+    init(useCases: UseCases,
+         objective: LearningObjective
+    ) {
         self.useCases = useCases
         self.objective = objective
         renderObjective()
@@ -121,6 +129,21 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
                 self?.renderObjective()
             case let .failure(error):
                 self?.renderObjective()// TODO
+            }
+        }
+    }
+    
+    func didConfirmDeletion() {
+        canEditDescription = false
+        buttonState = .loading
+        useCases.deleteObjectiveUseCase.execute(objective: objective) { [weak self] in
+            switch $0 {
+            case .success:
+                self?.isDeleted = true
+                break
+            case let .failure(error):
+                // TODO
+                break
             }
         }
     }

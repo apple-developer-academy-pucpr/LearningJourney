@@ -27,7 +27,8 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
                 useCases: .init(
                     toggleLearnUseCase: ToggleLearnUseCase(repository: repository),
                     toggleEagerToLearnUseCase: ToggleEagerToLearnUseCase(repository: repository),
-                    updateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCase(repository: repository)),
+                    updateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCase(repository: repository),
+                    deleteObjectiveUseCase: DeleteObjectiveUseCase(repository: repository)),
                 objective: $0))
         }
         

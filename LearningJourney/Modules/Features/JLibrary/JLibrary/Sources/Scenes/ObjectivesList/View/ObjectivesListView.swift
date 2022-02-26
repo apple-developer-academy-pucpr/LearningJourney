@@ -16,7 +16,6 @@ struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: Objec
     @State
     private var isPresentingModal = false
     
-    
     // MARK: - View
     
     var body: some View {
@@ -60,9 +59,10 @@ struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: Objec
             VStack {
                 ForEach(objectives) { objective in
                     objectiveView(objective)
-                        .padding(.horizontal)
+                    .padding(.horizontal)
                 }
             }
+            
         }
     }
 }

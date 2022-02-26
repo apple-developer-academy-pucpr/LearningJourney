@@ -10,6 +10,15 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
     var isEditingDescription: Bool
     
     var body: some View {
+        if viewModel.isDeleted {
+            Rectangle().frame(width: 0, height: 0)
+        } else {
+            contentView
+        }
+    }
+    
+    @ViewBuilder
+    private var contentView: some View {
         GroupBox {
             VStack {
                 descriptionView
@@ -28,9 +37,9 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
                 button
             }
         }.groupBoxStyle(ObjectiveGroupBoxStyle(isBookmarked: viewModel.isBookmarked))
-            .onTapGesture {
-                viewModel.handleWantToLearnToggled()
-            }
+        .onTapGesture {
+            viewModel.handleWantToLearnToggled()
+        }
     }
     
     @ViewBuilder
@@ -42,7 +51,8 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
                     viewModel.didStartEditing()
                 },
                 didDelete: {
-                
+                    isEditingDescription = false
+                    viewModel.didConfirmDeletion()
                 }, didFinishEditing: {
                     isEditingDescription = false
                     viewModel.didConfirmEditing()

@@ -16,6 +16,8 @@ protocol LibraryRemoteServiceProtocol {
     func updateObjectiveDescription(objectiveId: String,
                                     newDescription: String,
                                     completion: @escaping Completion)
+    
+    func delete(objectiveWithId: String, completion: @escaping Completion)
 }
 
 final class LibraryRemoteService: LibraryRemoteServiceProtocol {
@@ -70,6 +72,13 @@ final class LibraryRemoteService: LibraryRemoteServiceProtocol {
                                     completion: @escaping Completion
     ) {
         let endpoint: LibraryEndpoint = .updateObjectiveDescription(objectiveId, newDescription)
+        let apiRequest = apiFactory.make(endpoint)
+        currentRequest = apiRequest.make(completion: completion)
+    }
+    
+    
+    func delete(objectiveWithId: String, completion: @escaping Completion) {
+        let endpoint: LibraryEndpoint = .deleteObjective(objectiveWithId)
         let apiRequest = apiFactory.make(endpoint)
         currentRequest = apiRequest.make(completion: completion)
     }
