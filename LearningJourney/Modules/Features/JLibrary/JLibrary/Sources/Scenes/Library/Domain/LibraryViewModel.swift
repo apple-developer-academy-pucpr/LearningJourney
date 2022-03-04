@@ -88,7 +88,7 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     private func handleError(_ error: LibraryRepositoryError) {
         switch error {
         case .unauthorized:
-            strands = .error(.notAuthenticated)
+            strands = .error(.notAuthenticated(handleSignout))
         case .api, .parsing, .unknown:
             strands = .error(.unknown(fetchStrands))
         }

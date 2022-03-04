@@ -1,5 +1,6 @@
 import SwiftUI
 public typealias UnknownErrorCallback = () -> Void
+public typealias SignOutCallback = () -> Void
 struct UnknownErrorView: View {
     
     let action: UnknownErrorCallback
