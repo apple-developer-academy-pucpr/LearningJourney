@@ -9,7 +9,7 @@ protocol LibraryRepositoryProtocol {
     func updateObjective(newObjective: LearningObjective, completion: @escaping Completion<LearningObjective>)
     func fetchNewObjectiveMetadata(goalId: String, completion: @escaping Completion<NewObjectiveMetadata>)
     func createObjective(goalId: String, description: String, completion: @escaping Completion<LearningObjective>)
-    func updateObjectiveDescriotion(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>)
+    func updateObjectiveDescription(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>)
     func delete(objective: LearningObjective, completion: @escaping Completion<Void>)
 }
 
@@ -104,7 +104,7 @@ final class LibraryRepository: LibraryRepositoryProtocol {
         }
     }
     
-    func updateObjectiveDescriotion(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>) {
+    func updateObjectiveDescription(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>) {
         remoteService.updateObjectiveDescription(objectiveId: objective.id, newDescription: newDescription) { [weak self] in
             guard let self = self else { return }
             completion(self.mapResult(from: $0))

@@ -3,9 +3,9 @@ protocol DeleteObjectiveUseCaseProtocol {
 }
 
 final class DeleteObjectiveUseCase: DeleteObjectiveUseCaseProtocol {
-    private let repository: LibraryRepository
+    private let repository: LibraryRepositoryProtocol
     
-    init(repository: LibraryRepository) {
+    init(repository: LibraryRepositoryProtocol) {
         self.repository = repository
     }
     

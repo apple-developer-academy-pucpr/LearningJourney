@@ -16,6 +16,7 @@ public final class DefaultDependencyContainer: DependencyContainer {
         keyOptions: .strongMemory,
         valueOptions: .weakMemory)
     
+    public init() {}
     
     // MARK: - Container methods
     

@@ -15,7 +15,7 @@ public enum ApiError: Error {
     case notAllowed
 }
 
-public protocol ApiProtocol {
+public protocol ApiProtocol: AnyObject {
     typealias Completion = (Result<Data, ApiError>) -> Void
     init(endpoint: ApiEndpoint)
     func make(completion: @escaping Completion) -> ApiProtocol?

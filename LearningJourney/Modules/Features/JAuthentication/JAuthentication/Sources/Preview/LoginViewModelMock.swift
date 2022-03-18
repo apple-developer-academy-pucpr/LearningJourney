@@ -2,6 +2,8 @@
 import AuthenticationServices
 
 final class LoginViewModelMock: LoginViewModeling {
+    var isShowingSIWAAlert: Bool = false
+    
     func handleAuthStatusChange(_ output: NotificationCenter.Publisher.Output) {}
     
     func handleRequest(request: ASAuthorizationAppleIDRequestProtocol) {}

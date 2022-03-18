@@ -1,6 +1,7 @@
 import Combine
 import AuthenticationServices
 import CoreAdapters
+import CoreAuthentication
 
 enum LoginViewState {
     case loading, error, result
@@ -13,6 +14,7 @@ protocol LoginViewModeling: ObservableObject {
     func handleAuthStatusChange(_ output: NotificationCenter.Publisher.Output)
     
     var isPresented: Bool { get set }
+    var isShowingSIWAAlert: Bool { get set }
     var viewState: LoginViewState { get }
 }
 
@@ -29,6 +31,8 @@ final class LoginViewModel: LoginViewModeling {
     
     @Published
     var isPresented: Bool = true
+    @Published
+    var isShowingSIWAAlert: Bool = false
     @Published
     private(set) var viewState: LoginViewState = .loading
     
@@ -64,6 +68,10 @@ final class LoginViewModel: LoginViewModeling {
             switch result {
             case .success:
                 self?.dismiss()
+            case let .failure(SignInWithAppleUseCaseError.repository(err)) where
+                AuthenticationError.api(.clientError(400)).localizedDescription == err.localizedDescription:
+                self?.isShowingSIWAAlert = true
+                fallthrough
             case .failure:
                 self?.isPresented = true
             }

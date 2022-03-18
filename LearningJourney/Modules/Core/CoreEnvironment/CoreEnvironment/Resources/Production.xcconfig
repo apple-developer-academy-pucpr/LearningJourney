@@ -9,7 +9,12 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 SLASH=/
-BASE_URL = https:$(SLASH)/learning-journey-backend-prod.herokuapp.com/
+//BASE_URL = https:$(SLASH)/learning-journey-backend-prod.herokuapp.com/
+BASE_URL = http:$(SLASH)/learningjourney.sa-east-1.elasticbeanstalk.com/
+//BASE_URL=https:$(SLASH)/df99-2001-1284-f016-3bdd-1d9e-4de1-dc9f-a013.ngrok.io/
+//BASE_URL=http:$(SLASH)/192.168.18.79:9000/
+//BASE_URL = https:$(SLASH)/learning-journey-qa.herokuapp.com/
+// TODO create a separate staging env
 ENV_NAME=PROD
 
 #include "../../../../../Pods/Target Support Files/Pods-CoreEnvironment/Pods-CoreEnvironment.debug.xcconfig"

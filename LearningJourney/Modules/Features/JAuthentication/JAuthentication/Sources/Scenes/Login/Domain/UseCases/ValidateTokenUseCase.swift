@@ -2,6 +2,7 @@ import CoreAuthentication
 
 enum ValidateTokenUseCaseError: Error {
     case invalidToken
+    case userNotCreated
 }
 
 protocol ValidateTokenUseCaseProtocol {

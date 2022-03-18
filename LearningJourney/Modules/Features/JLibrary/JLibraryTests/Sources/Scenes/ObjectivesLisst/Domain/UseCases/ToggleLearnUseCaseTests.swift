@@ -12,7 +12,6 @@ final class ToggleLearnUseCaseTests: XCTestCase {
     func test_execute_itShouldFlipLearnedFlag() {
         // Given
 
-        let flagStub: Bool = .random()
         let expectedFlag = LearningObjectiveStatus.learning
 
         let completionExpectation = expectation(description: "Completion should be called")
@@ -34,6 +33,31 @@ final class ToggleLearnUseCaseTests: XCTestCase {
 // MARK: - Testing doubles
 
 final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
+    private(set) var fetchNewObjectiveMetadataCallCount = 0
+    func fetchNewObjectiveMetadata(goalId: String, completion: @escaping Completion<NewObjectiveMetadata>) {
+        fetchNewObjectiveMetadataCallCount += 1
+        completion(.success(.fixture()))
+        
+    }
+    
+    private(set) var createObjectiveCallCount = 0
+    func createObjective(goalId: String, description: String, completion: @escaping Completion<LearningObjective>) {
+        createObjectiveCallCount += 1
+        completion(.failure(.unauthorized))
+    }
+    
+    private(set) var updateObjectiveDescriotionCallCount = 0
+    func updateObjectiveDescription(objective: LearningObjective, newDescription: String, completion: @escaping Completion<LearningObjective>) {
+        updateObjectiveDescriotionCallCount += 1
+        completion(.success(.fixture()))
+    }
+    
+    private(set) var deleteCallCount = 0
+    func delete(objective: LearningObjective, completion: @escaping Completion<Void>) {
+        deleteCallCount += 1
+        completion(.failure(.unauthorized))
+    }
+    
     private(set) var fetchStrandsCallCount = 0
     func fetchStrands(completion: @escaping Completion<[LearningStrand]>) {
         fetchStrandsCallCount += 1
@@ -52,5 +76,17 @@ final class LibraryRepositorySpy: LibraryRepositoryProtocol  {
         updateObjectiveCallCount += 1
         updateObjectiveNewObjectivePassed = newObjective
         completion(.failure(.unknown))
+    }
+}
+
+extension NewObjectiveMetadata {
+    static func fixture(strandName: String = .init(),
+                        goalName: String = .init(),
+                        code: String = .init()
+    ) -> Self {
+        .init(
+            strandName: strandName,
+            goalName: goalName,
+            code: code)
     }
 }

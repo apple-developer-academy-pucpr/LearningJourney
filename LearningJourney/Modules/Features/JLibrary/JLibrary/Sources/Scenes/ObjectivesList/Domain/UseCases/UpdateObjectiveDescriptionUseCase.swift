@@ -4,14 +4,14 @@ protocol UpdateObjectiveDescriptionUseCaseProtocol {
 
 final class UpdateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCaseProtocol {
     
-    private let repository: LibraryRepository
+    private let repository: LibraryRepositoryProtocol
     
-    init(repository: LibraryRepository) {
+    init(repository: LibraryRepositoryProtocol) {
         self.repository = repository
     }
     
     func execute(objective: LearningObjective, newDescription: String, completion: @escaping (Result<LearningObjective, Error>) -> Void) {
-        repository.updateObjectiveDescriotion(objective: objective, newDescription: newDescription) {
+        repository.updateObjectiveDescription(objective: objective, newDescription: newDescription) {
             completion($0.mapError { $0 })
         }
     }
