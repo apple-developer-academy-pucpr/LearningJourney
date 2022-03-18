@@ -9,7 +9,7 @@ protocol SignInWithAppleUseCaseProtocol {
 
 enum SignInWithAppleUseCaseError: Error {
     case systemError(Error)
-    case repository(Error)
+    case repository(AuthenticationError)
     case invalidCredentialType
 }
 
@@ -53,7 +53,7 @@ final class SignInWithAppleUseCase: SignInWithAppleUseCaseProtocol {
             email: credentials.email)
         repository.signInWithApple(using: payload) {
             completion($0
-                        .mapError { .repository($0 )}
+                        .mapError { .repository($0)}
                         .map { _ in })
         }
     }

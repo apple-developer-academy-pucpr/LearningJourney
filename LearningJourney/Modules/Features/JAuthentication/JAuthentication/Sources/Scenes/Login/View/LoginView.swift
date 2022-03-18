@@ -27,6 +27,12 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
                 contentView
             }
         }
+        .alert(isPresented: $viewModel.isShowingSIWAAlert) {
+            Alert(
+                title: Text("Please, remove this app from the apps that are using your Apple ID and try again"),
+                message: Text("To do so, please go to your iPhone's configuration -> Your account -> password and security -> Apps using Apple ID -> Learning Journey -> click on Stop using this Apple ID.\nAlso, please be sure that you're sending your name"),
+                dismissButton: .cancel(Text("OK")))
+        }
     }
     
     // fazer a tela aqui
@@ -57,7 +63,6 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
                 .frame(height: 50)
                 .cornerRadius(10)
                 .signInWithAppleButtonStyle(colorScheme == .dark ? .white : .black )
-               
             }
             .padding(30)
         }

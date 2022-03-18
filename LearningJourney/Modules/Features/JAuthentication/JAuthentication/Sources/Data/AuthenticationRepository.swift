@@ -1,8 +1,9 @@
 import Foundation
 import CoreAuthentication
+import CoreNetworking
 
 enum AuthenticationError: Error {
-    case api(Error)
+    case api(ApiError)
     case parsing(Error)
     case caching
     case notAuthenticated

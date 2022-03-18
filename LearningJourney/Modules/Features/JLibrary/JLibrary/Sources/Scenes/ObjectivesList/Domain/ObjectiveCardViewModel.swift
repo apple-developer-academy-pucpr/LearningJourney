@@ -60,7 +60,6 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     @Published
     var objectiveDescription: String = ""
     
-    
     var canShowEditingBar: Bool { objective.type == .custom }
     
     private let useCases: UseCases
@@ -116,7 +115,6 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
         objectWillChange.send()
     }
     
-    
     func didConfirmEditing() {
         canEditDescription = false
         buttonState = .loading
@@ -128,7 +126,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
                 self?.objective = newObjective
                 self?.renderObjective()
             case let .failure(error):
-                self?.renderObjective()// TODO
+                self?.renderObjective() // TODO what to do when an error occurs while updating objective?
             }
         }
     }
@@ -140,9 +138,8 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
             switch $0 {
             case .success:
                 self?.isDeleted = true
-                break
             case let .failure(error):
-                // TODO
+                // TODO what to do when deletion fails?
                 break
             }
         }

@@ -39,7 +39,6 @@ final class CreateObjectiveViewModel: CreateObjectiveViewModelProtocol {
         }
     }
 
-        
     private let useCases: UseCases
     private let goal: LearningGoal
     private let maxDescriptionCount = 280
@@ -58,7 +57,6 @@ final class CreateObjectiveViewModel: CreateObjectiveViewModelProtocol {
     func handleAppear() {
         fetchMetadata()
     }
-    
 
     func descriptionDidCommit() {
         createObjectiveIfPossible()
