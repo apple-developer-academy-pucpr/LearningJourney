@@ -24,7 +24,6 @@ public final class AnalyticsLogger: AnalyticsLogging {
     }
 }
 
-// TODO review if this is the best injection method
 private extension AnalyticsLogger {
     static let defaultHandlers: [AnalyticsHandler] = {
         [

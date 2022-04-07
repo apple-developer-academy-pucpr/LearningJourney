@@ -17,6 +17,8 @@ targets:
         INFOPLIST_FILE: CoreAnalytics/Resources/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAnalytics
     sources: CoreAnalytics
+    dependencies:
+      - package: FirebaseAnalytics
 
   CoreAnalyticsTests:
     type: bundle.unit-test
@@ -63,3 +65,8 @@ schemes:
         - name: CoreAnalyticsTests
           parallelizable: true
           randomExecutionOrder: true
+    
+packages:
+  FirebaseAnalytics:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    version: 8.10.0

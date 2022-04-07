@@ -99,8 +99,7 @@ public final class ApiRequest: ApiProtocol {
         guard let response = response as? HTTPURLResponse
         else { return .failure(.nonHTTPResponse) }
         
-        guard let data = data else
-        { return .failure(.noData) }
+        guard let data = data else { return .failure(.noData) }
         
         let responseStatus = response.statusCode
         switch responseStatus {
