@@ -1,5 +1,6 @@
 import SwiftUI
 import UI
+import CoreAnalytics
 
 protocol ObjectivesListViewModelProtocol: ObservableObject {
     var objectives: LibraryViewModelState<[LearningObjective]> { get }
@@ -32,15 +33,18 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     private let useCases: UseCases
     private let dependencies: Dependencies
+    private let analyticsLogger: AnalyticsLogging
     
     // MARK: - Initialization
     
     init(
         useCases: UseCases,
-        dependencies: Dependencies
+        dependencies: Dependencies,
+        analyticsLogger: AnalyticsLogging
     ) {
         self.useCases = useCases
         self.dependencies = dependencies
+        self.analyticsLogger = analyticsLogger
     }
     
     // MARK: - ViewModel Protocol
@@ -53,6 +57,7 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
         useCases.fetchObjectivesUseCase.execute(using: dependencies.goal) { [weak self] in
             switch $0 {
             case let .success(objectives):
+                self?.analyticsLogger.log(.goalLoaded(self?.goalName))
                 self?.objectives = .result(objectives)
             case let .failure(error):
                 self?.handleError(error)

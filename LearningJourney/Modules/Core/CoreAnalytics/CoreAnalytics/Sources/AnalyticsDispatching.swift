@@ -1,3 +1,5 @@
+import Foundation
+
 public enum AnalyticsDestination {
     case firebase
 }
@@ -8,8 +10,9 @@ public protocol AnalyticsDispatching {
 
 // MARK: - Default values
 
-extension AnalyticsDispatching {
+public extension AnalyticsDispatching {
     var destinations: [AnalyticsDestination] {
         [.firebase]
     }
 }
+

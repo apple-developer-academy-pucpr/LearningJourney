@@ -1,6 +1,7 @@
 import CoreNetworking
 import Combine
 import SwiftUI
+import CoreAnalytics
 
 enum CreateButtonState {
     case disabled, loading, enabled
@@ -41,21 +42,25 @@ final class CreateObjectiveViewModel: CreateObjectiveViewModelProtocol {
 
     private let useCases: UseCases
     private let goal: LearningGoal
+    private let analyticsLogger: AnalyticsLogging
     private let maxDescriptionCount = 280
     
     private var isPresented: Binding<Bool>
     
     init(useCases: UseCases,
          goal: LearningGoal,
-         isPresented: Binding<Bool>
+         isPresented: Binding<Bool>,
+         analyticsLogger: AnalyticsLogging
     ) {
         self.useCases = useCases
         self.goal = goal
         self.isPresented = isPresented
+        self.analyticsLogger = analyticsLogger
     }
     
     func handleAppear() {
         fetchMetadata()
+        analyticsLogger.log(.createObjectiveTapped)
     }
 
     func descriptionDidCommit() {
@@ -76,6 +81,7 @@ final class CreateObjectiveViewModel: CreateObjectiveViewModelProtocol {
         useCases.createObjectiveUseCase.execute(goalId: goal.id, description: currentDescription) { [weak self] in
             switch $0 {
             case .success:
+                self?.analyticsLogger.log(.objectiveCreated)
                 self?.dismiss()
                 break
             case let .failure(error):

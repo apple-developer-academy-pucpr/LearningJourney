@@ -2,7 +2,7 @@ public protocol AnalyticsLogging {
     func log(event: AnalyticsEvent)
 }
 
-public typealias AnalyticsEvent = AnalyticsPayload & AnalyticsDispatching
+public protocol AnalyticsEvent: AnalyticsPayload & AnalyticsDispatching {}
 
 public final class AnalyticsLogger: AnalyticsLogging {
     // MARK: - Dependencies
@@ -11,8 +11,12 @@ public final class AnalyticsLogger: AnalyticsLogging {
     
     // MARK: - Initialization
     
-    init(handlers: [AnalyticsHandler]? = nil) {
-        self.handlers = handlers ?? AnalyticsLogger.defaultHandlers
+    public convenience init() {
+        self.init(handlers: AnalyticsLogger.defaultHandlers)
+    }
+    
+    init(handlers: [AnalyticsHandler]) {
+        self.handlers = handlers
     }
     
     // MARK: - Logging
@@ -24,7 +28,6 @@ public final class AnalyticsLogger: AnalyticsLogging {
     }
 }
 
-// TODO review if this is the best injection method
 private extension AnalyticsLogger {
     static let defaultHandlers: [AnalyticsHandler] = {
         [

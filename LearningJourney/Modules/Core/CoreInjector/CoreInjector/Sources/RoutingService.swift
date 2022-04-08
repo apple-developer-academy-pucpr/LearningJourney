@@ -100,6 +100,5 @@ struct RouterViewModifier<ModalContent>: ViewModifier where ModalContent: View {
                    onDismiss: onDismiss) {
                 modalContent
             }
-        
     }
 }
