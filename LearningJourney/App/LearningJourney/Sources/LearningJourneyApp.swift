@@ -7,6 +7,7 @@ import CoreEnvironment
 import CoreInjector
 import JAuthentication
 import JLibrary
+import CoreAnalytics
 
 @main
 struct LearningJourneyApp: App {
@@ -17,6 +18,7 @@ struct LearningJourneyApp: App {
         print(DefaultEnvironment.baseUrl)
         registerDependencies()
         registerRouteHandlers()
+        initializeAnalytics()
     }
     
     var body: some Scene {
@@ -32,10 +34,15 @@ struct LearningJourneyApp: App {
         routerService.register({ ApiFactory() }, for: ApiFactoryProtocol.self)
         routerService.register({ TokenManager.shared }, for: TokenCleaning.self)
         routerService.register({ NotificationCenter.default }, for: NotificationCenterProtocol.self)
+        routerService.register({ AnalyticsLogger() }, for: AnalyticsLogging.self)
     }
     
     private func registerRouteHandlers() {
         routerService.register(routeHandler: LibraryRouteHandler())
         routerService.register(routeHandler: AuthenticationRouteHandler())
+    }
+    
+    private func initializeAnalytics() {
+        FirebaseStarter.start()
     }
 }

@@ -23,7 +23,8 @@ final class LibraryAssembler: LibraryAssembling {
                 signoutUseCase: SignoutUseCase(
                     cache: feature.tokenCache,
                     notificationCenter: feature.notificationCenter)
-            )
+            ),
+            analyticsLogger: feature.analyticsLogger
         )
         
         let view = LibraryView<LibraryViewModel>(

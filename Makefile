@@ -1,6 +1,5 @@
 generate: ## Generate projects, workspace and install pods
 	@$(MAKE) generateprojects
-	@$(MAKE) generatepods
 
 generateprojects: ## Generate only .xcodeproj projects using Xcodegen
 	
@@ -10,16 +9,8 @@ generateprojects: ## Generate only .xcodeproj projects using Xcodegen
 	@echo "\nGenerating main projects"
 	@(cd LearningJourney/App; xcodegen;)
 
-generatepods:
-	@echo "\nRunning bundle install"
-	@bundle config set --local path 'vendor/bundle'
-	@bundle install --quiet --gemfile=LearningJourney/Gemfile
-	
-	@echo "\nInstalling Pods"
-	@(cd LearningJourney; pod install || pod install --repo-update)
-
 open: ## Opens the main XCode project
-	@(open LearningJourney/LearningJourney.xcworkspace)
+	@(open LearningJourney/App/LearningJourney.xcodeproj)
 
 create_module: ## Create module. Usage: make create_module NAME=Name TYPE=FEATURE | CORE
 	./tools/Scripts/create_module.sh ${NAME} ${TYPE}

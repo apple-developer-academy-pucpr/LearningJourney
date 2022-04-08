@@ -19,7 +19,8 @@ final class CreateObjectiveAssembler: CreateObjectiveAssembling {
             createObjectiveUseCase: CreateNewObjectiveUseCase(repository: repository)
         ),
             goal: route.goal,
-            isPresented: route.isPresented)
+            isPresented: route.isPresented,
+            analyticsLogger: feature.analyticsLogger)
         
         let view = CreateObjectiveView(viewModel: viewModel)
         return AnyView(view)

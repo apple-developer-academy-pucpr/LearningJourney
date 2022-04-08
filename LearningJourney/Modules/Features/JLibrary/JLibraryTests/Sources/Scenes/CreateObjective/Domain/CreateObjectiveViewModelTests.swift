@@ -3,17 +3,19 @@ import XCTest
 @testable import JLibrary
 
 final class CreateObjectiveViewModelTests: XCTestCase {
-    
+    private let analyticsLoggerSpy = AnalyticsLoggerSpy()
     private let fetchNewObjectiveMetadataUseCaseStub = FetchNewObjectiveMetadataUseCaseStub()
     private let createNewObjectiveUseCaseStub = CreateNewObjectiveUseCaseStub()
+    
     private lazy var sut = CreateObjectiveViewModel(
         useCases: .init(
             fetchNewObjectiveMetadataUseCase: fetchNewObjectiveMetadataUseCaseStub,
             createObjectiveUseCase: createNewObjectiveUseCaseStub),
         goal: .fixture(),
-        isPresented: .constant(true))
+        isPresented: .constant(true),
+        analyticsLogger: analyticsLoggerSpy)
     
-    func test_handleAppear_whenLoading_itShouldReturn() {
+    func test_handleAppear_whenCreateButtonStateIsDisabled_itShouldReturn() {
         
     }
 }
