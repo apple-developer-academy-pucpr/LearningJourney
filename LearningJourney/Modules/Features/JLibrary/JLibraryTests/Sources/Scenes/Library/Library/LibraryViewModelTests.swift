@@ -5,6 +5,7 @@ final class LibraryViewModelTests: XCTestCase {
 
     // MARK: - Properties
 
+    private let analyticsLoggerSpy = AnalyticsLoggerSpy()
     private let fetchStrandsSpy = FetchStrandsSpy()
     private lazy var fetchStrandsUseCase = FetchStrandsUseCaseMock(spy: fetchStrandsSpy)
     private let signoutUseCase = SignoutUseCaseMock()
@@ -13,7 +14,8 @@ final class LibraryViewModelTests: XCTestCase {
         useCases: .init(
             fetchStrandsUseCase: fetchStrandsUseCase,
             signoutUseCase: signoutUseCase
-        ))
+        ), analyticsLogger: analyticsLoggerSpy
+    )
 
     // MARK: - Unit tests
 
@@ -26,6 +28,7 @@ final class LibraryViewModelTests: XCTestCase {
 
         // Then
         XCTAssertEqual(sut.strands, .result([]))
+        XCTAssertEqual(1, analyticsLoggerSpy.logCallCount)
     }
 
     func test_handleOnAppear_whenResultFails_strandsAreSetToError() {
@@ -71,6 +74,19 @@ final class LibraryViewModelTests: XCTestCase {
 
         // Then
         XCTAssertTrue(signoutUseCase.executed)
+    }
+    
+    func test_togglePresentationMode_itShouldToggleListState_andLogEvent() {
+        // Given
+        let previousListState = sut.isList
+        let expectedListFlag = !previousListState
+        
+        // When
+        sut.togglePresentationMode()
+        
+        // Then
+        XCTAssertEqual(sut.isList, expectedListFlag)
+        XCTAssertEqual(1, analyticsLoggerSpy.logCallCount)
     }
 }
 

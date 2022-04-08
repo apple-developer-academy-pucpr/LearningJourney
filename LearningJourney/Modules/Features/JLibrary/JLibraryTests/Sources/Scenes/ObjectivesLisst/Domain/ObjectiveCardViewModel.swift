@@ -6,7 +6,7 @@ import XCTest
 final class ObjectiveCardViewModelTests: XCTestCase {
     
     // MARK: - Properties
-    
+    private let analyticsLoggerSpy = AnalyticsLoggerSpy()
     private let toggleLearnUseCaseStub = ToggleLearnUseCaseSpyStub()
     private let toggleEagerToLearnUseCaseStub = ToggleEagerToLearnUseCaseStub()
     private let updateObjectiveDescriptionUseCaseStub = UpdateObjectiveDescriptionUseCaseStub()
@@ -201,7 +201,8 @@ final class ObjectiveCardViewModelTests: XCTestCase {
                toggleEagerToLearnUseCase: toggleEagerToLearnUseCaseStub,
                updateObjectiveDescriptionUseCase: updateObjectiveDescriptionUseCaseStub,
                deleteObjectiveUseCase: deleteObjectiveUseCaseStub),
-           objective: objective)
+           objective: objective,
+           analyticsLogger: analyticsLoggerSpy)
     }
 }
 
