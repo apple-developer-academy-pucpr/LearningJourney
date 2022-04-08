@@ -1,4 +1,9 @@
 public struct AnalyticsProperty {
-    var name: String
-    var value: AnyHashable
+    let name: String
+    let value: AnyHashable
+    
+    public init(name: String, value: AnyHashable) {
+        self.name = name
+        self.value = value
+    }
 }

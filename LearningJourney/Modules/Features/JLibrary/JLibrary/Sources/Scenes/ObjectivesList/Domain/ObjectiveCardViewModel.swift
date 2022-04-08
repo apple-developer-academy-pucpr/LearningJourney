@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreAnalytics
 
 struct LearningStatusButtonState: Equatable {
     let name: String
@@ -62,6 +63,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     
     var canShowEditingBar: Bool { objective.type == .custom }
     
+    private let analyticsLogger: AnalyticsLogging
     private let useCases: UseCases
     private var objective: LearningObjective {
         didSet {
@@ -70,10 +72,12 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     }
     
     init(useCases: UseCases,
-         objective: LearningObjective
+         objective: LearningObjective,
+         analyticsLogger: AnalyticsLogging
     ) {
         self.useCases = useCases
         self.objective = objective
+        self.analyticsLogger = analyticsLogger
         renderObjective()
     }
     
@@ -83,13 +87,15 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
         useCases.toggleLearnUseCase.execute(objective: objective) { [weak self] in
             switch $0 {
             case let .success(objective):
+                self?.analyticsLogger.log(.objectiveStatusChanged(
+                    objective.code,
+                    objective.status))
                 self?.objective = objective
             case .failure:
                 self?.renderObjective()
             }
         }
     }
-    
     
     func handleWantToLearnToggled() {
         guard !canEditDescription else { return }
@@ -105,11 +111,13 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
     }
     
     func didStartEditing() {
+        analyticsLogger.log(.objectiveStartedEditing)
         canEditDescription = true
         objectWillChange.send()
     }
     
     func didCancelEditing() {
+        analyticsLogger.log(.objectiveCanceledEditing)
         canEditDescription = false
         renderObjective()
         objectWillChange.send()
@@ -125,6 +133,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
             case let .success(newObjective):
                 self?.objective = newObjective
                 self?.renderObjective()
+                self?.analyticsLogger.log(.objectiveCompletedEditing)
             case let .failure(error):
                 self?.renderObjective() // TODO what to do when an error occurs while updating objective?
             }
@@ -138,6 +147,7 @@ final class ObjectiveCardViewModel: ObjectiveCardViewModelProtocol {
             switch $0 {
             case .success:
                 self?.isDeleted = true
+                self?.analyticsLogger.log(.objectiveDeleted)
             case let .failure(error):
                 // TODO what to do when deletion fails?
                 break

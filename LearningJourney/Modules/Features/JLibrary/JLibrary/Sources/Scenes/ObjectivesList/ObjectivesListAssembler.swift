@@ -17,7 +17,8 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
             parser: parser)
         let viewModel = ObjectivesListViewModel(
             useCases: .init(fetchObjectivesUseCase: FetchObjectivesUseCase(repository: repository)),
-            dependencies: .init(goal: learningGoal))
+            dependencies: .init(goal: learningGoal),
+            analyticsLogger: feature.analyticsLogger)
         
         let view = ObjectivesListView<ObjectivesListViewModel, ObjectiveCard>(
             routingService: feature.routingService,
@@ -29,7 +30,8 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
                     toggleEagerToLearnUseCase: ToggleEagerToLearnUseCase(repository: repository),
                     updateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCase(repository: repository),
                     deleteObjectiveUseCase: DeleteObjectiveUseCase(repository: repository)),
-                objective: $0))
+                objective: $0,
+                analyticsLogger: feature.analyticsLogger))
         }
         
         return AnyView(view)

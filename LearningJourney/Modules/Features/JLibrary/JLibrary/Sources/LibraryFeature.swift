@@ -3,6 +3,7 @@ import CoreInjector
 import CoreNetworking
 import CoreAuthentication
 import CoreAdapters
+import CoreAnalytics
 
 public struct LibraryFeature: Feature {
     
@@ -12,6 +13,7 @@ public struct LibraryFeature: Feature {
     @Dependency var routingService: RoutingService
     @Dependency var tokenCache: TokenCleaning
     @Dependency var notificationCenter: NotificationCenterProtocol
+    @Dependency var analyticsLogger: AnalyticsLogging
     
     private let scenesFactory: LibraryScenesFactoryProtocol
     

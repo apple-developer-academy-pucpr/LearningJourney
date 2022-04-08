@@ -1,5 +1,6 @@
 import SwiftUI
 import UI
+import CoreAnalytics
 
 protocol LibraryViewModelProtocol: ObservableObject {
     var strands: LibraryViewModelState<[LearningStrand]> { get }
@@ -45,11 +46,14 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     // MARK: - Dependencies
     
     private let useCases: UseCases
+    private let analyticsLogger: AnalyticsLogging
     
     // MARK: - Initialization
     
-    init(useCases: UseCases) {
+    init(useCases: UseCases,
+         analyticsLogger: AnalyticsLogging) {
         self.useCases = useCases
+        self.analyticsLogger = analyticsLogger
     }
     
     // MARK: - View Events
@@ -68,6 +72,9 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     
     func togglePresentationMode() {
         isList.toggle()
+        analyticsLogger.log(.displayModeChanged(
+            isList ? .list : .groups
+        ))
     }
     
     // MARK: - Helper functions
@@ -79,6 +86,7 @@ final class LibraryViewModel: LibraryViewModelProtocol {
             switch $0 {
             case let .success(strands):
                 self?.strands = .result(strands)
+                self?.analyticsLogger.log(.homeLoaded)
             case let .failure(error):
                 self?.handleError(error)
             }

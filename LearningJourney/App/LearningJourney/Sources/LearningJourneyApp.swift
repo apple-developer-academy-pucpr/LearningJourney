@@ -34,6 +34,7 @@ struct LearningJourneyApp: App {
         routerService.register({ ApiFactory() }, for: ApiFactoryProtocol.self)
         routerService.register({ TokenManager.shared }, for: TokenCleaning.self)
         routerService.register({ NotificationCenter.default }, for: NotificationCenterProtocol.self)
+        routerService.register({ AnalyticsLogger() }, for: AnalyticsLogging.self)
     }
     
     private func registerRouteHandlers() {
@@ -42,6 +43,6 @@ struct LearningJourneyApp: App {
     }
     
     private func initializeAnalytics() {
-        AnalyticsDestination.start()
+        FirebaseStarter.start()
     }
 }
