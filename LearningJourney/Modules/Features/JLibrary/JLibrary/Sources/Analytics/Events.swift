@@ -5,6 +5,7 @@ enum LibraryEvent {
     case displayModeChanged(DisplayMode) // OK
     case goalLoaded(String?) // OK
     case objectiveStatusChanged(String, LearningObjectiveStatus) // OK
+    case objectiveLearningToggled(String)
     case createObjectiveTapped
     case objectiveCreated
     case objectiveStartedEditing // OK
@@ -46,6 +47,8 @@ extension LibraryEvent: AnalyticsEvent {
             return "objective_canceled"
         case .objectiveDeleted:
             return "objective_deleted"
+        case .objectiveLearningToggled:
+            return "objective_learning_toggled"
         }
     }
     
@@ -68,6 +71,10 @@ extension LibraryEvent: AnalyticsEvent {
             return [
                 .init(name: "objective_name", value: objectiveName),
                 .init(name: "new_status", value: newStatus),
+            ]
+        case let .objectiveLearningToggled(objectiveCode):
+            return [
+                .init(name: "objective_code", value: objectiveCode)
             ]
         }
     }

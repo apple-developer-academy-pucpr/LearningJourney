@@ -16,6 +16,3 @@ BASE_URL = http:$(SLASH)/learningjourney.sa-east-1.elasticbeanstalk.com/
 //BASE_URL = https:$(SLASH)/learning-journey-qa.herokuapp.com/
 // TODO create a separate staging env
 ENV_NAME=PROD
-
-#include "../../../../../Pods/Target Support Files/Pods-CoreEnvironment/Pods-CoreEnvironment.debug.xcconfig"
-#include "../../../../../Pods/Target Support Files/Pods-CoreEnvironment/Pods-CoreEnvironment.release.xcconfig"
