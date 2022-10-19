@@ -8,10 +8,10 @@ final class LibraryParserTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testParseDecodableDataShouldSucceed() {
+    func testParseDecodableDataShouldSucceed() throws {
         // Given
         let decodableData = DecodableData()
-        let encodedData = try! JSONEncoder().encode(decodableData)
+        let encodedData = try JSONEncoder().encode(decodableData)
 
         // When
         let parseResult: Result<DecodableData, ParsingError> = sut.parse(encodedData)
@@ -25,10 +25,10 @@ final class LibraryParserTests: XCTestCase {
         }
     }
 
-    func testParseUndecodableDataShouldFail() {
+    func testParseUndecodableDataShouldFail() throws {
         // Given
         let undecodableData = UndecodableData()
-        let encodedData = try! JSONEncoder().encode(undecodableData)
+        let encodedData = try JSONEncoder().encode(undecodableData)
 
         // When
         let parseResult: Result<DecodableData, ParsingError> = sut.parse(encodedData)
