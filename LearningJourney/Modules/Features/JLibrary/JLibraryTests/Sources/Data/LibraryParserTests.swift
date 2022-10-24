@@ -10,36 +10,28 @@ final class LibraryParserTests: XCTestCase {
 
     func testParseDecodableDataShouldSucceed() throws {
         // Given
-        let decodableData = DecodableData()
-        let encodedData = try JSONEncoder().encode(decodableData)
+        let decodable = "aDecodableString"
+        let encodedData = try XCTUnwrap(decodable.data(encoding: .utf8))
+        let expectedDecodedData: Result<String, Error> = .success(decodable)
 
         // When
-        let parseResult: Result<DecodableData, ParsingError> = sut.parse(encodedData)
+        let actualParsedValue = sut.parse(encodedData)
 
         // Then
-        switch parseResult {
-            case .success(let data):
-                XCTAssertEqual(data, decodableData)
-            case .failure(let error):
-                XCTFail("Expected decoded data but got \(error)")
-        }
+        
+        XCTAssertEqual(actualParsedValue, expectedDecodedData)
     }
 
     func testParseUndecodableDataShouldFail() throws {
         // Given
-        let undecodableData = UndecodableData()
-        let encodedData = try JSONEncoder().encode(undecodableData)
+        let invalidJson = "{" // any invalid JSON is undecodable
+        let encodedData = try XCTUnwrap(invalidJson.data(using: .utf8))
 
         // When
-        let parseResult: Result<DecodableData, ParsingError> = sut.parse(encodedData)
+        let actualResult = sut.parse(encodedData)
 
         // Then
-        switch parseResult {
-            case .success(let data):
-                XCTFail("Input data shouldn't be decodable but got \(data)")
-            case .failure:
-                break
-        }
+        XCTAssertThrowsError(try actualResult.get(), "TODO Message!")
     }
 }
 
