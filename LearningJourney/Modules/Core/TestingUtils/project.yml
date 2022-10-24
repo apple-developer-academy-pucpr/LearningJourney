@@ -24,6 +24,8 @@ targets:
     dependencies:
       - target: CoreAdapters/CoreAdapters
         implicit: true
+      - package: SnapshotTesting
+        implicit: true
 
   TestingUtilsSample:
     type: application
@@ -49,3 +51,8 @@ schemes:
     build:
       targets:
         TestingUtils: all
+
+packages:
+  SnapshotTesting:
+    url: https://github.com/pointfreeco/swift-snapshot-testing
+    from: 1.10.0
