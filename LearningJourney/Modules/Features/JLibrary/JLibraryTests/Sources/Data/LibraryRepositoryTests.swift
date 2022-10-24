@@ -232,16 +232,34 @@ final class LibraryRepositoryTests: XCTestCase {
 
 final class LibraryRemoteServiceStub: LibraryRemoteServiceProtocol {
     var resultToUse: Result<Data, ApiError> = .failure(.unknown)
+    
+    func learningObjectives(using strandId: String, completion: @escaping Completion) {
+        completion(resultToUse)
+    }
+    
+    func newObjectiveMetadata(goalId: String, completion: @escaping Completion) {
+        completion(resultToUse)
+    }
+    
+    func createObjective(using newObjectiveModel: LibraryEndpoint.NewObjectiveModel, completion: @escaping Completion) {
+        completion(resultToUse)
+    }
+    
+    func updateObjectiveDescription(objectiveId: String, newDescription: String, completion: @escaping Completion) {
+        completion(resultToUse)
+    }
+    
+    func delete(objectiveWithId: String, completion: @escaping Completion) {
+        completion(resultToUse)
+    }
+    
     func learningStrands(completion: @escaping Completion) {
         completion(resultToUse)
     }
-
     
     func learningObjectives(using strandId: Int, completion: @escaping Completion) {
         completion(resultToUse)
     }
-
-
 
     func updateObjective(using objective: LibraryEndpoint.UpdateObjectiveModel, completion: @escaping Completion) {
         completion(resultToUse)

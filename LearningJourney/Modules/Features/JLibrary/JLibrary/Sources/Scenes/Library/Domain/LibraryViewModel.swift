@@ -1,12 +1,15 @@
 import SwiftUI
 import UI
+import CoreAnalytics
 
 protocol LibraryViewModelProtocol: ObservableObject {
     var strands: LibraryViewModelState<[LearningStrand]> { get }
     var searchQuery: String { get set }
+    var isList: Bool { get }
     func handleOnAppear()
     func handleUserDidChange()
     func handleSignout()
+    func togglePresentationMode()
 }
 
 enum LibraryViewModelState<T: Equatable>: Equatable {
@@ -37,14 +40,20 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     @Published
     var searchQuery: String = ""
     
+    @Published
+    var isList: Bool = true
+    
     // MARK: - Dependencies
     
     private let useCases: UseCases
+    private let analyticsLogger: AnalyticsLogging
     
     // MARK: - Initialization
     
-    init(useCases: UseCases) {
+    init(useCases: UseCases,
+         analyticsLogger: AnalyticsLogging) {
         self.useCases = useCases
+        self.analyticsLogger = analyticsLogger
     }
     
     // MARK: - View Events
@@ -61,6 +70,13 @@ final class LibraryViewModel: LibraryViewModelProtocol {
         useCases.signoutUseCase.execute()
     }
     
+    func togglePresentationMode() {
+        isList.toggle()
+        analyticsLogger.log(.displayModeChanged(
+            isList ? .list : .groups
+        ))
+    }
+    
     // MARK: - Helper functions
     
     private func fetchStrands() {
@@ -70,6 +86,7 @@ final class LibraryViewModel: LibraryViewModelProtocol {
             switch $0 {
             case let .success(strands):
                 self?.strands = .result(strands)
+                self?.analyticsLogger.log(.homeLoaded)
             case let .failure(error):
                 self?.handleError(error)
             }
@@ -79,7 +96,7 @@ final class LibraryViewModel: LibraryViewModelProtocol {
     private func handleError(_ error: LibraryRepositoryError) {
         switch error {
         case .unauthorized:
-            strands = .error(.notAuthenticated)
+            strands = .error(.notAuthenticated(handleSignout))
         case .api, .parsing, .unknown:
             strands = .error(.unknown(fetchStrands))
         }

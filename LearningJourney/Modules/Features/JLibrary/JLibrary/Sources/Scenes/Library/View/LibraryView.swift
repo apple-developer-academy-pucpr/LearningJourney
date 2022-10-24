@@ -21,23 +21,27 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             }
             .padding(.leading)
             .navigationTitle("Library")
-            .navigationBarItems(trailing: signOutButton)
+            .navigationBarItems(trailing: listModeView)
             .onAppear(perform: viewModel.handleOnAppear) // TODO this should be replaced by `task`
             .onReceive(notificationCenter.publisher(for: .authDidChange),
                        perform: { _ in viewModel.handleUserDidChange()
             })
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     // MARK: - Component Views
+    
     
     private var contentView: some View {
         Group {
             switch viewModel.strands {
             case let .result(strands):
                 strandsView(using: strands)
-            case .loading, .empty:
+            case .loading:
                 LoadingView()
+            case .empty:
+                Text("Please, refresh your login credentials. To do that, go to Settings, your account, Password & Security and Apple ID login, then sign in back in the app")
             case let .error(error):
                 errorView(for: error)
             }
@@ -46,22 +50,66 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
     
     private var signOutButton: some View {
         Button("Signout", action: viewModel.handleSignout)
+            .foregroundColor(.red)
     }
     
+    @ViewBuilder
     private func strandsView(using strands: [LearningStrand]) -> some View {
         ScrollView {
             VStack {
-//                searchBar
-//                    .padding(.vertical, 18)
-                ForEach(strands) { strand in
-                    LearningStrandRow(
-                        service: routingService,
-                        strand: strand)
-                        .padding(.top)
+                if viewModel.isList {
+                    buildListView(using: strands)
+                } else {
+                    buildCollectionView(using: strands)
                 }
+                signOutButton
+                    .padding(EdgeInsets(top: 100, leading: 0, bottom: 20, trailing: 0))
             }
             .padding(.top, 20)
-            .padding(.bottom, 80)
+        }
+    }
+    
+    @ViewBuilder
+    private func buildCollectionView(using strands: [LearningStrand]) -> some View {
+        ForEach(strands) { strand in
+            LearningStrandRow(
+                service: routingService,
+                strand: strand)
+                .padding(.top)
+        }
+    }
+    
+    @ViewBuilder
+    private func buildListView(using strands: [LearningStrand]) -> some View {
+        ForEach(strands) { strand in
+            HStack {
+                Text(strand.name)
+                    .font(.system(size: 19))
+                    .bold()
+                    .padding(.top, 24)
+                Spacer()
+            }
+            .padding(.bottom, 16)
+            ForEach(strand.goals) { goal in
+                routingService.link(for: ObjectivesRoute(goal: goal)) {
+                    GroupBox {
+                        HStack {
+                            Spacer()
+                            Text(goal.name)
+                                .foregroundColor(.black)
+                                .padding(.vertical, 16)
+                            Spacer()
+                        }
+                    }
+                    .padding(.trailing)
+                }
+            }
+        }
+    }
+    
+    private var listModeView: some View {
+        Button(viewModel.isList ? "List" : "Groups") {
+            viewModel.togglePresentationMode()
         }
     }
     
@@ -70,8 +118,6 @@ struct LibraryView<ViewModel>: View where ViewModel: LibraryViewModelProtocol {
             "Search",
             text: $viewModel.searchQuery)
     }
-    
-    
 }
 
 public extension Notification.Name {
@@ -130,6 +176,10 @@ final class DummyRoutingService: RoutingService {
         NavigationLink(
             destination: AnyView(Text("Destination")),
             label: body)
+    }
+    
+    func view(for route: Route) -> AnyView {
+        AnyView(Text("Destination"))
     }
 }
 

@@ -2,10 +2,15 @@ import SwiftUI
 
 public struct LoadingView: View {
     
-    public init() {}
+    private let style: UIActivityIndicatorView.Style
+    
+    public init(style: UIActivityIndicatorView.Style = .large) {
+        self.style = style
+    }
     
     public var body: some View {
-        ActivityIndicator(isAnimating: .constant(true), style: .large)
+        ActivityIndicator(
+            isAnimating: .constant(true), style: style)
     }
 }
 

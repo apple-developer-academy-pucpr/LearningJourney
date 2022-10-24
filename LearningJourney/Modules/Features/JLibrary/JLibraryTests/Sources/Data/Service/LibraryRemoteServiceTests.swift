@@ -31,7 +31,7 @@ final class LibraryRemoteServiceTests: XCTestCase {
     func test_learningObjectives_itShouldCallApi() {
         // Given
         let expectation = XCTestExpectation()
-        let strandIdDummy = 1
+        let strandIdDummy = UUID().uuidString
         
         // When
         sut.learningObjectives(using: strandIdDummy) { _ in
@@ -48,8 +48,9 @@ final class LibraryRemoteServiceTests: XCTestCase {
         // Given
         let expectation = XCTestExpectation()
         let objectiveDummy: LibraryEndpoint.UpdateObjectiveModel = .init(
-            id: 1,
-            isComplete: true)
+            id: UUID().uuidString,
+            newStatus: .untutored,
+            isBookmarked: false)
         let expectedEndpoint = LibraryEndpoint.updateObjective(objectiveDummy)
         
         // When

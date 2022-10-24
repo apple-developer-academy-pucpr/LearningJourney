@@ -13,7 +13,7 @@ enum AuthenticationEndpoint {
 }
 
 extension AuthenticationEndpoint: ApiEndpoint {
-    var path: String { "authenticate/apple" }
+    var path: String { "auth/apple" }
     var method: HTTPMethod { .post }
     var body: Data? {
         switch self {

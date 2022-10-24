@@ -15,7 +15,7 @@ public enum ApiError: Error {
     case notAllowed
 }
 
-public protocol ApiProtocol {
+public protocol ApiProtocol: AnyObject {
     typealias Completion = (Result<Data, ApiError>) -> Void
     init(endpoint: ApiEndpoint)
     func make(completion: @escaping Completion) -> ApiProtocol?
@@ -82,6 +82,7 @@ public final class ApiRequest: ApiProtocol {
                 error: error)
             
             self.dispatchQueue.async {
+                print("Got a result from \(self.endpoint.absoluteStringUrl): ", result)
                 completion(result)
             }
         }
@@ -98,8 +99,7 @@ public final class ApiRequest: ApiProtocol {
         guard let response = response as? HTTPURLResponse
         else { return .failure(.nonHTTPResponse) }
         
-        guard let data = data else
-        { return .failure(.noData) }
+        guard let data = data else { return .failure(.noData) }
         
         let responseStatus = response.statusCode
         switch responseStatus {

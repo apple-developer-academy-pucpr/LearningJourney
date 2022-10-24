@@ -1,18 +1,43 @@
 import SwiftUI
 import UI
+import CoreInjector
 
-struct ObjectivesListView<ViewModel>: View where
-    ViewModel: ObjectivesListViewModelProtocol {
+struct ObjectivesListView<ViewModel, ObjectiveView>: View where ViewModel: ObjectivesListViewModelProtocol, ObjectiveView: View {
     
     // MARK: - Dependencies
+    let routingService: RoutingService
     
-    @ObservedObject var viewModel: ViewModel
+    @ObservedObject
+    var viewModel: ViewModel
+    
+    @ViewBuilder
+    let objectiveView: (LearningObjective) -> ObjectiveView
+    
+    @State
+    private var isPresentingModal = false
     
     // MARK: - View
     
     var body: some View {
         contentView
             .navigationTitle(viewModel.goalName)
+            .navigationBarItems(trailing: addObjectiveButton)
+            .sheet(for: NewObjectiveRoute(
+                goal: viewModel.goal,
+                isPresented: self.$isPresentingModal
+            ), using: routingService, isPresented: $isPresentingModal) {
+                viewModel.handleOnAppear()
+            }
+            
+    }
+    
+    private var addObjectiveButton: some View {
+        Button {
+            isPresentingModal = true
+        } label: {
+            Image(systemName: "plus")
+        }
+
     }
     
     private var contentView: some View {
@@ -27,18 +52,17 @@ struct ObjectivesListView<ViewModel>: View where
                 resultView(objectives)
             }
         }
-        .padding()
     }
     
-    private func resultView(_ objectives: [LibraryViewModelState<LearningObjective>]) -> some View {
+    private func resultView(_ objectives: [LearningObjective]) -> some View {
         ScrollView {
             VStack {
                 ForEach(objectives) { objective in
-                    ObjectiveCard(objective: objective) {
-                        viewModel.handleDidLearnToggled(objective: objective)
-                    }
+                    objectiveView(objective)
+                    .padding(.horizontal)
                 }
             }
+            
         }
     }
 }
@@ -47,7 +71,8 @@ struct ObjectivesListView<ViewModel>: View where
 
 struct ObjectivesListView_Previews: PreviewProvider {
     static var previews: some View {
-        ObjectivesListView<ObjectivesListViewModelMock>(viewModel: ObjectivesListViewModelMock())
+        Text("Demo")
+            .previewDevice(.init(rawValue: "iPhone 12 mini"))
     }
 }
 

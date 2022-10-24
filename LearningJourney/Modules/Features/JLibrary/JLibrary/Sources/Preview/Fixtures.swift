@@ -1,7 +1,7 @@
 #if DEBUG
 extension LearningStrand {
     static func fixture(
-        id: Int = 1,
+        id: String = "String",
         name: String = "Logic and Programming",
         goals: [LearningGoal] = []
     ) -> Self {
@@ -15,7 +15,7 @@ extension LearningStrand {
 
 extension LearningGoal {
     static func fixture(
-        id: Int = .init(),
+        id: String = .init(),
         name: String = "Logic and Programming",
         progress: Double = 0.1) -> Self {
         .init(
@@ -28,18 +28,20 @@ extension LearningGoal {
 
 extension LearningObjective {
     static func fixture(
-        id: Int = 0,
+        id: String = "String",
         code: String = "TMD300",
-        isCore: Bool = false,
+        type: LearningObjectiveType = .core,
         description: String = "I can describe the features and benefits of the subscription model and know when it is appropriate to use it.",
-        isComplete: Bool = false
+        status: LearningObjectiveStatus = .untutored,
+        isBookmarked: Bool = true
     ) -> Self {
         .init(
             id: id,
             code: code,
             description: description,
-            isCore: isCore,
-            isComplete: isComplete)
+            type: type,
+            status: status,
+            isBookmarked: isBookmarked)
     }
 }
 

@@ -22,7 +22,21 @@ final class ToggleLearnUseCase: ToggleLearnUseCaseProtocol {
             id: objective.id,
             code: objective.code,
             description: objective.description,
-            isCore: objective.isCore,
-            isComplete: !objective.isComplete), completion: handle)
+            type: objective.type,
+            status: status(after: objective.status),
+            isBookmarked: objective.isBookmarked), completion: handle)
+    }
+    
+    private func status(after oldStatus: LearningObjectiveStatus) -> LearningObjectiveStatus {
+        switch oldStatus {
+        case .untutored:
+            return .learning
+        case .learning:
+            return .learned
+        case .learned:
+            return .mastered
+        case .mastered:
+            return .untutored
+        }
     }
 }

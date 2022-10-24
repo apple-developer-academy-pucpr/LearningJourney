@@ -5,7 +5,8 @@ public struct LibraryRouteHandler: RouteHandling {
     public var routes: [Route.Type] {
         [
             LibraryRoute.self,
-            ObjectivesRoute.self
+            ObjectivesRoute.self,
+            NewObjectiveRoute.self,
         ]
     }
     

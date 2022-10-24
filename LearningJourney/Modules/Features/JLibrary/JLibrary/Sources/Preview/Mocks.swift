@@ -1,8 +1,15 @@
 #if DEBUG
 
 import SwiftUI
+import CoreInjector
 
 final class LibraryViewModelMock: LibraryViewModelProtocol {
+    var isList: Bool = false
+    
+    func togglePresentationMode() {
+        
+    }
+    
     func handleSignout() {
         
     }
@@ -27,6 +34,14 @@ final class LibraryViewModelMock: LibraryViewModelProtocol {
 }
 
 final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
+    func resolveCreateObjectiveScene(for feature: LibraryFeature, route: Route?) -> AnyView {
+        .init(Text("Dummy"))
+    }
+    
+    func resolveCreateObjectiveScene(for feature: LibraryFeature) -> AnyView {
+        .init(Text("Dummy"))
+    }
+    
     func resolveObjectivesListScene(for feature: LibraryFeature, using route: ObjectivesRoute) -> AnyView {
         .init(Text("Dummy"))
     }
@@ -38,17 +53,20 @@ final class LibraryScenesFactoryMock: LibraryScenesFactoryProtocol {
 }
 
 final class ObjectivesListViewModelMock: ObjectivesListViewModelProtocol {
-    func handleDidLearnToggled(objective: LibraryViewModelState<LearningObjective>) {}
-    
+    var goal: LearningGoal { .fixture() }
     
     @Published
-    var objectives: LibraryViewModelState<[LibraryViewModelState<LearningObjective>]> = .result([
-        .result(.fixture()),
-        .result(.fixture()),
-        .result(.fixture()),
-        .result(.fixture()),
-        .result(.fixture()),
+    var objectives: LibraryViewModelState<[LearningObjective]> = .result([
+        .fixture(),
+        .fixture(),
+        .fixture(),
+        .fixture(),
+        .fixture(),
     ])
+    
+    func handleWantToLearnToggled(objective state: LibraryViewModelState<LearningObjective>) {}
+    
+    func handleLearnStatusToggled(objective: LibraryViewModelState<LearningObjective>) {}
     
     var goalName: String = "Dummy"
     

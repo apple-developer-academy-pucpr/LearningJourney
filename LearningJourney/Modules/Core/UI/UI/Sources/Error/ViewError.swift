@@ -1,8 +1,12 @@
 import SwiftUI
 
 public enum ViewError: Equatable {
-    case notAuthenticated
+    public typealias SignOutCallback = () -> Void
+    
+    case notAuthenticated(SignOutCallback)
     case unknown (UnknownErrorCallback)
+    
+    public static let notAuthenticated: Self = .notAuthenticated({})
     
     public static func == (lhs: ViewError, rhs: ViewError) -> Bool {
         switch (lhs, rhs) {
@@ -16,12 +20,14 @@ public enum ViewError: Equatable {
 }
 
 public extension ViewError {
-    var view: AnyView {
-        switch self {
-        case .notAuthenticated:
-            return AnyView(Text("salve"))
-        case let .unknown (callback):
-            return AnyView(UnknownErrorView(action: callback))
+    var view: some View {
+        Group {
+            switch self {
+            case let .notAuthenticated(callback):
+                Button("Signout", action: callback)
+            case let .unknown (callback):
+                UnknownErrorView(action: callback)
+            }
         }
     }
 }

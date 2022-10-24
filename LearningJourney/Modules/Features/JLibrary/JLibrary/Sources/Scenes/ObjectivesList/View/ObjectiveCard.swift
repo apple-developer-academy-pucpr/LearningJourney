@@ -1,50 +1,102 @@
 import SwiftUI
 import UI
 
-struct ObjectiveCard: View {
+struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelProtocol {
     
-    let objective: LibraryViewModelState<LearningObjective>
-    let buttonAction: () -> Void
+    @ObservedObject
+    var viewModel: ViewModel
+    
+    @FocusState
+    var isEditingDescription: Bool
     
     var body: some View {
-        resultView
-        .padding()
-        .background(Color ("CardBackground"))
-        .cornerRadius(14)
-    }
-    
-    private var resultView: some View {
-        Group {
-            switch objective {
-            case .loading, .empty:
-                LoadingView()
-            case .error:
-                Text("Error")
-            case let .result(objective):
-                contentView(learningObjective: objective)
-            }
+        if viewModel.isDeleted {
+            Rectangle().frame(width: 0, height: 0)
+        } else {
+            contentView
         }
     }
     
-    private func contentView(learningObjective objective: LearningObjective) -> some View {
-        VStack(alignment: .leading) {
+    @ViewBuilder
+    private var contentView: some View {
+        GroupBox {
+            VStack {
+                descriptionView
+                editingBar
+            }
+        } label: {
             HStack(alignment: .top) {
                 VStack (alignment: .leading) {
-                    Text(objective.code)
+                    Text(viewModel.objectiveCode)
                         .font(.system(size: 15, weight: .semibold, design: .default))
-                    Text(objective.isCore ? "Core" : "Elective")
+                    Text(viewModel.objectiveType)
                         .font(.system(size: 12, weight: .regular, design: .default))
                         .foregroundColor(Color("SecondaryText"))
                 }
-                
                 Spacer()
-                Button("Learned") {
-                    buttonAction()
-                }
-                .buttonStyle(LearnedButtonStyle(isHightlighted: objective.isComplete))
+                button
             }
-            .padding(.bottom, 20)
-            Text(objective.description)
+        }.groupBoxStyle(ObjectiveGroupBoxStyle(isBookmarked: viewModel.isBookmarked))
+        .onTapGesture {
+            viewModel.handleWantToLearnToggled()
+        }
+    }
+    
+    @ViewBuilder
+    private var editingBar: some View {
+        if viewModel.canShowEditingBar {
+            EditObjectiveView(
+                didStartEditing: {
+                    isEditingDescription = true
+                    viewModel.didStartEditing()
+                },
+                didDelete: {
+                    isEditingDescription = false
+                    viewModel.didConfirmDeletion()
+                }, didFinishEditing: {
+                    isEditingDescription = false
+                    viewModel.didConfirmEditing()
+                }, didCancelEditing: {
+                    isEditingDescription = false
+                    viewModel.didCancelEditing()
+                },
+                loadingState: $viewModel.buttonState
+            )
+        }
+    }
+    
+    @ViewBuilder
+    private var descriptionView: some View {
+        ZStack {
+            TextEditor(text: $viewModel.objectiveDescription)
+                .opacity(viewModel.canEditDescription ? 1 : 0)
+                .focused($isEditingDescription)
+            Text(viewModel.objectiveDescription)
+                .opacity(viewModel.canEditDescription ? 0 : 1)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .lineLimit(nil)
+        .padding()
+        .background(.clear)
+    }
+    
+    @ViewBuilder
+    private var button: some View {
+        Group {
+            switch viewModel.buttonState {
+            case .loading, .empty:
+                LoadingView(style: .medium)
+            case .error:
+                LoadingView()
+            case let .result(state):
+                Button {
+                    viewModel.handleLearnStatusToggled()
+                } label: {
+                    Label(state.name, systemImage: state.imageName)
+                        .labelStyle(ObjectiveStatusLabelStyle())
+                }
+                .buttonStyle(state.learningStatusButtonStyle)
+            }
         }
     }
 }
@@ -53,9 +105,7 @@ struct ObjectiveCard: View {
 
 struct ObjectiveCard_Previews: PreviewProvider {
     static var previews: some View {
-        ObjectiveCard(
-            objective: .result(.fixture()),
-            buttonAction: {})
+        Text("Demo")
     }
 }
 

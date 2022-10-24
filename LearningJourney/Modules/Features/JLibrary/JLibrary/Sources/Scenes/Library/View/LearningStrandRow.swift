@@ -13,17 +13,16 @@ struct LearningStrandRow: View {
             Text(strand.name)
                 .font(.system(size: 19))
                 .bold()
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(strand.goals) { goal in
-                        service.link(for: ObjectivesRoute(
-                                        
-                                        goal: goal)) {
+                        service.link(for: ObjectivesRoute(goal: goal)) {
                             LearningGoalCard(goal: goal)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
+                .padding(.trailing)
             }
         }
     }
@@ -37,21 +36,21 @@ struct LearningStrandRow_Previews: PreviewProvider {
         ContentView_Previews.contentPreview
         
         LearningStrandRow(service: DummyRoutingService(), strand: .init(
-            id: 1,
+            id: "1",
             name: "Technical",
             goals: [
                 .init(
-                    id: 1,
+                    id: "1",
                     name: "App Programming",
                     progress: 0.1),
                 
                     .init(
-                        id:1,
+                        id: "1",
                         name: "App Programming",
                         progress: 0.5),
                 
                     .init(
-                        id:1,
+                        id: "1",
                         name: "App Programming",
                         progress: 0.75),
             ]

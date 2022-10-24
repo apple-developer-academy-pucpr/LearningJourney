@@ -10,6 +10,8 @@ configs:
 projectReferences:
   CoreAdapters:
     path: ../../Core/CoreAdapters/CoreAdapters.xcodeproj
+  CoreAnalytics:
+    path: ../../Core/CoreAnalytics/CoreAnalytics.xcodeproj
   CoreAuthentication:
     path: ../../Core/CoreAuthentication/CoreAuthentication.xcodeproj
   CoreInjector:
@@ -33,6 +35,8 @@ targets:
     sources: JLibrary
     dependencies:
       - target: CoreAdapters/CoreAdapters
+        implicit: true
+      - target: CoreAnalytics/CoreAnalytics
         implicit: true
       - target: CoreAuthentication/CoreAuthentication
         implicit: true

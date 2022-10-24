@@ -15,13 +15,24 @@ final class ObjectivesListAssembler: ObjectivesListAssembling{
         let repository = LibraryRepository(
             remoteService: service,
             parser: parser)
-        
         let viewModel = ObjectivesListViewModel(
-            useCases: .init(
-                fetchObjectivesUseCase: FetchObjectivesUseCase(repository: repository),
-                toggleLearnUseCase: ToggleLearnUseCase(repository: repository)),
-            dependencies: .init(goal: learningGoal))
-        let view = ObjectivesListView<ObjectivesListViewModel>(viewModel: viewModel)
+            useCases: .init(fetchObjectivesUseCase: FetchObjectivesUseCase(repository: repository)),
+            dependencies: .init(goal: learningGoal),
+            analyticsLogger: feature.analyticsLogger)
+        
+        let view = ObjectivesListView<ObjectivesListViewModel, ObjectiveCard>(
+            routingService: feature.routingService,
+            viewModel: viewModel
+        ) {
+            ObjectiveCard(viewModel: ObjectiveCardViewModel(
+                useCases: .init(
+                    toggleLearnUseCase: ToggleLearnUseCase(repository: repository),
+                    toggleEagerToLearnUseCase: ToggleEagerToLearnUseCase(repository: repository),
+                    updateObjectiveDescriptionUseCase: UpdateObjectiveDescriptionUseCase(repository: repository),
+                    deleteObjectiveUseCase: DeleteObjectiveUseCase(repository: repository)),
+                objective: $0,
+                analyticsLogger: feature.analyticsLogger))
+        }
         
         return AnyView(view)
     }

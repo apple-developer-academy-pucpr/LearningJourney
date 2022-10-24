@@ -1,11 +1,12 @@
 import SwiftUI
 import UI
+import CoreAnalytics
 
 protocol ObjectivesListViewModelProtocol: ObservableObject {
-    var objectives: LibraryViewModelState<[LibraryViewModelState<LearningObjective>]> { get }
+    var objectives: LibraryViewModelState<[LearningObjective]> { get }
     var goalName: String { get }
+    var goal: LearningGoal { get }
     func handleOnAppear()
-    func handleDidLearnToggled(objective state: LibraryViewModelState<LearningObjective>)
 }
 
 final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
@@ -14,7 +15,6 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     struct UseCases {
         let fetchObjectivesUseCase: FetchObjectivesUseCaseProtocol
-        let toggleLearnUseCase: ToggleLearnUseCaseProtocol
     }
     
     struct Dependencies {
@@ -23,24 +23,28 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
     
     // MARK: - ViewModel properties
     
-    typealias Objectives = LibraryViewModelState<[LibraryViewModelState<LearningObjective>]>
+    typealias Objectives = LibraryViewModelState<[LearningObjective]>
     
     @Published
     var objectives: Objectives = .empty
+    var goal: LearningGoal { dependencies.goal }
     
     // MARK: - Dependencies
     
     private let useCases: UseCases
     private let dependencies: Dependencies
+    private let analyticsLogger: AnalyticsLogging
     
     // MARK: - Initialization
     
     init(
         useCases: UseCases,
-        dependencies: Dependencies
+        dependencies: Dependencies,
+        analyticsLogger: AnalyticsLogging
     ) {
         self.useCases = useCases
         self.dependencies = dependencies
+        self.analyticsLogger = analyticsLogger
     }
     
     // MARK: - ViewModel Protocol
@@ -53,30 +57,10 @@ final class ObjectivesListViewModel: ObjectivesListViewModelProtocol {
         useCases.fetchObjectivesUseCase.execute(using: dependencies.goal) { [weak self] in
             switch $0 {
             case let .success(objectives):
-                self?.objectives = .result(objectives.map { .result($0) })
+                self?.analyticsLogger.log(.goalLoaded(self?.goalName))
+                self?.objectives = .result(objectives)
             case let .failure(error):
                 self?.handleError(error)
-            }
-        }
-    }
-    
-    func handleDidLearnToggled(objective state: LibraryViewModelState<LearningObjective>) {
-        guard case let .result(oldObjective) = state,
-              case var .result(objectives) = objectives,
-              let selectedIndex = objectives.firstIndex(where: { $0 == state })
-        else { return }
-        
-        objectives[selectedIndex] = .loading
-        self.objectives = .result(objectives)
-        
-        useCases.toggleLearnUseCase.execute(objective: oldObjective) { [weak self] in
-            switch $0 {
-            case let .success(objective):
-                objectives[selectedIndex] = .result(objective)
-                self?.objectives = .result(objectives)
-            case .failure:
-                objectives[selectedIndex] = .result(oldObjective) // TODO this should present a button so that the user can try again
-                self?.objectives = .result(objectives)
             }
         }
     }

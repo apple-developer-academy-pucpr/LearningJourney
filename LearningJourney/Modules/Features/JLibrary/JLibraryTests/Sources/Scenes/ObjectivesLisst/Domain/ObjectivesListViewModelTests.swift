@@ -1,22 +1,23 @@
 import TestingUtils
 import XCTest
+import CoreAnalytics
 
 @testable import JLibrary
 
 final class ObjectivesListViewModelTests: XCTestCase {
     
     // MARK: - Properties
-    
+    private let analyticsLogger = AnalyticsLogger()
     private let fetchObjectivesUseCaseSpy = FetchObjectivesUseCaseSpyStub()
     private let toggleLearnUseCaseSpy = ToggleLearnUseCaseSpyStub()
     private let goalMock: LearningGoal = .fixture()
     
     private lazy var sut = ObjectivesListViewModel(
         useCases: .init(
-            fetchObjectivesUseCase: fetchObjectivesUseCaseSpy,
-            toggleLearnUseCase: toggleLearnUseCaseSpy
+            fetchObjectivesUseCase: fetchObjectivesUseCaseSpy
         ),
-        dependencies: .init(goal: goalMock)
+        dependencies: .init(goal: goalMock),
+        analyticsLogger: analyticsLogger
     )
     
     // MARK: - handleOnAppear
@@ -94,42 +95,12 @@ final class ObjectivesListViewModelTests: XCTestCase {
         //Then
         XCTAssertEqual(sut.objectives, .error(.unknown({})))
     }
-    
-    // MARK: - handleDidLearnToggled
-    
-    func test_handleDidLearnToggled_shouldPassCorrectObjective() {
-        //Given
-        let firstLearningObjectiveDummy = LearningObjective.fixture(id: 1)
-        let secondLearningObjectiveStub = LearningObjective.fixture(id: 2)
-        
-        toggleLearnUseCaseSpy.resultToUse = .success(secondLearningObjectiveStub)
-        
-        sut.objectives = .result([
-            LibraryViewModelState.result(firstLearningObjectiveDummy),
-            LibraryViewModelState.result(secondLearningObjectiveStub)
-        ])
-        
-        //When
-        sut.handleDidLearnToggled(
-            objective: LibraryViewModelState.result(secondLearningObjectiveStub)
-        )
-        
-        //Then
-        XCTAssertEqual(toggleLearnUseCaseSpy.objectivePassed?.id, 2)
-    }
-    
-    func test_handleDidLearnToggled_whenObjectivesArrayIsEmpty_shouldNotCallExecute() {
-        //Given
-        let learningObjective = LearningObjective.fixture(id: 1)
-        toggleLearnUseCaseSpy.resultToUse = .success(learningObjective)
-        sut.objectives = .result([])
-                
-        //When
-        sut.handleDidLearnToggled(
-            objective: LibraryViewModelState.result(learningObjective)
-        )
-        
-        //Then
-        XCTAssertFalse(toggleLearnUseCaseSpy.executeCalled)
+}
+
+final class AnalyticsLoggerSpy: AnalyticsLogging {
+    var logCallCount: Int { logEventsPassed.count }
+    private(set) var logEventsPassed: [AnalyticsEvent] = []
+    func log(event: AnalyticsEvent) {
+        logEventsPassed.append(event)
     }
 }

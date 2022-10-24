@@ -9,7 +9,6 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 SLASH=/
-BASE_URL=https:$(SLASH)/learning-journey-app.herokuapp.com/api/
+//BASE_URL=http:$(SLASH)/192.168.0.115:9000/
+BASE_URL = http:$(SLASH)/learningjourney.sa-east-1.elasticbeanstalk.com/
 ENV_NAME=DEV
-
-#include "../../../../../Pods/Target Support Files/Pods-CoreEnvironment/Pods-CoreEnvironment.debug.xcconfig"
