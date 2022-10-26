@@ -5,4 +5,4 @@ xcodebuild clean build test \
     -scheme "LearningJourney - Debug" \
     -sdk iphonesimulator \
     -destination "platform=iOS Simulator,name=iPhone 8" \
-    CODE_SIGNING_REQUIRED=NO
+    CODE_SIGNING_REQUIRED=NO | xcpretty && exit ${PIPESTATUS[0]}
