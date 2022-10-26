@@ -1,4 +1,4 @@
-import CoreAnalytics
+import CoreTracking
 
 enum LibraryEvent {
     case homeLoaded // OK

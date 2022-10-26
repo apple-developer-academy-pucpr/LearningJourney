@@ -1,6 +1,6 @@
 import TestingUtils
 import XCTest
-import CoreAnalytics
+import CoreTracking
 
 @testable import JLibrary
 

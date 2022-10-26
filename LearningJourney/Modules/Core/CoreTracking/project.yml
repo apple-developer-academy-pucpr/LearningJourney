@@ -1,4 +1,4 @@
-name: CoreAnalytics
+name: CoreTracking
 
 options:
   xcodeVersion: '9999'
@@ -8,61 +8,61 @@ configs:
   Release: release
   
 targets:
-  CoreAnalytics:
+  CoreTracking:
     type: framework
     platform: iOS
     bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
-        INFOPLIST_FILE: CoreAnalytics/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAnalytics
-    sources: CoreAnalytics
+        INFOPLIST_FILE: CoreTracking/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreTracking
+    sources: CoreTracking
     dependencies:
       - package: FirebaseAnalytics
 
-  CoreAnalyticsTests:
+  CoreTrackingTests:
     type: bundle.unit-test
     platform: iOS
     bundleIdPrefix: dev.pastre.learningjourneyapp
     settings:
       base:
-        INFOPLIST_FILE: CoreAnalyticsTests/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAnalyticsTests
+        INFOPLIST_FILE: CoreTrackingTests/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreTrackingTests
     sources:
-      - path: CoreAnalyticsTests
+      - path: CoreTrackingTests
 
     dependencies:
-      - target: CoreAnalytics
+      - target: CoreTracking
 
-  CoreAnalyticsSample:
+  CoreTrackingSample:
     type: application
     platform: iOS
-    sources: CoreAnalyticsSample
+    sources: CoreTrackingSample
     settings:
       base:
-        INFOPLIST_FILE: CoreAnalyticsSample/Resources/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreAnalyticsSample
+        INFOPLIST_FILE: CoreTrackingSample/Resources/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: dev.pastre.learningjourneyapp.CoreTrackingSample
     dependencies:
-      - target: CoreAnalytics
+      - target: CoreTracking
         embed: false
 
 schemes:
-  CoreAnalyticsSample:
+  CoreTrackingSample:
     build:
         targets:
-            CoreAnalyticsSample: all
+            CoreTrackingSample: all
     run:
         targets:
-            CoreAnalyticsSample: all
-  CoreAnalytics:
+            CoreTrackingSample: all
+  CoreTracking:
     build:
       targets:
-        CoreAnalytics: all
+        CoreTracking: all
     test:
       config: Debug
       gatherCoverageData: true
       targets:
-        - name: CoreAnalyticsTests
+        - name: CoreTrackingTests
           parallelizable: true
           randomExecutionOrder: true
     

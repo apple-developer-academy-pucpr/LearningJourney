@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import CoreAnalytics
+@testable import CoreTracking
 
 final class AnalyticsDispatchingTests: XCTestCase {
     
