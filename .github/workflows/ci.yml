@@ -24,6 +24,8 @@ jobs:
         run: brew install xcodegen
       - name: Select Xcode 12.5
         run: sudo xcode-select -s /Applications/Xcode_13.2.app
+      - name: Generate project files
+        run: make clean generate
       - name: Run tests
         run:  "${GITHUB_WORKSPACE}/tools/Scripts/run_tests.sh"
       - name: Upload coverage to Codecov
