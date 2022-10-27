@@ -7,9 +7,6 @@ import SwiftUI
 final class LibraryViewTests: XCTestCase {
     // MARK: - Properties
     private let shouldRecordSnapshotTests = false
-    
-    
-    
     private let stub = LibraryViewModelStub()
     private lazy var sut = LibraryView(
         viewModel: stub,
@@ -65,6 +62,10 @@ final class LibraryViewTests: XCTestCase {
 }
 
 final class LibraryViewModelStub: LibraryViewModelProtocol {
+    var isList: Bool = false
+    
+    func togglePresentationMode() {}
+    
     var strands: LibraryViewModelState<[LearningStrand]> = .loading
     
     var searchQuery: String = ""
