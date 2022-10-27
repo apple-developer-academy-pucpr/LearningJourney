@@ -1,6 +1,6 @@
 import SwiftUI
 import UI
-import CoreAnalytics
+import CoreTracking
 
 protocol LibraryViewModelProtocol: ObservableObject {
     var strands: LibraryViewModelState<[LearningStrand]> { get }

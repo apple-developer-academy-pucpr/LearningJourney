@@ -1,7 +1,7 @@
 import CoreNetworking
 import Combine
 import SwiftUI
-import CoreAnalytics
+import CoreTracking
 
 enum CreateButtonState {
     case disabled, loading, enabled

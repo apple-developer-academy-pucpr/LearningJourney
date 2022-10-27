@@ -3,8 +3,8 @@ name: LearningJourney
 projectReferences:
   CoreAdapters:
     path: ../Modules/Core/CoreAdapters/CoreAdapters.xcodeproj
-  CoreAnalytics:
-    path: ../Modules/Core/CoreAnalytics/CoreAnalytics.xcodeproj
+  CoreTracking:
+    path: ../Modules/Core/CoreTracking/CoreTracking.xcodeproj
   CoreAuthentication:
     path: ../Modules/Core/CoreAuthentication/CoreAuthentication.xcodeproj
   CoreEnvironment:
@@ -37,7 +37,7 @@ targets:
     dependencies:
       - target: CoreAdapters/CoreAdapters
         implict: true
-      - target: CoreAnalytics/CoreAnalytics
+      - target: CoreTracking/CoreTracking
         implict: true
       - target: CoreAuthentication/CoreAuthentication
         implict: true
@@ -83,12 +83,12 @@ schemes:
     test:
       config: Debug
       gatherCoverageData: true
-      coverageTargets: [CoreAdapters/CoreAdapters, CoreAnalytics/CoreAnalytics, CoreAuthentication/CoreAuthentication, CoreEnvironment/CoreEnvironment, CoreInjector/CoreInjector, CoreNetworking/CoreNetworking, UI/UI, JAuthentication/JAuthentication, JLibrary/JLibrary]
+      coverageTargets: [CoreAdapters/CoreAdapters, CoreTracking/CoreTracking, CoreAuthentication/CoreAuthentication, CoreEnvironment/CoreEnvironment, CoreInjector/CoreInjector, CoreNetworking/CoreNetworking, UI/UI, JAuthentication/JAuthentication, JLibrary/JLibrary]
       targets:
         - name: CoreAdapters/CoreAdaptersTests
           parallelizable: false
           randomExecutionOrder: true
-        - name: CoreAnalytics/CoreAnalyticsTests
+        - name: CoreTracking/CoreTrackingTests
           parallelizable: false
           randomExecutionOrder: true
         - name: CoreAuthentication/CoreAuthenticationTests
@@ -128,12 +128,12 @@ schemes:
     test:
       config: Release
       gatherCoverageData: true
-      coverageTargets: [CoreAdapters/CoreAdapters, CoreAnalytics/CoreAnalytics, CoreAuthentication/CoreAuthentication, CoreEnvironment/CoreEnvironment, CoreInjector/CoreInjector, CoreNetworking/CoreNetworking, UI/UI, JAuthentication/JAuthentication, JLibrary/JLibrary]
+      coverageTargets: [CoreAdapters/CoreAdapters, CoreTracking/CoreTracking, CoreAuthentication/CoreAuthentication, CoreEnvironment/CoreEnvironment, CoreInjector/CoreInjector, CoreNetworking/CoreNetworking, UI/UI, JAuthentication/JAuthentication, JLibrary/JLibrary]
       targets:
         - name: CoreAdapters/CoreAdaptersTests
           parallelizable: false
           randomExecutionOrder: true
-        - name: CoreAnalytics/CoreAnalyticsTests
+        - name: CoreTracking/CoreTrackingTests
           parallelizable: false
           randomExecutionOrder: true
         - name: CoreAuthentication/CoreAuthenticationTests
