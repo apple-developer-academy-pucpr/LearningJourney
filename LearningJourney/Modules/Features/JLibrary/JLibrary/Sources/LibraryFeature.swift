@@ -3,7 +3,7 @@ import CoreInjector
 import CoreNetworking
 import CoreAuthentication
 import CoreAdapters
-import CoreAnalytics
+import CoreTracking
 
 public struct LibraryFeature: Feature {
     

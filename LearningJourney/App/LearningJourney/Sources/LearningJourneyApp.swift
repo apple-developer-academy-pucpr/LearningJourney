@@ -7,7 +7,7 @@ import CoreEnvironment
 import CoreInjector
 import JAuthentication
 import JLibrary
-import CoreAnalytics
+import CoreTracking
 
 @main
 struct LearningJourneyApp: App {

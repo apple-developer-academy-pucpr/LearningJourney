@@ -11,5 +11,5 @@ extension Bundle {
 }
 
 private enum Environment {
-    static let resourcesBundleName = "CoreAnalytics"
+    static let resourcesBundleName = "CoreTracking"
 }

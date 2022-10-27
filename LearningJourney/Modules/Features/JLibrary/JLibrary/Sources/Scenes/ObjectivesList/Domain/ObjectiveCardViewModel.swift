@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import CoreAnalytics
+import CoreTracking
 
 struct LearningStatusButtonState: Equatable {
     let name: String

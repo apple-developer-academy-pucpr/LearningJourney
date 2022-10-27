@@ -64,49 +64,13 @@ struct LearningGoalCard_Previews: PreviewProvider {
         func togglePresentationMode() {
             
         }
-        
-        var strands: LibraryViewModelState<[LearningStrand]> = .result([
-            .fixture(goals: [
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-            ]),
-            .fixture(goals: [
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-            ]),
-            .fixture(goals: [
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-            ]),
-            .fixture(goals: [
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-                .fixture(name: UUID().uuidString),
-            ]),
-        ])
+
+        var strands: LibraryViewModelState<[LearningStrand]> = .result(.init(
+            repeating: .fixture(goals: .init(
+                repeating: .fixture(),
+                count: 10)),
+            count: 10
+        ))
         
         var searchQuery: String = ""
         

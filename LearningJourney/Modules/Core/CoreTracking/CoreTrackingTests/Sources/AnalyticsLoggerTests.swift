@@ -1,9 +1,10 @@
 import XCTest
 
-@testable import CoreAnalytics
+@testable import CoreTracking
 
 final class AnalyticsLoggerTests: XCTestCase {
     // MARK: - Properties
+    
     private lazy var thirdPartyLoggerSpy = ThirdPartyLoggerSpy()
     
     // MARK: - Unit tests
@@ -46,7 +47,7 @@ final class AnalyticsLoggerTests: XCTestCase {
         XCTAssertTrue(handlers.first is FirebaseHandler)
     }
     
-    // MARK: - Heleprs
+    // MARK: - Helpers
     private func buildSut(
         destination: AnalyticsDestination = .firebase,
         logger: ThirdPartyLogger? = nil
