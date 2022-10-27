@@ -2,24 +2,22 @@ import XCTest
 @testable import JLibrary
 
 final class LibraryParserTests: XCTestCase {
-    // MARK: - System under test
+  // MARK: - System under test
 
-    private let sut = LibraryParser()
+  private let sut = LibraryParser()
 
-    // MARK: - Tests
+  // MARK: - Tests
 
-    func testParseDecodableDataShouldSucceed() throws {
+  func testParseDecodableDataShouldSucceed() throws {
         // Given
-        let decodable = "aDecodableString"
-        let encodedData = try XCTUnwrap(decodable.data(encoding: .utf8))
-        let expectedDecodedData: Result<String, Error> = .success(decodable)
+        let json = "{}"
+        let encodedData = try XCTUnwrap(json.data(using: .utf8))
 
         // When
-        let actualParsedValue = sut.parse(encodedData)
+        let result: Result<Dictionary<String, String>, ParsingError> = sut.parse(encodedData)
 
         // Then
-        
-        XCTAssertEqual(actualParsedValue, expectedDecodedData)
+        XCTAssertNoThrow(try result.get())
     }
 
     func testParseUndecodableDataShouldFail() throws {
@@ -28,15 +26,9 @@ final class LibraryParserTests: XCTestCase {
         let encodedData = try XCTUnwrap(invalidJson.data(using: .utf8))
 
         // When
-        let actualResult = sut.parse(encodedData)
+        let result: Result<String, ParsingError> = sut.parse(encodedData)
 
         // Then
-        XCTAssertThrowsError(try actualResult.get(), "TODO Message!")
+        XCTAssertThrowsError(try result.get(), "Expected decoding to fail, but got \(result)")
     }
 }
-
-private struct DecodableData: Encodable, Decodable, Equatable {
-    var areWeLucky: Bool = .random()
-}
-
-private struct UndecodableData: Encodable { }
