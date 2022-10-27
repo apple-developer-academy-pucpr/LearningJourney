@@ -26,6 +26,7 @@ targets:
         implicit: true
       - package: SnapshotTesting
         implicit: true
+      - sdk: XCTest.framework
 
   TestingUtilsSample:
     type: application
