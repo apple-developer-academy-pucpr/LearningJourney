@@ -1,0 +1,18 @@
+input_dir: LearningJourney/Resources/
+output_dir: LearningJourney/Sources/Generated/
+strings:
+  inputs: 
+    - Strings.strings
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: Strings.swift
+      params:
+          enumName: Strings
+xcassets:
+  inputs: Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: Assets.swift
+      params:
+          enumName: Assets

@@ -1,13 +1,16 @@
 generate: ## Generate projects, workspace and install pods
-	@$(MAKE) generateprojects
+	@$(MAKE) generate_assets generateprojects
 
 generateprojects: ## Generate only .xcodeproj projects using Xcodegen
-	
 	@echo "\nGenerating modules projects"
 	@find LearningJourney/Modules -type d -depth 2 -exec sh -c "cd {}; echo 'Generating {}'; [ -f ./project.yml ] && xcodegen" \;
 	
 	@echo "\nGenerating main projects"
 	@(cd LearningJourney/App; xcodegen;)
+
+generate_assets: ## Generate assets files using SwiftGen
+	@echo "\nGenerating main project assets"
+	@(cd LearningJourney/App; swiftgen;)
 
 open: ## Opens the main XCode project
 	@(open LearningJourney/App/LearningJourney.xcodeproj)
