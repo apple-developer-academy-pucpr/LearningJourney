@@ -26,4 +26,5 @@ run_tests: ## Run automated tests
 
 clean: ## Cleanup projects 
 	rm -rf LearningJourney/LearningJourney.xcworkspace
+	-@find LearningJourney -maxdepth 10 -d -name "Generated" -exec rm -r {} \; 2> /dev/null
 	-@find LearningJourney -maxdepth 10 -name "*.xcodeproj" -exec rm -r {} \; 2> /dev/null
