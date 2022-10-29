@@ -1,5 +1,5 @@
-input_dir: LearningJourney/Resources/
-output_dir: LearningJourney/Sources/Generated/
+input_dir: CoreInjector/Resources/
+output_dir: CoreInjector/Sources/Generated/
 strings:
   inputs: 
     - Strings.strings

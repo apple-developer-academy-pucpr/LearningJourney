@@ -1,0 +1,11 @@
+input_dir: CoreTracking/Resources/
+output_dir: CoreTracking/Sources/Generated/
+strings:
+  inputs: 
+    - Strings.strings
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: Strings.swift
+      params:
+          enumName: Strings

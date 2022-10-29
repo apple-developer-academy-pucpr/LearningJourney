@@ -1,4 +1,3 @@
-import UI
 import SwiftUI
 
 public typealias UnknownErrorCallback = () -> Void
@@ -12,7 +11,7 @@ struct UnknownErrorView: View {
         VStack{
             Spacer()
 
-            UI.Assets.ErrorScreen.errorImage.swiftUIImage
+            Assets.ErrorScreen.errorImage.swiftUIImage
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(80)

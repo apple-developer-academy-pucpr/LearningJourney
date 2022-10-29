@@ -10,8 +10,7 @@ generateprojects: ## Generate only .xcodeproj projects using Xcodegen
 
 generate_assets: ## Generate assets files using SwiftGen
 	@echo "\nGenerating asset files"
-
-	@(cd LearningJourney/Modules/Core/UI; swiftgen;)
+	@find LearningJourney/Modules -type d -depth 2 -exec sh -c "cd {}; [ -f swiftgen.yml ] && echo 'Generating files for {}' && pwd | xargs basename | xargs -I % mkdir %/Sources/Generated; swiftgen" \; 2> /dev/null
 
 open: ## Opens the main XCode project
 	@(open LearningJourney/App/LearningJourney.xcodeproj)
@@ -27,4 +26,4 @@ run_tests: ## Run automated tests
 
 clean: ## Cleanup projects 
 	rm -rf LearningJourney/LearningJourney.xcworkspace
-	-@find LearningJourney -maxdepth 10 -name "*.xcodeproj" -exec rm -r {} \;
+	-@find LearningJourney -maxdepth 10 -name "*.xcodeproj" -exec rm -r {} \; 2> /dev/null
