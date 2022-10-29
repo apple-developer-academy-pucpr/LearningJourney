@@ -9,8 +9,9 @@ generateprojects: ## Generate only .xcodeproj projects using Xcodegen
 	@(cd LearningJourney/App; xcodegen;)
 
 generate_assets: ## Generate assets files using SwiftGen
-	@echo "\nGenerating main project assets"
-	@(cd LearningJourney/App; swiftgen;)
+	@echo "\nGenerating asset files"
+
+	@(cd LearningJourney/Modules/Core/UI; swiftgen;)
 
 open: ## Opens the main XCode project
 	@(open LearningJourney/App/LearningJourney.xcodeproj)

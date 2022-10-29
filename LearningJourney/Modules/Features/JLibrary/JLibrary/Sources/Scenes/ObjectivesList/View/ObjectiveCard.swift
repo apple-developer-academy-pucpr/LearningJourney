@@ -31,7 +31,7 @@ struct ObjectiveCard<ViewModel>: View where ViewModel: ObjectiveCardViewModelPro
                         .font(.system(size: 15, weight: .semibold, design: .default))
                     Text(viewModel.objectiveType)
                         .font(.system(size: 12, weight: .regular, design: .default))
-                        .foregroundColor(Color("SecondaryText"))
+                        .foregroundColor(UI.Assets.Colors.secondaryText.swiftUIColor)
                 }
                 Spacer()
                 button

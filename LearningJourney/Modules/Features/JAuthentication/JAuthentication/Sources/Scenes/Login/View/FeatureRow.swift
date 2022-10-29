@@ -1,3 +1,4 @@
+import UI
 import SwiftUI
 
 struct FeatureRow: View {
@@ -12,7 +13,7 @@ struct FeatureRow: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 55)
-                .foregroundColor(Color("iconColor"))
+                .foregroundColor(UI.Assets.LoginScreen.iconColor.swiftUIColor)
                 .padding(.trailing, 15)
             VStack(alignment: .leading){
                 
