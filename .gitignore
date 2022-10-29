@@ -10,6 +10,6 @@ LearningJourney/Podfile.lock
 LearningJourney/Gemfile.lock
 
 LearningJourney/vendor/
-.bundleA
+.bundle
 
 **/Sources/Generated/
