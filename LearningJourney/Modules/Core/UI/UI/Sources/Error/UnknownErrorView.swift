@@ -11,7 +11,7 @@ struct UnknownErrorView: View {
         VStack{
             Spacer()
 
-            Assets.errorImage.swiftUIImage
+            Image(Assets.errorImage.name)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(80)

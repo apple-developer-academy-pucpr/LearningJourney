@@ -4,7 +4,7 @@ import UI
 struct LearningGoalCard: View {
     
     private enum Layout {
-        static let backgroundColor = UI.Assets.cardBackground.swiftUIColor
+        static let backgroundColor = Color(UI.Assets.cardBackground.name)
     }
     
     let goal: LearningGoal
