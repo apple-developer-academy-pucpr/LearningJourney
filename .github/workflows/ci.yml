@@ -21,7 +21,7 @@ jobs:
         with:
           access_token: ${{ github.token }}
       - name: Install dependencies
-        run: brew install xcodegen
+        run: brew install xcodegen swiftgen
       - name: Select Xcode 14.0
         run: sudo xcode-select -s /Applications/Xcode_14.0.app
       - name: Generate project files

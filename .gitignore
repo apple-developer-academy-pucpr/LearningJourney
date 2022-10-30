@@ -11,3 +11,5 @@ LearningJourney/Gemfile.lock
 
 LearningJourney/vendor/
 .bundle
+
+**/Sources/Generated/

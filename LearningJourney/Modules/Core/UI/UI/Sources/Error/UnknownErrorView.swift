@@ -1,6 +1,8 @@
 import SwiftUI
+
 public typealias UnknownErrorCallback = () -> Void
 public typealias SignOutCallback = () -> Void
+
 struct UnknownErrorView: View {
     
     let action: UnknownErrorCallback
@@ -8,7 +10,8 @@ struct UnknownErrorView: View {
     var body: some View {
         VStack{
             Spacer()
-            Image("errorImage")
+
+            Image(Assets.errorImage.name)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .padding(80)

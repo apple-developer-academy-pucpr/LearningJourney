@@ -22,6 +22,7 @@ To run this project, you will need to install:
 
   - make
   - xcodegen
+  - swiftgen
   - Cocoapods
   
 Having those tools installed, just run `make generate` to generate the Xcode project. 

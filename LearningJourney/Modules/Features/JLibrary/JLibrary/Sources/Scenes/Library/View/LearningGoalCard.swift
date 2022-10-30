@@ -1,9 +1,10 @@
 import SwiftUI
+import UI
 
 struct LearningGoalCard: View {
     
     private enum Layout {
-        static let backgroundColor = Color("CardBackground") // TODO swiftgen
+        static let backgroundColor = Color(UI.Assets.cardBackground.name)
     }
     
     let goal: LearningGoal

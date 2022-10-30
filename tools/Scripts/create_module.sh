@@ -44,22 +44,3 @@ find . ! -name ".*" -type f -exec sh -c "sed -i '' 's/<module_name>/$1/g' '{}'" 
 xcodegen
 
 exit 1
-
-# Integrate on project.yml
-sed -i '' '1,/dependencies:/s/dependencies:/&\
-      - framework: '"$moduleName"'.framework\
-        implicit: true/' AppPicPay/project.yml
-
-sed -i '' '1,/projectReferences:/s/projectReferences:/&\
-  '"$moduleName"':\
-    path: ..\/Modules\/'"$moduleName"'\/'"$moduleName"'.xcodeproj/' AppPicPay/project.yml
-
-if [ "$moduleType" != interface ]
-then
-  sed -i '' '1,/coverageTargets: \[PicPay, /s/coverageTargets: \[PicPay, /&'"$moduleName"'\/'"$moduleName"', /' AppPicPay/project.yml
-
-  sed -i '' '1,/randomExecutionOrder: true/s/randomExecutionOrder: true/&\
-        - name: '"$moduleName"'\/'"$moduleName"Tests'\
-          parallelizable: false\
-          randomExecutionOrder: true/' AppPicPay/project.yml
-fi
