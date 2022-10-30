@@ -39,7 +39,7 @@ struct LoginView<ViewModel>: View where ViewModel: LoginViewModeling {
     
     private var contentView: some View {
         VStack{
-            UI.Assets.LoginScreen.loginScreenBanner.swiftUIImage
+            UI.Assets.loginScreenBanner.swiftUIImage
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .ignoresSafeArea()

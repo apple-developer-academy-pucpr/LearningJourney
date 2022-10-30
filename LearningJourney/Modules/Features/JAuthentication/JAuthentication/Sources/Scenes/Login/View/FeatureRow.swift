@@ -13,7 +13,7 @@ struct FeatureRow: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 55)
-                .foregroundColor(UI.Assets.LoginScreen.iconColor.swiftUIColor)
+                .foregroundColor(UI.Assets.iconColor.swiftUIColor)
                 .padding(.trailing, 15)
             VStack(alignment: .leading){
                 
